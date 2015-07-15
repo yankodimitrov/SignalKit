@@ -91,3 +91,18 @@ public final class ObservableValue<T>: Observable {
         lock.unlock()
     }
 }
+
+public extension ObservableValue {
+    
+    /**
+        Dispatch the value on a given dispatch queue
+    
+    */
+    public func dispatch(value: T, on queue: SignalQueue) {
+        
+        dispatch_async(queue.dispatchQueue) { [weak self] in
+            
+            self?.value = value
+        }
+    }
+}
