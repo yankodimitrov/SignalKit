@@ -14,6 +14,9 @@
 		C9E7F2AF1B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */; };
 		C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */; };
 		C9E7F2B21B56817C001AB061 /* IncrementalKeyGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B11B56817C001AB061 /* IncrementalKeyGeneratorTests.swift */; };
+		C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B31B5681DF001AB061 /* Bag.swift */; };
+		C9E7F2B51B5681DF001AB061 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B31B5681DF001AB061 /* Bag.swift */; };
+		C9E7F2B71B5681F4001AB061 /* BagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B61B5681F4001AB061 /* BagTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,8 @@
 		C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenGeneratorType.swift; sourceTree = "<group>"; };
 		C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementalKeyGenerator.swift; sourceTree = "<group>"; };
 		C9E7F2B11B56817C001AB061 /* IncrementalKeyGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementalKeyGeneratorTests.swift; sourceTree = "<group>"; };
+		C9E7F2B31B5681DF001AB061 /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
+		C9E7F2B61B5681F4001AB061 /* BagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				C9E7F2B11B56817C001AB061 /* IncrementalKeyGeneratorTests.swift */,
+				C9E7F2B61B5681F4001AB061 /* BagTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -180,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */,
+				C9E7F2B31B5681DF001AB061 /* Bag.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -292,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9E7F2AF1B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
+				C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */,
 				C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +310,8 @@
 			files = (
 				C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
 				C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
+				C9E7F2B71B5681F4001AB061 /* BagTests.swift in Sources */,
+				C9E7F2B51B5681DF001AB061 /* Bag.swift in Sources */,
 				C9E7F2B21B56817C001AB061 /* IncrementalKeyGeneratorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
