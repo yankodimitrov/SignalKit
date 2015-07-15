@@ -17,4 +17,7 @@
 @interface MockButton : UIButton
 @end
 
+@interface MockDatePicker : UIDatePicker
+@end
+
 #endif

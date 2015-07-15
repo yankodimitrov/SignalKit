@@ -79,6 +79,9 @@
 		C9E7F3221B569FCC001AB061 /* UIButtonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3211B569FCC001AB061 /* UIButtonFunctions.swift */; };
 		C9E7F3231B569FCC001AB061 /* UIButtonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3211B569FCC001AB061 /* UIButtonFunctions.swift */; };
 		C9E7F3251B569FD7001AB061 /* UIButtonFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3241B569FD7001AB061 /* UIButtonFunctionsTests.swift */; };
+		C9E7F3271B56A052001AB061 /* UIDatePickerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3261B56A052001AB061 /* UIDatePickerFunctions.swift */; };
+		C9E7F3281B56A052001AB061 /* UIDatePickerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3261B56A052001AB061 /* UIDatePickerFunctions.swift */; };
+		C9E7F32A1B56A062001AB061 /* UIDatePickerFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3291B56A062001AB061 /* UIDatePickerFunctionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +148,8 @@
 		C9E7F31F1B569F66001AB061 /* UIControlFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlFunctionsTests.swift; sourceTree = "<group>"; };
 		C9E7F3211B569FCC001AB061 /* UIButtonFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonFunctions.swift; sourceTree = "<group>"; };
 		C9E7F3241B569FD7001AB061 /* UIButtonFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonFunctionsTests.swift; sourceTree = "<group>"; };
+		C9E7F3261B56A052001AB061 /* UIDatePickerFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePickerFunctions.swift; sourceTree = "<group>"; };
+		C9E7F3291B56A062001AB061 /* UIDatePickerFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePickerFunctionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +264,7 @@
 				C9E7F3151B56970A001AB061 /* KeyboardNotificationTests.swift */,
 				C9E7F31F1B569F66001AB061 /* UIControlFunctionsTests.swift */,
 				C9E7F3241B569FD7001AB061 /* UIButtonFunctionsTests.swift */,
+				C9E7F3291B56A062001AB061 /* UIDatePickerFunctionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 				C9E7F3121B5696E5001AB061 /* KeyboardNotification.swift */,
 				C9E7F31C1B569F59001AB061 /* UIControlFunctions.swift */,
 				C9E7F3211B569FCC001AB061 /* UIButtonFunctions.swift */,
+				C9E7F3261B56A052001AB061 /* UIDatePickerFunctions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -475,6 +482,7 @@
 				C9E7F2C91B5683D2001AB061 /* LockType.swift in Sources */,
 				C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 				C9E7F2C11B5682D4001AB061 /* Observable.swift in Sources */,
+				C9E7F3271B56A052001AB061 /* UIDatePickerFunctions.swift in Sources */,
 				C9E7F2BC1B568258001AB061 /* DisposableItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,6 +509,7 @@
 				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2BD1B568258001AB061 /* DisposableItem.swift in Sources */,
 				C9E7F3141B5696E5001AB061 /* KeyboardNotification.swift in Sources */,
+				C9E7F32A1B56A062001AB061 /* UIDatePickerFunctionsTests.swift in Sources */,
 				C9E7F2FA1B568B05001AB061 /* Person.swift in Sources */,
 				C9E7F3111B569680001AB061 /* KeyboardStateTests.swift in Sources */,
 				C9E7F3201B569F66001AB061 /* UIControlFunctionsTests.swift in Sources */,
@@ -522,6 +531,7 @@
 				C9E7F2E01B5687FB001AB061 /* SignalTests.swift in Sources */,
 				C9E7F2DB1B568644001AB061 /* MockLock.swift in Sources */,
 				C9E7F2B51B5681DF001AB061 /* Bag.swift in Sources */,
+				C9E7F3281B56A052001AB061 /* UIDatePickerFunctions.swift in Sources */,
 				C9E7F3161B56970A001AB061 /* KeyboardNotificationTests.swift in Sources */,
 				C9E7F2B21B56817C001AB061 /* IncrementalKeyGeneratorTests.swift in Sources */,
 				C9E7F2D81B5684FF001AB061 /* ObservableValueTests.swift in Sources */,
