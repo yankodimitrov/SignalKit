@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
+		C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */; };
+		C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,8 @@
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
 		C9E7F28A1B567DF5001AB061 /* SignalKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignalKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2901B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9E7F29B1B567F3D001AB061 /* SignalKitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SignalKitTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenGeneratorType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,11 @@
 		C9E7F2811B567DF5001AB061 /* SignalKit */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7F2A81B567FE4001AB061 /* Protocols */,
+				C9E7F2A61B567FE4001AB061 /* Observables */,
+				C9E7F2A71B567FE4001AB061 /* Observers */,
+				C9E7F2A91B567FE4001AB061 /* UIKit */,
+				C9E7F2AA1B567FE4001AB061 /* Utilities */,
 				C9E7F2821B567DF5001AB061 /* Supporting Files */,
 			);
 			path = SignalKit;
@@ -86,6 +95,10 @@
 		C9E7F28E1B567DF5001AB061 /* SignalKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7F2A21B567FD6001AB061 /* Observables */,
+				C9E7F2A31B567FD6001AB061 /* Observers */,
+				C9E7F2A41B567FD6001AB061 /* UIKit */,
+				C9E7F2A51B567FD6001AB061 /* Utilities */,
 				C9E7F28F1B567DF5001AB061 /* Supporting Files */,
 			);
 			path = SignalKitTests;
@@ -95,8 +108,73 @@
 			isa = PBXGroup;
 			children = (
 				C9E7F2901B567DF5001AB061 /* Info.plist */,
+				C9E7F29B1B567F3D001AB061 /* SignalKitTests-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9E7F2A21B567FD6001AB061 /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Observables;
+			sourceTree = "<group>";
+		};
+		C9E7F2A31B567FD6001AB061 /* Observers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Observers;
+			sourceTree = "<group>";
+		};
+		C9E7F2A41B567FD6001AB061 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C9E7F2A51B567FD6001AB061 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C9E7F2A61B567FE4001AB061 /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Observables;
+			sourceTree = "<group>";
+		};
+		C9E7F2A71B567FE4001AB061 /* Observers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Observers;
+			sourceTree = "<group>";
+		};
+		C9E7F2A81B567FE4001AB061 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C9E7F2A91B567FE4001AB061 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C9E7F2AA1B567FE4001AB061 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +399,7 @@
 		C9E7F2961B567DF5001AB061 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -328,12 +409,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		C9E7F2971B567DF5001AB061 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -349,6 +432,7 @@
 		C9E7F2991B567DF5001AB061 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -360,12 +444,15 @@
 				INFOPLIST_FILE = SignalKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SignalKitTests/SignalKitTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		C9E7F29A1B567DF5001AB061 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -373,6 +460,7 @@
 				INFOPLIST_FILE = SignalKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SignalKitTests/SignalKitTests-Bridging-Header.h";
 			};
 			name = Release;
 		};
