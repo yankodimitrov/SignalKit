@@ -60,6 +60,9 @@
 		C9E7F2FC1B568C2C001AB061 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2FB1B568C2C001AB061 /* NotificationObserver.swift */; };
 		C9E7F2FD1B568C2C001AB061 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2FB1B568C2C001AB061 /* NotificationObserver.swift */; };
 		C9E7F2FF1B568C4E001AB061 /* NotificationObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2FE1B568C4E001AB061 /* NotificationObserverTests.swift */; };
+		C9E7F3011B5693C4001AB061 /* CompoundObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3001B5693C4001AB061 /* CompoundObserver.swift */; };
+		C9E7F3021B5693C4001AB061 /* CompoundObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3001B5693C4001AB061 /* CompoundObserver.swift */; };
+		C9E7F3041B5693D2001AB061 /* CompoundObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3031B5693D2001AB061 /* CompoundObserverTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +115,8 @@
 		C9E7F2F91B568B05001AB061 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C9E7F2FB1B568C2C001AB061 /* NotificationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
 		C9E7F2FE1B568C4E001AB061 /* NotificationObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationObserverTests.swift; sourceTree = "<group>"; };
+		C9E7F3001B5693C4001AB061 /* CompoundObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundObserver.swift; sourceTree = "<group>"; };
+		C9E7F3031B5693D2001AB061 /* CompoundObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundObserverTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +218,7 @@
 				C9E7F2ED1B5689A4001AB061 /* ObserverOfTests.swift */,
 				C9E7F2F71B568AE0001AB061 /* KVOObserverTests.swift */,
 				C9E7F2FE1B568C4E001AB061 /* NotificationObserverTests.swift */,
+				C9E7F3031B5693D2001AB061 /* CompoundObserverTests.swift */,
 			);
 			path = Observers;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */,
 				C9E7F2F41B568AB8001AB061 /* KVOObserver.swift */,
 				C9E7F2FB1B568C2C001AB061 /* NotificationObserver.swift */,
+				C9E7F3001B5693C4001AB061 /* CompoundObserver.swift */,
 			);
 			path = Observers;
 			sourceTree = "<group>";
@@ -418,6 +425,7 @@
 				C9E7F2DD1B56878D001AB061 /* Signal.swift in Sources */,
 				C9E7F2F51B568AB8001AB061 /* KVOObserver.swift in Sources */,
 				C9E7F2D21B568468001AB061 /* SignalContainerType.swift in Sources */,
+				C9E7F3011B5693C4001AB061 /* CompoundObserver.swift in Sources */,
 				C9E7F2E61B5688DC001AB061 /* SignalContainer.swift in Sources */,
 				C9E7F2C91B5683D2001AB061 /* LockType.swift in Sources */,
 				C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
@@ -450,6 +458,7 @@
 				C9E7F2F11B5689EB001AB061 /* Functions.swift in Sources */,
 				C9E7F2E91B5688FC001AB061 /* SignalContainerTests.swift in Sources */,
 				C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */,
+				C9E7F3041B5693D2001AB061 /* CompoundObserverTests.swift in Sources */,
 				C9E7F2BF1B56826F001AB061 /* DisposableItemTests.swift in Sources */,
 				C9E7F2B71B5681F4001AB061 /* BagTests.swift in Sources */,
 				C9E7F2CD1B5683F9001AB061 /* SpinLock.swift in Sources */,
@@ -460,6 +469,7 @@
 				C9E7F2B51B5681DF001AB061 /* Bag.swift in Sources */,
 				C9E7F2B21B56817C001AB061 /* IncrementalKeyGeneratorTests.swift in Sources */,
 				C9E7F2D81B5684FF001AB061 /* ObservableValueTests.swift in Sources */,
+				C9E7F3021B5693C4001AB061 /* CompoundObserver.swift in Sources */,
 				C9E7F2C51B568312001AB061 /* ObservableOf.swift in Sources */,
 				C9E7F2C71B568320001AB061 /* ObservableOfTests.swift in Sources */,
 				C9E7F2E21B568817001AB061 /* MockDisposable.swift in Sources */,
