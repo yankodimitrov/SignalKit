@@ -29,6 +29,8 @@
 		C9E7F2C71B568320001AB061 /* ObservableOfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C61B568320001AB061 /* ObservableOfTests.swift */; };
 		C9E7F2C91B5683D2001AB061 /* LockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C81B5683D2001AB061 /* LockType.swift */; };
 		C9E7F2CA1B5683D2001AB061 /* LockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C81B5683D2001AB061 /* LockType.swift */; };
+		C9E7F2CC1B5683F9001AB061 /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2CB1B5683F9001AB061 /* SpinLock.swift */; };
+		C9E7F2CD1B5683F9001AB061 /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2CB1B5683F9001AB061 /* SpinLock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,7 @@
 		C9E7F2C31B568312001AB061 /* ObservableOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableOf.swift; sourceTree = "<group>"; };
 		C9E7F2C61B568320001AB061 /* ObservableOfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableOfTests.swift; sourceTree = "<group>"; };
 		C9E7F2C81B5683D2001AB061 /* LockType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockType.swift; sourceTree = "<group>"; };
+		C9E7F2CB1B5683F9001AB061 /* SpinLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinLock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,7 @@
 				C9E7F2B31B5681DF001AB061 /* Bag.swift */,
 				C9E7F2BB1B568258001AB061 /* DisposableItem.swift */,
 				C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */,
+				C9E7F2CB1B5683F9001AB061 /* SpinLock.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -324,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E7F2CC1B5683F9001AB061 /* SpinLock.swift in Sources */,
 				C9E7F2AF1B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
 				C9E7F2C41B568312001AB061 /* ObservableOf.swift in Sources */,
 				C9E7F2B91B56822F001AB061 /* Disposable.swift in Sources */,
@@ -347,6 +352,7 @@
 				C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */,
 				C9E7F2BF1B56826F001AB061 /* DisposableItemTests.swift in Sources */,
 				C9E7F2B71B5681F4001AB061 /* BagTests.swift in Sources */,
+				C9E7F2CD1B5683F9001AB061 /* SpinLock.swift in Sources */,
 				C9E7F2B51B5681DF001AB061 /* Bag.swift in Sources */,
 				C9E7F2B21B56817C001AB061 /* IncrementalKeyGeneratorTests.swift in Sources */,
 				C9E7F2C51B568312001AB061 /* ObservableOf.swift in Sources */,
