@@ -8,6 +8,23 @@
 
 import Foundation
 
+public enum SignalQueue {
+    case Main
+    case Background(dispatch_queue_t)
+    
+    var dispatchQueue: dispatch_queue_t {
+        
+        switch self {
+            
+        case .Main:
+            return dispatch_get_main_queue()
+            
+        case .Background(let backgroundQueue):
+            return backgroundQueue
+        }
+    }
+}
+
 public final class Signal<T>: SignalType, Observable {
     
     private let observable: ObservableOf<T>
