@@ -63,6 +63,10 @@
 		C9E7F3011B5693C4001AB061 /* CompoundObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3001B5693C4001AB061 /* CompoundObserver.swift */; };
 		C9E7F3021B5693C4001AB061 /* CompoundObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3001B5693C4001AB061 /* CompoundObserver.swift */; };
 		C9E7F3041B5693D2001AB061 /* CompoundObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3031B5693D2001AB061 /* CompoundObserverTests.swift */; };
+		C9E7F3061B5694DB001AB061 /* ControlObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3051B5694DB001AB061 /* ControlObserver.swift */; };
+		C9E7F3071B5694DB001AB061 /* ControlObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3051B5694DB001AB061 /* ControlObserver.swift */; };
+		C9E7F3091B56952C001AB061 /* ControlObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3081B56952C001AB061 /* ControlObserverTests.swift */; };
+		C9E7F30C1B569571001AB061 /* MockControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F30B1B569571001AB061 /* MockControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +121,10 @@
 		C9E7F2FE1B568C4E001AB061 /* NotificationObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationObserverTests.swift; sourceTree = "<group>"; };
 		C9E7F3001B5693C4001AB061 /* CompoundObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundObserver.swift; sourceTree = "<group>"; };
 		C9E7F3031B5693D2001AB061 /* CompoundObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundObserverTests.swift; sourceTree = "<group>"; };
+		C9E7F3051B5694DB001AB061 /* ControlObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlObserver.swift; sourceTree = "<group>"; };
+		C9E7F3081B56952C001AB061 /* ControlObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlObserverTests.swift; sourceTree = "<group>"; };
+		C9E7F30A1B56955F001AB061 /* MockControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockControl.h; sourceTree = "<group>"; };
+		C9E7F30B1B569571001AB061 /* MockControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +227,7 @@
 				C9E7F2F71B568AE0001AB061 /* KVOObserverTests.swift */,
 				C9E7F2FE1B568C4E001AB061 /* NotificationObserverTests.swift */,
 				C9E7F3031B5693D2001AB061 /* CompoundObserverTests.swift */,
+				C9E7F3081B56952C001AB061 /* ControlObserverTests.swift */,
 			);
 			path = Observers;
 			sourceTree = "<group>";
@@ -258,6 +267,7 @@
 				C9E7F2F41B568AB8001AB061 /* KVOObserver.swift */,
 				C9E7F2FB1B568C2C001AB061 /* NotificationObserver.swift */,
 				C9E7F3001B5693C4001AB061 /* CompoundObserver.swift */,
+				C9E7F3051B5694DB001AB061 /* ControlObserver.swift */,
 			);
 			path = Observers;
 			sourceTree = "<group>";
@@ -301,6 +311,8 @@
 				C9E7F2E11B568817001AB061 /* MockDisposable.swift */,
 				C9E7F2E31B56883C001AB061 /* MockSignal.swift */,
 				C9E7F2F91B568B05001AB061 /* Person.swift */,
+				C9E7F30A1B56955F001AB061 /* MockControl.h */,
+				C9E7F30B1B569571001AB061 /* MockControl.m */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -421,6 +433,7 @@
 				C9E7F2B91B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */,
 				C9E7F2FC1B568C2C001AB061 /* NotificationObserver.swift in Sources */,
+				C9E7F3061B5694DB001AB061 /* ControlObserver.swift in Sources */,
 				C9E7F2CF1B568443001AB061 /* SignalType.swift in Sources */,
 				C9E7F2DD1B56878D001AB061 /* Signal.swift in Sources */,
 				C9E7F2F51B568AB8001AB061 /* KVOObserver.swift in Sources */,
@@ -439,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9E7F2CA1B5683D2001AB061 /* LockType.swift in Sources */,
+				C9E7F3071B5694DB001AB061 /* ControlObserver.swift in Sources */,
 				C9E7F2D31B568468001AB061 /* SignalContainerType.swift in Sources */,
 				C9E7F2FF1B568C4E001AB061 /* NotificationObserverTests.swift in Sources */,
 				C9E7F2D61B5684E0001AB061 /* ObservableValue.swift in Sources */,
@@ -446,6 +460,7 @@
 				C9E7F2FD1B568C2C001AB061 /* NotificationObserver.swift in Sources */,
 				C9E7F2EE1B5689A4001AB061 /* ObserverOfTests.swift in Sources */,
 				C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
+				C9E7F3091B56952C001AB061 /* ControlObserverTests.swift in Sources */,
 				C9E7F2F61B568AB8001AB061 /* KVOObserver.swift in Sources */,
 				C9E7F2E71B5688DC001AB061 /* SignalContainer.swift in Sources */,
 				C9E7F2F31B568A18001AB061 /* FunctionsTests.swift in Sources */,
@@ -457,6 +472,7 @@
 				C9E7F2DE1B56878D001AB061 /* Signal.swift in Sources */,
 				C9E7F2F11B5689EB001AB061 /* Functions.swift in Sources */,
 				C9E7F2E91B5688FC001AB061 /* SignalContainerTests.swift in Sources */,
+				C9E7F30C1B569571001AB061 /* MockControl.m in Sources */,
 				C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */,
 				C9E7F3041B5693D2001AB061 /* CompoundObserverTests.swift in Sources */,
 				C9E7F2BF1B56826F001AB061 /* DisposableItemTests.swift in Sources */,
