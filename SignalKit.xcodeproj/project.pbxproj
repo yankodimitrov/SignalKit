@@ -47,6 +47,9 @@
 		C9E7F2E61B5688DC001AB061 /* SignalContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E51B5688DC001AB061 /* SignalContainer.swift */; };
 		C9E7F2E71B5688DC001AB061 /* SignalContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E51B5688DC001AB061 /* SignalContainer.swift */; };
 		C9E7F2E91B5688FC001AB061 /* SignalContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E81B5688FC001AB061 /* SignalContainerTests.swift */; };
+		C9E7F2EB1B56896C001AB061 /* ObserverOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */; };
+		C9E7F2EC1B56896C001AB061 /* ObserverOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */; };
+		C9E7F2EE1B5689A4001AB061 /* ObserverOfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2ED1B5689A4001AB061 /* ObserverOfTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +93,8 @@
 		C9E7F2E31B56883C001AB061 /* MockSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSignal.swift; sourceTree = "<group>"; };
 		C9E7F2E51B5688DC001AB061 /* SignalContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalContainer.swift; sourceTree = "<group>"; };
 		C9E7F2E81B5688FC001AB061 /* SignalContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalContainerTests.swift; sourceTree = "<group>"; };
+		C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverOf.swift; sourceTree = "<group>"; };
+		C9E7F2ED1B5689A4001AB061 /* ObserverOfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverOfTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +191,7 @@
 		C9E7F2A31B567FD6001AB061 /* Observers */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7F2ED1B5689A4001AB061 /* ObserverOfTests.swift */,
 			);
 			path = Observers;
 			sourceTree = "<group>";
@@ -221,6 +227,7 @@
 		C9E7F2A71B567FE4001AB061 /* Observers */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */,
 			);
 			path = Observers;
 			sourceTree = "<group>";
@@ -377,6 +384,7 @@
 				C9E7F2CC1B5683F9001AB061 /* SpinLock.swift in Sources */,
 				C9E7F2AF1B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
 				C9E7F2D51B5684E0001AB061 /* ObservableValue.swift in Sources */,
+				C9E7F2EB1B56896C001AB061 /* ObserverOf.swift in Sources */,
 				C9E7F2C41B568312001AB061 /* ObservableOf.swift in Sources */,
 				C9E7F2B91B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */,
@@ -398,6 +406,8 @@
 				C9E7F2CA1B5683D2001AB061 /* LockType.swift in Sources */,
 				C9E7F2D31B568468001AB061 /* SignalContainerType.swift in Sources */,
 				C9E7F2D61B5684E0001AB061 /* ObservableValue.swift in Sources */,
+				C9E7F2EC1B56896C001AB061 /* ObserverOf.swift in Sources */,
+				C9E7F2EE1B5689A4001AB061 /* ObserverOfTests.swift in Sources */,
 				C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
 				C9E7F2E71B5688DC001AB061 /* SignalContainer.swift in Sources */,
 				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
