@@ -91,6 +91,9 @@
 		C9E7F3361B56A1B3001AB061 /* UISliderFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3351B56A1B3001AB061 /* UISliderFunctions.swift */; };
 		C9E7F3371B56A1B3001AB061 /* UISliderFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3351B56A1B3001AB061 /* UISliderFunctions.swift */; };
 		C9E7F3391B56A1C0001AB061 /* UISliderFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3381B56A1C0001AB061 /* UISliderFunctionsTests.swift */; };
+		C9E7F33B1B56A236001AB061 /* UISwitchFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F33A1B56A236001AB061 /* UISwitchFunctions.swift */; };
+		C9E7F33C1B56A236001AB061 /* UISwitchFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F33A1B56A236001AB061 /* UISwitchFunctions.swift */; };
+		C9E7F33E1B56A243001AB061 /* UISwitchFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F33D1B56A243001AB061 /* UISwitchFunctionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +168,8 @@
 		C9E7F3331B56A16C001AB061 /* UILabelFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelFunctionsTests.swift; sourceTree = "<group>"; };
 		C9E7F3351B56A1B3001AB061 /* UISliderFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderFunctions.swift; sourceTree = "<group>"; };
 		C9E7F3381B56A1C0001AB061 /* UISliderFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderFunctionsTests.swift; sourceTree = "<group>"; };
+		C9E7F33A1B56A236001AB061 /* UISwitchFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchFunctions.swift; sourceTree = "<group>"; };
+		C9E7F33D1B56A243001AB061 /* UISwitchFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchFunctionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +288,7 @@
 				C9E7F32E1B56A105001AB061 /* UIImageViewFunctionsTests.swift */,
 				C9E7F3331B56A16C001AB061 /* UILabelFunctionsTests.swift */,
 				C9E7F3381B56A1C0001AB061 /* UISliderFunctionsTests.swift */,
+				C9E7F33D1B56A243001AB061 /* UISwitchFunctionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 				C9E7F32B1B56A0FA001AB061 /* UIImageViewFunctions.swift */,
 				C9E7F3301B56A161001AB061 /* UILabelFunctions.swift */,
 				C9E7F3351B56A1B3001AB061 /* UISliderFunctions.swift */,
+				C9E7F33A1B56A236001AB061 /* UISwitchFunctions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -480,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E7F33B1B56A236001AB061 /* UISwitchFunctions.swift in Sources */,
 				C9E7F2CC1B5683F9001AB061 /* SpinLock.swift in Sources */,
 				C9E7F2AF1B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
 				C9E7F2D51B5684E0001AB061 /* ObservableValue.swift in Sources */,
@@ -532,6 +540,7 @@
 				C9E7F2E71B5688DC001AB061 /* SignalContainer.swift in Sources */,
 				C9E7F2F31B568A18001AB061 /* FunctionsTests.swift in Sources */,
 				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
+				C9E7F33C1B56A236001AB061 /* UISwitchFunctions.swift in Sources */,
 				C9E7F2BD1B568258001AB061 /* DisposableItem.swift in Sources */,
 				C9E7F3141B5696E5001AB061 /* KeyboardNotification.swift in Sources */,
 				C9E7F32A1B56A062001AB061 /* UIDatePickerFunctionsTests.swift in Sources */,
@@ -549,6 +558,7 @@
 				C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */,
 				C9E7F3041B5693D2001AB061 /* CompoundObserverTests.swift in Sources */,
 				C9E7F2BF1B56826F001AB061 /* DisposableItemTests.swift in Sources */,
+				C9E7F33E1B56A243001AB061 /* UISwitchFunctionsTests.swift in Sources */,
 				C9E7F2B71B5681F4001AB061 /* BagTests.swift in Sources */,
 				C9E7F2CD1B5683F9001AB061 /* SpinLock.swift in Sources */,
 				C9E7F3321B56A161001AB061 /* UILabelFunctions.swift in Sources */,

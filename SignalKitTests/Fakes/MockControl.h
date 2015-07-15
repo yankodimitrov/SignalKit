@@ -23,4 +23,7 @@
 @interface MockSlider : UISlider
 @end
 
+@interface MockSwitch : UISwitch
+@end
+
 #endif
