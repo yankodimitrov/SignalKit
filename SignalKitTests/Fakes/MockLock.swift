@@ -15,11 +15,13 @@ class MockLock: LockType {
     var unlockCalled = false
     
     func lock() {
+        
         syncCounter += 1
         lockCalled = true
     }
     
     func unlock() {
+        
         syncCounter -= 1
         unlockCalled = true
     }
