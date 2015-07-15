@@ -73,6 +73,9 @@
 		C9E7F3131B5696E5001AB061 /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3121B5696E5001AB061 /* KeyboardNotification.swift */; };
 		C9E7F3141B5696E5001AB061 /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3121B5696E5001AB061 /* KeyboardNotification.swift */; };
 		C9E7F3161B56970A001AB061 /* KeyboardNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3151B56970A001AB061 /* KeyboardNotificationTests.swift */; };
+		C9E7F31D1B569F59001AB061 /* UIControlFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F31C1B569F59001AB061 /* UIControlFunctions.swift */; };
+		C9E7F31E1B569F59001AB061 /* UIControlFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F31C1B569F59001AB061 /* UIControlFunctions.swift */; };
+		C9E7F3201B569F66001AB061 /* UIControlFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F31F1B569F66001AB061 /* UIControlFunctionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +138,8 @@
 		C9E7F3101B569680001AB061 /* KeyboardStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardStateTests.swift; sourceTree = "<group>"; };
 		C9E7F3121B5696E5001AB061 /* KeyboardNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotification.swift; sourceTree = "<group>"; };
 		C9E7F3151B56970A001AB061 /* KeyboardNotificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationTests.swift; sourceTree = "<group>"; };
+		C9E7F31C1B569F59001AB061 /* UIControlFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlFunctions.swift; sourceTree = "<group>"; };
+		C9E7F31F1B569F66001AB061 /* UIControlFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlFunctionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +252,7 @@
 			children = (
 				C9E7F3101B569680001AB061 /* KeyboardStateTests.swift */,
 				C9E7F3151B56970A001AB061 /* KeyboardNotificationTests.swift */,
+				C9E7F31F1B569F66001AB061 /* UIControlFunctionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -302,6 +308,7 @@
 			children = (
 				C9E7F30D1B56965E001AB061 /* KeyboardState.swift */,
 				C9E7F3121B5696E5001AB061 /* KeyboardNotification.swift */,
+				C9E7F31C1B569F59001AB061 /* UIControlFunctions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -448,6 +455,7 @@
 				C9E7F2B91B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */,
 				C9E7F2FC1B568C2C001AB061 /* NotificationObserver.swift in Sources */,
+				C9E7F31D1B569F59001AB061 /* UIControlFunctions.swift in Sources */,
 				C9E7F3061B5694DB001AB061 /* ControlObserver.swift in Sources */,
 				C9E7F2CF1B568443001AB061 /* SignalType.swift in Sources */,
 				C9E7F2DD1B56878D001AB061 /* Signal.swift in Sources */,
@@ -478,6 +486,7 @@
 				C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
 				C9E7F3091B56952C001AB061 /* ControlObserverTests.swift in Sources */,
 				C9E7F2F61B568AB8001AB061 /* KVOObserver.swift in Sources */,
+				C9E7F31E1B569F59001AB061 /* UIControlFunctions.swift in Sources */,
 				C9E7F2E71B5688DC001AB061 /* SignalContainer.swift in Sources */,
 				C9E7F2F31B568A18001AB061 /* FunctionsTests.swift in Sources */,
 				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
@@ -485,6 +494,7 @@
 				C9E7F3141B5696E5001AB061 /* KeyboardNotification.swift in Sources */,
 				C9E7F2FA1B568B05001AB061 /* Person.swift in Sources */,
 				C9E7F3111B569680001AB061 /* KeyboardStateTests.swift in Sources */,
+				C9E7F3201B569F66001AB061 /* UIControlFunctionsTests.swift in Sources */,
 				C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 				C9E7F2F81B568AE0001AB061 /* KVOObserverTests.swift in Sources */,
 				C9E7F2DE1B56878D001AB061 /* Signal.swift in Sources */,
