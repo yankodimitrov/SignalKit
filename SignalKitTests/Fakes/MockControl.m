@@ -49,3 +49,14 @@
 }
 
 @end
+
+@implementation MockSlider
+
+-(void)sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
+    
+    MockControl* control = [[MockControl alloc] init];
+    
+    [control sendAction:action to:target forEvent:event];
+}
+
+@end

@@ -20,4 +20,7 @@
 @interface MockDatePicker : UIDatePicker
 @end
 
+@interface MockSlider : UISlider
+@end
+
 #endif
