@@ -50,6 +50,9 @@
 		C9E7F2EB1B56896C001AB061 /* ObserverOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */; };
 		C9E7F2EC1B56896C001AB061 /* ObserverOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */; };
 		C9E7F2EE1B5689A4001AB061 /* ObserverOfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2ED1B5689A4001AB061 /* ObserverOfTests.swift */; };
+		C9E7F2F01B5689EB001AB061 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EF1B5689EB001AB061 /* Functions.swift */; };
+		C9E7F2F11B5689EB001AB061 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EF1B5689EB001AB061 /* Functions.swift */; };
+		C9E7F2F31B568A18001AB061 /* FunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2F21B568A18001AB061 /* FunctionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,8 @@
 		C9E7F2E81B5688FC001AB061 /* SignalContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalContainerTests.swift; sourceTree = "<group>"; };
 		C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverOf.swift; sourceTree = "<group>"; };
 		C9E7F2ED1B5689A4001AB061 /* ObserverOfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverOfTests.swift; sourceTree = "<group>"; };
+		C9E7F2EF1B5689EB001AB061 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		C9E7F2F21B568A18001AB061 /* FunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +148,7 @@
 				C9E7F2A91B567FE4001AB061 /* UIKit */,
 				C9E7F2AA1B567FE4001AB061 /* Utilities */,
 				C9E7F2821B567DF5001AB061 /* Supporting Files */,
+				C9E7F2EF1B5689EB001AB061 /* Functions.swift */,
 			);
 			path = SignalKit;
 			sourceTree = "<group>";
@@ -165,6 +171,7 @@
 				C9E7F2A51B567FD6001AB061 /* Utilities */,
 				C9E7F2D91B56860B001AB061 /* Fakes */,
 				C9E7F28F1B567DF5001AB061 /* Supporting Files */,
+				C9E7F2F21B568A18001AB061 /* FunctionsTests.swift */,
 			);
 			path = SignalKitTests;
 			sourceTree = "<group>";
@@ -384,6 +391,7 @@
 				C9E7F2CC1B5683F9001AB061 /* SpinLock.swift in Sources */,
 				C9E7F2AF1B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
 				C9E7F2D51B5684E0001AB061 /* ObservableValue.swift in Sources */,
+				C9E7F2F01B5689EB001AB061 /* Functions.swift in Sources */,
 				C9E7F2EB1B56896C001AB061 /* ObserverOf.swift in Sources */,
 				C9E7F2C41B568312001AB061 /* ObservableOf.swift in Sources */,
 				C9E7F2B91B56822F001AB061 /* Disposable.swift in Sources */,
@@ -410,10 +418,12 @@
 				C9E7F2EE1B5689A4001AB061 /* ObserverOfTests.swift in Sources */,
 				C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
 				C9E7F2E71B5688DC001AB061 /* SignalContainer.swift in Sources */,
+				C9E7F2F31B568A18001AB061 /* FunctionsTests.swift in Sources */,
 				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2BD1B568258001AB061 /* DisposableItem.swift in Sources */,
 				C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 				C9E7F2DE1B56878D001AB061 /* Signal.swift in Sources */,
+				C9E7F2F11B5689EB001AB061 /* Functions.swift in Sources */,
 				C9E7F2E91B5688FC001AB061 /* SignalContainerTests.swift in Sources */,
 				C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */,
 				C9E7F2BF1B56826F001AB061 /* DisposableItemTests.swift in Sources */,
