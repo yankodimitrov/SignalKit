@@ -24,6 +24,9 @@
 		C9E7F2BF1B56826F001AB061 /* DisposableItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2BE1B56826F001AB061 /* DisposableItemTests.swift */; };
 		C9E7F2C11B5682D4001AB061 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C01B5682D4001AB061 /* Observable.swift */; };
 		C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C01B5682D4001AB061 /* Observable.swift */; };
+		C9E7F2C41B568312001AB061 /* ObservableOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C31B568312001AB061 /* ObservableOf.swift */; };
+		C9E7F2C51B568312001AB061 /* ObservableOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C31B568312001AB061 /* ObservableOf.swift */; };
+		C9E7F2C71B568320001AB061 /* ObservableOfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C61B568320001AB061 /* ObservableOfTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,8 @@
 		C9E7F2BB1B568258001AB061 /* DisposableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableItem.swift; sourceTree = "<group>"; };
 		C9E7F2BE1B56826F001AB061 /* DisposableItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableItemTests.swift; sourceTree = "<group>"; };
 		C9E7F2C01B5682D4001AB061 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		C9E7F2C31B568312001AB061 /* ObservableOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableOf.swift; sourceTree = "<group>"; };
+		C9E7F2C61B568320001AB061 /* ObservableOfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableOfTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +142,7 @@
 		C9E7F2A21B567FD6001AB061 /* Observables */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7F2C61B568320001AB061 /* ObservableOfTests.swift */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -168,6 +174,7 @@
 		C9E7F2A61B567FE4001AB061 /* Observables */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7F2C31B568312001AB061 /* ObservableOf.swift */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -314,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9E7F2AF1B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
+				C9E7F2C41B568312001AB061 /* ObservableOf.swift in Sources */,
 				C9E7F2B91B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */,
 				C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
@@ -335,6 +343,8 @@
 				C9E7F2B71B5681F4001AB061 /* BagTests.swift in Sources */,
 				C9E7F2B51B5681DF001AB061 /* Bag.swift in Sources */,
 				C9E7F2B21B56817C001AB061 /* IncrementalKeyGeneratorTests.swift in Sources */,
+				C9E7F2C51B568312001AB061 /* ObservableOf.swift in Sources */,
+				C9E7F2C71B568320001AB061 /* ObservableOfTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
