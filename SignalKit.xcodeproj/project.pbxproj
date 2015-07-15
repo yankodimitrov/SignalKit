@@ -85,6 +85,9 @@
 		C9E7F32C1B56A0FA001AB061 /* UIImageViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F32B1B56A0FA001AB061 /* UIImageViewFunctions.swift */; };
 		C9E7F32D1B56A0FA001AB061 /* UIImageViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F32B1B56A0FA001AB061 /* UIImageViewFunctions.swift */; };
 		C9E7F32F1B56A105001AB061 /* UIImageViewFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F32E1B56A105001AB061 /* UIImageViewFunctionsTests.swift */; };
+		C9E7F3311B56A161001AB061 /* UILabelFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3301B56A161001AB061 /* UILabelFunctions.swift */; };
+		C9E7F3321B56A161001AB061 /* UILabelFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3301B56A161001AB061 /* UILabelFunctions.swift */; };
+		C9E7F3341B56A16C001AB061 /* UILabelFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3331B56A16C001AB061 /* UILabelFunctionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +158,8 @@
 		C9E7F3291B56A062001AB061 /* UIDatePickerFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePickerFunctionsTests.swift; sourceTree = "<group>"; };
 		C9E7F32B1B56A0FA001AB061 /* UIImageViewFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewFunctions.swift; sourceTree = "<group>"; };
 		C9E7F32E1B56A105001AB061 /* UIImageViewFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewFunctionsTests.swift; sourceTree = "<group>"; };
+		C9E7F3301B56A161001AB061 /* UILabelFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelFunctions.swift; sourceTree = "<group>"; };
+		C9E7F3331B56A16C001AB061 /* UILabelFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelFunctionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +276,7 @@
 				C9E7F3241B569FD7001AB061 /* UIButtonFunctionsTests.swift */,
 				C9E7F3291B56A062001AB061 /* UIDatePickerFunctionsTests.swift */,
 				C9E7F32E1B56A105001AB061 /* UIImageViewFunctionsTests.swift */,
+				C9E7F3331B56A16C001AB061 /* UILabelFunctionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -330,6 +336,7 @@
 				C9E7F3211B569FCC001AB061 /* UIButtonFunctions.swift */,
 				C9E7F3261B56A052001AB061 /* UIDatePickerFunctions.swift */,
 				C9E7F32B1B56A0FA001AB061 /* UIImageViewFunctions.swift */,
+				C9E7F3301B56A161001AB061 /* UILabelFunctions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -487,6 +494,7 @@
 				C9E7F30E1B56965E001AB061 /* KeyboardState.swift in Sources */,
 				C9E7F3011B5693C4001AB061 /* CompoundObserver.swift in Sources */,
 				C9E7F2E61B5688DC001AB061 /* SignalContainer.swift in Sources */,
+				C9E7F3311B56A161001AB061 /* UILabelFunctions.swift in Sources */,
 				C9E7F2C91B5683D2001AB061 /* LockType.swift in Sources */,
 				C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 				C9E7F2C11B5682D4001AB061 /* Observable.swift in Sources */,
@@ -535,6 +543,7 @@
 				C9E7F2BF1B56826F001AB061 /* DisposableItemTests.swift in Sources */,
 				C9E7F2B71B5681F4001AB061 /* BagTests.swift in Sources */,
 				C9E7F2CD1B5683F9001AB061 /* SpinLock.swift in Sources */,
+				C9E7F3321B56A161001AB061 /* UILabelFunctions.swift in Sources */,
 				C9E7F3231B569FCC001AB061 /* UIButtonFunctions.swift in Sources */,
 				C9E7F2D01B568443001AB061 /* SignalType.swift in Sources */,
 				C9E7F2E41B56883C001AB061 /* MockSignal.swift in Sources */,
@@ -546,6 +555,7 @@
 				C9E7F2B21B56817C001AB061 /* IncrementalKeyGeneratorTests.swift in Sources */,
 				C9E7F2D81B5684FF001AB061 /* ObservableValueTests.swift in Sources */,
 				C9E7F3021B5693C4001AB061 /* CompoundObserver.swift in Sources */,
+				C9E7F3341B56A16C001AB061 /* UILabelFunctionsTests.swift in Sources */,
 				C9E7F2C51B568312001AB061 /* ObservableOf.swift in Sources */,
 				C9E7F2C71B568320001AB061 /* ObservableOfTests.swift in Sources */,
 				C9E7F2E21B568817001AB061 /* MockDisposable.swift in Sources */,
