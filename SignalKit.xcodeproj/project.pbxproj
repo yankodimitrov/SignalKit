@@ -27,6 +27,8 @@
 		C9E7F2C41B568312001AB061 /* ObservableOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C31B568312001AB061 /* ObservableOf.swift */; };
 		C9E7F2C51B568312001AB061 /* ObservableOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C31B568312001AB061 /* ObservableOf.swift */; };
 		C9E7F2C71B568320001AB061 /* ObservableOfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C61B568320001AB061 /* ObservableOfTests.swift */; };
+		C9E7F2C91B5683D2001AB061 /* LockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C81B5683D2001AB061 /* LockType.swift */; };
+		C9E7F2CA1B5683D2001AB061 /* LockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C81B5683D2001AB061 /* LockType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 		C9E7F2C01B5682D4001AB061 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		C9E7F2C31B568312001AB061 /* ObservableOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableOf.swift; sourceTree = "<group>"; };
 		C9E7F2C61B568320001AB061 /* ObservableOfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableOfTests.swift; sourceTree = "<group>"; };
+		C9E7F2C81B5683D2001AB061 /* LockType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +195,7 @@
 				C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */,
 				C9E7F2B81B56822F001AB061 /* Disposable.swift */,
 				C9E7F2C01B5682D4001AB061 /* Observable.swift */,
+				C9E7F2C81B5683D2001AB061 /* LockType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -324,6 +328,7 @@
 				C9E7F2C41B568312001AB061 /* ObservableOf.swift in Sources */,
 				C9E7F2B91B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */,
+				C9E7F2C91B5683D2001AB061 /* LockType.swift in Sources */,
 				C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 				C9E7F2C11B5682D4001AB061 /* Observable.swift in Sources */,
 				C9E7F2BC1B568258001AB061 /* DisposableItem.swift in Sources */,
@@ -334,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E7F2CA1B5683D2001AB061 /* LockType.swift in Sources */,
 				C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
 				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2BD1B568258001AB061 /* DisposableItem.swift in Sources */,
