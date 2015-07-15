@@ -100,6 +100,9 @@
 		C9E7F3451B56A34F001AB061 /* UITextViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3441B56A34F001AB061 /* UITextViewFunctions.swift */; };
 		C9E7F3461B56A34F001AB061 /* UITextViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3441B56A34F001AB061 /* UITextViewFunctions.swift */; };
 		C9E7F3481B56A35B001AB061 /* UITextViewFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3471B56A35B001AB061 /* UITextViewFunctionsTests.swift */; };
+		C9E7F34A1B56A46E001AB061 /* UIViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3491B56A46E001AB061 /* UIViewFunctions.swift */; };
+		C9E7F34B1B56A46E001AB061 /* UIViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3491B56A46E001AB061 /* UIViewFunctions.swift */; };
+		C9E7F34D1B56A47A001AB061 /* UIViewFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F34C1B56A47A001AB061 /* UIViewFunctionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +183,8 @@
 		C9E7F3421B56A2D3001AB061 /* UITextFieldFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldFunctionsTests.swift; sourceTree = "<group>"; };
 		C9E7F3441B56A34F001AB061 /* UITextViewFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewFunctions.swift; sourceTree = "<group>"; };
 		C9E7F3471B56A35B001AB061 /* UITextViewFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewFunctionsTests.swift; sourceTree = "<group>"; };
+		C9E7F3491B56A46E001AB061 /* UIViewFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewFunctions.swift; sourceTree = "<group>"; };
+		C9E7F34C1B56A47A001AB061 /* UIViewFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewFunctionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +306,7 @@
 				C9E7F33D1B56A243001AB061 /* UISwitchFunctionsTests.swift */,
 				C9E7F3421B56A2D3001AB061 /* UITextFieldFunctionsTests.swift */,
 				C9E7F3471B56A35B001AB061 /* UITextViewFunctionsTests.swift */,
+				C9E7F34C1B56A47A001AB061 /* UIViewFunctionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -365,6 +371,7 @@
 				C9E7F33A1B56A236001AB061 /* UISwitchFunctions.swift */,
 				C9E7F33F1B56A2C7001AB061 /* UITextFieldFunctions.swift */,
 				C9E7F3441B56A34F001AB061 /* UITextViewFunctions.swift */,
+				C9E7F3491B56A46E001AB061 /* UIViewFunctions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -503,6 +510,7 @@
 			files = (
 				C9E7F33B1B56A236001AB061 /* UISwitchFunctions.swift in Sources */,
 				C9E7F2CC1B5683F9001AB061 /* SpinLock.swift in Sources */,
+				C9E7F34A1B56A46E001AB061 /* UIViewFunctions.swift in Sources */,
 				C9E7F2AF1B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
 				C9E7F2D51B5684E0001AB061 /* ObservableValue.swift in Sources */,
 				C9E7F2F01B5689EB001AB061 /* Functions.swift in Sources */,
@@ -550,6 +558,7 @@
 				C9E7F32F1B56A105001AB061 /* UIImageViewFunctionsTests.swift in Sources */,
 				C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
 				C9E7F3251B569FD7001AB061 /* UIButtonFunctionsTests.swift in Sources */,
+				C9E7F34B1B56A46E001AB061 /* UIViewFunctions.swift in Sources */,
 				C9E7F3091B56952C001AB061 /* ControlObserverTests.swift in Sources */,
 				C9E7F2F61B568AB8001AB061 /* KVOObserver.swift in Sources */,
 				C9E7F31E1B569F59001AB061 /* UIControlFunctions.swift in Sources */,
@@ -574,6 +583,7 @@
 				C9E7F30C1B569571001AB061 /* MockControl.m in Sources */,
 				C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */,
 				C9E7F3041B5693D2001AB061 /* CompoundObserverTests.swift in Sources */,
+				C9E7F34D1B56A47A001AB061 /* UIViewFunctionsTests.swift in Sources */,
 				C9E7F3481B56A35B001AB061 /* UITextViewFunctionsTests.swift in Sources */,
 				C9E7F2BF1B56826F001AB061 /* DisposableItemTests.swift in Sources */,
 				C9E7F33E1B56A243001AB061 /* UISwitchFunctionsTests.swift in Sources */,
