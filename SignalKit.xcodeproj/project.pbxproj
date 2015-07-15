@@ -44,6 +44,9 @@
 		C9E7F2E01B5687FB001AB061 /* SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2DF1B5687FB001AB061 /* SignalTests.swift */; };
 		C9E7F2E21B568817001AB061 /* MockDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E11B568817001AB061 /* MockDisposable.swift */; };
 		C9E7F2E41B56883C001AB061 /* MockSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E31B56883C001AB061 /* MockSignal.swift */; };
+		C9E7F2E61B5688DC001AB061 /* SignalContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E51B5688DC001AB061 /* SignalContainer.swift */; };
+		C9E7F2E71B5688DC001AB061 /* SignalContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E51B5688DC001AB061 /* SignalContainer.swift */; };
+		C9E7F2E91B5688FC001AB061 /* SignalContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E81B5688FC001AB061 /* SignalContainerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,8 @@
 		C9E7F2DF1B5687FB001AB061 /* SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalTests.swift; sourceTree = "<group>"; };
 		C9E7F2E11B568817001AB061 /* MockDisposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDisposable.swift; sourceTree = "<group>"; };
 		C9E7F2E31B56883C001AB061 /* MockSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSignal.swift; sourceTree = "<group>"; };
+		C9E7F2E51B5688DC001AB061 /* SignalContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalContainer.swift; sourceTree = "<group>"; };
+		C9E7F2E81B5688FC001AB061 /* SignalContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalContainerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +203,7 @@
 				C9E7F2B61B5681F4001AB061 /* BagTests.swift */,
 				C9E7F2BE1B56826F001AB061 /* DisposableItemTests.swift */,
 				C9E7F2B11B56817C001AB061 /* IncrementalKeyGeneratorTests.swift */,
+				C9E7F2E81B5688FC001AB061 /* SignalContainerTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 				C9E7F2B31B5681DF001AB061 /* Bag.swift */,
 				C9E7F2BB1B568258001AB061 /* DisposableItem.swift */,
 				C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */,
+				C9E7F2E51B5688DC001AB061 /* SignalContainer.swift */,
 				C9E7F2CB1B5683F9001AB061 /* SpinLock.swift */,
 			);
 			path = Utilities;
@@ -376,6 +383,7 @@
 				C9E7F2CF1B568443001AB061 /* SignalType.swift in Sources */,
 				C9E7F2DD1B56878D001AB061 /* Signal.swift in Sources */,
 				C9E7F2D21B568468001AB061 /* SignalContainerType.swift in Sources */,
+				C9E7F2E61B5688DC001AB061 /* SignalContainer.swift in Sources */,
 				C9E7F2C91B5683D2001AB061 /* LockType.swift in Sources */,
 				C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 				C9E7F2C11B5682D4001AB061 /* Observable.swift in Sources */,
@@ -391,10 +399,12 @@
 				C9E7F2D31B568468001AB061 /* SignalContainerType.swift in Sources */,
 				C9E7F2D61B5684E0001AB061 /* ObservableValue.swift in Sources */,
 				C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
+				C9E7F2E71B5688DC001AB061 /* SignalContainer.swift in Sources */,
 				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2BD1B568258001AB061 /* DisposableItem.swift in Sources */,
 				C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 				C9E7F2DE1B56878D001AB061 /* Signal.swift in Sources */,
+				C9E7F2E91B5688FC001AB061 /* SignalContainerTests.swift in Sources */,
 				C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */,
 				C9E7F2BF1B56826F001AB061 /* DisposableItemTests.swift in Sources */,
 				C9E7F2B71B5681F4001AB061 /* BagTests.swift in Sources */,
