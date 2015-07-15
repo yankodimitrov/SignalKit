@@ -26,4 +26,7 @@
 @interface MockSwitch : UISwitch
 @end
 
+@interface MockTextField : UITextField
+@end
+
 #endif
