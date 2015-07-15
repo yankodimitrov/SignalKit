@@ -60,3 +60,26 @@ public func observe<T>(#keyPath: String, #value: T, #object: NSObject, callback:
     
     return signal
 }
+
+/**
+    Observe the default NSNotificationCenter for a given notification
+
+*/
+public func observe(notification: String, fromObject object: AnyObject? = nil, callback: (NSNotification -> Void)? = nil) -> Signal<NSNotification> {
+    
+    let signal = Signal<NSNotification>(dispatchRule: { _ in return { return nil }})
+    
+    let observer = NotificationObserver(observe: notification, fromObject: object) { [weak signal] in
+        
+        signal?.dispatch($0)
+    }
+    
+    if let callback = callback {
+        
+        signal.addObserver(callback)
+    }
+    
+    signal.addDisposable(observer)
+    
+    return signal
+}
