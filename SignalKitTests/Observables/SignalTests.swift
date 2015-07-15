@@ -145,4 +145,18 @@ class SignalTests: XCTestCase {
         XCTAssertEqual(signalContainer.signalsCount, 1, "Should add the signal chain to signal container")
         XCTAssertEqual(result, "John", "Should retain the signal chain")
     }
+    
+    func testMap() {
+        
+        var result: Int = 0
+        
+        observe(userName)
+            .map { count($0) }
+            .next { result = $0 }
+            .addTo(signalContainer)
+        
+        userName.dispatch("John")
+        
+        XCTAssertEqual(result, 4, "Should transform a signal of type T to signal of type U")
+    }
 }

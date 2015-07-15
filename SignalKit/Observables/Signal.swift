@@ -133,4 +133,22 @@ public extension Signal {
         
         return container.addSignal(self)
     }
+    
+    /**
+        Transform a signal ot type T to a signal of type U
+    
+    */
+    public func map<U>(transform: T -> U) -> Signal<U> {
+        
+        let b = Signal<U>()
+        
+        addObserver { [weak b] in
+            
+            b?.dispatch( transform($0) )
+        }
+        
+        b.sourceSignal = self
+        
+        return b
+    }
 }
