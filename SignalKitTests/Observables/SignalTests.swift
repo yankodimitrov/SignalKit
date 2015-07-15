@@ -13,6 +13,7 @@ class SignalTests: XCTestCase {
     
     var signal: Signal<Int>!
     var lock: MockLock!
+    var userName: ObservableOf<String>!
     
     override func setUp() {
         super.setUp()
@@ -21,6 +22,7 @@ class SignalTests: XCTestCase {
         
         lock = MockLock()
         signal = Signal<Int>(observable: observable, lock: lock)
+        userName = ObservableOf<String>()
     }
     
     func testAddObserver() {
@@ -113,5 +115,18 @@ class SignalTests: XCTestCase {
         signal.dispose()
         
         XCTAssertEqual(sourceSignal.disposed, true, "Should call the signal source to dispose")
+    }
+    
+    /// MARK: Signal Extensions Tests
+    
+    func testNext() {
+        
+        var result = ""
+        
+        let signal = observe(userName).next { result = $0 }
+        
+        userName.dispatch("John")
+        
+        XCTAssertEqual(result, "John", "Should add a new observer to the signal")
     }
 }

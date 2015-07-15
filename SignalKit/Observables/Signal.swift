@@ -111,3 +111,17 @@ public final class Signal<T>: SignalType, Observable {
         sourceSignal?.dispose()
     }
 }
+
+public extension Signal {
+    
+    /**
+        Add a new observer to a signal to perform a side effect
+    
+    */
+    public func next(observer: T -> Void) -> Signal<T> {
+        
+        addObserver(observer)
+        
+        return self
+    }
+}
