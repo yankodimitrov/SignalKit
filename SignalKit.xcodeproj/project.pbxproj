@@ -22,6 +22,8 @@
 		C9E7F2BC1B568258001AB061 /* DisposableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2BB1B568258001AB061 /* DisposableItem.swift */; };
 		C9E7F2BD1B568258001AB061 /* DisposableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2BB1B568258001AB061 /* DisposableItem.swift */; };
 		C9E7F2BF1B56826F001AB061 /* DisposableItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2BE1B56826F001AB061 /* DisposableItemTests.swift */; };
+		C9E7F2C11B5682D4001AB061 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C01B5682D4001AB061 /* Observable.swift */; };
+		C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C01B5682D4001AB061 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		C9E7F2B81B56822F001AB061 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		C9E7F2BB1B568258001AB061 /* DisposableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableItem.swift; sourceTree = "<group>"; };
 		C9E7F2BE1B56826F001AB061 /* DisposableItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableItemTests.swift; sourceTree = "<group>"; };
+		C9E7F2C01B5682D4001AB061 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,7 @@
 			children = (
 				C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */,
 				C9E7F2B81B56822F001AB061 /* Disposable.swift */,
+				C9E7F2C01B5682D4001AB061 /* Observable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -313,6 +317,7 @@
 				C9E7F2B91B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */,
 				C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
+				C9E7F2C11B5682D4001AB061 /* Observable.swift in Sources */,
 				C9E7F2BC1B568258001AB061 /* DisposableItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +330,7 @@
 				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2BD1B568258001AB061 /* DisposableItem.swift in Sources */,
 				C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
+				C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */,
 				C9E7F2BF1B56826F001AB061 /* DisposableItemTests.swift in Sources */,
 				C9E7F2B71B5681F4001AB061 /* BagTests.swift in Sources */,
 				C9E7F2B51B5681DF001AB061 /* Bag.swift in Sources */,
