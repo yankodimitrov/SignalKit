@@ -70,6 +70,9 @@
 		C9E7F30E1B56965E001AB061 /* KeyboardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F30D1B56965E001AB061 /* KeyboardState.swift */; };
 		C9E7F30F1B56965E001AB061 /* KeyboardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F30D1B56965E001AB061 /* KeyboardState.swift */; };
 		C9E7F3111B569680001AB061 /* KeyboardStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3101B569680001AB061 /* KeyboardStateTests.swift */; };
+		C9E7F3131B5696E5001AB061 /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3121B5696E5001AB061 /* KeyboardNotification.swift */; };
+		C9E7F3141B5696E5001AB061 /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3121B5696E5001AB061 /* KeyboardNotification.swift */; };
+		C9E7F3161B56970A001AB061 /* KeyboardNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3151B56970A001AB061 /* KeyboardNotificationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +133,8 @@
 		C9E7F30B1B569571001AB061 /* MockControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockControl.m; sourceTree = "<group>"; };
 		C9E7F30D1B56965E001AB061 /* KeyboardState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardState.swift; sourceTree = "<group>"; };
 		C9E7F3101B569680001AB061 /* KeyboardStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardStateTests.swift; sourceTree = "<group>"; };
+		C9E7F3121B5696E5001AB061 /* KeyboardNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotification.swift; sourceTree = "<group>"; };
+		C9E7F3151B56970A001AB061 /* KeyboardNotificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				C9E7F3101B569680001AB061 /* KeyboardStateTests.swift */,
+				C9E7F3151B56970A001AB061 /* KeyboardNotificationTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				C9E7F30D1B56965E001AB061 /* KeyboardState.swift */,
+				C9E7F3121B5696E5001AB061 /* KeyboardNotification.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -436,6 +443,7 @@
 				C9E7F2D51B5684E0001AB061 /* ObservableValue.swift in Sources */,
 				C9E7F2F01B5689EB001AB061 /* Functions.swift in Sources */,
 				C9E7F2EB1B56896C001AB061 /* ObserverOf.swift in Sources */,
+				C9E7F3131B5696E5001AB061 /* KeyboardNotification.swift in Sources */,
 				C9E7F2C41B568312001AB061 /* ObservableOf.swift in Sources */,
 				C9E7F2B91B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */,
@@ -474,6 +482,7 @@
 				C9E7F2F31B568A18001AB061 /* FunctionsTests.swift in Sources */,
 				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2BD1B568258001AB061 /* DisposableItem.swift in Sources */,
+				C9E7F3141B5696E5001AB061 /* KeyboardNotification.swift in Sources */,
 				C9E7F2FA1B568B05001AB061 /* Person.swift in Sources */,
 				C9E7F3111B569680001AB061 /* KeyboardStateTests.swift in Sources */,
 				C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
@@ -493,6 +502,7 @@
 				C9E7F2E01B5687FB001AB061 /* SignalTests.swift in Sources */,
 				C9E7F2DB1B568644001AB061 /* MockLock.swift in Sources */,
 				C9E7F2B51B5681DF001AB061 /* Bag.swift in Sources */,
+				C9E7F3161B56970A001AB061 /* KeyboardNotificationTests.swift in Sources */,
 				C9E7F2B21B56817C001AB061 /* IncrementalKeyGeneratorTests.swift in Sources */,
 				C9E7F2D81B5684FF001AB061 /* ObservableValueTests.swift in Sources */,
 				C9E7F3021B5693C4001AB061 /* CompoundObserver.swift in Sources */,
