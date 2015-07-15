@@ -176,4 +176,23 @@ class SignalTests: XCTestCase {
         
         XCTAssertEqual(result, 4, "Should dispatch only the value that matches the filter predicate")
     }
+    
+    func testSkip() {
+        
+        var result: Int = 0
+        let number = ObservableOf<Int>()
+        
+        number.dispatch(0)
+        
+        observe(number)
+            .skip(2)
+            .next { result = $0 }
+            .addTo(signalContainer)
+        
+        number.dispatch(1)
+        number.dispatch(4)
+        number.dispatch(3)
+        
+        XCTAssertEqual(result, 3, "Should skip a certain number of dispatched values")
+    }
 }
