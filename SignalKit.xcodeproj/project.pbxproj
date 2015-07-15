@@ -17,6 +17,8 @@
 		C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B31B5681DF001AB061 /* Bag.swift */; };
 		C9E7F2B51B5681DF001AB061 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B31B5681DF001AB061 /* Bag.swift */; };
 		C9E7F2B71B5681F4001AB061 /* BagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B61B5681F4001AB061 /* BagTests.swift */; };
+		C9E7F2B91B56822F001AB061 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B81B56822F001AB061 /* Disposable.swift */; };
+		C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B81B56822F001AB061 /* Disposable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,7 @@
 		C9E7F2B11B56817C001AB061 /* IncrementalKeyGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementalKeyGeneratorTests.swift; sourceTree = "<group>"; };
 		C9E7F2B31B5681DF001AB061 /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		C9E7F2B61B5681F4001AB061 /* BagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagTests.swift; sourceTree = "<group>"; };
+		C9E7F2B81B56822F001AB061 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */,
+				C9E7F2B81B56822F001AB061 /* Disposable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -299,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9E7F2AF1B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
+				C9E7F2B91B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */,
 				C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 			);
@@ -309,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
+				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 				C9E7F2B71B5681F4001AB061 /* BagTests.swift in Sources */,
 				C9E7F2B51B5681DF001AB061 /* Bag.swift in Sources */,
