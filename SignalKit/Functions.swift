@@ -83,3 +83,43 @@ public func observe(notification: String, fromObject object: AnyObject? = nil, c
     
     return signal
 }
+
+/// MARK: - Combine Latest
+
+/**
+    Combine the latest values of two signals A and B into a signal of type (A, B)
+
+*/
+public func combineLatest<A, B>(a: Signal<A>, b: Signal<B>) -> Signal<(A, B)> {
+    
+    let c = Signal<(A, B)>()
+    
+    let observer = CompoundObserver(signalA: a, signalB: b) { [weak c] in
+        
+        c?.dispatch($0)
+    }
+    
+    c.addDisposable(observer)
+    
+    return c
+}
+
+/**
+    Combine the latest values of three signals A, B and C into a signal of type (A, B, C)
+
+*/
+public func combineLatest<A, B, C>(a: Signal<A>, b: Signal<B>, c: Signal<C>) -> Signal<(A, B, C)> {
+    
+    return combineLatest( combineLatest(a, b), c)
+        .map { ($0.0.0, $0.0.1, $0.1) }
+}
+
+/**
+    Combine the latest values of four signals A, B, C and D into a signal of type (A, B, C, D)
+
+*/
+public func combineLatest<A, B, C, D>(a: Signal<A>, b: Signal<B>, c: Signal<C>, d: Signal<D>) -> Signal<(A, B, C, D)> {
+    
+    return combineLatest( combineLatest(a, b, c), d)
+        .map { ($0.0.0, $0.0.1, $0.0.2, $0.1) }
+}

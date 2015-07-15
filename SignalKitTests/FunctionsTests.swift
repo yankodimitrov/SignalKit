@@ -14,11 +14,13 @@ class FunctionsTests: XCTestCase {
     let center = NSNotificationCenter.defaultCenter()
     let notificationName = "TestObserveForNotification"
     var person: Person!
+    var signalContainer: SignalContainer!
     
     override func setUp() {
         super.setUp()
         
         person = Person(name: "")
+        signalContainer = SignalContainer()
     }
     
     /// MARK: - Observe Observable
@@ -185,5 +187,83 @@ class FunctionsTests: XCTestCase {
         }
         
         XCTAssert(result == nil, "Should use a dispatch rule that never sends the latest received notification. We are interested only in newly received notifications")
+    }
+    
+    /// MARK: - Combine Latest
+    
+    func testCombineTwoSignals() {
+        
+        let signalA = Signal<String>()
+        let signalB = Signal<Int>()
+        
+        var result = ("", 0)
+        
+        signalB.dispatch(19)
+        signalA.dispatch("Jonathan")
+        signalA.dispatch("Jane")
+        
+        combineLatest(signalA, signalB)
+            .next { result = $0 }
+            .addTo(signalContainer)
+        
+        signalA.dispatch("John")
+        signalB.dispatch(2)
+        
+        XCTAssertEqual(result.0, "John", "Should contain the latest value from signalA")
+        XCTAssertEqual(result.1, 2, "Should contain the latest value from signalB")
+    }
+    
+    func testCombineThreeSignals() {
+        
+        let signalA = Signal<Int>()
+        let signalB = Signal<Int>()
+        let signalC = Signal<Int>()
+        
+        var result = (0, 0, 0)
+        
+        combineLatest(signalA, signalB, signalC)
+            .next { result = $0 }
+            .addTo(signalContainer)
+        
+        signalA.dispatch(11)
+        signalB.dispatch(22)
+        signalC.dispatch(33)
+        
+        signalA.dispatch(1)
+        signalB.dispatch(2)
+        signalC.dispatch(3)
+        
+        XCTAssertEqual(result.0, 1, "Should contain the latest value from signalA")
+        XCTAssertEqual(result.1, 2, "Should contain the latest value from signalB")
+        XCTAssertEqual(result.2, 3, "Should contain the latest value from signalC")
+    }
+    
+    func testCombineFourSignals() {
+        
+        let signalA = Signal<Int>()
+        let signalB = Signal<Int>()
+        let signalC = Signal<Int>()
+        let signalD = Signal<Int>()
+        
+        var result = (0, 0, 0, 0)
+        
+        combineLatest(signalA, signalB, signalC, signalD)
+            .next { result = $0 }
+            .addTo(signalContainer)
+        
+        signalA.dispatch(11)
+        signalB.dispatch(22)
+        signalC.dispatch(33)
+        signalD.dispatch(44)
+        
+        signalA.dispatch(1)
+        signalB.dispatch(2)
+        signalC.dispatch(3)
+        signalD.dispatch(4)
+        
+        XCTAssertEqual(result.0, 1, "Should contain the latest value from signalA")
+        XCTAssertEqual(result.1, 2, "Should contain the latest value from signalB")
+        XCTAssertEqual(result.2, 3, "Should contain the latest value from signalC")
+        XCTAssertEqual(result.3, 4, "Should contain the latest value from signalD")
     }
 }
