@@ -236,4 +236,18 @@ public extension Signal {
         
         return b
     }
+    
+    /**
+        Bind the signal value to a Observable of the same type
+    
+    */
+    public func bindTo<U: Observable where U.Item == T>(observable: U) -> Signal<T> {
+        
+        addObserver { [weak observable] in
+            
+            observable?.dispatch($0)
+        }
+        
+        return self
+    }
 }

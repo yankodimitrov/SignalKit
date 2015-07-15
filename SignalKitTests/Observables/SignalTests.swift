@@ -243,4 +243,17 @@ class SignalTests: XCTestCase {
         
         waitForExpectationsWithTimeout(0.5, handler: nil)
     }
+    
+    func testBindToObservable() {
+        
+        let destination = ObservableValue<String>("")
+        
+        observe(userName)
+            .bindTo(destination)
+            .addTo(signalContainer)
+        
+        userName.dispatch("Jack")
+        
+        XCTAssertEqual(destination.value, "Jack", "Should bind a signal value to observable of the same type")
+    }
 }
