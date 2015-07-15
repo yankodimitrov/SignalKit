@@ -151,4 +151,25 @@ public extension Signal {
         
         return b
     }
+    
+    /**
+        Filter the dispatched by the signal values using a predicate
+    
+    */
+    public func filter(predicate: T -> Bool) -> Signal<T> {
+        
+        let b = Signal<T>()
+        
+        addObserver { [weak b] in
+            
+            if predicate($0) {
+                
+                b?.dispatch($0)
+            }
+        }
+        
+        b.sourceSignal = self
+        
+        return b
+    }
 }

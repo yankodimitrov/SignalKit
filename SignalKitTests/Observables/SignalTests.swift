@@ -159,4 +159,21 @@ class SignalTests: XCTestCase {
         
         XCTAssertEqual(result, 4, "Should transform a signal of type T to signal of type U")
     }
+    
+    func testFilter() {
+        
+        var result: Int = 0
+        let number = ObservableOf<Int>()
+        
+        observe(number)
+            .filter { $0 > 3 }
+            .next { result = $0 }
+            .addTo(signalContainer)
+        
+        number.dispatch(1)
+        number.dispatch(4)
+        number.dispatch(3)
+        
+        XCTAssertEqual(result, 4, "Should dispatch only the value that matches the filter predicate")
+    }
 }
