@@ -14,6 +14,7 @@ class SignalTests: XCTestCase {
     var signal: Signal<Int>!
     var lock: MockLock!
     var userName: ObservableOf<String>!
+    var signalContainer: SignalContainer!
     
     override func setUp() {
         super.setUp()
@@ -23,6 +24,7 @@ class SignalTests: XCTestCase {
         lock = MockLock()
         signal = Signal<Int>(observable: observable, lock: lock)
         userName = ObservableOf<String>()
+        signalContainer = SignalContainer()
     }
     
     func testAddObserver() {
@@ -128,5 +130,19 @@ class SignalTests: XCTestCase {
         userName.dispatch("John")
         
         XCTAssertEqual(result, "John", "Should add a new observer to the signal")
+    }
+    
+    func testAddToSignalContainer() {
+        
+        var result = ""
+        
+        observe(userName)
+            .next{ result = $0 }
+            .addTo(signalContainer)
+        
+        userName.dispatch("John")
+        
+        XCTAssertEqual(signalContainer.signalsCount, 1, "Should add the signal chain to signal container")
+        XCTAssertEqual(result, "John", "Should retain the signal chain")
     }
 }

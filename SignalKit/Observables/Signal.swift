@@ -124,4 +124,13 @@ public extension Signal {
         
         return self
     }
+    
+    /**
+        Add a signal or a chain of signals to a signal container.
+    
+    */
+    public func addTo(container: SignalContainerType) -> Disposable {
+        
+        return container.addSignal(self)
+    }
 }
