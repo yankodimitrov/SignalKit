@@ -37,7 +37,7 @@ class KeyboardNotificationTests: XCTestCase {
         
         var called = false
         
-        observe(keyboard: .DiDShow)
+        observe(keyboard: .DidShow)
             .next { _ in called = true }
             .addTo(signalContainer)
         

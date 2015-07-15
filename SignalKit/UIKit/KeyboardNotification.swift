@@ -10,7 +10,7 @@ import UIKit
 
 public enum KeyboardNotification {
     case WillShow
-    case DiDShow
+    case DidShow
     case WillHide
     case DidHide
     case WillChangeFrame
@@ -20,7 +20,7 @@ public enum KeyboardNotification {
         
         switch self {
         case .WillShow: return UIKeyboardWillShowNotification
-        case .DiDShow: return UIKeyboardDidShowNotification
+        case .DidShow: return UIKeyboardDidShowNotification
         case .WillHide: return UIKeyboardWillHideNotification
         case .DidHide: return UIKeyboardDidHideNotification
         case .WillChangeFrame: return UIKeyboardWillChangeFrameNotification
