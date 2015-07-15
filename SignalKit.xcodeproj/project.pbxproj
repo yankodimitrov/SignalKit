@@ -53,6 +53,10 @@
 		C9E7F2F01B5689EB001AB061 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EF1B5689EB001AB061 /* Functions.swift */; };
 		C9E7F2F11B5689EB001AB061 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EF1B5689EB001AB061 /* Functions.swift */; };
 		C9E7F2F31B568A18001AB061 /* FunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2F21B568A18001AB061 /* FunctionsTests.swift */; };
+		C9E7F2F51B568AB8001AB061 /* KVOObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2F41B568AB8001AB061 /* KVOObserver.swift */; };
+		C9E7F2F61B568AB8001AB061 /* KVOObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2F41B568AB8001AB061 /* KVOObserver.swift */; };
+		C9E7F2F81B568AE0001AB061 /* KVOObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2F71B568AE0001AB061 /* KVOObserverTests.swift */; };
+		C9E7F2FA1B568B05001AB061 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2F91B568B05001AB061 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +104,9 @@
 		C9E7F2ED1B5689A4001AB061 /* ObserverOfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverOfTests.swift; sourceTree = "<group>"; };
 		C9E7F2EF1B5689EB001AB061 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		C9E7F2F21B568A18001AB061 /* FunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionsTests.swift; sourceTree = "<group>"; };
+		C9E7F2F41B568AB8001AB061 /* KVOObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOObserver.swift; sourceTree = "<group>"; };
+		C9E7F2F71B568AE0001AB061 /* KVOObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOObserverTests.swift; sourceTree = "<group>"; };
+		C9E7F2F91B568B05001AB061 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				C9E7F2ED1B5689A4001AB061 /* ObserverOfTests.swift */,
+				C9E7F2F71B568AE0001AB061 /* KVOObserverTests.swift */,
 			);
 			path = Observers;
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */,
+				C9E7F2F41B568AB8001AB061 /* KVOObserver.swift */,
 			);
 			path = Observers;
 			sourceTree = "<group>";
@@ -277,6 +286,7 @@
 				C9E7F2DA1B568644001AB061 /* MockLock.swift */,
 				C9E7F2E11B568817001AB061 /* MockDisposable.swift */,
 				C9E7F2E31B56883C001AB061 /* MockSignal.swift */,
+				C9E7F2F91B568B05001AB061 /* Person.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -398,6 +408,7 @@
 				C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */,
 				C9E7F2CF1B568443001AB061 /* SignalType.swift in Sources */,
 				C9E7F2DD1B56878D001AB061 /* Signal.swift in Sources */,
+				C9E7F2F51B568AB8001AB061 /* KVOObserver.swift in Sources */,
 				C9E7F2D21B568468001AB061 /* SignalContainerType.swift in Sources */,
 				C9E7F2E61B5688DC001AB061 /* SignalContainer.swift in Sources */,
 				C9E7F2C91B5683D2001AB061 /* LockType.swift in Sources */,
@@ -417,11 +428,14 @@
 				C9E7F2EC1B56896C001AB061 /* ObserverOf.swift in Sources */,
 				C9E7F2EE1B5689A4001AB061 /* ObserverOfTests.swift in Sources */,
 				C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
+				C9E7F2F61B568AB8001AB061 /* KVOObserver.swift in Sources */,
 				C9E7F2E71B5688DC001AB061 /* SignalContainer.swift in Sources */,
 				C9E7F2F31B568A18001AB061 /* FunctionsTests.swift in Sources */,
 				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2BD1B568258001AB061 /* DisposableItem.swift in Sources */,
+				C9E7F2FA1B568B05001AB061 /* Person.swift in Sources */,
 				C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
+				C9E7F2F81B568AE0001AB061 /* KVOObserverTests.swift in Sources */,
 				C9E7F2DE1B56878D001AB061 /* Signal.swift in Sources */,
 				C9E7F2F11B5689EB001AB061 /* Functions.swift in Sources */,
 				C9E7F2E91B5688FC001AB061 /* SignalContainerTests.swift in Sources */,
