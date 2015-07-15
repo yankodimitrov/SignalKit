@@ -67,6 +67,9 @@
 		C9E7F3071B5694DB001AB061 /* ControlObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3051B5694DB001AB061 /* ControlObserver.swift */; };
 		C9E7F3091B56952C001AB061 /* ControlObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3081B56952C001AB061 /* ControlObserverTests.swift */; };
 		C9E7F30C1B569571001AB061 /* MockControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F30B1B569571001AB061 /* MockControl.m */; };
+		C9E7F30E1B56965E001AB061 /* KeyboardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F30D1B56965E001AB061 /* KeyboardState.swift */; };
+		C9E7F30F1B56965E001AB061 /* KeyboardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F30D1B56965E001AB061 /* KeyboardState.swift */; };
+		C9E7F3111B569680001AB061 /* KeyboardStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3101B569680001AB061 /* KeyboardStateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,8 @@
 		C9E7F3081B56952C001AB061 /* ControlObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlObserverTests.swift; sourceTree = "<group>"; };
 		C9E7F30A1B56955F001AB061 /* MockControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockControl.h; sourceTree = "<group>"; };
 		C9E7F30B1B569571001AB061 /* MockControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockControl.m; sourceTree = "<group>"; };
+		C9E7F30D1B56965E001AB061 /* KeyboardState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardState.swift; sourceTree = "<group>"; };
+		C9E7F3101B569680001AB061 /* KeyboardStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardStateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +240,7 @@
 		C9E7F2A41B567FD6001AB061 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7F3101B569680001AB061 /* KeyboardStateTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 		C9E7F2A91B567FE4001AB061 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7F30D1B56965E001AB061 /* KeyboardState.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -438,6 +445,7 @@
 				C9E7F2DD1B56878D001AB061 /* Signal.swift in Sources */,
 				C9E7F2F51B568AB8001AB061 /* KVOObserver.swift in Sources */,
 				C9E7F2D21B568468001AB061 /* SignalContainerType.swift in Sources */,
+				C9E7F30E1B56965E001AB061 /* KeyboardState.swift in Sources */,
 				C9E7F3011B5693C4001AB061 /* CompoundObserver.swift in Sources */,
 				C9E7F2E61B5688DC001AB061 /* SignalContainer.swift in Sources */,
 				C9E7F2C91B5683D2001AB061 /* LockType.swift in Sources */,
@@ -467,10 +475,12 @@
 				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F2BD1B568258001AB061 /* DisposableItem.swift in Sources */,
 				C9E7F2FA1B568B05001AB061 /* Person.swift in Sources */,
+				C9E7F3111B569680001AB061 /* KeyboardStateTests.swift in Sources */,
 				C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 				C9E7F2F81B568AE0001AB061 /* KVOObserverTests.swift in Sources */,
 				C9E7F2DE1B56878D001AB061 /* Signal.swift in Sources */,
 				C9E7F2F11B5689EB001AB061 /* Functions.swift in Sources */,
+				C9E7F30F1B56965E001AB061 /* KeyboardState.swift in Sources */,
 				C9E7F2E91B5688FC001AB061 /* SignalContainerTests.swift in Sources */,
 				C9E7F30C1B569571001AB061 /* MockControl.m in Sources */,
 				C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */,
