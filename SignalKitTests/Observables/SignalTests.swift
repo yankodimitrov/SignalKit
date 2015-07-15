@@ -195,4 +195,52 @@ class SignalTests: XCTestCase {
         
         XCTAssertEqual(result, 3, "Should skip a certain number of dispatched values")
     }
+    
+    func testDeliverOnMain() {
+        
+        let expectation = expectationWithDescription("Should deliver on main queue")
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        
+        observe(userName)
+            .deliverOn(.Main)
+            .next { _ in
+                
+                if NSThread.isMainThread() == true {
+                    
+                    expectation.fulfill()
+                }
+            }
+            .addTo(signalContainer)
+        
+        dispatch_async(queue) {
+            
+            self.userName.dispatch("John")
+        }
+        
+        waitForExpectationsWithTimeout(0.5, handler: nil)
+    }
+    
+    func testDeliverOnBackgroundQueue() {
+        
+        let expectation = expectationWithDescription("Should deliver on background queue")
+        let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        
+        observe(userName)
+            .deliverOn(.Background(queue))
+            .next { _ in
+                
+                if NSThread.isMainThread() == false {
+                    
+                    expectation.fulfill()
+                }
+            }
+            .addTo(signalContainer)
+        
+        dispatch_async( dispatch_get_main_queue() ){
+            
+            self.userName.dispatch("John")
+        }
+        
+        waitForExpectationsWithTimeout(0.5, handler: nil)
+    }
 }

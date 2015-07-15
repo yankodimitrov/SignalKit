@@ -215,4 +215,25 @@ public extension Signal {
         
         return b
     }
+    
+    /**
+        Dispatch (deliver) the next signal value on a given dispatch queue
+    
+    */
+    public func deliverOn(queue: SignalQueue) -> Signal<T> {
+        
+        let b = Signal<T>()
+        
+        addObserver { [weak b] value in
+            
+            dispatch_async(queue.dispatchQueue) {
+                
+                b?.dispatch(value)
+            }
+        }
+        
+        b.sourceSignal = self
+        
+        return b
+    }
 }
