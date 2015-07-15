@@ -14,4 +14,7 @@
 @interface MockControl : UIControl
 @end
 
+@interface MockButton : UIButton
+@end
+
 #endif
