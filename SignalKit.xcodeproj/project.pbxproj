@@ -11,6 +11,9 @@
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 		C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */; };
 		C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */; };
+		C9E7F2AF1B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */; };
+		C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */; };
+		C9E7F2B21B56817C001AB061 /* IncrementalKeyGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B11B56817C001AB061 /* IncrementalKeyGeneratorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +34,8 @@
 		C9E7F2901B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F29B1B567F3D001AB061 /* SignalKitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SignalKitTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenGeneratorType.swift; sourceTree = "<group>"; };
+		C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementalKeyGenerator.swift; sourceTree = "<group>"; };
+		C9E7F2B11B56817C001AB061 /* IncrementalKeyGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementalKeyGeneratorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +142,7 @@
 		C9E7F2A51B567FD6001AB061 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7F2B11B56817C001AB061 /* IncrementalKeyGeneratorTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -173,6 +179,7 @@
 		C9E7F2AA1B567FE4001AB061 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -284,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E7F2AF1B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
 				C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
 				C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
+				C9E7F2B21B56817C001AB061 /* IncrementalKeyGeneratorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
