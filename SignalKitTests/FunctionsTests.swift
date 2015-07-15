@@ -11,12 +11,12 @@ import XCTest
 
 class FunctionsTests: XCTestCase {
 
-    var signalContainer: SignalContainer!
+    var person: Person!
     
     override func setUp() {
         super.setUp()
         
-        signalContainer = SignalContainer()
+        person = Person(name: "")
     }
     
     /// MARK: - Observe Observable
@@ -58,5 +58,52 @@ class FunctionsTests: XCTestCase {
         name.dispatch("John")
         
         XCTAssertEqual(result, "", "Should dispose the observation")
+    }
+    
+    /// MARK: - Observe key path
+    
+    func testObserveKeyPath() {
+        
+        var name = ""
+        
+        let signal = observe(keyPath: "name", value: "", object: person) {
+            
+            name = $0
+        }
+        
+        person.name = "Jack"
+        
+        XCTAssertEqual(name, "Jack", "Should observe a NSObject for the given key path")
+    }
+    
+    func testObserveKeyPathCallbackCalled() {
+        
+        var name = ""
+        
+        let signal = observe(keyPath: "name", value: "", object: person) {
+            
+            name = $0
+        }
+        
+        person.name = "Jack"
+        
+        XCTAssertEqual(name, "Jack", "Should call the observe key path callback")
+    }
+    
+    func testObserveKeyPathDispose() {
+        
+        
+        var name = ""
+        
+        let signal = observe(keyPath: "name", value: "", object: person) {
+            
+            name = $0
+        }
+        
+        signal.dispose()
+        
+        person.name = "Jack"
+        
+        XCTAssertEqual(name, "", "Should dispose the observation")
     }
 }

@@ -32,3 +32,31 @@ public func observe<T: Observable>(observable: T, callback: (T.Item -> Void)? = 
     
     return signal
 }
+
+/**
+    Observe NSObject for a given keyPath
+
+*/
+public func observe<T>(#keyPath: String, #value: T, #object: NSObject, callback: (T -> Void)? = nil) -> Signal<T> {
+    
+    let signal = Signal<T>(lock: SpinLock())
+    
+    let observer = KVOObserver(observe: object, keyPath: keyPath) { [weak signal] value in
+        
+        if let value = value as? T {
+            
+            signal?.dispatch(value)
+        }
+    }
+    
+    signal.dispatch(value)
+    
+    if let callback = callback {
+        
+        signal.addObserver(callback)
+    }
+    
+    signal.addDisposable(observer)
+    
+    return signal
+}
