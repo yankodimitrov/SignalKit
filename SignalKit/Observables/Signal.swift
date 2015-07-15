@@ -250,4 +250,18 @@ public extension Signal {
         
         return self
     }
+    
+    /**
+        Bind the signal value using a binding function
+    
+    */
+    public func bindTo(bindFunction: (T) -> Void ) -> Signal<T> {
+        
+        addObserver {
+            
+            bindFunction($0)
+        }
+        
+        return self
+    }
 }

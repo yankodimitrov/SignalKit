@@ -256,4 +256,17 @@ class SignalTests: XCTestCase {
         
         XCTAssertEqual(destination.value, "Jack", "Should bind a signal value to observable of the same type")
     }
+    
+    func testBindTo() {
+        
+        var result = ""
+        
+        userName.dispatch("Jack")
+        
+        observe(userName)
+            .bindTo { result = $0 }
+            .addTo(signalContainer)
+        
+        XCTAssertEqual(result, "Jack", "Should bind the signal value")
+    }
 }
