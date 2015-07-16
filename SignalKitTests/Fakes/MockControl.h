@@ -29,4 +29,7 @@
 @interface MockTextField : UITextField
 @end
 
+@interface MockSegmentedControl : UISegmentedControl
+@end
+
 #endif
