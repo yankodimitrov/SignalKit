@@ -182,8 +182,6 @@ class SignalTests: XCTestCase {
         var result: Int = 0
         let number = ObservableOf<Int>()
         
-        number.dispatch(0)
-        
         observe(number)
             .skip(2)
             .next { result = $0 }
@@ -194,6 +192,25 @@ class SignalTests: XCTestCase {
         number.dispatch(3)
         
         XCTAssertEqual(result, 3, "Should skip a certain number of dispatched values")
+    }
+    
+    func testSkipWhenSignalDispatchesImmediately() {
+        
+        var result: Int = 0
+        let number = ObservableOf<Int>()
+        
+        number.dispatch(8)
+        
+        observe(number)
+            .skip(2)
+            .next { result = $0 }
+            .addTo(signalContainer)
+        
+        number.dispatch(1)
+        number.dispatch(4)
+        number.dispatch(3)
+        
+        XCTAssertEqual(result, 3, "Should skip a certain number of dispatched values when the signal dispatches the latest value on addObserver")
     }
     
     func testDeliverOnMain() {

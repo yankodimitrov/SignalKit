@@ -197,7 +197,7 @@ public extension Signal {
     public func skip(count: Int) -> Signal<T> {
         
         let b = Signal<T>()
-        var counter = count + 1
+        var counter = count
         
         addObserver { [weak b] in
             
