@@ -110,8 +110,7 @@ public func combineLatest<A, B>(a: Signal<A>, b: Signal<B>) -> Signal<(A, B)> {
 */
 public func combineLatest<A, B, C>(a: Signal<A>, b: Signal<B>, c: Signal<C>) -> Signal<(A, B, C)> {
     
-    return combineLatest( combineLatest(a, b), c)
-        .map { ($0.0.0, $0.0.1, $0.1) }
+    return combineLatest( combineLatest(a, b), c).map { ($0.0.0, $0.0.1, $0.1) }
 }
 
 /**
@@ -120,6 +119,5 @@ public func combineLatest<A, B, C>(a: Signal<A>, b: Signal<B>, c: Signal<C>) -> 
 */
 public func combineLatest<A, B, C, D>(a: Signal<A>, b: Signal<B>, c: Signal<C>, d: Signal<D>) -> Signal<(A, B, C, D)> {
     
-    return combineLatest( combineLatest(a, b, c), d)
-        .map { ($0.0.0, $0.0.1, $0.0.2, $0.1) }
+    return combineLatest( combineLatest(a, b, c), d).map { ($0.0.0, $0.0.1, $0.0.2, $0.1) }
 }
