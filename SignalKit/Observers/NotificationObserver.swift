@@ -13,6 +13,7 @@ final class NotificationObserver: NSObject, Disposable {
     private let notification: String
     private let callback: NSNotification -> Void
     private var disposed = false
+    private weak var object: AnyObject?
     
     private var center: NSNotificationCenter {
         return  NSNotificationCenter.defaultCenter()
@@ -22,6 +23,7 @@ final class NotificationObserver: NSObject, Disposable {
         
         self.notification = notification
         self.callback = callback
+        self.object = object
         
         super.init()
         
@@ -49,7 +51,7 @@ final class NotificationObserver: NSObject, Disposable {
             return
         }
         
-        center.removeObserver(self, name: notification, object: nil)
+        center.removeObserver(self, name: notification, object: object)
         disposed = true
     }
 }
