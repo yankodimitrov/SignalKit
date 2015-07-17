@@ -9,7 +9,6 @@
 import Foundation
 
 public final class ObservableValue<T>: Observable {
-    typealias ObservationType = T
     
     private let observable: ObservableOf<T>
     private let lock: LockType
