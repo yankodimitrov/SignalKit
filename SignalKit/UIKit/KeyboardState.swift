@@ -44,7 +44,7 @@ public struct KeyboardState {
                 return animationCurve
         }
         
-        return UIViewAnimationCurve.EaseInOut
+        return .EaseInOut
     }
     
     public var animationDuration: Double {
