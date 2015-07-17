@@ -9,7 +9,6 @@
 import Foundation
 
 public final class ObservableOf<T>: Observable {
-    typealias ObservationType = T
     
     private lazy var observers = Bag<SinkOf<T>>()
     private let dispatchRule: (T) -> () -> T?
