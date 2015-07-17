@@ -1,6 +1,7 @@
 <img src="https://raw.githubusercontent.com/yankodimitrov/SignalKit/master/logo.png" width="280" alt="SignalKit">
 
 # SignalKit
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 SignalKit is a type safe event and binding Swift framework with great focus on clean and readable API. It allows you to observe different event streams like KVO, Target-Action, NSNotificationCenter and custom events by using a single unified API. You can declare a chain of operations that will be performed when the event occurs like <code>map</code> and <code>filter</code> or bind the resulting value to a property of a UI element.
 
@@ -237,5 +238,18 @@ Here is the list of currently implemented observe and bind functions for UIKit:
 | UITextField | String <br/> NSAttributedString | textIn(field: UITextField) <br/> attributedTextIn(field: UITextField) |
 | UITextView | String <br/> NSAttributedString | textIn(textView: UITextView) <br/> attributedTextIn(textView: UITextView) |
 
+## Installation
+
+#### Carthage
+Add the following line to your [Cartfile](https://github.com/carthage/carthage)
+```swift
+github "yankodimitrov/SignalKit"
+```
+
+#### CocoaPods
+Add the following line to your [Podfile](https://guides.cocoapods.org/)
+```swift
+pod “SignalKit”
+```
 ##License
 SignalKit is released under the MIT license. See the LICENSE.txt file for more info.
