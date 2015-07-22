@@ -251,5 +251,12 @@ Add the following line to your [Podfile](https://guides.cocoapods.org/)
 ```swift
 pod “SignalKit”
 ```
+
+## Roadmap
+
+- Support for more UIKit observations/bindings
+- AppKit support
+- WatchKit support
+
 ##License
 SignalKit is released under the MIT license. See the LICENSE.txt file for more info.
