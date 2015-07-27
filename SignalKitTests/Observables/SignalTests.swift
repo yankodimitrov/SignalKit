@@ -11,9 +11,10 @@ import XCTest
 
 class SignalTests: XCTestCase {
     
+    let initialUserName = "John"
     var signal: Signal<Int>!
     var lock: MockLock!
-    var userName: ObservableOf<String>!
+    var userName: ObservableValue<String>!
     var signalContainer: SignalContainer!
     
     override func setUp() {
@@ -23,7 +24,7 @@ class SignalTests: XCTestCase {
         
         lock = MockLock()
         signal = Signal<Int>(observable: observable, lock: lock)
-        userName = ObservableOf<String>()
+        userName = ObservableValue<String>(value: initialUserName, lock: lock)
         signalContainer = SignalContainer()
     }
     
@@ -127,9 +128,7 @@ class SignalTests: XCTestCase {
         
         let signal = observe(userName).next { result = $0 }
         
-        userName.dispatch("John")
-        
-        XCTAssertEqual(result, "John", "Should add a new observer to the signal")
+        XCTAssertEqual(result, initialUserName, "Should add a new observer to the signal")
     }
     
     func testAddToSignalContainer() {
@@ -140,10 +139,10 @@ class SignalTests: XCTestCase {
             .next{ result = $0 }
             .addTo(signalContainer)
         
-        userName.dispatch("John")
+        userName.dispatch("Jane")
         
         XCTAssertEqual(signalContainer.signalsCount, 1, "Should add the signal chain to signal container")
-        XCTAssertEqual(result, "John", "Should retain the signal chain")
+        XCTAssertEqual(result, "Jane", "Should retain the signal chain")
     }
     
     func testMap() {
@@ -154,8 +153,6 @@ class SignalTests: XCTestCase {
             .map { count($0) }
             .next { result = $0 }
             .addTo(signalContainer)
-        
-        userName.dispatch("John")
         
         XCTAssertEqual(result, 4, "Should transform a signal of type T to signal of type U")
     }
@@ -217,12 +214,15 @@ class SignalTests: XCTestCase {
         
         let expectation = expectationWithDescription("Should deliver on main queue")
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        var dispatchCounter = 0
         
         observe(userName)
             .deliverOn(.Main)
             .next { _ in
                 
-                if NSThread.isMainThread() == true {
+                dispatchCounter += 1
+                
+                if dispatchCounter == 2 && NSThread.isMainThread() == true {
                     
                     expectation.fulfill()
                 }
@@ -241,12 +241,15 @@ class SignalTests: XCTestCase {
         
         let expectation = expectationWithDescription("Should deliver on background queue")
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        var dispatchCounter = 0
         
         observe(userName)
             .deliverOn(.Background(queue))
             .next { _ in
                 
-                if NSThread.isMainThread() == false {
+                dispatchCounter += 1
+                
+                if dispatchCounter == 2 && NSThread.isMainThread() == false {
                     
                     expectation.fulfill()
                 }
@@ -278,12 +281,10 @@ class SignalTests: XCTestCase {
         
         var result = ""
         
-        userName.dispatch("Jack")
-        
         observe(userName)
             .bindTo { result = $0 }
             .addTo(signalContainer)
         
-        XCTAssertEqual(result, "Jack", "Should bind the signal value")
+        XCTAssertEqual(result, initialUserName, "Should bind the signal value")
     }
 }

@@ -122,17 +122,30 @@ class ObservableValueTests: XCTestCase {
         XCTAssertEqual(lock.syncCounter, 0, "Should perform balanced calls to lock() / unlock()")
     }
     
+    func testDispatchTheCurrentValueOnAddObserver() {
+        
+        let name = ObservableValue<String>("John")
+        var result = ""
+        
+        name.addObserver { result = $0 }
+        
+        XCTAssertEqual(result, "John", "Should dispatch the current value when adding a new observer")
+    }
+    
     /// MARK: ObservableValue Extensions Tests
     
     func testDispatchOnMainQueue() {
         
         let expectation = expectationWithDescription("Should dispatch on main queue")
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        var dispatchCounter = 0
         
         observe(userName)
             .next { _ in
                 
-                if NSThread.isMainThread() == true {
+                dispatchCounter += 1
+                
+                if dispatchCounter == 2 && NSThread.isMainThread() == true {
                     expectation.fulfill()
                 }
             }
@@ -150,11 +163,14 @@ class ObservableValueTests: XCTestCase {
         
         let expectation = expectationWithDescription("Should dispatch on background queue")
         let queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        var dispatchCounter = 0
         
         observe(userName)
             .next { _ in
                 
-                if NSThread.isMainThread() == false {
+                dispatchCounter += 1
+                
+                if dispatchCounter == 2 && NSThread.isMainThread() == false {
                     expectation.fulfill()
                 }
             }

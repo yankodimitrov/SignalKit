@@ -46,6 +46,8 @@ public final class ObservableValue<T>: Observable {
         self.internalValue = value
         self.observable = observable
         self.lock = lock
+        
+        observable.dispatch(value)
     }
     
     public convenience init(_ value: T) {
