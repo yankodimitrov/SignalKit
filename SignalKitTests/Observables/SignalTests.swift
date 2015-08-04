@@ -15,7 +15,7 @@ class SignalTests: XCTestCase {
     var signal: Signal<Int>!
     var lock: MockLock!
     var userName: ObservableValue<String>!
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
@@ -25,7 +25,7 @@ class SignalTests: XCTestCase {
         lock = MockLock()
         signal = Signal<Int>(observable: observable, lock: lock)
         userName = ObservableValue<String>(value: initialUserName, lock: lock)
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     func testAddObserver() {
@@ -137,11 +137,11 @@ class SignalTests: XCTestCase {
         
         observe(userName)
             .next{ result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         userName.dispatch("Jane")
         
-        XCTAssertEqual(signalContainer.signalsCount, 1, "Should add the signal chain to signal container")
+        XCTAssertEqual(signalsBag.signalsCount, 1, "Should add the signal chain to signal container")
         XCTAssertEqual(result, "Jane", "Should retain the signal chain")
     }
     
@@ -152,7 +152,7 @@ class SignalTests: XCTestCase {
         observe(userName)
             .map { count($0) }
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(result, 4, "Should transform a signal of type T to signal of type U")
     }
@@ -165,7 +165,7 @@ class SignalTests: XCTestCase {
         observe(number)
             .filter { $0 > 3 }
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         number.dispatch(1)
         number.dispatch(4)
@@ -182,7 +182,7 @@ class SignalTests: XCTestCase {
         observe(number)
             .skip(2)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         number.dispatch(1)
         number.dispatch(4)
@@ -201,7 +201,7 @@ class SignalTests: XCTestCase {
         observe(number)
             .skip(2)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         number.dispatch(1)
         number.dispatch(4)
@@ -218,21 +218,18 @@ class SignalTests: XCTestCase {
         
         observe(userName)
             .deliverOn(.Main)
-            .next { _ in
+            .next { [weak expectation] _ in
                 
                 dispatchCounter += 1
                 
                 if dispatchCounter == 2 && NSThread.isMainThread() == true {
                     
-                    expectation.fulfill()
+                    expectation?.fulfill()
                 }
             }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
-        dispatch_async(queue) {
-            
-            self.userName.dispatch("John")
-        }
+        userName.dispatch("John", on: .Background(queue))
         
         waitForExpectationsWithTimeout(0.5, handler: nil)
     }
@@ -245,18 +242,18 @@ class SignalTests: XCTestCase {
         
         observe(userName)
             .deliverOn(.Background(queue))
-            .next { _ in
+            .next { [weak expectation] _ in
                 
                 dispatchCounter += 1
                 
                 if dispatchCounter == 2 && NSThread.isMainThread() == false {
                     
-                    expectation.fulfill()
+                    expectation?.fulfill()
                 }
             }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
-        dispatch_async( dispatch_get_main_queue() ){
+        dispatch_async(dispatch_get_main_queue()) {
             
             self.userName.dispatch("John")
         }
@@ -270,7 +267,7 @@ class SignalTests: XCTestCase {
         
         observe(userName)
             .bindTo(destination)
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         userName.dispatch("Jack")
         
@@ -283,7 +280,7 @@ class SignalTests: XCTestCase {
         
         observe(userName)
             .bindTo { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(result, initialUserName, "Should bind the signal value")
     }

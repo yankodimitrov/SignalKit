@@ -12,13 +12,13 @@ import XCTest
 class UIControlFunctionsTests: XCTestCase {
 
     var control: MockControl!
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         control = MockControl()
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     /// MARK: Observe UIControl
@@ -29,7 +29,7 @@ class UIControlFunctionsTests: XCTestCase {
         
         observe(control, forEvents: .ValueChanged)
             .next { _ in called = true }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         control.sendActionsForControlEvents(.ValueChanged)
         
@@ -58,7 +58,7 @@ class UIControlFunctionsTests: XCTestCase {
         
         observe(state)
             .bindTo(isEnabled(control))
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         state.dispatch(true)
         

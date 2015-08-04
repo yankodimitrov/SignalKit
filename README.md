@@ -16,24 +16,24 @@ observe(viewModel.name)
     .bindTo( textIn(nameLabel) )
 ```
 
-Now the above code will set the <code>nameLabel</code>’s text to reflect the current value (“John”) found in the observable, but if we want to observe for the upcoming changes we need to retain the resulting <code>Signal</code> and its preceding chain of operations. To do this we can use a private property or we can add the signal to a <code>SignalContainer</code>:
+Now the above code will set the <code>nameLabel</code>’s text to reflect the current value (“John”) found in the observable, but if we want to observe for the upcoming changes we need to retain the resulting <code>Signal</code> and its preceding chain of operations. To do this we can use a private property or we can add the signal to a <code>SignalBag</code>:
 
 ```swift
-private let signalContainer = SignalContainer()
+private let signalsBag = SignalBag()
 ...
 
 observe(viewModel.name)
     .bindTo( textIn(nameLabel) )
-    .addTo(signalContainer)
+    .addTo(signalsBag)
 ```
-The <code>addTo(signalContainer)</code> method will return a disposable item which you can use to remove (dispose) the chain of operations from the container.
+The <code>addTo(signalsBag)</code> method will return a disposable item which you can use to remove (dispose) the chain of operations from the container.
 
 How about observing a UIButton for the <code>.TouchUpInside</code> event:
 
 ```swift
 observe(touchUpInside: button)
     .next { _ in println("Wooot!") }
-    .addTo(signalContainer)
+    .addTo(signalsBag)
 ``` 
 
 So, the <code>observe(...)</code> functions will return a <code>Signal</code> of the type of the observable and we can build a chain of signal operations starting from that initial signal. Thus a signal represents a value over time. Each signal except the initial one, holds a back reference to its source signal - the signal on which its value depends on. 
@@ -67,7 +67,7 @@ let person = Person(name: "John")
 
 observe(keyPath: "name", value: "", object: person)
     .next { println("Name: "\($0)") }
-    .addTo(signalContainer)
+    .addTo(signalsBag)
 ```
 
 The <code>value</code> argument is used as an initial dispatch value and its type is used to perform an optional type cast on the <code>AnyObject</code> that is sent by the KVO mechanism. This way you will not have to manually cast it to the type of the observable property. Cool! 
@@ -81,7 +81,7 @@ We can observe an <code>UIControl</code> instance for control event/s using the 
 ```swift
 observe(control, forEvents: .ValueChanged)
     .next { _ in println("value changed") }
-    .addTo(signalContainer)
+    .addTo(signalsBag)
 ```
 
 The resulting signal is of type <code>Signal< T ></code> where <code>T</code> is the type of the control that we are observing.
@@ -93,7 +93,7 @@ We can also observe the default <code>NSNotificationCenter</code> for a given no
 ```swift
 observe(notificationName)
     .next { println("\($0.name)")
-    .addTo(signalContainer)
+    .addTo(signalsBag)
 ```
 
 The resulting signal is of type <code>Signal< NSNotification ></code>.
@@ -105,7 +105,7 @@ SignalKit comes with a convenient way to observe for keyboard notifications on i
 ```swift
 observe(keyboard: .WillShow)
     .next { println("keyboard end frame: \($0.endFrame)") }
-    .addTo(signalContainer)
+    .addTo(signalsBag)
 ```
 
 Awesome!
@@ -181,7 +181,7 @@ let signalB = observe(textIn: passwordField).map(isValidPassword)
 combineLatest(signalA, signalB)
     .map { $0.0 == $0.1 == true }
     .bindTo( isEnabled(loginButton) )
-    .addTo(signalContainer)
+    .addTo(signalsBag)
 ```
 
 **Note**: The combined signal will contain a reference to each of the combined signals, so we can store only that chain of signals to a signal container or property. 

@@ -13,13 +13,13 @@ class UITextViewFunctionsTests: XCTestCase {
 
     let center = NSNotificationCenter.defaultCenter()
     var textView: UITextView!
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         textView = UITextView()
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     func testObserveTextInTextView() {
@@ -28,7 +28,7 @@ class UITextViewFunctionsTests: XCTestCase {
         
         observe(textIn: textView)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         textView.text = "Jack"
         center.postNotificationName(UITextViewTextDidChangeNotification, object: textView)
@@ -44,7 +44,7 @@ class UITextViewFunctionsTests: XCTestCase {
         
         observe(textIn: textView)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(result, "Jack", "Should contain the current text from the UITextView")
     }
@@ -55,7 +55,7 @@ class UITextViewFunctionsTests: XCTestCase {
         
         observe(attributedTextIn: textView)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         textView.attributedText = NSAttributedString(string: "Jack")
         center.postNotificationName(UITextViewTextDidChangeNotification, object: textView)
@@ -71,7 +71,7 @@ class UITextViewFunctionsTests: XCTestCase {
         
         observe(attributedTextIn: textView)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(result.string, "Jack", "Should contain the current attributed text from the UITextView")
     }
@@ -84,7 +84,7 @@ class UITextViewFunctionsTests: XCTestCase {
         
         observe(name)
             .bindTo(textIn(textView))
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(textView.text, "Jack", "Should bind a String value to the text property of UITextView")
     }
@@ -98,7 +98,7 @@ class UITextViewFunctionsTests: XCTestCase {
         
         observe(name)
             .bindTo(attributedTextIn(textView))
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(textView.attributedText.string, "Jack", "Should bind a NSAttributedString to the attributedText property of UITextView")
     }

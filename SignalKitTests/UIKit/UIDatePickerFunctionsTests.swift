@@ -12,13 +12,13 @@ import XCTest
 class UIDatePickerFunctionsTests: XCTestCase {
 
     var datePicker: MockDatePicker!
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         datePicker = MockDatePicker()
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     func testObserveDateInDatePicker() {
@@ -28,7 +28,7 @@ class UIDatePickerFunctionsTests: XCTestCase {
         
         observe(dateIn: datePicker)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         datePicker.date = newDate
         datePicker.sendActionsForControlEvents(.ValueChanged)
@@ -45,7 +45,7 @@ class UIDatePickerFunctionsTests: XCTestCase {
         
         observe(dateIn: datePicker)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(result, newDate, "Should contain the current date from UIDatePicker")
     }

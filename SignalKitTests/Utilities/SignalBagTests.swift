@@ -1,5 +1,5 @@
 //
-//  SignalContainerTests.swift
+//  SignalBagTests.swift
 //  SignalKit
 //
 //  Created by Yanko Dimitrov on 7/15/15.
@@ -9,18 +9,18 @@
 import UIKit
 import XCTest
 
-class SignalContainerTests: XCTestCase {
+class SignalBagTests: XCTestCase {
 
     var lock: MockLock!
     var signal: MockSignal!
-    var container: SignalContainer!
+    var container: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         lock = MockLock()
         signal = MockSignal()
-        container = SignalContainer(lock: lock)
+        container = SignalBag(lock: lock)
     }
     
     func testAddSignal() {

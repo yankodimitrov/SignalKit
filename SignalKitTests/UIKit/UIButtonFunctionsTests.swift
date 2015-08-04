@@ -12,13 +12,13 @@ import XCTest
 class UIButtonFunctionsTests: XCTestCase {
 
     var button: MockButton!
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         button = MockButton()
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     func testObserveTouchUpInside() {
@@ -27,7 +27,7 @@ class UIButtonFunctionsTests: XCTestCase {
         
         observe(touchUpInside: button)
             .next { _ in called = true }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         button.sendActionsForControlEvents(.TouchUpInside)
         

@@ -12,13 +12,13 @@ import XCTest
 class UISwitchFunctionsTests: XCTestCase {
 
     var switchControl: MockSwitch!
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         switchControl = MockSwitch()
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     func testObserveOnStateInSwitch() {
@@ -27,7 +27,7 @@ class UISwitchFunctionsTests: XCTestCase {
         
         observe(switchIsOn: switchControl)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         switchControl.on = true
         switchControl.sendActionsForControlEvents(.ValueChanged)
@@ -43,7 +43,7 @@ class UISwitchFunctionsTests: XCTestCase {
         
         observe(switchIsOn: switchControl)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(result, true, "Should contain the current on/off state in UISwitch")
     }
@@ -54,7 +54,7 @@ class UISwitchFunctionsTests: XCTestCase {
         
         observe(onState)
             .bindTo(switchIsOn(switchControl))
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         onState.dispatch(true)
         

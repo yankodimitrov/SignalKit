@@ -11,13 +11,13 @@ import XCTest
 
 class UISegmentedControlFunctionsTests: XCTestCase {
 
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     var segmentedControl: MockSegmentedControl!
     
     override func setUp() {
         super.setUp()
         
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
         segmentedControl = MockSegmentedControl()
         
         segmentedControl.insertSegmentWithTitle("1", atIndex: 0, animated: false)
@@ -30,7 +30,7 @@ class UISegmentedControlFunctionsTests: XCTestCase {
         
         observe(selectedIndexIn: segmentedControl)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         segmentedControl.selectedSegmentIndex = 1
         

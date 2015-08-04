@@ -12,13 +12,13 @@ import XCTest
 class UILabelFunctionsTests: XCTestCase {
 
     var label: UILabel!
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         label = UILabel()
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     func testBindToTextIn() {
@@ -29,7 +29,7 @@ class UILabelFunctionsTests: XCTestCase {
         
         observe(name)
             .bindTo(textIn(label))
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(label.text!, "Jack", "Should bind a String value to the text property of UILabel")
     }
@@ -43,7 +43,7 @@ class UILabelFunctionsTests: XCTestCase {
         
         observe(name)
             .bindTo(attributedTextIn(label))
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(label.attributedText!, attrText, "Should bind a NSAttributedString to the attributedText property of UILabel")
     }

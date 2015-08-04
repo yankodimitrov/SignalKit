@@ -12,13 +12,13 @@ import XCTest
 class UIViewFunctionsTests: XCTestCase {
 
     var view: UIView!
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         view = UIView()
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     func testBindToBackgroundColor() {
@@ -28,7 +28,7 @@ class UIViewFunctionsTests: XCTestCase {
         
         observe(observable)
             .bindTo(backgroundColorIn(view))
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         observable.dispatch(color)
         
@@ -43,7 +43,7 @@ class UIViewFunctionsTests: XCTestCase {
         
         observe(alpha)
             .bindTo(alphaIn(view))
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         alpha.dispatch(0.5)
         
@@ -56,7 +56,7 @@ class UIViewFunctionsTests: XCTestCase {
         
         observe(hiddenState)
             .bindTo(viewIsHidden(view))
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         hiddenState.dispatch(true)
         

@@ -12,12 +12,12 @@ import XCTest
 class KeyboardNotificationTests: XCTestCase {
 
     let center = NSNotificationCenter.defaultCenter()
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     func testObserveKeyboardWillShow() {
@@ -26,7 +26,7 @@ class KeyboardNotificationTests: XCTestCase {
         
         observe(keyboard: .WillShow)
             .next { _ in called = true }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         center.postNotificationName(UIKeyboardWillShowNotification, object: nil)
         
@@ -39,7 +39,7 @@ class KeyboardNotificationTests: XCTestCase {
         
         observe(keyboard: .DidShow)
             .next { _ in called = true }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         center.postNotificationName(UIKeyboardDidShowNotification, object: nil)
         
@@ -52,7 +52,7 @@ class KeyboardNotificationTests: XCTestCase {
         
         observe(keyboard: .WillHide)
             .next { _ in called = true }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         center.postNotificationName(UIKeyboardWillHideNotification, object: nil)
         
@@ -65,7 +65,7 @@ class KeyboardNotificationTests: XCTestCase {
         
         observe(keyboard: .DidHide)
             .next { _ in called = true }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         center.postNotificationName(UIKeyboardDidHideNotification, object: nil)
         
@@ -78,7 +78,7 @@ class KeyboardNotificationTests: XCTestCase {
         
         observe(keyboard: .WillChangeFrame)
             .next { _ in called = true }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         center.postNotificationName(UIKeyboardWillChangeFrameNotification, object: nil)
         
@@ -91,7 +91,7 @@ class KeyboardNotificationTests: XCTestCase {
         
         observe(keyboard: .DidChangeFrame)
             .next { _ in called = true }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         center.postNotificationName(UIKeyboardDidChangeFrameNotification, object: nil)
         

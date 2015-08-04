@@ -44,9 +44,9 @@
 		C9E7F2E01B5687FB001AB061 /* SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2DF1B5687FB001AB061 /* SignalTests.swift */; };
 		C9E7F2E21B568817001AB061 /* MockDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E11B568817001AB061 /* MockDisposable.swift */; };
 		C9E7F2E41B56883C001AB061 /* MockSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E31B56883C001AB061 /* MockSignal.swift */; };
-		C9E7F2E61B5688DC001AB061 /* SignalContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E51B5688DC001AB061 /* SignalContainer.swift */; };
-		C9E7F2E71B5688DC001AB061 /* SignalContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E51B5688DC001AB061 /* SignalContainer.swift */; };
-		C9E7F2E91B5688FC001AB061 /* SignalContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E81B5688FC001AB061 /* SignalContainerTests.swift */; };
+		C9E7F2E61B5688DC001AB061 /* SignalBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E51B5688DC001AB061 /* SignalBag.swift */; };
+		C9E7F2E71B5688DC001AB061 /* SignalBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E51B5688DC001AB061 /* SignalBag.swift */; };
+		C9E7F2E91B5688FC001AB061 /* SignalBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E81B5688FC001AB061 /* SignalBagTests.swift */; };
 		C9E7F2EB1B56896C001AB061 /* ObserverOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */; };
 		C9E7F2EC1B56896C001AB061 /* ObserverOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */; };
 		C9E7F2EE1B5689A4001AB061 /* ObserverOfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2ED1B5689A4001AB061 /* ObserverOfTests.swift */; };
@@ -147,8 +147,8 @@
 		C9E7F2DF1B5687FB001AB061 /* SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalTests.swift; sourceTree = "<group>"; };
 		C9E7F2E11B568817001AB061 /* MockDisposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDisposable.swift; sourceTree = "<group>"; };
 		C9E7F2E31B56883C001AB061 /* MockSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSignal.swift; sourceTree = "<group>"; };
-		C9E7F2E51B5688DC001AB061 /* SignalContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalContainer.swift; sourceTree = "<group>"; };
-		C9E7F2E81B5688FC001AB061 /* SignalContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalContainerTests.swift; sourceTree = "<group>"; };
+		C9E7F2E51B5688DC001AB061 /* SignalBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalBag.swift; sourceTree = "<group>"; };
+		C9E7F2E81B5688FC001AB061 /* SignalBagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalBagTests.swift; sourceTree = "<group>"; };
 		C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverOf.swift; sourceTree = "<group>"; };
 		C9E7F2ED1B5689A4001AB061 /* ObserverOfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverOfTests.swift; sourceTree = "<group>"; };
 		C9E7F2EF1B5689EB001AB061 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -323,7 +323,7 @@
 				C9E7F2B61B5681F4001AB061 /* BagTests.swift */,
 				C9E7F2BE1B56826F001AB061 /* DisposableItemTests.swift */,
 				C9E7F2B11B56817C001AB061 /* IncrementalKeyGeneratorTests.swift */,
-				C9E7F2E81B5688FC001AB061 /* SignalContainerTests.swift */,
+				C9E7F2E81B5688FC001AB061 /* SignalBagTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -389,7 +389,7 @@
 				C9E7F2B31B5681DF001AB061 /* Bag.swift */,
 				C9E7F2BB1B568258001AB061 /* DisposableItem.swift */,
 				C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */,
-				C9E7F2E51B5688DC001AB061 /* SignalContainer.swift */,
+				C9E7F2E51B5688DC001AB061 /* SignalBag.swift */,
 				C9E7F2CB1B5683F9001AB061 /* SpinLock.swift */,
 			);
 			path = Utilities;
@@ -539,7 +539,7 @@
 				C9E7F30E1B56965E001AB061 /* KeyboardState.swift in Sources */,
 				C9E7F3401B56A2C7001AB061 /* UITextFieldFunctions.swift in Sources */,
 				C9E7F3011B5693C4001AB061 /* CompoundObserver.swift in Sources */,
-				C9E7F2E61B5688DC001AB061 /* SignalContainer.swift in Sources */,
+				C9E7F2E61B5688DC001AB061 /* SignalBag.swift in Sources */,
 				C9E7F3311B56A161001AB061 /* UILabelFunctions.swift in Sources */,
 				C9E7F3451B56A34F001AB061 /* UITextViewFunctions.swift in Sources */,
 				C9F0CCDD1B57B7320049E7D5 /* UISegmentedControlFunctions.swift in Sources */,
@@ -570,7 +570,7 @@
 				C9E7F3091B56952C001AB061 /* ControlObserverTests.swift in Sources */,
 				C9E7F2F61B568AB8001AB061 /* KVOObserver.swift in Sources */,
 				C9E7F31E1B569F59001AB061 /* UIControlFunctions.swift in Sources */,
-				C9E7F2E71B5688DC001AB061 /* SignalContainer.swift in Sources */,
+				C9E7F2E71B5688DC001AB061 /* SignalBag.swift in Sources */,
 				C9E7F2F31B568A18001AB061 /* FunctionsTests.swift in Sources */,
 				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
 				C9E7F33C1B56A236001AB061 /* UISwitchFunctions.swift in Sources */,
@@ -588,7 +588,7 @@
 				C9F0CCDE1B57B7320049E7D5 /* UISegmentedControlFunctions.swift in Sources */,
 				C9E7F30F1B56965E001AB061 /* KeyboardState.swift in Sources */,
 				C9E7F32D1B56A0FA001AB061 /* UIImageViewFunctions.swift in Sources */,
-				C9E7F2E91B5688FC001AB061 /* SignalContainerTests.swift in Sources */,
+				C9E7F2E91B5688FC001AB061 /* SignalBagTests.swift in Sources */,
 				C9E7F30C1B569571001AB061 /* MockControl.m in Sources */,
 				C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */,
 				C9E7F3041B5693D2001AB061 /* CompoundObserverTests.swift in Sources */,

@@ -14,13 +14,13 @@ class FunctionsTests: XCTestCase {
     let center = NSNotificationCenter.defaultCenter()
     let notificationName = "TestObserveForNotification"
     var person: Person!
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         person = Person(name: "")
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     /// MARK: - Observe Observable
@@ -204,7 +204,7 @@ class FunctionsTests: XCTestCase {
         
         combineLatest(signalA, signalB)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         signalA.dispatch("John")
         signalB.dispatch(2)
@@ -223,7 +223,7 @@ class FunctionsTests: XCTestCase {
         
         combineLatest(signalA, signalB, signalC)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         signalA.dispatch(11)
         signalB.dispatch(22)
@@ -249,7 +249,7 @@ class FunctionsTests: XCTestCase {
         
         combineLatest(signalA, signalB, signalC, signalD)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         signalA.dispatch(11)
         signalB.dispatch(22)

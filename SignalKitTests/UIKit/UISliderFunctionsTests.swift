@@ -12,14 +12,14 @@ import XCTest
 class UISliderFunctionsTests: XCTestCase {
 
     var slider: MockSlider!
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         slider = MockSlider()
         slider.maximumValue = 20
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     func testObserveValueIn() {
@@ -28,7 +28,7 @@ class UISliderFunctionsTests: XCTestCase {
         
         observe(valueIn: slider)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         slider.value = 10
         slider.sendActionsForControlEvents(.ValueChanged)
@@ -44,7 +44,7 @@ class UISliderFunctionsTests: XCTestCase {
         
         observe(valueIn: slider)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(result, 10, "Should contain the current value in UISlider")
     }
@@ -55,7 +55,7 @@ class UISliderFunctionsTests: XCTestCase {
         
         observe(value)
             .bindTo(valueIn(slider))
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         value.dispatch(12)
         

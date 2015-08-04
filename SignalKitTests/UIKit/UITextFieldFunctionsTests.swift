@@ -12,13 +12,13 @@ import XCTest
 class UITextFieldFunctionsTests: XCTestCase {
 
     var textField: MockTextField!
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         textField = MockTextField()
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     func testObserveTextInTextField() {
@@ -27,7 +27,7 @@ class UITextFieldFunctionsTests: XCTestCase {
         
         observe(textIn: textField)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         textField.text = "Jack"
         textField.sendActionsForControlEvents(.EditingChanged)
@@ -43,7 +43,7 @@ class UITextFieldFunctionsTests: XCTestCase {
         
         observe(textIn: textField)
             .next { result = $0 }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(result, "Jack", "Should contain the current text from the UITextField")
     }
@@ -56,7 +56,7 @@ class UITextFieldFunctionsTests: XCTestCase {
         
         observe(name)
             .bindTo(textIn(textField))
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(textField.text, "Jack", "Should bind a String value to the text property of UITextField")
     }
@@ -70,7 +70,7 @@ class UITextFieldFunctionsTests: XCTestCase {
         
         observe(name)
             .bindTo(attributedTextIn(textField))
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         XCTAssertEqual(textField.attributedText!.string, "Jack", "Should bind a NSAttributedString to the attributedText property of UITextField")
     }

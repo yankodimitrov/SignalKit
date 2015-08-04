@@ -14,14 +14,14 @@ class ObservableValueTests: XCTestCase {
     var initialValue = ""
     var userName: ObservableValue<String>!
     var lock: MockLock!
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         lock = MockLock()
         userName = ObservableValue<String>(value: initialValue, lock: lock)
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     func testAddObserver() {
@@ -141,15 +141,15 @@ class ObservableValueTests: XCTestCase {
         var dispatchCounter = 0
         
         observe(userName)
-            .next { _ in
+            .next { [weak expectation] _ in
                 
                 dispatchCounter += 1
                 
                 if dispatchCounter == 2 && NSThread.isMainThread() == true {
-                    expectation.fulfill()
+                    expectation?.fulfill()
                 }
             }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         dispatch_async(queue) {
             
@@ -166,15 +166,15 @@ class ObservableValueTests: XCTestCase {
         var dispatchCounter = 0
         
         observe(userName)
-            .next { _ in
+            .next { [weak expectation] _ in
                 
                 dispatchCounter += 1
                 
                 if dispatchCounter == 2 && NSThread.isMainThread() == false {
-                    expectation.fulfill()
+                    expectation?.fulfill()
                 }
             }
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         dispatch_async( dispatch_get_main_queue() ){
             

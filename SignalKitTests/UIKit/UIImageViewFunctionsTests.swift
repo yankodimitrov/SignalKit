@@ -12,13 +12,13 @@ import XCTest
 class UIImageViewFunctionsTests: XCTestCase {
 
     var imageView: UIImageView!
-    var signalContainer: SignalContainer!
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         imageView = UIImageView()
-        signalContainer = SignalContainer()
+        signalsBag = SignalBag()
     }
     
     func testBindToImageIn() {
@@ -28,7 +28,7 @@ class UIImageViewFunctionsTests: XCTestCase {
         
         observe(observableImage)
             .bindTo(imageIn(imageView))
-            .addTo(signalContainer)
+            .addTo(signalsBag)
         
         observableImage.dispatch(image)
         

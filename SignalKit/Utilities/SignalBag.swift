@@ -1,5 +1,5 @@
 //
-//  SignalContainer.swift
+//  SignalList.swift
 //  SignalKit
 //
 //  Created by Yanko Dimitrov on 7/15/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class SignalContainer: SignalContainerType {
+public final class SignalBag: SignalContainerType {
     
     private lazy var signals = Bag<SignalType>()
     private let lock: LockType?
