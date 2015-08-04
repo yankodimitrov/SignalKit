@@ -101,7 +101,7 @@ public extension ObservableValue {
     */
     public func dispatch(value: T, on queue: SignalQueue) {
         
-        dispatch_async(queue.dispatchQueue) { [weak self] in
+        queue.dispatchAsync { [weak self] in
             
             self?.value = value
         }

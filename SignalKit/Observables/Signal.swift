@@ -23,6 +23,26 @@ public enum SignalQueue {
             return backgroundQueue
         }
     }
+    
+    internal var isMainQueue: Bool {
+        
+        switch self {
+            case .Main: return true
+            case .Background: return false
+        }
+    }
+    
+    func dispatchAsync(block: dispatch_block_t) {
+        
+        if isMainQueue && NSThread.isMainThread() {
+            
+            block()
+        
+        } else {
+        
+            dispatch_async(dispatchQueue, block)
+        }
+    }
 }
 
 public final class Signal<T>: SignalType, Observable {
@@ -226,7 +246,7 @@ public extension Signal {
         
         addObserver { [weak b] value in
             
-            dispatch_async(queue.dispatchQueue) {
+            queue.dispatchAsync {
                 
                 b?.dispatch(value)
             }
