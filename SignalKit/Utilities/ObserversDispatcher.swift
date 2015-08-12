@@ -10,7 +10,7 @@ import Foundation
 
 public final class ObserversDispatcher<Item> {
     
-    private let dispatchRule: (Item) -> () -> Item?
+    private let dispatchRule: Item -> () -> Item?
     private var dispatchValue: ( () -> Item? )?
     
     private lazy var observers = Bag<Item -> Void>()
