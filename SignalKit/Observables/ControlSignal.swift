@@ -48,5 +48,7 @@ public final class ControlSignal<T: UIControl>: NSObject, SignalType {
         
         control?.removeTarget(self, action: "eventHandler", forControlEvents: events)
         isDisposed = true
+        
+        disposableSource?.dispose()
     }
 }
