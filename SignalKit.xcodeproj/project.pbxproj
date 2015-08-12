@@ -22,6 +22,9 @@
 		C9D9885F1B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */; };
 		C9D988601B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */; };
 		C9D988621B7B1946004559CD /* IncrementalKeyGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988611B7B1946004559CD /* IncrementalKeyGeneratorTests.swift */; };
+		C9D988641B7B1B2B004559CD /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988631B7B1B2B004559CD /* Bag.swift */; };
+		C9D988651B7B1B2B004559CD /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988631B7B1B2B004559CD /* Bag.swift */; };
+		C9D988671B7B1B74004559CD /* BagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988661B7B1B74004559CD /* BagTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +48,8 @@
 		C9D988511B7B1788004559CD /* TokenGeneratorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenGeneratorType.swift; sourceTree = "<group>"; };
 		C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementalKeyGenerator.swift; sourceTree = "<group>"; };
 		C9D988611B7B1946004559CD /* IncrementalKeyGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementalKeyGeneratorTests.swift; sourceTree = "<group>"; };
+		C9D988631B7B1B2B004559CD /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
+		C9D988661B7B1B74004559CD /* BagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */,
+				C9D988631B7B1B2B004559CD /* Bag.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -141,8 +147,16 @@
 			isa = PBXGroup;
 			children = (
 				C9D988611B7B1946004559CD /* IncrementalKeyGeneratorTests.swift */,
+				C9D988661B7B1B74004559CD /* BagTests.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C9D988681B7B1C25004559CD /* Fakes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fakes;
 			sourceTree = "<group>";
 		};
 		C9E7F2751B567DF5001AB061 = {
@@ -187,6 +201,7 @@
 		C9E7F28E1B567DF5001AB061 /* SignalKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				C9D988681B7B1C25004559CD /* Fakes */,
 				C9D988351B7B0950004559CD /* Observables */,
 				C9D988361B7B0950004559CD /* Utilities */,
 				C9D988331B7B0950004559CD /* Extensions */,
@@ -318,6 +333,7 @@
 				C9D988561B7B1788004559CD /* Observable.swift in Sources */,
 				C9D988521B7B1788004559CD /* Disposable.swift in Sources */,
 				C9D988581B7B1788004559CD /* SignalContainerType.swift in Sources */,
+				C9D988641B7B1B2B004559CD /* Bag.swift in Sources */,
 				C9D9885C1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,11 +344,13 @@
 			files = (
 				C9D9885B1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D988551B7B1788004559CD /* LockType.swift in Sources */,
+				C9D988671B7B1B74004559CD /* BagTests.swift in Sources */,
 				C9D988621B7B1946004559CD /* IncrementalKeyGeneratorTests.swift in Sources */,
 				C9D988601B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
 				C9D988571B7B1788004559CD /* Observable.swift in Sources */,
 				C9D988531B7B1788004559CD /* Disposable.swift in Sources */,
 				C9D988591B7B1788004559CD /* SignalContainerType.swift in Sources */,
+				C9D988651B7B1B2B004559CD /* Bag.swift in Sources */,
 				C9D9885D1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
