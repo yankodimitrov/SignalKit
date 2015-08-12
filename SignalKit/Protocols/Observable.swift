@@ -37,6 +37,10 @@ public extension Observable {
     
     public func observe() -> Signal<Item> {
         
-        return Signal<Item>(lock: SpinLock())
+        let signal = Signal<Item>(lock: SpinLock())
+        
+        signal.observe(self)
+        
+        return signal
     }
 }
