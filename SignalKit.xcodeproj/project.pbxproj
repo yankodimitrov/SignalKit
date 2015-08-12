@@ -29,6 +29,10 @@
 		C9D9886E1B7B1DE8004559CD /* DisposableActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9886D1B7B1DE8004559CD /* DisposableActionTests.swift */; };
 		C9D9886F1B7B1E52004559CD /* DisposableAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9886B1B7B1D41004559CD /* DisposableAction.swift */; };
 		C9D988711B7B1F14004559CD /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988701B7B1F14004559CD /* SpinLock.swift */; };
+		C9D988731B7B2AD7004559CD /* ObserversDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988721B7B2AD7004559CD /* ObserversDispatcher.swift */; };
+		C9D988741B7B2AD7004559CD /* ObserversDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988721B7B2AD7004559CD /* ObserversDispatcher.swift */; };
+		C9D988761B7B2B20004559CD /* ObserversDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988751B7B2B20004559CD /* ObserversDispatcherTests.swift */; };
+		C9D988781B7B334B004559CD /* MockLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988771B7B334B004559CD /* MockLock.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -57,6 +61,9 @@
 		C9D9886B1B7B1D41004559CD /* DisposableAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableAction.swift; sourceTree = "<group>"; };
 		C9D9886D1B7B1DE8004559CD /* DisposableActionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableActionTests.swift; sourceTree = "<group>"; };
 		C9D988701B7B1F14004559CD /* SpinLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinLock.swift; sourceTree = "<group>"; };
+		C9D988721B7B2AD7004559CD /* ObserversDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserversDispatcher.swift; sourceTree = "<group>"; };
+		C9D988751B7B2B20004559CD /* ObserversDispatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserversDispatcherTests.swift; sourceTree = "<group>"; };
+		C9D988771B7B334B004559CD /* MockLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLock.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -109,11 +116,11 @@
 		C9D988311B7B0903004559CD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				C9D9884C1B7B1788004559CD /* Disposable.swift */,
-				C9D9884D1B7B1788004559CD /* LockType.swift */,
 				C9D9884E1B7B1788004559CD /* Observable.swift */,
-				C9D9884F1B7B1788004559CD /* SignalContainerType.swift */,
+				C9D9884C1B7B1788004559CD /* Disposable.swift */,
 				C9D988501B7B1788004559CD /* SignalType.swift */,
+				C9D9884D1B7B1788004559CD /* LockType.swift */,
+				C9D9884F1B7B1788004559CD /* SignalContainerType.swift */,
 				C9D988511B7B1788004559CD /* TokenGeneratorType.swift */,
 			);
 			path = Protocols;
@@ -122,8 +129,9 @@
 		C9D988321B7B0903004559CD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */,
 				C9D988631B7B1B2B004559CD /* Bag.swift */,
+				C9D988721B7B2AD7004559CD /* ObserversDispatcher.swift */,
+				C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */,
 				C9D9886B1B7B1D41004559CD /* DisposableAction.swift */,
 				C9D988701B7B1F14004559CD /* SpinLock.swift */,
 			);
@@ -158,6 +166,7 @@
 				C9D988611B7B1946004559CD /* IncrementalKeyGeneratorTests.swift */,
 				C9D988661B7B1B74004559CD /* BagTests.swift */,
 				C9D9886D1B7B1DE8004559CD /* DisposableActionTests.swift */,
+				C9D988751B7B2B20004559CD /* ObserversDispatcherTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -165,6 +174,7 @@
 		C9D988681B7B1C25004559CD /* Fakes */ = {
 			isa = PBXGroup;
 			children = (
+				C9D988771B7B334B004559CD /* MockLock.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -340,6 +350,7 @@
 				C9D988711B7B1F14004559CD /* SpinLock.swift in Sources */,
 				C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */,
+				C9D988731B7B2AD7004559CD /* ObserversDispatcher.swift in Sources */,
 				C9D988541B7B1788004559CD /* LockType.swift in Sources */,
 				C9D9885F1B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
 				C9D988561B7B1788004559CD /* Observable.swift in Sources */,
@@ -354,14 +365,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D988761B7B2B20004559CD /* ObserversDispatcherTests.swift in Sources */,
 				C9D9885B1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886F1B7B1E52004559CD /* DisposableAction.swift in Sources */,
+				C9D988781B7B334B004559CD /* MockLock.swift in Sources */,
 				C9D988551B7B1788004559CD /* LockType.swift in Sources */,
 				C9D988671B7B1B74004559CD /* BagTests.swift in Sources */,
 				C9D988621B7B1946004559CD /* IncrementalKeyGeneratorTests.swift in Sources */,
 				C9D988601B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
 				C9D988571B7B1788004559CD /* Observable.swift in Sources */,
 				C9D988531B7B1788004559CD /* Disposable.swift in Sources */,
+				C9D988741B7B2AD7004559CD /* ObserversDispatcher.swift in Sources */,
 				C9D988591B7B1788004559CD /* SignalContainerType.swift in Sources */,
 				C9D988651B7B1B2B004559CD /* Bag.swift in Sources */,
 				C9D9885D1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,

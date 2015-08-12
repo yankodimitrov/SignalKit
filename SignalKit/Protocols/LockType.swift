@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LockType {
+public protocol LockType {
     
     func lock()
     func unlock()
