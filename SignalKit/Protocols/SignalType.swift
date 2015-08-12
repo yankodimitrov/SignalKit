@@ -48,4 +48,25 @@ public extension SignalType {
         
         return signal
     }
+    
+    /**
+        Filter the dispatched by the signal values using a predicate
+    
+    */
+    public func filter(predicate: Item -> Bool) -> Signal<Item> {
+        
+        let signal = Signal<Item>()
+        
+        addObserver { [weak signal] in
+            
+            if predicate($0) {
+                
+                signal?.dispatch($0)
+            }
+        }
+        
+        signal.disposableSource = self
+        
+        return signal
+    }
 }
