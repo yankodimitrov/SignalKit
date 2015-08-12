@@ -64,4 +64,17 @@ class NotificationSignalTests: XCTestCase {
         
         XCTAssertEqual(disposableSource.isDisposeCalled, true, "Should call the disposable source to dispose")
     }
+    
+    func testDispatchesOnlyNewNotifications() {
+        
+        let notification = NSNotification(name: notificationName, object: nil)
+        let signal = NotificationSignal(notificationName: notificationName)
+        var result: NSNotification?
+        
+        center.postNotification(notification)
+        
+        signal.addObserver { result = $0 }
+        
+        XCTAssertEqual(result, nil, "The dispatch rule should dispatch only the new notifications")
+    }
 }

@@ -24,7 +24,7 @@ public final class NotificationSignal: NSObject, SignalType {
     
     public init(notificationName: String, fromObject object: AnyObject? = nil, lock: LockType? = nil) {
         
-        self.dispatcher = ObserversDispatcher<Item>(lock: lock)
+        self.dispatcher = ObserversDispatcher<Item>(dispatchRule: { _ in return { return nil }}, lock: lock)
         self.notificationName = notificationName
         self.object = object
         
