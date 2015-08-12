@@ -19,4 +19,15 @@ public extension SignalType {
         
         disposableSource?.dispose()
     }
+    
+    /**
+        Add a new observer to a signal to perform a side effect
+    
+    */
+    public func next(observer: Item -> Void) -> Self {
+        
+        addObserver(observer)
+        
+        return self
+    }
 }

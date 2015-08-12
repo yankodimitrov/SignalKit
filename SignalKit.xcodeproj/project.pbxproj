@@ -55,6 +55,8 @@
 		C9D9889B1B7B6049004559CD /* NotificationSignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9889A1B7B6049004559CD /* NotificationSignalTests.swift */; };
 		C9D9889D1B7B7982004559CD /* ObservableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9889C1B7B7982004559CD /* ObservableTests.swift */; };
 		C9D9889F1B7B79A2004559CD /* MockObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9889E1B7B79A2004559CD /* MockObservable.swift */; };
+		C9D988A11B7B7D10004559CD /* SignalTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A01B7B7D10004559CD /* SignalTypeTests.swift */; };
+		C9D988A31B7B7D41004559CD /* MockSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A21B7B7D41004559CD /* MockSignal.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -103,6 +105,8 @@
 		C9D9889A1B7B6049004559CD /* NotificationSignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSignalTests.swift; sourceTree = "<group>"; };
 		C9D9889C1B7B7982004559CD /* ObservableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableTests.swift; sourceTree = "<group>"; };
 		C9D9889E1B7B79A2004559CD /* MockObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockObservable.swift; sourceTree = "<group>"; };
+		C9D988A01B7B7D10004559CD /* SignalTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalTypeTests.swift; sourceTree = "<group>"; };
+		C9D988A21B7B7D41004559CD /* MockSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSignal.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 			children = (
 				C9D988341B7B0950004559CD /* UIKit */,
 				C9D9889C1B7B7982004559CD /* ObservableTests.swift */,
+				C9D988A01B7B7D10004559CD /* SignalTypeTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 				C9D988861B7B4DC3004559CD /* MockDisposable.swift */,
 				C9D9888B1B7B5865004559CD /* Person.swift */,
 				C9D9889E1B7B79A2004559CD /* MockObservable.swift */,
+				C9D988A21B7B7D41004559CD /* MockSignal.swift */,
 				C9D988941B7B5C79004559CD /* MockControl.h */,
 				C9D988951B7B5D18004559CD /* MockControl.m */,
 			);
@@ -433,6 +439,7 @@
 				C9D9885B1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886F1B7B1E52004559CD /* DisposableAction.swift in Sources */,
 				C9D988781B7B334B004559CD /* MockLock.swift in Sources */,
+				C9D988A31B7B7D41004559CD /* MockSignal.swift in Sources */,
 				C9D988931B7B5C09004559CD /* ControlSignalTests.swift in Sources */,
 				C9D988961B7B5D18004559CD /* MockControl.m in Sources */,
 				C9D9888A1B7B55C4004559CD /* KVOSignal.swift in Sources */,
@@ -444,6 +451,7 @@
 				C9D988671B7B1B74004559CD /* BagTests.swift in Sources */,
 				C9D988621B7B1946004559CD /* IncrementalKeyGeneratorTests.swift in Sources */,
 				C9D988601B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
+				C9D988A11B7B7D10004559CD /* SignalTypeTests.swift in Sources */,
 				C9D988571B7B1788004559CD /* Observable.swift in Sources */,
 				C9D988851B7B4D7F004559CD /* StubObservable.swift in Sources */,
 				C9D988531B7B1788004559CD /* Disposable.swift in Sources */,
