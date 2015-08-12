@@ -33,11 +33,12 @@ class SignalTypeTests: XCTestCase {
     
     func testMap() {
         
+        let signal = MockSignal<String>()
         var result = 0
         
-        chain = signal.map { $0 * 2 }.next { result = $0 }
+        chain = signal.map { $0.characters.count }.next { result = $0 }
         
-        signal.dispatch(2)
+        signal.dispatch("John")
         
         XCTAssertEqual(result, 4, "Should transform a signal of type T to signal of type U")
     }
