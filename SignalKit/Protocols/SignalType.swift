@@ -30,4 +30,22 @@ public extension SignalType {
         
         return self
     }
+    
+    /**
+        Transform a signal ot type Item to a signal of type U
+    
+    */
+    public func map<U>(transform: Item -> U) -> Signal<U> {
+        
+        let signal = Signal<U>()
+        
+        addObserver { [weak signal] in
+            
+            signal?.dispatch( transform($0) )
+        }
+        
+        signal.disposableSource = self
+        
+        return signal
+    }
 }
