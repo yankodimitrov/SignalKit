@@ -50,3 +50,15 @@ public final class ObservableProperty<T>: Observable {
         value = item
     }
 }
+
+public extension ObservableProperty {
+    
+    public func observe() -> Signal<Item> {
+        
+        let signal = Signal<Item>(lock: SpinLock())
+        
+        signal.observe(self)
+        
+        return signal
+    }
+}

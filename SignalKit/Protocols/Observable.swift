@@ -34,13 +34,4 @@ public extension Observable {
         
         dispatcher.removeObservers()
     }
-    
-    public func observe() -> Signal<Item> {
-        
-        let signal = Signal<Item>(lock: SpinLock())
-        
-        signal.observe(self)
-        
-        return signal
-    }
 }

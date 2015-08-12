@@ -63,4 +63,16 @@ class ObservablePropertyTests: XCTestCase {
         XCTAssertEqual(lock.isUnlockCalled, true, "Should unlock")
         XCTAssertEqual(lock.synchronizationCounter, 0, "Should perform balanced lock/unlock")
     }
+    
+    func testObserve() {
+        
+        let signal = userName.observe()
+        var result = ""
+        
+        signal.addObserver { result = $0 }
+        
+        userName.dispatch("Jack")
+        
+        XCTAssertEqual(result, "Jack", "Should return a signal that can be used to form a chain of operations on the upcoming changes in the observable")
+    }
 }
