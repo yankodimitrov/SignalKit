@@ -28,6 +28,7 @@
 		C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9886B1B7B1D41004559CD /* DisposableAction.swift */; };
 		C9D9886E1B7B1DE8004559CD /* DisposableActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9886D1B7B1DE8004559CD /* DisposableActionTests.swift */; };
 		C9D9886F1B7B1E52004559CD /* DisposableAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9886B1B7B1D41004559CD /* DisposableAction.swift */; };
+		C9D988711B7B1F14004559CD /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988701B7B1F14004559CD /* SpinLock.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		C9D988661B7B1B74004559CD /* BagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagTests.swift; sourceTree = "<group>"; };
 		C9D9886B1B7B1D41004559CD /* DisposableAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableAction.swift; sourceTree = "<group>"; };
 		C9D9886D1B7B1DE8004559CD /* DisposableActionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableActionTests.swift; sourceTree = "<group>"; };
+		C9D988701B7B1F14004559CD /* SpinLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinLock.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */,
 				C9D988631B7B1B2B004559CD /* Bag.swift */,
 				C9D9886B1B7B1D41004559CD /* DisposableAction.swift */,
+				C9D988701B7B1F14004559CD /* SpinLock.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D988711B7B1F14004559CD /* SpinLock.swift in Sources */,
 				C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */,
 				C9D988541B7B1788004559CD /* LockType.swift in Sources */,
