@@ -50,6 +50,9 @@
 		C9D988911B7B5A91004559CD /* ControlSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9888F1B7B5A91004559CD /* ControlSignal.swift */; };
 		C9D988931B7B5C09004559CD /* ControlSignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988921B7B5C09004559CD /* ControlSignalTests.swift */; };
 		C9D988961B7B5D18004559CD /* MockControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D988951B7B5D18004559CD /* MockControl.m */; };
+		C9D988981B7B5ECB004559CD /* NotificationSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988971B7B5ECB004559CD /* NotificationSignal.swift */; };
+		C9D988991B7B5ECB004559CD /* NotificationSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988971B7B5ECB004559CD /* NotificationSignal.swift */; };
+		C9D9889B1B7B6049004559CD /* NotificationSignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9889A1B7B6049004559CD /* NotificationSignalTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -94,6 +97,8 @@
 		C9D988921B7B5C09004559CD /* ControlSignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlSignalTests.swift; sourceTree = "<group>"; };
 		C9D988941B7B5C79004559CD /* MockControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockControl.h; sourceTree = "<group>"; };
 		C9D988951B7B5D18004559CD /* MockControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockControl.m; sourceTree = "<group>"; };
+		C9D988971B7B5ECB004559CD /* NotificationSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSignal.swift; sourceTree = "<group>"; };
+		C9D9889A1B7B6049004559CD /* NotificationSignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationSignalTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -143,6 +148,7 @@
 				C9D9887E1B7B445F004559CD /* ObservableProperty.swift */,
 				C9D988881B7B55C0004559CD /* KVOSignal.swift */,
 				C9D9888F1B7B5A91004559CD /* ControlSignal.swift */,
+				C9D988971B7B5ECB004559CD /* NotificationSignal.swift */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -194,6 +200,7 @@
 				C9D988811B7B46DE004559CD /* ObservablePropertyTests.swift */,
 				C9D9888D1B7B587A004559CD /* KVOSignalTests.swift */,
 				C9D988921B7B5C09004559CD /* ControlSignalTests.swift */,
+				C9D9889A1B7B6049004559CD /* NotificationSignalTests.swift */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -398,6 +405,7 @@
 				C9D9887F1B7B445F004559CD /* ObservableProperty.swift in Sources */,
 				C9D988891B7B55C0004559CD /* KVOSignal.swift in Sources */,
 				C9D988541B7B1788004559CD /* LockType.swift in Sources */,
+				C9D988981B7B5ECB004559CD /* NotificationSignal.swift in Sources */,
 				C9D9885F1B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
 				C9D988561B7B1788004559CD /* Observable.swift in Sources */,
 				C9D988521B7B1788004559CD /* Disposable.swift in Sources */,
@@ -414,6 +422,7 @@
 			files = (
 				C9D988831B7B486B004559CD /* SpinLock.swift in Sources */,
 				C9D9888E1B7B587A004559CD /* KVOSignalTests.swift in Sources */,
+				C9D9889B1B7B6049004559CD /* NotificationSignalTests.swift in Sources */,
 				C9D988761B7B2B20004559CD /* ObserversDispatcherTests.swift in Sources */,
 				C9D9885B1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886F1B7B1E52004559CD /* DisposableAction.swift in Sources */,
@@ -423,6 +432,7 @@
 				C9D9888A1B7B55C4004559CD /* KVOSignal.swift in Sources */,
 				C9D9888C1B7B5865004559CD /* Person.swift in Sources */,
 				C9D988551B7B1788004559CD /* LockType.swift in Sources */,
+				C9D988991B7B5ECB004559CD /* NotificationSignal.swift in Sources */,
 				C9D9887B1B7B3ECF004559CD /* Signal.swift in Sources */,
 				C9D988671B7B1B74004559CD /* BagTests.swift in Sources */,
 				C9D988621B7B1946004559CD /* IncrementalKeyGeneratorTests.swift in Sources */,
