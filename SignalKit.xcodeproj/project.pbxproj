@@ -9,103 +9,6 @@
 /* Begin PBXBuildFile section */
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
-		C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */; };
-		C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */; };
-		C9E7F2AF1B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */; };
-		C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */; };
-		C9E7F2B21B56817C001AB061 /* IncrementalKeyGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B11B56817C001AB061 /* IncrementalKeyGeneratorTests.swift */; };
-		C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B31B5681DF001AB061 /* Bag.swift */; };
-		C9E7F2B51B5681DF001AB061 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B31B5681DF001AB061 /* Bag.swift */; };
-		C9E7F2B71B5681F4001AB061 /* BagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B61B5681F4001AB061 /* BagTests.swift */; };
-		C9E7F2B91B56822F001AB061 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B81B56822F001AB061 /* Disposable.swift */; };
-		C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2B81B56822F001AB061 /* Disposable.swift */; };
-		C9E7F2BC1B568258001AB061 /* DisposableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2BB1B568258001AB061 /* DisposableItem.swift */; };
-		C9E7F2BD1B568258001AB061 /* DisposableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2BB1B568258001AB061 /* DisposableItem.swift */; };
-		C9E7F2BF1B56826F001AB061 /* DisposableItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2BE1B56826F001AB061 /* DisposableItemTests.swift */; };
-		C9E7F2C11B5682D4001AB061 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C01B5682D4001AB061 /* Observable.swift */; };
-		C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C01B5682D4001AB061 /* Observable.swift */; };
-		C9E7F2C41B568312001AB061 /* ObservableOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C31B568312001AB061 /* ObservableOf.swift */; };
-		C9E7F2C51B568312001AB061 /* ObservableOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C31B568312001AB061 /* ObservableOf.swift */; };
-		C9E7F2C71B568320001AB061 /* ObservableOfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C61B568320001AB061 /* ObservableOfTests.swift */; };
-		C9E7F2C91B5683D2001AB061 /* LockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C81B5683D2001AB061 /* LockType.swift */; };
-		C9E7F2CA1B5683D2001AB061 /* LockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2C81B5683D2001AB061 /* LockType.swift */; };
-		C9E7F2CC1B5683F9001AB061 /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2CB1B5683F9001AB061 /* SpinLock.swift */; };
-		C9E7F2CD1B5683F9001AB061 /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2CB1B5683F9001AB061 /* SpinLock.swift */; };
-		C9E7F2CF1B568443001AB061 /* SignalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2CE1B568443001AB061 /* SignalType.swift */; };
-		C9E7F2D01B568443001AB061 /* SignalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2CE1B568443001AB061 /* SignalType.swift */; };
-		C9E7F2D21B568468001AB061 /* SignalContainerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2D11B568468001AB061 /* SignalContainerType.swift */; };
-		C9E7F2D31B568468001AB061 /* SignalContainerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2D11B568468001AB061 /* SignalContainerType.swift */; };
-		C9E7F2D51B5684E0001AB061 /* ObservableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2D41B5684E0001AB061 /* ObservableValue.swift */; };
-		C9E7F2D61B5684E0001AB061 /* ObservableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2D41B5684E0001AB061 /* ObservableValue.swift */; };
-		C9E7F2D81B5684FF001AB061 /* ObservableValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2D71B5684FF001AB061 /* ObservableValueTests.swift */; };
-		C9E7F2DB1B568644001AB061 /* MockLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2DA1B568644001AB061 /* MockLock.swift */; };
-		C9E7F2DD1B56878D001AB061 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2DC1B56878D001AB061 /* Signal.swift */; };
-		C9E7F2DE1B56878D001AB061 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2DC1B56878D001AB061 /* Signal.swift */; };
-		C9E7F2E01B5687FB001AB061 /* SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2DF1B5687FB001AB061 /* SignalTests.swift */; };
-		C9E7F2E21B568817001AB061 /* MockDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E11B568817001AB061 /* MockDisposable.swift */; };
-		C9E7F2E41B56883C001AB061 /* MockSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E31B56883C001AB061 /* MockSignal.swift */; };
-		C9E7F2E61B5688DC001AB061 /* SignalBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E51B5688DC001AB061 /* SignalBag.swift */; };
-		C9E7F2E71B5688DC001AB061 /* SignalBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E51B5688DC001AB061 /* SignalBag.swift */; };
-		C9E7F2E91B5688FC001AB061 /* SignalBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2E81B5688FC001AB061 /* SignalBagTests.swift */; };
-		C9E7F2EB1B56896C001AB061 /* ObserverOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */; };
-		C9E7F2EC1B56896C001AB061 /* ObserverOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */; };
-		C9E7F2EE1B5689A4001AB061 /* ObserverOfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2ED1B5689A4001AB061 /* ObserverOfTests.swift */; };
-		C9E7F2F01B5689EB001AB061 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EF1B5689EB001AB061 /* Functions.swift */; };
-		C9E7F2F11B5689EB001AB061 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2EF1B5689EB001AB061 /* Functions.swift */; };
-		C9E7F2F31B568A18001AB061 /* FunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2F21B568A18001AB061 /* FunctionsTests.swift */; };
-		C9E7F2F51B568AB8001AB061 /* KVOObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2F41B568AB8001AB061 /* KVOObserver.swift */; };
-		C9E7F2F61B568AB8001AB061 /* KVOObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2F41B568AB8001AB061 /* KVOObserver.swift */; };
-		C9E7F2F81B568AE0001AB061 /* KVOObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2F71B568AE0001AB061 /* KVOObserverTests.swift */; };
-		C9E7F2FA1B568B05001AB061 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2F91B568B05001AB061 /* Person.swift */; };
-		C9E7F2FC1B568C2C001AB061 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2FB1B568C2C001AB061 /* NotificationObserver.swift */; };
-		C9E7F2FD1B568C2C001AB061 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2FB1B568C2C001AB061 /* NotificationObserver.swift */; };
-		C9E7F2FF1B568C4E001AB061 /* NotificationObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F2FE1B568C4E001AB061 /* NotificationObserverTests.swift */; };
-		C9E7F3011B5693C4001AB061 /* CompoundObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3001B5693C4001AB061 /* CompoundObserver.swift */; };
-		C9E7F3021B5693C4001AB061 /* CompoundObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3001B5693C4001AB061 /* CompoundObserver.swift */; };
-		C9E7F3041B5693D2001AB061 /* CompoundObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3031B5693D2001AB061 /* CompoundObserverTests.swift */; };
-		C9E7F3061B5694DB001AB061 /* ControlObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3051B5694DB001AB061 /* ControlObserver.swift */; };
-		C9E7F3071B5694DB001AB061 /* ControlObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3051B5694DB001AB061 /* ControlObserver.swift */; };
-		C9E7F3091B56952C001AB061 /* ControlObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3081B56952C001AB061 /* ControlObserverTests.swift */; };
-		C9E7F30C1B569571001AB061 /* MockControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F30B1B569571001AB061 /* MockControl.m */; };
-		C9E7F30E1B56965E001AB061 /* KeyboardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F30D1B56965E001AB061 /* KeyboardState.swift */; };
-		C9E7F30F1B56965E001AB061 /* KeyboardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F30D1B56965E001AB061 /* KeyboardState.swift */; };
-		C9E7F3111B569680001AB061 /* KeyboardStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3101B569680001AB061 /* KeyboardStateTests.swift */; };
-		C9E7F3131B5696E5001AB061 /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3121B5696E5001AB061 /* KeyboardNotification.swift */; };
-		C9E7F3141B5696E5001AB061 /* KeyboardNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3121B5696E5001AB061 /* KeyboardNotification.swift */; };
-		C9E7F3161B56970A001AB061 /* KeyboardNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3151B56970A001AB061 /* KeyboardNotificationTests.swift */; };
-		C9E7F31D1B569F59001AB061 /* UIControlFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F31C1B569F59001AB061 /* UIControlFunctions.swift */; };
-		C9E7F31E1B569F59001AB061 /* UIControlFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F31C1B569F59001AB061 /* UIControlFunctions.swift */; };
-		C9E7F3201B569F66001AB061 /* UIControlFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F31F1B569F66001AB061 /* UIControlFunctionsTests.swift */; };
-		C9E7F3221B569FCC001AB061 /* UIButtonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3211B569FCC001AB061 /* UIButtonFunctions.swift */; };
-		C9E7F3231B569FCC001AB061 /* UIButtonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3211B569FCC001AB061 /* UIButtonFunctions.swift */; };
-		C9E7F3251B569FD7001AB061 /* UIButtonFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3241B569FD7001AB061 /* UIButtonFunctionsTests.swift */; };
-		C9E7F3271B56A052001AB061 /* UIDatePickerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3261B56A052001AB061 /* UIDatePickerFunctions.swift */; };
-		C9E7F3281B56A052001AB061 /* UIDatePickerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3261B56A052001AB061 /* UIDatePickerFunctions.swift */; };
-		C9E7F32A1B56A062001AB061 /* UIDatePickerFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3291B56A062001AB061 /* UIDatePickerFunctionsTests.swift */; };
-		C9E7F32C1B56A0FA001AB061 /* UIImageViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F32B1B56A0FA001AB061 /* UIImageViewFunctions.swift */; };
-		C9E7F32D1B56A0FA001AB061 /* UIImageViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F32B1B56A0FA001AB061 /* UIImageViewFunctions.swift */; };
-		C9E7F32F1B56A105001AB061 /* UIImageViewFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F32E1B56A105001AB061 /* UIImageViewFunctionsTests.swift */; };
-		C9E7F3311B56A161001AB061 /* UILabelFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3301B56A161001AB061 /* UILabelFunctions.swift */; };
-		C9E7F3321B56A161001AB061 /* UILabelFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3301B56A161001AB061 /* UILabelFunctions.swift */; };
-		C9E7F3341B56A16C001AB061 /* UILabelFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3331B56A16C001AB061 /* UILabelFunctionsTests.swift */; };
-		C9E7F3361B56A1B3001AB061 /* UISliderFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3351B56A1B3001AB061 /* UISliderFunctions.swift */; };
-		C9E7F3371B56A1B3001AB061 /* UISliderFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3351B56A1B3001AB061 /* UISliderFunctions.swift */; };
-		C9E7F3391B56A1C0001AB061 /* UISliderFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3381B56A1C0001AB061 /* UISliderFunctionsTests.swift */; };
-		C9E7F33B1B56A236001AB061 /* UISwitchFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F33A1B56A236001AB061 /* UISwitchFunctions.swift */; };
-		C9E7F33C1B56A236001AB061 /* UISwitchFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F33A1B56A236001AB061 /* UISwitchFunctions.swift */; };
-		C9E7F33E1B56A243001AB061 /* UISwitchFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F33D1B56A243001AB061 /* UISwitchFunctionsTests.swift */; };
-		C9E7F3401B56A2C7001AB061 /* UITextFieldFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F33F1B56A2C7001AB061 /* UITextFieldFunctions.swift */; };
-		C9E7F3411B56A2C7001AB061 /* UITextFieldFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F33F1B56A2C7001AB061 /* UITextFieldFunctions.swift */; };
-		C9E7F3431B56A2D3001AB061 /* UITextFieldFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3421B56A2D3001AB061 /* UITextFieldFunctionsTests.swift */; };
-		C9E7F3451B56A34F001AB061 /* UITextViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3441B56A34F001AB061 /* UITextViewFunctions.swift */; };
-		C9E7F3461B56A34F001AB061 /* UITextViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3441B56A34F001AB061 /* UITextViewFunctions.swift */; };
-		C9E7F3481B56A35B001AB061 /* UITextViewFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3471B56A35B001AB061 /* UITextViewFunctionsTests.swift */; };
-		C9E7F34A1B56A46E001AB061 /* UIViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3491B56A46E001AB061 /* UIViewFunctions.swift */; };
-		C9E7F34B1B56A46E001AB061 /* UIViewFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F3491B56A46E001AB061 /* UIViewFunctions.swift */; };
-		C9E7F34D1B56A47A001AB061 /* UIViewFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E7F34C1B56A47A001AB061 /* UIViewFunctionsTests.swift */; };
-		C9F0CCDD1B57B7320049E7D5 /* UISegmentedControlFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0CCDC1B57B7320049E7D5 /* UISegmentedControlFunctions.swift */; };
-		C9F0CCDE1B57B7320049E7D5 /* UISegmentedControlFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0CCDC1B57B7320049E7D5 /* UISegmentedControlFunctions.swift */; };
-		C9F0CCE01B57B7440049E7D5 /* UISegmentedControlFunctionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F0CCDF1B57B7440049E7D5 /* UISegmentedControlFunctionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,71 +28,6 @@
 		C9E7F28A1B567DF5001AB061 /* SignalKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignalKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2901B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F29B1B567F3D001AB061 /* SignalKitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SignalKitTests-Bridging-Header.h"; sourceTree = "<group>"; };
-		C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenGeneratorType.swift; sourceTree = "<group>"; };
-		C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementalKeyGenerator.swift; sourceTree = "<group>"; };
-		C9E7F2B11B56817C001AB061 /* IncrementalKeyGeneratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementalKeyGeneratorTests.swift; sourceTree = "<group>"; };
-		C9E7F2B31B5681DF001AB061 /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
-		C9E7F2B61B5681F4001AB061 /* BagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagTests.swift; sourceTree = "<group>"; };
-		C9E7F2B81B56822F001AB061 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
-		C9E7F2BB1B568258001AB061 /* DisposableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableItem.swift; sourceTree = "<group>"; };
-		C9E7F2BE1B56826F001AB061 /* DisposableItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableItemTests.swift; sourceTree = "<group>"; };
-		C9E7F2C01B5682D4001AB061 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		C9E7F2C31B568312001AB061 /* ObservableOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableOf.swift; sourceTree = "<group>"; };
-		C9E7F2C61B568320001AB061 /* ObservableOfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableOfTests.swift; sourceTree = "<group>"; };
-		C9E7F2C81B5683D2001AB061 /* LockType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockType.swift; sourceTree = "<group>"; };
-		C9E7F2CB1B5683F9001AB061 /* SpinLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinLock.swift; sourceTree = "<group>"; };
-		C9E7F2CE1B568443001AB061 /* SignalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalType.swift; sourceTree = "<group>"; };
-		C9E7F2D11B568468001AB061 /* SignalContainerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalContainerType.swift; sourceTree = "<group>"; };
-		C9E7F2D41B5684E0001AB061 /* ObservableValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableValue.swift; sourceTree = "<group>"; };
-		C9E7F2D71B5684FF001AB061 /* ObservableValueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableValueTests.swift; sourceTree = "<group>"; };
-		C9E7F2DA1B568644001AB061 /* MockLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLock.swift; sourceTree = "<group>"; };
-		C9E7F2DC1B56878D001AB061 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
-		C9E7F2DF1B5687FB001AB061 /* SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalTests.swift; sourceTree = "<group>"; };
-		C9E7F2E11B568817001AB061 /* MockDisposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDisposable.swift; sourceTree = "<group>"; };
-		C9E7F2E31B56883C001AB061 /* MockSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSignal.swift; sourceTree = "<group>"; };
-		C9E7F2E51B5688DC001AB061 /* SignalBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalBag.swift; sourceTree = "<group>"; };
-		C9E7F2E81B5688FC001AB061 /* SignalBagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalBagTests.swift; sourceTree = "<group>"; };
-		C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverOf.swift; sourceTree = "<group>"; };
-		C9E7F2ED1B5689A4001AB061 /* ObserverOfTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserverOfTests.swift; sourceTree = "<group>"; };
-		C9E7F2EF1B5689EB001AB061 /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
-		C9E7F2F21B568A18001AB061 /* FunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionsTests.swift; sourceTree = "<group>"; };
-		C9E7F2F41B568AB8001AB061 /* KVOObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOObserver.swift; sourceTree = "<group>"; };
-		C9E7F2F71B568AE0001AB061 /* KVOObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOObserverTests.swift; sourceTree = "<group>"; };
-		C9E7F2F91B568B05001AB061 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		C9E7F2FB1B568C2C001AB061 /* NotificationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
-		C9E7F2FE1B568C4E001AB061 /* NotificationObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationObserverTests.swift; sourceTree = "<group>"; };
-		C9E7F3001B5693C4001AB061 /* CompoundObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundObserver.swift; sourceTree = "<group>"; };
-		C9E7F3031B5693D2001AB061 /* CompoundObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundObserverTests.swift; sourceTree = "<group>"; };
-		C9E7F3051B5694DB001AB061 /* ControlObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlObserver.swift; sourceTree = "<group>"; };
-		C9E7F3081B56952C001AB061 /* ControlObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlObserverTests.swift; sourceTree = "<group>"; };
-		C9E7F30A1B56955F001AB061 /* MockControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockControl.h; sourceTree = "<group>"; };
-		C9E7F30B1B569571001AB061 /* MockControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockControl.m; sourceTree = "<group>"; };
-		C9E7F30D1B56965E001AB061 /* KeyboardState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardState.swift; sourceTree = "<group>"; };
-		C9E7F3101B569680001AB061 /* KeyboardStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardStateTests.swift; sourceTree = "<group>"; };
-		C9E7F3121B5696E5001AB061 /* KeyboardNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotification.swift; sourceTree = "<group>"; };
-		C9E7F3151B56970A001AB061 /* KeyboardNotificationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationTests.swift; sourceTree = "<group>"; };
-		C9E7F31C1B569F59001AB061 /* UIControlFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlFunctions.swift; sourceTree = "<group>"; };
-		C9E7F31F1B569F66001AB061 /* UIControlFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlFunctionsTests.swift; sourceTree = "<group>"; };
-		C9E7F3211B569FCC001AB061 /* UIButtonFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonFunctions.swift; sourceTree = "<group>"; };
-		C9E7F3241B569FD7001AB061 /* UIButtonFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonFunctionsTests.swift; sourceTree = "<group>"; };
-		C9E7F3261B56A052001AB061 /* UIDatePickerFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePickerFunctions.swift; sourceTree = "<group>"; };
-		C9E7F3291B56A062001AB061 /* UIDatePickerFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePickerFunctionsTests.swift; sourceTree = "<group>"; };
-		C9E7F32B1B56A0FA001AB061 /* UIImageViewFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewFunctions.swift; sourceTree = "<group>"; };
-		C9E7F32E1B56A105001AB061 /* UIImageViewFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewFunctionsTests.swift; sourceTree = "<group>"; };
-		C9E7F3301B56A161001AB061 /* UILabelFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelFunctions.swift; sourceTree = "<group>"; };
-		C9E7F3331B56A16C001AB061 /* UILabelFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelFunctionsTests.swift; sourceTree = "<group>"; };
-		C9E7F3351B56A1B3001AB061 /* UISliderFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderFunctions.swift; sourceTree = "<group>"; };
-		C9E7F3381B56A1C0001AB061 /* UISliderFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISliderFunctionsTests.swift; sourceTree = "<group>"; };
-		C9E7F33A1B56A236001AB061 /* UISwitchFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchFunctions.swift; sourceTree = "<group>"; };
-		C9E7F33D1B56A243001AB061 /* UISwitchFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchFunctionsTests.swift; sourceTree = "<group>"; };
-		C9E7F33F1B56A2C7001AB061 /* UITextFieldFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldFunctions.swift; sourceTree = "<group>"; };
-		C9E7F3421B56A2D3001AB061 /* UITextFieldFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldFunctionsTests.swift; sourceTree = "<group>"; };
-		C9E7F3441B56A34F001AB061 /* UITextViewFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewFunctions.swift; sourceTree = "<group>"; };
-		C9E7F3471B56A35B001AB061 /* UITextViewFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewFunctionsTests.swift; sourceTree = "<group>"; };
-		C9E7F3491B56A46E001AB061 /* UIViewFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewFunctions.swift; sourceTree = "<group>"; };
-		C9E7F34C1B56A47A001AB061 /* UIViewFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewFunctionsTests.swift; sourceTree = "<group>"; };
-		C9F0CCDC1B57B7320049E7D5 /* UISegmentedControlFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControlFunctions.swift; sourceTree = "<group>"; };
-		C9F0CCDF1B57B7440049E7D5 /* UISegmentedControlFunctionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControlFunctionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +49,71 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9D9882E1B7B0903004559CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C9D9882F1B7B0903004559CD /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C9D9882F1B7B0903004559CD /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C9D988301B7B0903004559CD /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Observables;
+			sourceTree = "<group>";
+		};
+		C9D988311B7B0903004559CD /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C9D988321B7B0903004559CD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C9D988331B7B0950004559CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C9D988341B7B0950004559CD /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C9D988341B7B0950004559CD /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C9D988351B7B0950004559CD /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Observables;
+			sourceTree = "<group>";
+		};
+		C9D988361B7B0950004559CD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		C9E7F2751B567DF5001AB061 = {
 			isa = PBXGroup;
 			children = (
@@ -232,13 +135,11 @@
 		C9E7F2811B567DF5001AB061 /* SignalKit */ = {
 			isa = PBXGroup;
 			children = (
-				C9E7F2A81B567FE4001AB061 /* Protocols */,
-				C9E7F2A61B567FE4001AB061 /* Observables */,
-				C9E7F2A71B567FE4001AB061 /* Observers */,
-				C9E7F2A91B567FE4001AB061 /* UIKit */,
-				C9E7F2AA1B567FE4001AB061 /* Utilities */,
+				C9D988311B7B0903004559CD /* Protocols */,
+				C9D988301B7B0903004559CD /* Observables */,
+				C9D988321B7B0903004559CD /* Utilities */,
+				C9D9882E1B7B0903004559CD /* Extensions */,
 				C9E7F2821B567DF5001AB061 /* Supporting Files */,
-				C9E7F2EF1B5689EB001AB061 /* Functions.swift */,
 			);
 			path = SignalKit;
 			sourceTree = "<group>";
@@ -255,13 +156,10 @@
 		C9E7F28E1B567DF5001AB061 /* SignalKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				C9E7F2A21B567FD6001AB061 /* Observables */,
-				C9E7F2A31B567FD6001AB061 /* Observers */,
-				C9E7F2A41B567FD6001AB061 /* UIKit */,
-				C9E7F2A51B567FD6001AB061 /* Utilities */,
-				C9E7F2D91B56860B001AB061 /* Fakes */,
+				C9D988351B7B0950004559CD /* Observables */,
+				C9D988361B7B0950004559CD /* Utilities */,
+				C9D988331B7B0950004559CD /* Extensions */,
 				C9E7F28F1B567DF5001AB061 /* Supporting Files */,
-				C9E7F2F21B568A18001AB061 /* FunctionsTests.swift */,
 			);
 			path = SignalKitTests;
 			sourceTree = "<group>";
@@ -273,139 +171,6 @@
 				C9E7F29B1B567F3D001AB061 /* SignalKitTests-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		C9E7F2A21B567FD6001AB061 /* Observables */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2C61B568320001AB061 /* ObservableOfTests.swift */,
-				C9E7F2D71B5684FF001AB061 /* ObservableValueTests.swift */,
-				C9E7F2DF1B5687FB001AB061 /* SignalTests.swift */,
-			);
-			path = Observables;
-			sourceTree = "<group>";
-		};
-		C9E7F2A31B567FD6001AB061 /* Observers */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2ED1B5689A4001AB061 /* ObserverOfTests.swift */,
-				C9E7F2F71B568AE0001AB061 /* KVOObserverTests.swift */,
-				C9E7F2FE1B568C4E001AB061 /* NotificationObserverTests.swift */,
-				C9E7F3031B5693D2001AB061 /* CompoundObserverTests.swift */,
-				C9E7F3081B56952C001AB061 /* ControlObserverTests.swift */,
-			);
-			path = Observers;
-			sourceTree = "<group>";
-		};
-		C9E7F2A41B567FD6001AB061 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F3101B569680001AB061 /* KeyboardStateTests.swift */,
-				C9E7F3151B56970A001AB061 /* KeyboardNotificationTests.swift */,
-				C9E7F31F1B569F66001AB061 /* UIControlFunctionsTests.swift */,
-				C9E7F3241B569FD7001AB061 /* UIButtonFunctionsTests.swift */,
-				C9E7F3291B56A062001AB061 /* UIDatePickerFunctionsTests.swift */,
-				C9E7F32E1B56A105001AB061 /* UIImageViewFunctionsTests.swift */,
-				C9E7F3331B56A16C001AB061 /* UILabelFunctionsTests.swift */,
-				C9E7F3381B56A1C0001AB061 /* UISliderFunctionsTests.swift */,
-				C9E7F33D1B56A243001AB061 /* UISwitchFunctionsTests.swift */,
-				C9E7F3421B56A2D3001AB061 /* UITextFieldFunctionsTests.swift */,
-				C9E7F3471B56A35B001AB061 /* UITextViewFunctionsTests.swift */,
-				C9F0CCDF1B57B7440049E7D5 /* UISegmentedControlFunctionsTests.swift */,
-				C9E7F34C1B56A47A001AB061 /* UIViewFunctionsTests.swift */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		C9E7F2A51B567FD6001AB061 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2B61B5681F4001AB061 /* BagTests.swift */,
-				C9E7F2BE1B56826F001AB061 /* DisposableItemTests.swift */,
-				C9E7F2B11B56817C001AB061 /* IncrementalKeyGeneratorTests.swift */,
-				C9E7F2E81B5688FC001AB061 /* SignalBagTests.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		C9E7F2A61B567FE4001AB061 /* Observables */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2C31B568312001AB061 /* ObservableOf.swift */,
-				C9E7F2D41B5684E0001AB061 /* ObservableValue.swift */,
-				C9E7F2DC1B56878D001AB061 /* Signal.swift */,
-			);
-			path = Observables;
-			sourceTree = "<group>";
-		};
-		C9E7F2A71B567FE4001AB061 /* Observers */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2EA1B56896C001AB061 /* ObserverOf.swift */,
-				C9E7F2F41B568AB8001AB061 /* KVOObserver.swift */,
-				C9E7F2FB1B568C2C001AB061 /* NotificationObserver.swift */,
-				C9E7F3001B5693C4001AB061 /* CompoundObserver.swift */,
-				C9E7F3051B5694DB001AB061 /* ControlObserver.swift */,
-			);
-			path = Observers;
-			sourceTree = "<group>";
-		};
-		C9E7F2A81B567FE4001AB061 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2B81B56822F001AB061 /* Disposable.swift */,
-				C9E7F2C01B5682D4001AB061 /* Observable.swift */,
-				C9E7F2CE1B568443001AB061 /* SignalType.swift */,
-				C9E7F2AB1B5680E1001AB061 /* TokenGeneratorType.swift */,
-				C9E7F2D11B568468001AB061 /* SignalContainerType.swift */,
-				C9E7F2C81B5683D2001AB061 /* LockType.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		C9E7F2A91B567FE4001AB061 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F30D1B56965E001AB061 /* KeyboardState.swift */,
-				C9E7F3121B5696E5001AB061 /* KeyboardNotification.swift */,
-				C9E7F31C1B569F59001AB061 /* UIControlFunctions.swift */,
-				C9E7F3211B569FCC001AB061 /* UIButtonFunctions.swift */,
-				C9E7F3261B56A052001AB061 /* UIDatePickerFunctions.swift */,
-				C9E7F32B1B56A0FA001AB061 /* UIImageViewFunctions.swift */,
-				C9E7F3301B56A161001AB061 /* UILabelFunctions.swift */,
-				C9E7F3351B56A1B3001AB061 /* UISliderFunctions.swift */,
-				C9E7F33A1B56A236001AB061 /* UISwitchFunctions.swift */,
-				C9E7F33F1B56A2C7001AB061 /* UITextFieldFunctions.swift */,
-				C9E7F3441B56A34F001AB061 /* UITextViewFunctions.swift */,
-				C9F0CCDC1B57B7320049E7D5 /* UISegmentedControlFunctions.swift */,
-				C9E7F3491B56A46E001AB061 /* UIViewFunctions.swift */,
-			);
-			path = UIKit;
-			sourceTree = "<group>";
-		};
-		C9E7F2AA1B567FE4001AB061 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2B31B5681DF001AB061 /* Bag.swift */,
-				C9E7F2BB1B568258001AB061 /* DisposableItem.swift */,
-				C9E7F2AE1B568151001AB061 /* IncrementalKeyGenerator.swift */,
-				C9E7F2E51B5688DC001AB061 /* SignalBag.swift */,
-				C9E7F2CB1B5683F9001AB061 /* SpinLock.swift */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		C9E7F2D91B56860B001AB061 /* Fakes */ = {
-			isa = PBXGroup;
-			children = (
-				C9E7F2DA1B568644001AB061 /* MockLock.swift */,
-				C9E7F2E11B568817001AB061 /* MockDisposable.swift */,
-				C9E7F2E31B56883C001AB061 /* MockSignal.swift */,
-				C9E7F2F91B568B05001AB061 /* Person.swift */,
-				C9E7F30A1B56955F001AB061 /* MockControl.h */,
-				C9E7F30B1B569571001AB061 /* MockControl.m */,
-			);
-			path = Fakes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,7 +229,8 @@
 		C9E7F2761B567DF5001AB061 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Yanko Dimitrov";
 				TargetAttributes = {
 					C9E7F27E1B567DF5001AB061 = {
@@ -515,39 +281,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9E7F33B1B56A236001AB061 /* UISwitchFunctions.swift in Sources */,
-				C9E7F2CC1B5683F9001AB061 /* SpinLock.swift in Sources */,
-				C9E7F34A1B56A46E001AB061 /* UIViewFunctions.swift in Sources */,
-				C9E7F2AF1B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
-				C9E7F2D51B5684E0001AB061 /* ObservableValue.swift in Sources */,
-				C9E7F2F01B5689EB001AB061 /* Functions.swift in Sources */,
-				C9E7F2EB1B56896C001AB061 /* ObserverOf.swift in Sources */,
-				C9E7F3221B569FCC001AB061 /* UIButtonFunctions.swift in Sources */,
-				C9E7F3131B5696E5001AB061 /* KeyboardNotification.swift in Sources */,
-				C9E7F2C41B568312001AB061 /* ObservableOf.swift in Sources */,
-				C9E7F3361B56A1B3001AB061 /* UISliderFunctions.swift in Sources */,
-				C9E7F2B91B56822F001AB061 /* Disposable.swift in Sources */,
-				C9E7F2B41B5681DF001AB061 /* Bag.swift in Sources */,
-				C9E7F2FC1B568C2C001AB061 /* NotificationObserver.swift in Sources */,
-				C9E7F31D1B569F59001AB061 /* UIControlFunctions.swift in Sources */,
-				C9E7F3061B5694DB001AB061 /* ControlObserver.swift in Sources */,
-				C9E7F2CF1B568443001AB061 /* SignalType.swift in Sources */,
-				C9E7F2DD1B56878D001AB061 /* Signal.swift in Sources */,
-				C9E7F2F51B568AB8001AB061 /* KVOObserver.swift in Sources */,
-				C9E7F32C1B56A0FA001AB061 /* UIImageViewFunctions.swift in Sources */,
-				C9E7F2D21B568468001AB061 /* SignalContainerType.swift in Sources */,
-				C9E7F30E1B56965E001AB061 /* KeyboardState.swift in Sources */,
-				C9E7F3401B56A2C7001AB061 /* UITextFieldFunctions.swift in Sources */,
-				C9E7F3011B5693C4001AB061 /* CompoundObserver.swift in Sources */,
-				C9E7F2E61B5688DC001AB061 /* SignalBag.swift in Sources */,
-				C9E7F3311B56A161001AB061 /* UILabelFunctions.swift in Sources */,
-				C9E7F3451B56A34F001AB061 /* UITextViewFunctions.swift in Sources */,
-				C9F0CCDD1B57B7320049E7D5 /* UISegmentedControlFunctions.swift in Sources */,
-				C9E7F2C91B5683D2001AB061 /* LockType.swift in Sources */,
-				C9E7F2AC1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
-				C9E7F2C11B5682D4001AB061 /* Observable.swift in Sources */,
-				C9E7F3271B56A052001AB061 /* UIDatePickerFunctions.swift in Sources */,
-				C9E7F2BC1B568258001AB061 /* DisposableItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,70 +288,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9E7F2CA1B5683D2001AB061 /* LockType.swift in Sources */,
-				C9E7F3071B5694DB001AB061 /* ControlObserver.swift in Sources */,
-				C9E7F2D31B568468001AB061 /* SignalContainerType.swift in Sources */,
-				C9E7F2FF1B568C4E001AB061 /* NotificationObserverTests.swift in Sources */,
-				C9E7F2D61B5684E0001AB061 /* ObservableValue.swift in Sources */,
-				C9E7F2EC1B56896C001AB061 /* ObserverOf.swift in Sources */,
-				C9E7F2FD1B568C2C001AB061 /* NotificationObserver.swift in Sources */,
-				C9E7F2EE1B5689A4001AB061 /* ObserverOfTests.swift in Sources */,
-				C9E7F32F1B56A105001AB061 /* UIImageViewFunctionsTests.swift in Sources */,
-				C9E7F2B01B568151001AB061 /* IncrementalKeyGenerator.swift in Sources */,
-				C9E7F3251B569FD7001AB061 /* UIButtonFunctionsTests.swift in Sources */,
-				C9E7F34B1B56A46E001AB061 /* UIViewFunctions.swift in Sources */,
-				C9E7F3091B56952C001AB061 /* ControlObserverTests.swift in Sources */,
-				C9E7F2F61B568AB8001AB061 /* KVOObserver.swift in Sources */,
-				C9E7F31E1B569F59001AB061 /* UIControlFunctions.swift in Sources */,
-				C9E7F2E71B5688DC001AB061 /* SignalBag.swift in Sources */,
-				C9E7F2F31B568A18001AB061 /* FunctionsTests.swift in Sources */,
-				C9E7F2BA1B56822F001AB061 /* Disposable.swift in Sources */,
-				C9E7F33C1B56A236001AB061 /* UISwitchFunctions.swift in Sources */,
-				C9E7F2BD1B568258001AB061 /* DisposableItem.swift in Sources */,
-				C9E7F3141B5696E5001AB061 /* KeyboardNotification.swift in Sources */,
-				C9E7F32A1B56A062001AB061 /* UIDatePickerFunctionsTests.swift in Sources */,
-				C9E7F3461B56A34F001AB061 /* UITextViewFunctions.swift in Sources */,
-				C9E7F2FA1B568B05001AB061 /* Person.swift in Sources */,
-				C9E7F3111B569680001AB061 /* KeyboardStateTests.swift in Sources */,
-				C9E7F3201B569F66001AB061 /* UIControlFunctionsTests.swift in Sources */,
-				C9E7F2AD1B5680E1001AB061 /* TokenGeneratorType.swift in Sources */,
-				C9E7F2F81B568AE0001AB061 /* KVOObserverTests.swift in Sources */,
-				C9E7F2DE1B56878D001AB061 /* Signal.swift in Sources */,
-				C9E7F2F11B5689EB001AB061 /* Functions.swift in Sources */,
-				C9F0CCDE1B57B7320049E7D5 /* UISegmentedControlFunctions.swift in Sources */,
-				C9E7F30F1B56965E001AB061 /* KeyboardState.swift in Sources */,
-				C9E7F32D1B56A0FA001AB061 /* UIImageViewFunctions.swift in Sources */,
-				C9E7F2E91B5688FC001AB061 /* SignalBagTests.swift in Sources */,
-				C9E7F30C1B569571001AB061 /* MockControl.m in Sources */,
-				C9E7F2C21B5682D4001AB061 /* Observable.swift in Sources */,
-				C9E7F3041B5693D2001AB061 /* CompoundObserverTests.swift in Sources */,
-				C9E7F34D1B56A47A001AB061 /* UIViewFunctionsTests.swift in Sources */,
-				C9E7F3481B56A35B001AB061 /* UITextViewFunctionsTests.swift in Sources */,
-				C9E7F2BF1B56826F001AB061 /* DisposableItemTests.swift in Sources */,
-				C9F0CCE01B57B7440049E7D5 /* UISegmentedControlFunctionsTests.swift in Sources */,
-				C9E7F33E1B56A243001AB061 /* UISwitchFunctionsTests.swift in Sources */,
-				C9E7F2B71B5681F4001AB061 /* BagTests.swift in Sources */,
-				C9E7F2CD1B5683F9001AB061 /* SpinLock.swift in Sources */,
-				C9E7F3321B56A161001AB061 /* UILabelFunctions.swift in Sources */,
-				C9E7F3231B569FCC001AB061 /* UIButtonFunctions.swift in Sources */,
-				C9E7F3371B56A1B3001AB061 /* UISliderFunctions.swift in Sources */,
-				C9E7F2D01B568443001AB061 /* SignalType.swift in Sources */,
-				C9E7F3411B56A2C7001AB061 /* UITextFieldFunctions.swift in Sources */,
-				C9E7F2E41B56883C001AB061 /* MockSignal.swift in Sources */,
-				C9E7F2E01B5687FB001AB061 /* SignalTests.swift in Sources */,
-				C9E7F2DB1B568644001AB061 /* MockLock.swift in Sources */,
-				C9E7F2B51B5681DF001AB061 /* Bag.swift in Sources */,
-				C9E7F3431B56A2D3001AB061 /* UITextFieldFunctionsTests.swift in Sources */,
-				C9E7F3281B56A052001AB061 /* UIDatePickerFunctions.swift in Sources */,
-				C9E7F3161B56970A001AB061 /* KeyboardNotificationTests.swift in Sources */,
-				C9E7F2B21B56817C001AB061 /* IncrementalKeyGeneratorTests.swift in Sources */,
-				C9E7F2D81B5684FF001AB061 /* ObservableValueTests.swift in Sources */,
-				C9E7F3391B56A1C0001AB061 /* UISliderFunctionsTests.swift in Sources */,
-				C9E7F3021B5693C4001AB061 /* CompoundObserver.swift in Sources */,
-				C9E7F3341B56A16C001AB061 /* UILabelFunctionsTests.swift in Sources */,
-				C9E7F2C51B568312001AB061 /* ObservableOf.swift in Sources */,
-				C9E7F2C71B568320001AB061 /* ObservableOfTests.swift in Sources */,
-				C9E7F2E21B568817001AB061 /* MockDisposable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +324,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -733,6 +403,7 @@
 				INFOPLIST_FILE = SignalKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yankodimitrov.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -750,6 +421,7 @@
 				INFOPLIST_FILE = SignalKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yankodimitrov.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -759,16 +431,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = SignalKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yankodimitrov.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SignalKitTests/SignalKitTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -779,12 +449,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = SignalKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yankodimitrov.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SignalKitTests/SignalKitTests-Bridging-Header.h";
 			};
