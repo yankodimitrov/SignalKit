@@ -54,5 +54,7 @@ public final class KVOSignal<T>: NSObject, SignalType {
         
         subject?.removeObserver(self, forKeyPath: keyPath)
         isDisposed = true
+        
+        disposableSource?.dispose()
     }
 }

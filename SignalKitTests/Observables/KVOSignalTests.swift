@@ -42,4 +42,17 @@ class KVOSignalTests: XCTestCase {
         
         XCTAssertEqual(result, "", "Should dispose the observation")
     }
+    
+    func testDisposeTheDisposableSource() {
+        
+        let disposableSource = MockDisposable()
+        
+        let signal = KVOSignal<String>(subject: person, keyPath: "name")
+        
+        signal.disposableSource = disposableSource
+        
+        signal.dispose()
+        
+        XCTAssertEqual(disposableSource.isDisposeCalled, true, "Should call the disposable source to dispose")
+    }
 }
