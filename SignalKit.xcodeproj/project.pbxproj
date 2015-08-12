@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C9D988521B7B1788004559CD /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884C1B7B1788004559CD /* Disposable.swift */; };
+		C9D988531B7B1788004559CD /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884C1B7B1788004559CD /* Disposable.swift */; };
+		C9D988541B7B1788004559CD /* LockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884D1B7B1788004559CD /* LockType.swift */; };
+		C9D988551B7B1788004559CD /* LockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884D1B7B1788004559CD /* LockType.swift */; };
+		C9D988561B7B1788004559CD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884E1B7B1788004559CD /* Observable.swift */; };
+		C9D988571B7B1788004559CD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884E1B7B1788004559CD /* Observable.swift */; };
+		C9D988581B7B1788004559CD /* SignalContainerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884F1B7B1788004559CD /* SignalContainerType.swift */; };
+		C9D988591B7B1788004559CD /* SignalContainerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884F1B7B1788004559CD /* SignalContainerType.swift */; };
+		C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988501B7B1788004559CD /* SignalType.swift */; };
+		C9D9885B1B7B1788004559CD /* SignalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988501B7B1788004559CD /* SignalType.swift */; };
+		C9D9885C1B7B1788004559CD /* TokenGeneratorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988511B7B1788004559CD /* TokenGeneratorType.swift */; };
+		C9D9885D1B7B1788004559CD /* TokenGeneratorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988511B7B1788004559CD /* TokenGeneratorType.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -22,6 +34,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C9D9884C1B7B1788004559CD /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
+		C9D9884D1B7B1788004559CD /* LockType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockType.swift; sourceTree = "<group>"; };
+		C9D9884E1B7B1788004559CD /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		C9D9884F1B7B1788004559CD /* SignalContainerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalContainerType.swift; sourceTree = "<group>"; };
+		C9D988501B7B1788004559CD /* SignalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalType.swift; sourceTree = "<group>"; };
+		C9D988511B7B1788004559CD /* TokenGeneratorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenGeneratorType.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -74,6 +92,12 @@
 		C9D988311B7B0903004559CD /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				C9D9884C1B7B1788004559CD /* Disposable.swift */,
+				C9D9884D1B7B1788004559CD /* LockType.swift */,
+				C9D9884E1B7B1788004559CD /* Observable.swift */,
+				C9D9884F1B7B1788004559CD /* SignalContainerType.swift */,
+				C9D988501B7B1788004559CD /* SignalType.swift */,
+				C9D988511B7B1788004559CD /* TokenGeneratorType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -281,6 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */,
+				C9D988541B7B1788004559CD /* LockType.swift in Sources */,
+				C9D988561B7B1788004559CD /* Observable.swift in Sources */,
+				C9D988521B7B1788004559CD /* Disposable.swift in Sources */,
+				C9D988581B7B1788004559CD /* SignalContainerType.swift in Sources */,
+				C9D9885C1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +318,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D9885B1B7B1788004559CD /* SignalType.swift in Sources */,
+				C9D988551B7B1788004559CD /* LockType.swift in Sources */,
+				C9D988571B7B1788004559CD /* Observable.swift in Sources */,
+				C9D988531B7B1788004559CD /* Disposable.swift in Sources */,
+				C9D988591B7B1788004559CD /* SignalContainerType.swift in Sources */,
+				C9D9885D1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
