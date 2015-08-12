@@ -20,17 +20,17 @@ public protocol Observable {
 
 public extension Observable {
     
-    func addObserver(observer: Item -> Void) -> Disposable {
+    public func addObserver(observer: Item -> Void) -> Disposable {
         
         return dispatcher.addObserver(observer)
     }
     
-    func dispatch(item: Item) {
+    public func dispatch(item: Item) {
         
         dispatcher.dispatch(item)
     }
     
-    func removeObservers() {
+    public func removeObservers() {
         
         dispatcher.removeObservers()
     }
