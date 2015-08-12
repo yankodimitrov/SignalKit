@@ -11,7 +11,27 @@ import Foundation
 public protocol Observable {
     typealias Item
     
+    var dispatcher: ObserversDispatcher<Item> {get}
+    
     func addObserver(observer: Item -> Void) -> Disposable
     func dispatch(item: Item)
     func removeObservers()
+}
+
+public extension Observable {
+    
+    func addObserver(observer: Item -> Void) -> Disposable {
+        
+        return dispatcher.addObserver(observer)
+    }
+    
+    func dispatch(item: Item) {
+        
+        dispatcher.dispatch(item)
+    }
+    
+    func removeObservers() {
+        
+        dispatcher.removeObservers()
+    }
 }
