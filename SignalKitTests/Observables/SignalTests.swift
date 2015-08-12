@@ -58,4 +58,17 @@ class SignalTests: XCTestCase {
         
         XCTAssertEqual(disposable.isDisposeCalled, true, "Should dispose the previous observation")
     }
+    
+    func testDisposeTheDisposableSource() {
+        
+        let disposableSource = MockDisposable()
+        
+        let signal = Signal<String>()
+        
+        signal.disposableSource = disposableSource
+        
+        signal.dispose()
+        
+        XCTAssertEqual(disposableSource.isDisposeCalled, true, "Should call the disposable source to dispose")
+    }
 }

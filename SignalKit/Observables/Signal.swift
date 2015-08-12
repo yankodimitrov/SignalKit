@@ -40,5 +40,7 @@ public final class Signal<T>: SignalType {
         
         observer?.dispose()
         observer = nil
+        
+        disposableSource?.dispose()
     }
 }
