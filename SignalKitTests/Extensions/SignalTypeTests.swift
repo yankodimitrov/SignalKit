@@ -55,4 +55,17 @@ class SignalTypeTests: XCTestCase {
         
         XCTAssertEqual(result, 44, "Should dispatch only the value that matches the filter predicate")
     }
+    
+    func testSkip() {
+        
+        var result = 0
+        
+        chain = signal.skip(2).next { result = $0 }
+        
+        signal.dispatch(11)
+        signal.dispatch(22)
+        signal.dispatch(33)
+        
+        XCTAssertEqual(result, 33, "Should skip a certain number of dispatched values")
+    }
 }

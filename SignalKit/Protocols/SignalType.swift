@@ -69,4 +69,29 @@ public extension SignalType {
         
         return signal
     }
+    
+    /**
+        Skip a certain number of dispatched by the signal values
+    
+    */
+    public func skip(var count: Int) -> Signal<Item> {
+        
+        let signal = Signal<Item>()
+        
+        addObserver { [weak signal] in
+            
+            if count <= 0 {
+                
+                signal?.dispatch($0)
+            
+            } else {
+            
+                count -= 1
+            }
+        }
+        
+        signal.disposableSource = self
+        
+        return signal
+    }
 }
