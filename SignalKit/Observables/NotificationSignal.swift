@@ -50,5 +50,7 @@ public final class NotificationSignal: NSObject, SignalType {
         center.removeObserver(self, name: notificationName, object: object)
         object = nil
         isDisposed = true
+        
+        disposableSource?.dispose()
     }
 }

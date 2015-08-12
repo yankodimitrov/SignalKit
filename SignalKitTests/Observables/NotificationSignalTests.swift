@@ -51,4 +51,17 @@ class NotificationSignalTests: XCTestCase {
         
         XCTAssertEqual(called, false, "Should dispose the observation")
     }
+    
+    func testDisposeTheDisposableSource() {
+        
+        let disposableSource = MockDisposable()
+        
+        let signal = NotificationSignal(notificationName: notificationName)
+        
+        signal.disposableSource = disposableSource
+        
+        signal.dispose()
+        
+        XCTAssertEqual(disposableSource.isDisposeCalled, true, "Should call the disposable source to dispose")
+    }
 }
