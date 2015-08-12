@@ -12,12 +12,14 @@ class SignalTypeTests: XCTestCase {
     
     var signal: MockSignal<Int>!
     var chain: Disposable?
+    var signalsBag: SignalBag!
     
     override func setUp() {
         super.setUp()
         
         signal = MockSignal<Int>()
         chain = nil
+        signalsBag = SignalBag()
     }
     
     func testNext() {
@@ -68,5 +70,16 @@ class SignalTypeTests: XCTestCase {
         signal.dispatch(33)
         
         XCTAssertEqual(result, 33, "Should skip a certain number of dispatched values")
+    }
+    
+    func testAddToSignalContainer() {
+        
+        var result = 0
+        
+        signal.next { result = $0 }.addTo(signalsBag)
+        
+        signal.dispatch(18)
+        
+        XCTAssertEqual(result, 18, "Should store the signal or chain of signal operations in a signal container")
     }
 }
