@@ -57,6 +57,9 @@
 		C9D9889F1B7B79A2004559CD /* MockObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9889E1B7B79A2004559CD /* MockObservable.swift */; };
 		C9D988A11B7B7D10004559CD /* SignalTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A01B7B7D10004559CD /* SignalTypeTests.swift */; };
 		C9D988A31B7B7D41004559CD /* MockSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A21B7B7D41004559CD /* MockSignal.swift */; };
+		C9D988A51B7BCA18004559CD /* SignalBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A41B7BCA18004559CD /* SignalBag.swift */; };
+		C9D988A61B7BCA18004559CD /* SignalBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A41B7BCA18004559CD /* SignalBag.swift */; };
+		C9D988A81B7BCA4C004559CD /* SignalBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A71B7BCA4C004559CD /* SignalBagTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -107,6 +110,8 @@
 		C9D9889E1B7B79A2004559CD /* MockObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockObservable.swift; sourceTree = "<group>"; };
 		C9D988A01B7B7D10004559CD /* SignalTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalTypeTests.swift; sourceTree = "<group>"; };
 		C9D988A21B7B7D41004559CD /* MockSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSignal.swift; sourceTree = "<group>"; };
+		C9D988A41B7BCA18004559CD /* SignalBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalBag.swift; sourceTree = "<group>"; };
+		C9D988A71B7BCA4C004559CD /* SignalBagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalBagTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -182,6 +187,7 @@
 				C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */,
 				C9D9886B1B7B1D41004559CD /* DisposableAction.swift */,
 				C9D988701B7B1F14004559CD /* SpinLock.swift */,
+				C9D988A41B7BCA18004559CD /* SignalBag.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -222,6 +228,7 @@
 				C9D988661B7B1B74004559CD /* BagTests.swift */,
 				C9D9886D1B7B1DE8004559CD /* DisposableActionTests.swift */,
 				C9D988751B7B2B20004559CD /* ObserversDispatcherTests.swift */,
+				C9D988A71B7BCA4C004559CD /* SignalBagTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -425,6 +432,7 @@
 				C9D988581B7B1788004559CD /* SignalContainerType.swift in Sources */,
 				C9D988641B7B1B2B004559CD /* Bag.swift in Sources */,
 				C9D9885C1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,
+				C9D988A51B7BCA18004559CD /* SignalBag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +473,8 @@
 				C9D988821B7B46DE004559CD /* ObservablePropertyTests.swift in Sources */,
 				C9D9886E1B7B1DE8004559CD /* DisposableActionTests.swift in Sources */,
 				C9D9889F1B7B79A2004559CD /* MockObservable.swift in Sources */,
+				C9D988A61B7BCA18004559CD /* SignalBag.swift in Sources */,
+				C9D988A81B7BCA4C004559CD /* SignalBagTests.swift in Sources */,
 				C9D988911B7B5A91004559CD /* ControlSignal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
