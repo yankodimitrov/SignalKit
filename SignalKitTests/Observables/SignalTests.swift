@@ -56,6 +56,6 @@ class SignalTests: XCTestCase {
         signal.observe(name)
         signal.observe(name)
         
-        XCTAssertEqual(disposable.isDisposeCalled, true, "Should dispose the previous observer")
+        XCTAssertEqual(disposable.isDisposeCalled, true, "Should dispose the previous observation")
     }
 }
