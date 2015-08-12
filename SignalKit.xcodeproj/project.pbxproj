@@ -33,6 +33,15 @@
 		C9D988741B7B2AD7004559CD /* ObserversDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988721B7B2AD7004559CD /* ObserversDispatcher.swift */; };
 		C9D988761B7B2B20004559CD /* ObserversDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988751B7B2B20004559CD /* ObserversDispatcherTests.swift */; };
 		C9D988781B7B334B004559CD /* MockLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988771B7B334B004559CD /* MockLock.swift */; };
+		C9D9887A1B7B3ECF004559CD /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988791B7B3ECF004559CD /* Signal.swift */; };
+		C9D9887B1B7B3ECF004559CD /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988791B7B3ECF004559CD /* Signal.swift */; };
+		C9D9887D1B7B4375004559CD /* SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9887C1B7B4375004559CD /* SignalTests.swift */; };
+		C9D9887F1B7B445F004559CD /* ObservableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9887E1B7B445F004559CD /* ObservableProperty.swift */; };
+		C9D988801B7B445F004559CD /* ObservableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9887E1B7B445F004559CD /* ObservableProperty.swift */; };
+		C9D988821B7B46DE004559CD /* ObservablePropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988811B7B46DE004559CD /* ObservablePropertyTests.swift */; };
+		C9D988831B7B486B004559CD /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988701B7B1F14004559CD /* SpinLock.swift */; };
+		C9D988851B7B4D7F004559CD /* StubObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988841B7B4D7F004559CD /* StubObservable.swift */; };
+		C9D988871B7B4DC3004559CD /* MockDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988861B7B4DC3004559CD /* MockDisposable.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +73,12 @@
 		C9D988721B7B2AD7004559CD /* ObserversDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserversDispatcher.swift; sourceTree = "<group>"; };
 		C9D988751B7B2B20004559CD /* ObserversDispatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserversDispatcherTests.swift; sourceTree = "<group>"; };
 		C9D988771B7B334B004559CD /* MockLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLock.swift; sourceTree = "<group>"; };
+		C9D988791B7B3ECF004559CD /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		C9D9887C1B7B4375004559CD /* SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalTests.swift; sourceTree = "<group>"; };
+		C9D9887E1B7B445F004559CD /* ObservableProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableProperty.swift; sourceTree = "<group>"; };
+		C9D988811B7B46DE004559CD /* ObservablePropertyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservablePropertyTests.swift; sourceTree = "<group>"; };
+		C9D988841B7B4D7F004559CD /* StubObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubObservable.swift; sourceTree = "<group>"; };
+		C9D988861B7B4DC3004559CD /* MockDisposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDisposable.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -109,6 +124,8 @@
 		C9D988301B7B0903004559CD /* Observables */ = {
 			isa = PBXGroup;
 			children = (
+				C9D988791B7B3ECF004559CD /* Signal.swift */,
+				C9D9887E1B7B445F004559CD /* ObservableProperty.swift */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -156,6 +173,8 @@
 		C9D988351B7B0950004559CD /* Observables */ = {
 			isa = PBXGroup;
 			children = (
+				C9D9887C1B7B4375004559CD /* SignalTests.swift */,
+				C9D988811B7B46DE004559CD /* ObservablePropertyTests.swift */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -175,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				C9D988771B7B334B004559CD /* MockLock.swift */,
+				C9D988841B7B4D7F004559CD /* StubObservable.swift */,
+				C9D988861B7B4DC3004559CD /* MockDisposable.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -348,9 +369,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9D988711B7B1F14004559CD /* SpinLock.swift in Sources */,
+				C9D9887A1B7B3ECF004559CD /* Signal.swift in Sources */,
 				C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */,
 				C9D988731B7B2AD7004559CD /* ObserversDispatcher.swift in Sources */,
+				C9D9887F1B7B445F004559CD /* ObservableProperty.swift in Sources */,
 				C9D988541B7B1788004559CD /* LockType.swift in Sources */,
 				C9D9885F1B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
 				C9D988561B7B1788004559CD /* Observable.swift in Sources */,
@@ -365,20 +388,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D988831B7B486B004559CD /* SpinLock.swift in Sources */,
 				C9D988761B7B2B20004559CD /* ObserversDispatcherTests.swift in Sources */,
 				C9D9885B1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886F1B7B1E52004559CD /* DisposableAction.swift in Sources */,
 				C9D988781B7B334B004559CD /* MockLock.swift in Sources */,
 				C9D988551B7B1788004559CD /* LockType.swift in Sources */,
+				C9D9887B1B7B3ECF004559CD /* Signal.swift in Sources */,
 				C9D988671B7B1B74004559CD /* BagTests.swift in Sources */,
 				C9D988621B7B1946004559CD /* IncrementalKeyGeneratorTests.swift in Sources */,
 				C9D988601B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
 				C9D988571B7B1788004559CD /* Observable.swift in Sources */,
+				C9D988851B7B4D7F004559CD /* StubObservable.swift in Sources */,
 				C9D988531B7B1788004559CD /* Disposable.swift in Sources */,
 				C9D988741B7B2AD7004559CD /* ObserversDispatcher.swift in Sources */,
 				C9D988591B7B1788004559CD /* SignalContainerType.swift in Sources */,
 				C9D988651B7B1B2B004559CD /* Bag.swift in Sources */,
+				C9D9887D1B7B4375004559CD /* SignalTests.swift in Sources */,
+				C9D988801B7B445F004559CD /* ObservableProperty.swift in Sources */,
 				C9D9885D1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,
+				C9D988871B7B4DC3004559CD /* MockDisposable.swift in Sources */,
+				C9D988821B7B46DE004559CD /* ObservablePropertyTests.swift in Sources */,
 				C9D9886E1B7B1DE8004559CD /* DisposableActionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
