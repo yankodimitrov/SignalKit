@@ -20,11 +20,11 @@ public final class NotificationSignal: NSObject, SignalType {
     }
     
     public var disposableSource: Disposable?
-    public let dispatcher: ObserversDispatcher<Item>
+    public let dispatcher: Dispatcher<Item>
     
     public init(notificationName: String, fromObject object: AnyObject? = nil, lock: LockType? = nil) {
         
-        self.dispatcher = ObserversDispatcher<Item>(dispatchRule: { _ in return { return nil }}, lock: lock)
+        self.dispatcher = Dispatcher<Item>(dispatchRule: { _ in return { return nil }}, lock: lock)
         self.notificationName = notificationName
         self.object = object
         

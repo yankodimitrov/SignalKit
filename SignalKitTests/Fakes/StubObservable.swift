@@ -11,12 +11,12 @@ import Foundation
 class StubObservable<T>: Observable {
     typealias Item = T
     
-    let dispatcher: ObserversDispatcher<Item>
+    let dispatcher: Dispatcher<Item>
     let disposable: Disposable
     
     init(disposable: Disposable) {
         
-        self.dispatcher = ObserversDispatcher<Item>()
+        self.dispatcher = Dispatcher<Item>()
         self.disposable = disposable
     }
     

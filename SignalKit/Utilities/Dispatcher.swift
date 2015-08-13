@@ -1,5 +1,5 @@
 //
-//  ObserversDispatcher.swift
+//  Dispatcher.swift
 //  SignalKit
 //
 //  Created by Yanko Dimitrov on 8/12/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class ObserversDispatcher<Item> {
+public final class Dispatcher<Item> {
     
     private let dispatchRule: Item -> () -> Item?
     private var dispatchValue: ( () -> Item? )?

@@ -11,7 +11,7 @@ import Foundation
 public protocol Observable {
     typealias Item
     
-    var dispatcher: ObserversDispatcher<Item> {get}
+    var dispatcher: Dispatcher<Item> {get}
     
     func addObserver(observer: Item -> Void) -> Disposable
     func dispatch(item: Item)

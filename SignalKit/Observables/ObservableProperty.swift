@@ -14,7 +14,7 @@ public final class ObservableProperty<T>: Observable {
     private var internalValue: Item
     private let lock: LockType
     
-    public let dispatcher: ObserversDispatcher<Item>
+    public let dispatcher: Dispatcher<Item>
     
     public var value: Item {
         get {
@@ -37,7 +37,7 @@ public final class ObservableProperty<T>: Observable {
         
         self.internalValue = value
         self.lock = lock
-        self.dispatcher = ObserversDispatcher<Item>(lock: lock)
+        self.dispatcher = Dispatcher<Item>(lock: lock)
     }
     
     public convenience init(_ value: Item) {

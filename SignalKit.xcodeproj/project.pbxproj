@@ -29,9 +29,9 @@
 		C9D9886E1B7B1DE8004559CD /* DisposableActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9886D1B7B1DE8004559CD /* DisposableActionTests.swift */; };
 		C9D9886F1B7B1E52004559CD /* DisposableAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9886B1B7B1D41004559CD /* DisposableAction.swift */; };
 		C9D988711B7B1F14004559CD /* SpinLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988701B7B1F14004559CD /* SpinLock.swift */; };
-		C9D988731B7B2AD7004559CD /* ObserversDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988721B7B2AD7004559CD /* ObserversDispatcher.swift */; };
-		C9D988741B7B2AD7004559CD /* ObserversDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988721B7B2AD7004559CD /* ObserversDispatcher.swift */; };
-		C9D988761B7B2B20004559CD /* ObserversDispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988751B7B2B20004559CD /* ObserversDispatcherTests.swift */; };
+		C9D988731B7B2AD7004559CD /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988721B7B2AD7004559CD /* Dispatcher.swift */; };
+		C9D988741B7B2AD7004559CD /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988721B7B2AD7004559CD /* Dispatcher.swift */; };
+		C9D988761B7B2B20004559CD /* DispatcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988751B7B2B20004559CD /* DispatcherTests.swift */; };
 		C9D988781B7B334B004559CD /* MockLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988771B7B334B004559CD /* MockLock.swift */; };
 		C9D9887A1B7B3ECF004559CD /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988791B7B3ECF004559CD /* Signal.swift */; };
 		C9D9887B1B7B3ECF004559CD /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988791B7B3ECF004559CD /* Signal.swift */; };
@@ -88,8 +88,8 @@
 		C9D9886B1B7B1D41004559CD /* DisposableAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableAction.swift; sourceTree = "<group>"; };
 		C9D9886D1B7B1DE8004559CD /* DisposableActionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableActionTests.swift; sourceTree = "<group>"; };
 		C9D988701B7B1F14004559CD /* SpinLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinLock.swift; sourceTree = "<group>"; };
-		C9D988721B7B2AD7004559CD /* ObserversDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserversDispatcher.swift; sourceTree = "<group>"; };
-		C9D988751B7B2B20004559CD /* ObserversDispatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObserversDispatcherTests.swift; sourceTree = "<group>"; };
+		C9D988721B7B2AD7004559CD /* Dispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
+		C9D988751B7B2B20004559CD /* DispatcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatcherTests.swift; sourceTree = "<group>"; };
 		C9D988771B7B334B004559CD /* MockLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLock.swift; sourceTree = "<group>"; };
 		C9D988791B7B3ECF004559CD /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		C9D9887C1B7B4375004559CD /* SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalTests.swift; sourceTree = "<group>"; };
@@ -183,7 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				C9D988631B7B1B2B004559CD /* Bag.swift */,
-				C9D988721B7B2AD7004559CD /* ObserversDispatcher.swift */,
+				C9D988721B7B2AD7004559CD /* Dispatcher.swift */,
 				C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */,
 				C9D9886B1B7B1D41004559CD /* DisposableAction.swift */,
 				C9D988701B7B1F14004559CD /* SpinLock.swift */,
@@ -227,7 +227,7 @@
 				C9D988611B7B1946004559CD /* IncrementalKeyGeneratorTests.swift */,
 				C9D988661B7B1B74004559CD /* BagTests.swift */,
 				C9D9886D1B7B1DE8004559CD /* DisposableActionTests.swift */,
-				C9D988751B7B2B20004559CD /* ObserversDispatcherTests.swift */,
+				C9D988751B7B2B20004559CD /* DispatcherTests.swift */,
 				C9D988A71B7BCA4C004559CD /* SignalBagTests.swift */,
 			);
 			path = Utilities;
@@ -420,7 +420,7 @@
 				C9D9887A1B7B3ECF004559CD /* Signal.swift in Sources */,
 				C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */,
-				C9D988731B7B2AD7004559CD /* ObserversDispatcher.swift in Sources */,
+				C9D988731B7B2AD7004559CD /* Dispatcher.swift in Sources */,
 				C9D9887F1B7B445F004559CD /* ObservableProperty.swift in Sources */,
 				C9D988891B7B55C0004559CD /* KVOSignal.swift in Sources */,
 				C9D988541B7B1788004559CD /* LockType.swift in Sources */,
@@ -443,7 +443,7 @@
 				C9D988831B7B486B004559CD /* SpinLock.swift in Sources */,
 				C9D9888E1B7B587A004559CD /* KVOSignalTests.swift in Sources */,
 				C9D9889B1B7B6049004559CD /* NotificationSignalTests.swift in Sources */,
-				C9D988761B7B2B20004559CD /* ObserversDispatcherTests.swift in Sources */,
+				C9D988761B7B2B20004559CD /* DispatcherTests.swift in Sources */,
 				C9D9885B1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886F1B7B1E52004559CD /* DisposableAction.swift in Sources */,
 				C9D988781B7B334B004559CD /* MockLock.swift in Sources */,
@@ -463,7 +463,7 @@
 				C9D988571B7B1788004559CD /* Observable.swift in Sources */,
 				C9D988851B7B4D7F004559CD /* StubObservable.swift in Sources */,
 				C9D988531B7B1788004559CD /* Disposable.swift in Sources */,
-				C9D988741B7B2AD7004559CD /* ObserversDispatcher.swift in Sources */,
+				C9D988741B7B2AD7004559CD /* Dispatcher.swift in Sources */,
 				C9D988591B7B1788004559CD /* SignalContainerType.swift in Sources */,
 				C9D988651B7B1B2B004559CD /* Bag.swift in Sources */,
 				C9D9887D1B7B4375004559CD /* SignalTests.swift in Sources */,

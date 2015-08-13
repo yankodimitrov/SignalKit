@@ -18,13 +18,13 @@ public final class KVOSignal<T>: NSObject, SignalType {
     private var isDisposed = false
     
     public var disposableSource: Disposable?
-    public let dispatcher: ObserversDispatcher<Item>
+    public let dispatcher: Dispatcher<Item>
     
     public init(subject: NSObject, keyPath: String, lock: LockType? = nil) {
         
         self.subject = subject
         self.keyPath = keyPath
-        self.dispatcher = ObserversDispatcher<Item>(lock: lock)
+        self.dispatcher = Dispatcher<Item>(lock: lock)
         
         super.init()
         

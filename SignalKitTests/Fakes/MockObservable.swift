@@ -11,10 +11,10 @@ import Foundation
 class MockObservable<T>: Observable {
     typealias Item = T
     
-    let dispatcher: ObserversDispatcher<Item>
+    let dispatcher: Dispatcher<Item>
     
     init() {
         
-        self.dispatcher = ObserversDispatcher<Item>()
+        self.dispatcher = Dispatcher<Item>()
     }
 }

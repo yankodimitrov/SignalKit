@@ -14,11 +14,11 @@ public final class Signal<T>: SignalType {
     private var observer: Disposable?
     
     public var disposableSource: Disposable?
-    public let dispatcher: ObserversDispatcher<Item>
+    public let dispatcher: Dispatcher<Item>
     
     public init(lock: LockType? = nil) {
         
-        dispatcher = ObserversDispatcher<Item>(lock: lock)
+        dispatcher = Dispatcher<Item>(lock: lock)
     }
     
     deinit {

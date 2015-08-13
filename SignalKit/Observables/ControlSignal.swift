@@ -16,11 +16,11 @@ public final class ControlSignal<T: UIControl>: NSObject, SignalType {
     private var isDisposed = false
     
     public var disposableSource: Disposable?
-    public let dispatcher: ObserversDispatcher<Item>
+    public let dispatcher: Dispatcher<Item>
     
     public init(control: T, events: UIControlEvents, lock: LockType? = nil) {
         
-        self.dispatcher = ObserversDispatcher<Item>(lock: lock)
+        self.dispatcher = Dispatcher<Item>(lock: lock)
         self.control = control
         self.events = events
         

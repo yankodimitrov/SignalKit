@@ -1,5 +1,5 @@
 //
-//  ObserversDispatcherTests.swift
+//  DispatcherTests.swift
 //  SignalKit
 //
 //  Created by Yanko Dimitrov on 8/12/15.
@@ -8,14 +8,14 @@
 
 import XCTest
 
-class ObserversDispatcherTests: XCTestCase {
+class DispatcherTests: XCTestCase {
     
-    var dispatcher: ObserversDispatcher<Int>!
+    var dispatcher: Dispatcher<Int>!
     
     override func setUp() {
         super.setUp()
         
-        dispatcher = ObserversDispatcher<Int>()
+        dispatcher = Dispatcher<Int>()
     }
     
     func testAddObserver() {
@@ -96,7 +96,7 @@ class ObserversDispatcherTests: XCTestCase {
     
     func testCustomDispatchRule() {
         
-        let dispatcher = ObserversDispatcher<Int>(dispatchRule: { v in { return nil }})
+        let dispatcher = Dispatcher<Int>(dispatchRule: { v in { return nil }})
         
         dispatcher.dispatch(7)
         
@@ -110,7 +110,7 @@ class ObserversDispatcherTests: XCTestCase {
     func testAtomicAddObserver() {
         
         let lock = MockLock()
-        let dispatcher = ObserversDispatcher<Int>(lock: lock)
+        let dispatcher = Dispatcher<Int>(lock: lock)
         
         dispatcher.addObserver { v in }
         
@@ -122,7 +122,7 @@ class ObserversDispatcherTests: XCTestCase {
     func testAtomicDisposeObserver() {
         
         let lock = MockLock()
-        let dispatcher = ObserversDispatcher<Int>(lock: lock)
+        let dispatcher = Dispatcher<Int>(lock: lock)
         
         let disposable = dispatcher.addObserver { v in }
         
@@ -136,7 +136,7 @@ class ObserversDispatcherTests: XCTestCase {
     func testAtomicDispatch() {
         
         let lock = MockLock()
-        let dispatcher = ObserversDispatcher<Int>(lock: lock)
+        let dispatcher = Dispatcher<Int>(lock: lock)
         
         dispatcher.dispatch(123)
         
@@ -148,7 +148,7 @@ class ObserversDispatcherTests: XCTestCase {
     func testAtmoicRemoveObservers() {
         
         let lock = MockLock()
-        let dispatcher = ObserversDispatcher<Int>(lock: lock)
+        let dispatcher = Dispatcher<Int>(lock: lock)
         
         dispatcher.removeObservers()
         
