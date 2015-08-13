@@ -99,7 +99,7 @@ public extension SignalType {
         Store a signal or a chain of signal operations in a container
     
     */
-    func addTo(container: SignalContainerType) -> Disposable {
+    public func addTo(container: SignalContainerType) -> Disposable {
         
         return container.addSignal(self)
     }
