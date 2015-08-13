@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */; };
+		C98CE7951B7CC5C90035CF1E /* SignalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */; };
+		C98CE7971B7CCF350035CF1E /* SignalSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */; };
 		C9D988521B7B1788004559CD /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884C1B7B1788004559CD /* Disposable.swift */; };
 		C9D988531B7B1788004559CD /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884C1B7B1788004559CD /* Disposable.swift */; };
 		C9D988541B7B1788004559CD /* LockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884D1B7B1788004559CD /* LockType.swift */; };
@@ -75,6 +78,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalScheduler.swift; sourceTree = "<group>"; };
+		C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalSchedulerTests.swift; sourceTree = "<group>"; };
 		C9D9884C1B7B1788004559CD /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		C9D9884D1B7B1788004559CD /* LockType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockType.swift; sourceTree = "<group>"; };
 		C9D9884E1B7B1788004559CD /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -186,6 +191,7 @@
 				C9D988721B7B2AD7004559CD /* Dispatcher.swift */,
 				C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */,
 				C9D9886B1B7B1D41004559CD /* DisposableAction.swift */,
+				C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */,
 				C9D988701B7B1F14004559CD /* SpinLock.swift */,
 				C9D988A41B7BCA18004559CD /* SignalBag.swift */,
 			);
@@ -229,6 +235,7 @@
 				C9D9886D1B7B1DE8004559CD /* DisposableActionTests.swift */,
 				C9D988751B7B2B20004559CD /* DispatcherTests.swift */,
 				C9D988A71B7BCA4C004559CD /* SignalBagTests.swift */,
+				C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -433,6 +440,7 @@
 				C9D988641B7B1B2B004559CD /* Bag.swift in Sources */,
 				C9D9885C1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,
 				C9D988A51B7BCA18004559CD /* SignalBag.swift in Sources */,
+				C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,9 +465,11 @@
 				C9D9887B1B7B3ECF004559CD /* Signal.swift in Sources */,
 				C9D9889D1B7B7982004559CD /* ObservableTests.swift in Sources */,
 				C9D988671B7B1B74004559CD /* BagTests.swift in Sources */,
+				C98CE7951B7CC5C90035CF1E /* SignalScheduler.swift in Sources */,
 				C9D988621B7B1946004559CD /* IncrementalKeyGeneratorTests.swift in Sources */,
 				C9D988601B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
 				C9D988A11B7B7D10004559CD /* SignalTypeTests.swift in Sources */,
+				C98CE7971B7CCF350035CF1E /* SignalSchedulerTests.swift in Sources */,
 				C9D988571B7B1788004559CD /* Observable.swift in Sources */,
 				C9D988851B7B4D7F004559CD /* StubObservable.swift in Sources */,
 				C9D988531B7B1788004559CD /* Disposable.swift in Sources */,
