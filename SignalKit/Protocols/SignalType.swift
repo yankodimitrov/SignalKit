@@ -96,6 +96,27 @@ public extension SignalType {
     }
     
     /**
+        Deliver the signal on the given queue
+    
+    */
+    public func deliverOn(scheduler: SignalScheduler) -> Signal<Item> {
+        
+        let signal = Signal<Item>()
+        
+        addObserver { [weak signal] value in
+            
+            scheduler.dispatchAsync {
+                
+                signal?.dispatch(value)
+            }
+        }
+        
+        signal.disposableSource = self
+        
+        return signal
+    }
+    
+    /**
         Store a signal or a chain of signal operations in a container
     
     */

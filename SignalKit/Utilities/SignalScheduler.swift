@@ -54,12 +54,12 @@ public enum SignalScheduler {
         return queue
     }
     
-    func dispatchAsync(block: () -> Void) {
+    func dispatchAsync(block: dispatch_block_t) {
         
         dispatch_async(queue, block)
     }
     
-    func delayAfter(seconds: Double, block: () -> Void) {
+    func delayAfter(seconds: Double, block: dispatch_block_t) {
         
         let when = dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * Double(NSEC_PER_SEC)))
         

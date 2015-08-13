@@ -82,4 +82,24 @@ class SignalTypeTests: XCTestCase {
         
         XCTAssertEqual(result, 18, "Should store the signal or chain of signal operations in a signal container")
     }
+    
+    func testDeliverOn() {
+        
+        let expectation = expectationWithDescription("Should deliver on a background queue")
+        
+        signal
+            .deliverOn(.UserInitiatedQueue)
+            .next { v in
+                
+                if !NSThread.isMainThread() {
+                    
+                    expectation.fulfill()
+                }
+            }
+            .addTo(signalsBag)
+        
+        signal.dispatch(10)
+        
+        waitForExpectationsWithTimeout(0.1, handler: nil)
+    }
 }
