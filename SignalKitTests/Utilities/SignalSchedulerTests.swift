@@ -23,7 +23,7 @@ class SignalSchedulerTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.5, handler: nil)
+        waitForExpectationsWithTimeout(0.1, handler: nil)
     }
     
     func testDispatchOnUserInteractiveQueue() {
@@ -40,7 +40,7 @@ class SignalSchedulerTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.5, handler: nil)
+        waitForExpectationsWithTimeout(0.1, handler: nil)
     }
     
     func testDispatchOnUserInitiatedQueue() {
@@ -57,7 +57,7 @@ class SignalSchedulerTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.5, handler: nil)
+        waitForExpectationsWithTimeout(0.1, handler: nil)
     }
     
     func testDispatchOnUtilityQueue() {
@@ -74,7 +74,7 @@ class SignalSchedulerTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.5, handler: nil)
+        waitForExpectationsWithTimeout(0.1, handler: nil)
     }
     
     func testDispatchOnBackgroundQueue() {
@@ -91,7 +91,7 @@ class SignalSchedulerTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.5, handler: nil)
+        waitForExpectationsWithTimeout(0.1, handler: nil)
     }
     
     func testDispatchOnCustomQueue() {
@@ -108,7 +108,7 @@ class SignalSchedulerTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.5, handler: nil)
+        waitForExpectationsWithTimeout(0.1, handler: nil)
     }
     
     func testDelay() {
@@ -116,11 +116,11 @@ class SignalSchedulerTests: XCTestCase {
         let expectation = expectationWithDescription("Should dispatch an action with delay")
         let scheduler = SignalScheduler.MainQueue
         
-        scheduler.delayAfter(0.5) {
+        scheduler.delayAfter(0.1) {
             
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(0.5, handler: nil)
+        waitForExpectationsWithTimeout(0.1, handler: nil)
     }
 }
