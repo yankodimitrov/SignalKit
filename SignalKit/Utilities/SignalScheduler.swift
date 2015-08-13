@@ -8,6 +8,15 @@
 
 import Foundation
 
+private struct SignalQueue {
+    
+    static let mainQueue = dispatch_get_main_queue()
+    static let highQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+    static let defaultQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+    static let utilityQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)
+    static let backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
+}
+
 public enum SignalScheduler {
     
     case MainQueue
@@ -24,19 +33,19 @@ public enum SignalScheduler {
         switch self {
         
         case .MainQueue:
-            queue = dispatch_get_main_queue()
+            queue = SignalQueue.mainQueue
         
         case .UserInteractiveQueue:
-            queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+            queue = SignalQueue.highQueue
         
         case .UserInitiatedQueue:
-            queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+            queue = SignalQueue.defaultQueue
         
         case .UtilityQueue:
-            queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)
+            queue = SignalQueue.utilityQueue
         
         case .BackgroundQueue:
-            queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
+            queue = SignalQueue.backgroundQueue
         
         case .CustomQueue(let customQueue):
             queue = customQueue
