@@ -65,4 +65,23 @@ public struct SignalScheduler {
         
         dispatch_after(when, queue, block)
     }
+    
+    var debounceAction: (() -> Void)? = nil
+    
+    mutating func debounce(seconds: Double, block: dispatch_block_t) {
+        
+        debounceAction?()
+        
+        var cancelled = false
+        
+        delayAfter(seconds) {
+            
+            if !cancelled {
+                
+                block()
+            }
+        }
+        
+        debounceAction = { cancelled = true }
+    }
 }
