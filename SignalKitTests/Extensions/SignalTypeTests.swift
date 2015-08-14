@@ -152,4 +152,71 @@ class SignalTypeTests: XCTestCase {
         
         waitForExpectationsWithTimeout(0.2, handler: nil)
     }
+    
+    func testCombineLatestWith() {
+        
+        let signalA = MockSignal<Int>()
+        let signalB = MockSignal<Int>()
+        
+        var result = (0, 0)
+        
+        signalA.combineLatestWith(signalB)
+            .next { result = $0 }
+            .addTo(signalsBag)
+        
+        signalA.dispatch(4)
+        signalA.dispatch(1)
+        
+        signalB.dispatch(11)
+        
+        XCTAssertEqual(result.0, 1, "Should contain the latest value from signalA")
+        XCTAssertEqual(result.1, 11, "Should contain the latest value from signalB")
+    }
+    
+    func testCombineTwoLatestSignals() {
+        
+        let signalA = MockSignal<Int>()
+        let signalB = MockSignal<Int>()
+        
+        var result = (0, 0)
+        
+        combineLatest(signalA, signalB)
+            .next { result = $0 }
+            .addTo(signalsBag)
+        
+        signalA.dispatch(1)
+        signalA.dispatch(2)
+        
+        signalB.dispatch(11)
+        signalB.dispatch(22)
+        signalB.dispatch(33)
+        
+        XCTAssertEqual(result.0, 2, "Should contain the latest value from signalA")
+        XCTAssertEqual(result.1, 33, "Should contain the latest value from signalB")
+    }
+    
+    func testCombineThreeLatestSignals() {
+        
+        let signalA = MockSignal<Int>()
+        let signalB = MockSignal<Int>()
+        let signalC = MockSignal<Int>()
+        
+        var result = (0, 0, 0)
+        
+        combineLatest(signalA, signalB, signalC)
+            .next { result = $0 }
+            .addTo(signalsBag)
+        
+        signalA.dispatch(1)
+        signalA.dispatch(2)
+        
+        signalB.dispatch(11)
+        
+        signalC.dispatch(111)
+        signalC.dispatch(222)
+        
+        XCTAssertEqual(result.0, 2, "Should contain the latest value from signalA")
+        XCTAssertEqual(result.1, 11, "Should contain the latest value from signalB")
+        XCTAssertEqual(result.2, 222, "Should contain the latest value from signalC")
+    }
 }

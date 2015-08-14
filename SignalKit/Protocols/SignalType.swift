@@ -174,4 +174,45 @@ public extension SignalType {
         
         return container.addSignal(self)
     }
+    
+    /**
+        Combine the latest values of the current signal A and
+        another signal B in a signal of type (A, B)
+    
+    */
+    public func combineLatestWith<T: SignalType>(signal: T) -> Signal<(Item, T.Item)> {
+        
+        let compoundSignal = Signal<(Item, T.Item)>()
+        
+        let observer = CompoundObserver(observableA: self, observableB: signal) {
+            [weak compoundSignal] in
+            
+            compoundSignal?.dispatch($0)
+        }
+        
+        compoundSignal.disposableSource = observer
+        
+        return compoundSignal
+    }
+}
+
+// MARK: - Combine Latest
+
+/**
+    Combine the latest values of the current signal A and
+    another signal B in a signal of type (A, B)
+
+*/
+public func combineLatest<A: SignalType, B: SignalType>(a: A, _ b: B) -> Signal<(A.Item, B.Item)> {
+    
+    return a.combineLatestWith(b)
+}
+
+/**
+    Combine the latest values of three signals A, B and C in a signal of type (A, B, C)
+
+*/
+public func combineLatest<A: SignalType, B: SignalType, C: SignalType>(a: A, _ b: B, _ c: C) -> Signal<(A.Item, B.Item, C.Item)> {
+    
+    return combineLatest( combineLatest(a, b), c).map { ($0.0.0, $0.0.1, $0.1) }
 }
