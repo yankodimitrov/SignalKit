@@ -21,7 +21,7 @@ public extension SignalType {
     }
     
     /**
-        Add a new observer to a signal to perform a side effect
+        Adds a new observer to a signal to perform a side effect
     
     */
     public func next(observer: Item -> Void) -> Self {
@@ -32,7 +32,7 @@ public extension SignalType {
     }
     
     /**
-        Transform a signal ot type Item to a signal of type U
+        Transforms a signal ot type Item to a signal of type U
     
     */
     public func map<U>(transform: Item -> U) -> Signal<U> {
@@ -50,7 +50,7 @@ public extension SignalType {
     }
     
     /**
-        Filter the dispatched by the signal values using a predicate
+        Filters the dispatched by the signal values using a predicate
     
     */
     public func filter(predicate: Item -> Bool) -> Signal<Item> {
@@ -71,7 +71,7 @@ public extension SignalType {
     }
     
     /**
-        Skip a certain number of dispatched by the signal values
+        Skips a certain number of dispatched by the signal values
     
     */
     public func skip(var count: Int) -> Signal<Item> {
@@ -96,7 +96,7 @@ public extension SignalType {
     }
     
     /**
-        Deliver the signal using on a signal scheduler queue
+        Delivers the signal on a given queue
     
     */
     public func deliverOn(queue: SignalScheduler.Queue) -> Signal<Item> {
@@ -118,7 +118,30 @@ public extension SignalType {
     }
     
     /**
-        Store a signal or a chain of signal operations in a container
+        Sends only the latest values that are not followed by
+        another values within the specified duration
+    
+    */
+    public func debounce(seconds: Double, queue: SignalScheduler.Queue = .MainQueue) -> Signal<Item> {
+        
+        let signal = Signal<Item>()
+        var scheduler = SignalScheduler(queue: queue)
+        
+        addObserver { [weak signal] value in
+            
+            scheduler.debounce(seconds) {
+                
+                signal?.dispatch(value)
+            }
+        }
+        
+        signal.disposableSource = self
+        
+        return signal
+    }
+    
+    /**
+        Stores a signal or a chain of signal operations in a container
     
     */
     public func addTo(container: SignalContainerType) -> Disposable {

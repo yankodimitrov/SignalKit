@@ -49,6 +49,8 @@ public struct SignalScheduler {
     
     let queue: dispatch_queue_t
     
+    private var debounceAction: (() -> Void)? = nil
+    
     public init(queue: Queue) {
         
         self.queue = queue.dispatchQueue
@@ -65,8 +67,6 @@ public struct SignalScheduler {
         
         dispatch_after(when, queue, block)
     }
-    
-    var debounceAction: (() -> Void)? = nil
     
     mutating func debounce(seconds: Double, block: dispatch_block_t) {
         
