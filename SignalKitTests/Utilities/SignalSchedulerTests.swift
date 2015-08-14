@@ -116,7 +116,7 @@ class SignalSchedulerTests: XCTestCase {
         let expectation = expectationWithDescription("Should dispatch an action with delay")
         let scheduler = SignalScheduler(queue: .MainQueue)
         
-        scheduler.delayAfter(0.1) {
+        scheduler.delay(0.1) {
             
             expectation.fulfill()
         }
@@ -134,7 +134,7 @@ class SignalSchedulerTests: XCTestCase {
         scheduler.debounce(0.1) { result = 2 }
         scheduler.debounce(0.1) { result = 3 }
         
-        scheduler.delayAfter(0.1) {
+        scheduler.delay(0.1) {
             
             if result == 3 {
                 

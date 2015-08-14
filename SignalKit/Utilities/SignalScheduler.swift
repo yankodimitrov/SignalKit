@@ -59,7 +59,7 @@ public struct SignalScheduler {
         dispatch_async(queue, block)
     }
     
-    func delayAfter(seconds: Double, block: dispatch_block_t) {
+    func delay(seconds: Double, block: dispatch_block_t) {
         
         let when = dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * Double(NSEC_PER_SEC)))
         
@@ -74,7 +74,7 @@ public struct SignalScheduler {
         
         var cancelled = false
         
-        delayAfter(seconds) {
+        delay(seconds) {
             
             if !cancelled {
                 
