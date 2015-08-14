@@ -13,7 +13,7 @@ class SignalSchedulerTests: XCTestCase {
     func testDispatchOnMainQueue() {
     
         let expectation = expectationWithDescription("Should dispatch on main queue")
-        let scheduler = SignalScheduler.MainQueue
+        let scheduler = SignalScheduler(queue: .MainQueue)
         
         scheduler.dispatchAsync {
             
@@ -28,9 +28,9 @@ class SignalSchedulerTests: XCTestCase {
     
     func testDispatchOnUserInteractiveQueue() {
         
-        let interactiveQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
+        let interactiveQueue = dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)
         let expectation = expectationWithDescription("Should dispatch on user interactive queue")
-        let scheduler = SignalScheduler.UserInteractiveQueue
+        let scheduler = SignalScheduler(queue: .UserInteractiveQueue)
         
         scheduler.dispatchAsync {
             
@@ -45,9 +45,9 @@ class SignalSchedulerTests: XCTestCase {
     
     func testDispatchOnUserInitiatedQueue() {
         
-        let initiatedQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+        let initiatedQueue = dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)
         let expectation = expectationWithDescription("Should dispatch on user initiated queue")
-        let scheduler = SignalScheduler.UserInitiatedQueue
+        let scheduler = SignalScheduler(queue: .UserInitiatedQueue)
         
         scheduler.dispatchAsync {
             
@@ -62,9 +62,9 @@ class SignalSchedulerTests: XCTestCase {
     
     func testDispatchOnUtilityQueue() {
         
-        let utilityQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)
+        let utilityQueue = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)
         let expectation = expectationWithDescription("Should dispatch on utility queue")
-        let scheduler = SignalScheduler.UtilityQueue
+        let scheduler = SignalScheduler(queue: .UtilityQueue)
         
         scheduler.dispatchAsync {
             
@@ -79,9 +79,9 @@ class SignalSchedulerTests: XCTestCase {
     
     func testDispatchOnBackgroundQueue() {
         
-        let backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
+        let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
         let expectation = expectationWithDescription("Should dispatch on background queue")
-        let scheduler = SignalScheduler.BackgroundQueue
+        let scheduler = SignalScheduler(queue: .BackgroundQueue)
         
         scheduler.dispatchAsync {
             
@@ -98,7 +98,7 @@ class SignalSchedulerTests: XCTestCase {
         
         let customQueue = dispatch_queue_create("signal.kit.tests.queue", DISPATCH_QUEUE_CONCURRENT)
         let expectation = expectationWithDescription("Should dispatch on custom queue")
-        let scheduler = SignalScheduler.CustomQueue(customQueue)
+        let scheduler = SignalScheduler(queue: .CustomQueue(customQueue))
         
         scheduler.dispatchAsync {
             
@@ -114,7 +114,7 @@ class SignalSchedulerTests: XCTestCase {
     func testDelay() {
         
         let expectation = expectationWithDescription("Should dispatch an action with delay")
-        let scheduler = SignalScheduler.MainQueue
+        let scheduler = SignalScheduler(queue: .MainQueue)
         
         scheduler.delayAfter(0.1) {
             

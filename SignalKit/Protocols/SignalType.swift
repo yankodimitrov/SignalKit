@@ -96,12 +96,13 @@ public extension SignalType {
     }
     
     /**
-        Deliver the signal on the given queue
+        Deliver the signal using on a signal scheduler queue
     
     */
-    public func deliverOn(scheduler: SignalScheduler) -> Signal<Item> {
+    public func deliverOn(queue: SignalScheduler.Queue) -> Signal<Item> {
         
         let signal = Signal<Item>()
+        let scheduler = SignalScheduler(queue: queue)
         
         addObserver { [weak signal] value in
             

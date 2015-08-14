@@ -8,50 +8,50 @@
 
 import Foundation
 
-private struct SignalQueue {
+public struct SignalScheduler {
     
-    static let mainQueue = dispatch_get_main_queue()
-    static let highQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)
-    static let defaultQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
-    static let utilityQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)
-    static let backgroundQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)
-}
-
-public enum SignalScheduler {
-    
-    case MainQueue
-    case UserInteractiveQueue
-    case UserInitiatedQueue
-    case UtilityQueue
-    case BackgroundQueue
-    case CustomQueue(dispatch_queue_t)
-    
-    var queue: dispatch_queue_t {
+    public enum Queue {
+        case MainQueue
+        case UserInteractiveQueue
+        case UserInitiatedQueue
+        case UtilityQueue
+        case BackgroundQueue
+        case CustomQueue(dispatch_queue_t)
         
-        let queue: dispatch_queue_t
-        
-        switch self {
-        
-        case .MainQueue:
-            queue = SignalQueue.mainQueue
-        
-        case .UserInteractiveQueue:
-            queue = SignalQueue.highQueue
-        
-        case .UserInitiatedQueue:
-            queue = SignalQueue.defaultQueue
-        
-        case .UtilityQueue:
-            queue = SignalQueue.utilityQueue
-        
-        case .BackgroundQueue:
-            queue = SignalQueue.backgroundQueue
-        
-        case .CustomQueue(let customQueue):
-            queue = customQueue
+        var dispatchQueue: dispatch_queue_t {
+            
+            let queue: dispatch_queue_t
+            
+            switch self {
+                
+            case .MainQueue:
+                queue = dispatch_get_main_queue()
+                
+            case .UserInteractiveQueue:
+                queue = dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)
+                
+            case .UserInitiatedQueue:
+                queue = dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)
+                
+            case .UtilityQueue:
+                queue = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)
+                
+            case .BackgroundQueue:
+                queue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+                
+            case .CustomQueue(let customQueue):
+                queue = customQueue
+            }
+            
+            return queue
         }
+    }
+    
+    let queue: dispatch_queue_t
+    
+    public init(queue: Queue) {
         
-        return queue
+        self.queue = queue.dispatchQueue
     }
     
     func dispatchAsync(block: dispatch_block_t) {
