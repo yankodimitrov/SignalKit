@@ -128,4 +128,28 @@ class SignalTypeTests: XCTestCase {
         
         waitForExpectationsWithTimeout(0.1, handler: nil)
     }
+    
+    func testDelay() {
+        
+        let expectation = expectationWithDescription("Should delay the dispatch of the signal")
+        let scheduler = SignalScheduler(queue: .MainQueue)
+        var result = 0
+        
+        signal
+            .delay(0.1)
+            .next { result = $0 }
+            .addTo(signalsBag)
+        
+        scheduler.delay(0.2) {
+            
+            if result == 55 {
+                
+                expectation.fulfill()
+            }
+        }
+        
+        signal.dispatch(55)
+        
+        waitForExpectationsWithTimeout(0.2, handler: nil)
+    }
 }

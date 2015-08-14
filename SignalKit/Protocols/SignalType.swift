@@ -141,6 +141,28 @@ public extension SignalType {
     }
     
     /**
+        Delays the dispatch of the signal
+    
+    */
+    public func delay(seconds: Double, queue: SignalScheduler.Queue = .MainQueue) -> Signal<Item> {
+        
+        let signal = Signal<Item>()
+        let scheduler = SignalScheduler(queue: queue)
+        
+        addObserver { [weak signal] value in
+            
+            scheduler.delay(seconds) {
+                
+                signal?.dispatch(value)
+            }
+        }
+
+        signal.disposableSource = self
+        
+        return signal
+    }
+    
+    /**
         Stores a signal or a chain of signal operations in a container
     
     */
