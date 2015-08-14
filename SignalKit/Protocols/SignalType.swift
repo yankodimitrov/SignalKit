@@ -15,6 +15,10 @@ public protocol SignalType: class, Observable, Disposable {
 
 public extension SignalType {
     
+    /**
+        Dispose the chain of signal operations
+    
+    */
     public func dispose() {
         
         disposableSource?.dispose()

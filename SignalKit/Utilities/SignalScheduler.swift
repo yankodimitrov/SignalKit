@@ -47,9 +47,8 @@ public struct SignalScheduler {
         }
     }
     
-    let queue: dispatch_queue_t
-    
     private var debounceAction: (() -> Void)? = nil
+    internal let queue: dispatch_queue_t
     
     public init(queue: Queue) {
         

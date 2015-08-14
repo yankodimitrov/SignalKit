@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class SpinLock: LockType {
+internal final class SpinLock: LockType {
     
     private lazy var spinlock = OS_SPINLOCK_INIT
     
