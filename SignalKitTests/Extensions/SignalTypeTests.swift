@@ -279,4 +279,24 @@ class SignalTypeTests: XCTestCase {
         
         XCTAssertEqual(result, correct, "Should dispatch true only when all values are equal to true")
     }
+    
+    func testSomeForTupleWithThreeBooleans() {
+        
+        let correct = [false, true, true, true]
+        var result = [Bool]()
+        
+        let signal = MockSignal<(Bool, Bool, Bool)>()
+        
+        signal
+            .some { $0 == true }
+            .next { result.append($0) }
+            .addTo(signalsBag)
+        
+        signal.dispatch((false, false, false))
+        signal.dispatch((true, false, false))
+        signal.dispatch((false, true, false))
+        signal.dispatch((true, true, true))
+        
+        XCTAssertEqual(result, correct, "Should dispatch true when some of the values are equal to true")
+    }
 }

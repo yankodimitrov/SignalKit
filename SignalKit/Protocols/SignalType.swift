@@ -234,6 +234,16 @@ public extension SignalType where Item == (Bool, Bool, Bool) {
         
         return self.map { predicate($0.0) && predicate($0.1) && predicate($0.2) }
     }
+    
+    /**
+        Sends true if at least one value in a signal of tuple type (Bool, Bool, Bool)
+        matches the predicate function
+    
+    */
+    public func some(predicate: Bool -> Bool) -> Signal<Bool> {
+        
+        return self.map { predicate($0.0) || predicate($0.1) || predicate($0.2) }
+    }
 }
 
 // MARK: - Combine Latest
