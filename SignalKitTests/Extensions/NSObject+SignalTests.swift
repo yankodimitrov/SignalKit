@@ -24,8 +24,7 @@ class NSObject_SignalTests: XCTestCase {
         
         var result = ""
         
-        person.observe()
-            .keyPath("name", value: "")
+        person.observe(keyPath: "name", value: "")
             .next { result = $0 }
             .addTo(signalsBag)
         
@@ -38,8 +37,7 @@ class NSObject_SignalTests: XCTestCase {
         
         var result = ""
         
-        person.observe()
-            .keyPath("name", value: "Jack")
+        person.observe(keyPath: "name", value: "Jack")
             .next { result = $0 }
             .addTo(signalsBag)
         
