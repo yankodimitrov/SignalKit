@@ -11,6 +11,9 @@
 		C92948EB1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */; };
 		C92948ED1B7F759200BCBC7C /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948EC1B7F759100BCBC7C /* SignalEvent.swift */; };
 		C92948EE1B7F759200BCBC7C /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948EC1B7F759100BCBC7C /* SignalEvent.swift */; };
+		C92948F21B7F794000BCBC7C /* NSObject+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948F11B7F794000BCBC7C /* NSObject+Signal.swift */; };
+		C92948F31B7F794000BCBC7C /* NSObject+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948F11B7F794000BCBC7C /* NSObject+Signal.swift */; };
+		C92948F51B7F841600BCBC7C /* NSObject+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948F41B7F841600BCBC7C /* NSObject+SignalTests.swift */; };
 		C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */; };
 		C98CE7951B7CC5C90035CF1E /* SignalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */; };
 		C98CE7971B7CCF350035CF1E /* SignalSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */; };
@@ -87,6 +90,8 @@
 /* Begin PBXFileReference section */
 		C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEventType.swift; sourceTree = "<group>"; };
 		C92948EC1B7F759100BCBC7C /* SignalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvent.swift; sourceTree = "<group>"; };
+		C92948F11B7F794000BCBC7C /* NSObject+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Signal.swift"; sourceTree = "<group>"; };
+		C92948F41B7F841600BCBC7C /* NSObject+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+SignalTests.swift"; sourceTree = "<group>"; };
 		C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalScheduler.swift; sourceTree = "<group>"; };
 		C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalSchedulerTests.swift; sourceTree = "<group>"; };
 		C98CE79B1B7E2AA70035CF1E /* CompoundObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundObserver.swift; sourceTree = "<group>"; };
@@ -159,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				C9D9882F1B7B0903004559CD /* UIKit */,
+				C92948F11B7F794000BCBC7C /* NSObject+Signal.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +224,7 @@
 				C9D988341B7B0950004559CD /* UIKit */,
 				C9D9889C1B7B7982004559CD /* ObservableTests.swift */,
 				C9D988A01B7B7D10004559CD /* SignalTypeTests.swift */,
+				C92948F41B7F841600BCBC7C /* NSObject+SignalTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -457,6 +464,7 @@
 				C9D988581B7B1788004559CD /* SignalContainerType.swift in Sources */,
 				C9D988641B7B1B2B004559CD /* Bag.swift in Sources */,
 				C9D9885C1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,
+				C92948F21B7F794000BCBC7C /* NSObject+Signal.swift in Sources */,
 				C9D988A51B7BCA18004559CD /* SignalBag.swift in Sources */,
 				C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */,
 			);
@@ -483,6 +491,7 @@
 				C9D988551B7B1788004559CD /* LockType.swift in Sources */,
 				C9D988991B7B5ECB004559CD /* NotificationSignal.swift in Sources */,
 				C9D9887B1B7B3ECF004559CD /* Signal.swift in Sources */,
+				C92948F51B7F841600BCBC7C /* NSObject+SignalTests.swift in Sources */,
 				C9D9889D1B7B7982004559CD /* ObservableTests.swift in Sources */,
 				C9D988671B7B1B74004559CD /* BagTests.swift in Sources */,
 				C98CE7951B7CC5C90035CF1E /* SignalScheduler.swift in Sources */,
@@ -503,6 +512,7 @@
 				C9D988871B7B4DC3004559CD /* MockDisposable.swift in Sources */,
 				C9D988821B7B46DE004559CD /* ObservablePropertyTests.swift in Sources */,
 				C98CE79D1B7E2AA70035CF1E /* CompoundObserver.swift in Sources */,
+				C92948F31B7F794000BCBC7C /* NSObject+Signal.swift in Sources */,
 				C9D9886E1B7B1DE8004559CD /* DisposableActionTests.swift in Sources */,
 				C9D9889F1B7B79A2004559CD /* MockObservable.swift in Sources */,
 				C9D988A61B7BCA18004559CD /* SignalBag.swift in Sources */,
