@@ -237,7 +237,7 @@ class SignalTypeTests: XCTestCase {
         signal.dispatch((true, false))
         signal.dispatch((true, true))
         
-        XCTAssertEqual(result, correct, "Should return true only when both values are equal to true")
+        XCTAssertEqual(result, correct, "Should dispatch true only when all values are equal to true")
     }
     
     func testSomeForTupleWithTwoBooleans() {
@@ -257,6 +257,26 @@ class SignalTypeTests: XCTestCase {
         signal.dispatch((true, false))
         signal.dispatch((true, true))
         
-        XCTAssertEqual(result, correct, "Should return true when some of the values are equal to true")
+        XCTAssertEqual(result, correct, "Should dispatch true when some of the values are equal to true")
+    }
+    
+    func testAllForTupleWithThreeBooleans() {
+        
+        let correct = [false, false, false, true]
+        var result = [Bool]()
+        
+        let signal = MockSignal<(Bool, Bool, Bool)>()
+        
+        signal
+            .all { $0 == true }
+            .next { result.append($0) }
+            .addTo(signalsBag)
+        
+        signal.dispatch((false, false, false))
+        signal.dispatch((true, false, false))
+        signal.dispatch((false, true, false))
+        signal.dispatch((true, true, true))
+        
+        XCTAssertEqual(result, correct, "Should dispatch true only when all values are equal to true")
     }
 }

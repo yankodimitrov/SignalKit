@@ -221,6 +221,21 @@ public extension SignalType where Item == (Bool, Bool) {
     }
 }
 
+// MARK: - SignalType (Bool, Bool, Bool)
+
+public extension SignalType where Item == (Bool, Bool, Bool) {
+    
+    /**
+        Sends true if all values in a signal of tuple type (Bool, Bool, Bool)
+        are matching the predicate function
+    
+    */
+    public func all(predicate: Bool -> Bool) -> Signal<Bool> {
+        
+        return self.map { predicate($0.0) && predicate($0.1) && predicate($0.2) }
+    }
+}
+
 // MARK: - Combine Latest
 
 /**
