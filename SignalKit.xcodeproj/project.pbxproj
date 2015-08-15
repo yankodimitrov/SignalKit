@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C92948EA1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */; };
+		C92948EB1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */; };
 		C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */; };
 		C98CE7951B7CC5C90035CF1E /* SignalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */; };
 		C98CE7971B7CCF350035CF1E /* SignalSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */; };
@@ -81,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEventType.swift; sourceTree = "<group>"; };
 		C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalScheduler.swift; sourceTree = "<group>"; };
 		C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalSchedulerTests.swift; sourceTree = "<group>"; };
 		C98CE79B1B7E2AA70035CF1E /* CompoundObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundObserver.swift; sourceTree = "<group>"; };
@@ -182,6 +185,7 @@
 				C9D9884E1B7B1788004559CD /* Observable.swift */,
 				C9D9884C1B7B1788004559CD /* Disposable.swift */,
 				C9D988501B7B1788004559CD /* SignalType.swift */,
+				C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */,
 				C9D9884D1B7B1788004559CD /* LockType.swift */,
 				C9D9884F1B7B1788004559CD /* SignalContainerType.swift */,
 				C9D988511B7B1788004559CD /* TokenGeneratorType.swift */,
@@ -432,6 +436,7 @@
 			files = (
 				C9D988711B7B1F14004559CD /* SpinLock.swift in Sources */,
 				C9D9887A1B7B3ECF004559CD /* Signal.swift in Sources */,
+				C92948EA1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */,
 				C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */,
 				C9D988731B7B2AD7004559CD /* Dispatcher.swift in Sources */,
@@ -464,6 +469,7 @@
 				C9D9886F1B7B1E52004559CD /* DisposableAction.swift in Sources */,
 				C9D988781B7B334B004559CD /* MockLock.swift in Sources */,
 				C9D988A31B7B7D41004559CD /* MockSignal.swift in Sources */,
+				C92948EB1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */,
 				C9D988931B7B5C09004559CD /* ControlSignalTests.swift in Sources */,
 				C9D988961B7B5D18004559CD /* MockControl.m in Sources */,
 				C9D9888A1B7B55C4004559CD /* KVOSignal.swift in Sources */,

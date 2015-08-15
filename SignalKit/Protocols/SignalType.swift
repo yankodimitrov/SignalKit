@@ -25,7 +25,7 @@ public extension SignalType {
     }
     
     /**
-        Adds a new observer to a signal to perform a side effect
+        Adds a new observer to the signal to perform a side effect
     
     */
     public func next(observer: Item -> Void) -> Self {
@@ -266,5 +266,3 @@ public func combineLatest<A: SignalType, B: SignalType, C: SignalType>(a: A, _ b
     
     return combineLatest( combineLatest(a, b), c).map { ($0.0.0, $0.0.1, $0.1) }
 }
-
-
