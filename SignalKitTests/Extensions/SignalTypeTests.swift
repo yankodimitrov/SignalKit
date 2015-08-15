@@ -239,4 +239,24 @@ class SignalTypeTests: XCTestCase {
         
         XCTAssertEqual(result, correct, "Should return true only when both values are equal to true")
     }
+    
+    func testSomeForTupleWithTwoBooleans() {
+        
+        let correct = [false, true, true, true]
+        var result = [Bool]()
+        
+        let signal = MockSignal<(Bool, Bool)>()
+        
+        signal
+            .some { $0 == true }
+            .next { result.append($0) }
+            .addTo(signalsBag)
+        
+        signal.dispatch((false, false))
+        signal.dispatch((false, true))
+        signal.dispatch((true, false))
+        signal.dispatch((true, true))
+        
+        XCTAssertEqual(result, correct, "Should return true when some of the values are equal to true")
+    }
 }
