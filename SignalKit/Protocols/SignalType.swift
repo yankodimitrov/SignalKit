@@ -196,6 +196,21 @@ public extension SignalType {
     }
 }
 
+// MARK: - SignalType (Bool, Bool)
+
+public extension SignalType where Item == (Bool, Bool) {
+    
+    /**
+        Returns true if all values in a signal of tuple type (Bool, Bool)
+        are matching the predicate function
+    
+    */
+    public func all(predicate: Bool -> Bool) -> Signal<Bool> {
+        
+        return self.map { predicate($0.0) && predicate($0.1) }
+    }
+}
+
 // MARK: - Combine Latest
 
 /**
@@ -216,3 +231,5 @@ public func combineLatest<A: SignalType, B: SignalType, C: SignalType>(a: A, _ b
     
     return combineLatest( combineLatest(a, b), c).map { ($0.0.0, $0.0.1, $0.1) }
 }
+
+

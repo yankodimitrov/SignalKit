@@ -219,4 +219,24 @@ class SignalTypeTests: XCTestCase {
         XCTAssertEqual(result.1, 11, "Should contain the latest value from signalB")
         XCTAssertEqual(result.2, 222, "Should contain the latest value from signalC")
     }
+    
+    func testAllForTupleWithTwoBooleans() {
+        
+        let correct = [false, false, false, true]
+        var result = [Bool]()
+        
+        let signal = MockSignal<(Bool, Bool)>()
+        
+        signal
+            .all { $0 == true }
+            .next { result.append($0) }
+            .addTo(signalsBag)
+        
+        signal.dispatch((false, false))
+        signal.dispatch((false, true))
+        signal.dispatch((true, false))
+        signal.dispatch((true, true))
+        
+        XCTAssertEqual(result, correct, "Should return true only when both values are equal to true")
+    }
 }

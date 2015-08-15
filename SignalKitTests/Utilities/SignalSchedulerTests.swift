@@ -134,7 +134,7 @@ class SignalSchedulerTests: XCTestCase {
         scheduler.debounce(0.1) { result.append(2) }
         scheduler.debounce(0.1) { result.append(3) }
         
-        scheduler.delay(0.2) {
+        scheduler.delay(0.1) {
             
             if result == [3] {
                 
@@ -142,6 +142,6 @@ class SignalSchedulerTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.2, handler: nil)
+        waitForExpectationsWithTimeout(0.1, handler: nil)
     }
 }
