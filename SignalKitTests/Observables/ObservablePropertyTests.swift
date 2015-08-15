@@ -69,7 +69,7 @@ class ObservablePropertyTests: XCTestCase {
         let signal = userName.observe()
         var result = ""
         
-        signal.addObserver { result = $0 }
+        signal.next { result = $0 }
         
         userName.dispatch("Jack")
         

@@ -46,6 +46,6 @@ class NSNotificationCenter_SignalTests: XCTestCase {
         
         center.postNotificationName(notificationName, object: person)
         
-        XCTAssertEqual(called, true, "Should observe for notification from a given object")
+        XCTAssertEqual(called, true, "Should observe for a notification from a given object")
     }
 }

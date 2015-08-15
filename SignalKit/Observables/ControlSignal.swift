@@ -20,7 +20,7 @@ public final class ControlSignal<T: UIControl>: NSObject, SignalType {
     
     public init(control: T, events: UIControlEvents, lock: LockType? = nil) {
         
-        self.dispatcher = Dispatcher<Item>(lock: lock)
+        self.dispatcher = Dispatcher<Item>(dispatchRule: {(v: T) in return { [weak v] in return v} }, lock: lock)
         self.control = control
         self.events = events
         
