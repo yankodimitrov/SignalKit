@@ -20,7 +20,7 @@ class UIButton_SignalTests: XCTestCase {
         signalsBag = SignalBag()
     }
     
-    func testTap() {
+    func testObserveTapEvents() {
         
         var called = false
         

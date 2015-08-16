@@ -19,4 +19,8 @@
 
 @end
 
+@interface MockDatePicker : UIDatePicker
+
+@end
+
 #endif /* MockControl_h */
