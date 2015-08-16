@@ -8,22 +8,10 @@
 
 import Foundation
 
-public extension NSNotificationCenter {
+public extension SignalEventType where Sender: NSNotificationCenter {
     
     /**
-        Returns all available events for this type.
-    
-    */
-    public func observe() -> SignalEvent<NSNotificationCenter> {
-        
-        return SignalEvent(sender: self)
-    }
-}
-
-public extension SignalEventType where Sender == NSNotificationCenter {
-    
-    /**
-        Observes the notification center for a given notification.
+        Observes the notification center for a given notification name.
     
     */
     public func notification(name: String, fromObject: AnyObject? = nil) -> NotificationSignal {

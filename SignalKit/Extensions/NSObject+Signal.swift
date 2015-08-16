@@ -8,7 +8,19 @@
 
 import Foundation
 
-public extension NSObject {
+public extension NSObjectProtocol {
+    
+    /**
+        Returns all available events for this type.
+    
+    */
+    public func observe() -> SignalEvent<Self> {
+        
+        return SignalEvent(sender: self)
+    }
+}
+
+public extension SignalEventType where Sender: NSObject {
     
     /**
         Observes for property change events using KVO.
@@ -16,9 +28,9 @@ public extension NSObject {
         to specify the type of the observable property.
     
     */
-    public func observe<T>(keyPath path: String, value: T) -> KVOSignal<T> {
+    public func keyPath<T>(path: String, value: T) -> KVOSignal<T> {
         
-        let signal = KVOSignal<T>(subject: self, keyPath: path)
+        let signal = KVOSignal<T>(subject: sender, keyPath: path)
         
         signal.dispatch(value)
         

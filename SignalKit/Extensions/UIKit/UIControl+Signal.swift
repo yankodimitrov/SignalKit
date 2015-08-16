@@ -8,19 +8,7 @@
 
 import UIKit
 
-public extension UIControl {
-    
-    /**
-        Returns all available events for this type.
-    
-    */
-    public func observe() -> SignalEvent<UIControl> {
-        
-        return SignalEvent(sender: self)
-    }
-}
-
-public extension SignalEventType where Sender == UIControl {
+public extension SignalEventType where Sender: UIControl {
     
     /**
         Observe the UIControl for control events
