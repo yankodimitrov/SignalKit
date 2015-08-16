@@ -35,4 +35,8 @@
 
 @end
 
+@interface MockTextField : UITextField
+
+@end
+
 #endif /* MockControl_h */

@@ -102,6 +102,9 @@
 		C9F7AABD1B80AAE2002DA7B7 /* UISwitch+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AABC1B80AAE2002DA7B7 /* UISwitch+SignalTests.swift */; };
 		C9F7AABF1B80AB26002DA7B7 /* UISwitch+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AABE1B80AB26002DA7B7 /* UISwitch+Signal.swift */; };
 		C9F7AAC01B80AB26002DA7B7 /* UISwitch+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AABE1B80AB26002DA7B7 /* UISwitch+Signal.swift */; };
+		C9F7E8581B80B612000D5CC7 /* UITextField+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7E8571B80B612000D5CC7 /* UITextField+SignalTests.swift */; };
+		C9F7E85A1B80B64F000D5CC7 /* UITextField+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7E8591B80B64F000D5CC7 /* UITextField+Signal.swift */; };
+		C9F7E85B1B80B64F000D5CC7 /* UITextField+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7E8591B80B64F000D5CC7 /* UITextField+Signal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -184,6 +187,8 @@
 		C9F7AAB91B809F59002DA7B7 /* UISlider+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISlider+Signal.swift"; sourceTree = "<group>"; };
 		C9F7AABC1B80AAE2002DA7B7 /* UISwitch+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+SignalTests.swift"; sourceTree = "<group>"; };
 		C9F7AABE1B80AB26002DA7B7 /* UISwitch+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISwitch+Signal.swift"; sourceTree = "<group>"; };
+		C9F7E8571B80B612000D5CC7 /* UITextField+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+SignalTests.swift"; sourceTree = "<group>"; };
+		C9F7E8591B80B64F000D5CC7 /* UITextField+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Signal.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +231,7 @@
 				C9F7AAB21B809C64002DA7B7 /* UISegmentedControl+Signal.swift */,
 				C9F7AAB91B809F59002DA7B7 /* UISlider+Signal.swift */,
 				C9F7AABE1B80AB26002DA7B7 /* UISwitch+Signal.swift */,
+				C9F7E8591B80B64F000D5CC7 /* UITextField+Signal.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 				C9F7AAB51B809C73002DA7B7 /* UISegmentedControl+SignalTests.swift */,
 				C9F7AAB71B809ECF002DA7B7 /* UISlider+SignalTests.swift */,
 				C9F7AABC1B80AAE2002DA7B7 /* UISwitch+SignalTests.swift */,
+				C9F7E8571B80B612000D5CC7 /* UITextField+SignalTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -511,6 +518,7 @@
 				C9D988711B7B1F14004559CD /* SpinLock.swift in Sources */,
 				C92948FC1B7F994D00BCBC7C /* UIControl+Signal.swift in Sources */,
 				C9F7AA9F1B809088002DA7B7 /* UIButton+Signal.swift in Sources */,
+				C9F7E85A1B80B64F000D5CC7 /* UITextField+Signal.swift in Sources */,
 				C9D9887A1B7B3ECF004559CD /* Signal.swift in Sources */,
 				C92948F71B7F8C6100BCBC7C /* NSNotificationCenter+Signal.swift in Sources */,
 				C92948EA1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */,
@@ -564,6 +572,7 @@
 				C9D988931B7B5C09004559CD /* ControlSignalTests.swift in Sources */,
 				C9D988961B7B5D18004559CD /* MockControl.m in Sources */,
 				C9D9888A1B7B55C4004559CD /* KVOSignal.swift in Sources */,
+				C9F7E8581B80B612000D5CC7 /* UITextField+SignalTests.swift in Sources */,
 				C9D9888C1B7B5865004559CD /* Person.swift in Sources */,
 				C9F7AAA51B80943F002DA7B7 /* UIDatePicker+Signal.swift in Sources */,
 				C9D988551B7B1788004559CD /* LockType.swift in Sources */,
@@ -580,6 +589,7 @@
 				C9D988621B7B1946004559CD /* IncrementalKeyGeneratorTests.swift in Sources */,
 				C9D988601B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
 				C9D988A11B7B7D10004559CD /* SignalTypeTests.swift in Sources */,
+				C9F7E85B1B80B64F000D5CC7 /* UITextField+Signal.swift in Sources */,
 				C98CE7971B7CCF350035CF1E /* SignalSchedulerTests.swift in Sources */,
 				C9F7AAA21B8091AC002DA7B7 /* UIButton+SignalTests.swift in Sources */,
 				C9D988571B7B1788004559CD /* Observable.swift in Sources */,
