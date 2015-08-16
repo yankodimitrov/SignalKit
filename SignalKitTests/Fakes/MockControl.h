@@ -31,4 +31,8 @@
 
 @end
 
+@interface MockSwitch : UISwitch
+
+@end
+
 #endif /* MockControl_h */

@@ -45,8 +45,6 @@ class UISlider_SignalTests: XCTestCase {
             .next { result = $0 }
             .addTo(signalsBag)
         
-        slider.sendActionsForControlEvents(.ValueChanged)
-        
         XCTAssertEqual(result, 10, "Should dispatch the current value from UISlider")
     }
     
