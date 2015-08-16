@@ -33,4 +33,17 @@ class UITextField_SignalTests: XCTestCase {
         
         XCTAssertEqual(result, "John", "Should observe for text changes in UITextField")
     }
+    
+    func testObserveCurrentText() {
+        
+        var result = ""
+        
+        textField.text = "John"
+        
+        textField.observe().text
+            .next { result = $0 }
+            .addTo(signalsBag)
+        
+        XCTAssertEqual(result, "John", "Should dispatch the current text in UITextField")
+    }
 }
