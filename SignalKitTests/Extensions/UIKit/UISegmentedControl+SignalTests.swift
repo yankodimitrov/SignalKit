@@ -36,4 +36,17 @@ class UISegmentedControl_SignalTests: XCTestCase {
         
         XCTAssertEqual(result, 1, "Should observe the UISegmentedControl for selected index changes")
     }
+    
+    func testObserveCurrentSelectedIndex() {
+        
+        var result = 0
+        
+        segmentedControl.selectedSegmentIndex = 1
+        
+        segmentedControl.observe().selectedIndex
+            .next { result = $0 }
+            .addTo(signalsBag)
+        
+        XCTAssertEqual(result, 1, "Should dispatch the current selected index in UISegmentedControl")
+    }
 }

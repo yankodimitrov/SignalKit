@@ -16,6 +16,10 @@ public extension SignalEventType where Sender: UISegmentedControl {
     */
     public var selectedIndex: Signal<Int> {
         
-        return ControlSignal(control: sender, events: .ValueChanged).map { $0.selectedSegmentIndex }
+        let signal = ControlSignal(control: sender, events: .ValueChanged).map { $0.selectedSegmentIndex }
+        
+        signal.dispatch(sender.selectedSegmentIndex)
+        
+        return signal
     }
 }
