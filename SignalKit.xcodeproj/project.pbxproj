@@ -87,6 +87,9 @@
 		C9F7AAA41B80943F002DA7B7 /* UIDatePicker+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAA31B80943F002DA7B7 /* UIDatePicker+Signal.swift */; };
 		C9F7AAA51B80943F002DA7B7 /* UIDatePicker+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAA31B80943F002DA7B7 /* UIDatePicker+Signal.swift */; };
 		C9F7AAA71B809543002DA7B7 /* UIDatePicker+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAA61B809543002DA7B7 /* UIDatePicker+SignalTests.swift */; };
+		C9F7AAA91B8097DA002DA7B7 /* UIImageView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAA81B8097DA002DA7B7 /* UIImageView+Signal.swift */; };
+		C9F7AAAA1B8097DA002DA7B7 /* UIImageView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAA81B8097DA002DA7B7 /* UIImageView+Signal.swift */; };
+		C9F7AAAC1B8098A8002DA7B7 /* UIImageView+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAAB1B8098A8002DA7B7 /* UIImageView+SignalTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +162,8 @@
 		C9F7AAA11B8091AC002DA7B7 /* UIButton+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+SignalTests.swift"; sourceTree = "<group>"; };
 		C9F7AAA31B80943F002DA7B7 /* UIDatePicker+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+Signal.swift"; sourceTree = "<group>"; };
 		C9F7AAA61B809543002DA7B7 /* UIDatePicker+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDatePicker+SignalTests.swift"; sourceTree = "<group>"; };
+		C9F7AAA81B8097DA002DA7B7 /* UIImageView+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Signal.swift"; sourceTree = "<group>"; };
+		C9F7AAAB1B8098A8002DA7B7 /* UIImageView+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SignalTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +201,7 @@
 				C92948FB1B7F994D00BCBC7C /* UIControl+Signal.swift */,
 				C9F7AA9E1B809088002DA7B7 /* UIButton+Signal.swift */,
 				C9F7AAA31B80943F002DA7B7 /* UIDatePicker+Signal.swift */,
+				C9F7AAA81B8097DA002DA7B7 /* UIImageView+Signal.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 				C92948FE1B7F9A9900BCBC7C /* UIControl+SignalTests.swift */,
 				C9F7AAA11B8091AC002DA7B7 /* UIButton+SignalTests.swift */,
 				C9F7AAA61B809543002DA7B7 /* UIDatePicker+SignalTests.swift */,
+				C9F7AAAB1B8098A8002DA7B7 /* UIImageView+SignalTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -488,6 +495,7 @@
 				C9D988891B7B55C0004559CD /* KVOSignal.swift in Sources */,
 				C9D988541B7B1788004559CD /* LockType.swift in Sources */,
 				C9D988981B7B5ECB004559CD /* NotificationSignal.swift in Sources */,
+				C9F7AAA91B8097DA002DA7B7 /* UIImageView+Signal.swift in Sources */,
 				C9D9885F1B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
 				C9D988561B7B1788004559CD /* Observable.swift in Sources */,
 				C9D988521B7B1788004559CD /* Disposable.swift in Sources */,
@@ -516,6 +524,7 @@
 				C9D9885B1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886F1B7B1E52004559CD /* DisposableAction.swift in Sources */,
 				C9D988781B7B334B004559CD /* MockLock.swift in Sources */,
+				C9F7AAAC1B8098A8002DA7B7 /* UIImageView+SignalTests.swift in Sources */,
 				C9D988A31B7B7D41004559CD /* MockSignal.swift in Sources */,
 				C92948EB1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */,
 				C9D988931B7B5C09004559CD /* ControlSignalTests.swift in Sources */,
@@ -551,6 +560,7 @@
 				C9D9885D1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,
 				C9D988871B7B4DC3004559CD /* MockDisposable.swift in Sources */,
 				C9D988821B7B46DE004559CD /* ObservablePropertyTests.swift in Sources */,
+				C9F7AAAA1B8097DA002DA7B7 /* UIImageView+Signal.swift in Sources */,
 				C98CE79D1B7E2AA70035CF1E /* CompoundObserver.swift in Sources */,
 				C92948F31B7F794000BCBC7C /* NSObject+Signal.swift in Sources */,
 				C9D9886E1B7B1DE8004559CD /* DisposableActionTests.swift in Sources */,
