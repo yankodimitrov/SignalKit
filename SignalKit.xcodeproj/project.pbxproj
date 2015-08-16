@@ -96,6 +96,9 @@
 		C9F7AAB31B809C64002DA7B7 /* UISegmentedControl+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAB21B809C64002DA7B7 /* UISegmentedControl+Signal.swift */; };
 		C9F7AAB41B809C64002DA7B7 /* UISegmentedControl+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAB21B809C64002DA7B7 /* UISegmentedControl+Signal.swift */; };
 		C9F7AAB61B809C73002DA7B7 /* UISegmentedControl+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAB51B809C73002DA7B7 /* UISegmentedControl+SignalTests.swift */; };
+		C9F7AAB81B809ECF002DA7B7 /* UISlider+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAB71B809ECF002DA7B7 /* UISlider+SignalTests.swift */; };
+		C9F7AABA1B809F59002DA7B7 /* UISlider+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAB91B809F59002DA7B7 /* UISlider+Signal.swift */; };
+		C9F7AABB1B809F59002DA7B7 /* UISlider+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAB91B809F59002DA7B7 /* UISlider+Signal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +177,8 @@
 		C9F7AAB01B809B0C002DA7B7 /* UILabel+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+SignalTests.swift"; sourceTree = "<group>"; };
 		C9F7AAB21B809C64002DA7B7 /* UISegmentedControl+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Signal.swift"; sourceTree = "<group>"; };
 		C9F7AAB51B809C73002DA7B7 /* UISegmentedControl+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+SignalTests.swift"; sourceTree = "<group>"; };
+		C9F7AAB71B809ECF002DA7B7 /* UISlider+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISlider+SignalTests.swift"; sourceTree = "<group>"; };
+		C9F7AAB91B809F59002DA7B7 /* UISlider+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISlider+Signal.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +219,7 @@
 				C9F7AAA81B8097DA002DA7B7 /* UIImageView+Signal.swift */,
 				C9F7AAAD1B809A00002DA7B7 /* UILabel+Signal.swift */,
 				C9F7AAB21B809C64002DA7B7 /* UISegmentedControl+Signal.swift */,
+				C9F7AAB91B809F59002DA7B7 /* UISlider+Signal.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 				C9F7AAAB1B8098A8002DA7B7 /* UIImageView+SignalTests.swift */,
 				C9F7AAB01B809B0C002DA7B7 /* UILabel+SignalTests.swift */,
 				C9F7AAB51B809C73002DA7B7 /* UISegmentedControl+SignalTests.swift */,
+				C9F7AAB71B809ECF002DA7B7 /* UISlider+SignalTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -504,6 +511,7 @@
 				C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */,
 				C92948ED1B7F759200BCBC7C /* SignalEvent.swift in Sources */,
 				C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */,
+				C9F7AABA1B809F59002DA7B7 /* UISlider+Signal.swift in Sources */,
 				C9D988731B7B2AD7004559CD /* Dispatcher.swift in Sources */,
 				C9D9887F1B7B445F004559CD /* ObservableProperty.swift in Sources */,
 				C9F7AAA41B80943F002DA7B7 /* UIDatePicker+Signal.swift in Sources */,
@@ -536,9 +544,11 @@
 				C9F7AAA71B809543002DA7B7 /* UIDatePicker+SignalTests.swift in Sources */,
 				C9D988761B7B2B20004559CD /* DispatcherTests.swift in Sources */,
 				C9F7AAA01B809088002DA7B7 /* UIButton+Signal.swift in Sources */,
+				C9F7AAB81B809ECF002DA7B7 /* UISlider+SignalTests.swift in Sources */,
 				C92948EE1B7F759200BCBC7C /* SignalEvent.swift in Sources */,
 				C9D9885B1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886F1B7B1E52004559CD /* DisposableAction.swift in Sources */,
+				C9F7AABB1B809F59002DA7B7 /* UISlider+Signal.swift in Sources */,
 				C9D988781B7B334B004559CD /* MockLock.swift in Sources */,
 				C9F7AAAC1B8098A8002DA7B7 /* UIImageView+SignalTests.swift in Sources */,
 				C9D988A31B7B7D41004559CD /* MockSignal.swift in Sources */,

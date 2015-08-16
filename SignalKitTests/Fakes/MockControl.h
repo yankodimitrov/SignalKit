@@ -27,4 +27,8 @@
 
 @end
 
+@interface MockSlider : UISlider
+
+@end
+
 #endif /* MockControl_h */
