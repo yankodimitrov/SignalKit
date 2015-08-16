@@ -31,6 +31,17 @@ public final class NotificationSignal: NSObject, SignalType {
         center.addObserver(self, selector: "notificationHandler:", name: notificationName, object: object)
     }
     
+    /**
+        Initialzie with default notification center
+    
+    */
+    public convenience init(name: String, fromObject: AnyObject? = nil, lock: LockType? = nil) {
+        
+        let center = NSNotificationCenter.defaultCenter()
+        
+        self.init(center: center, name: name, fromObject: fromObject, lock: lock)
+    }
+    
     deinit {
         
         dispose()
