@@ -23,4 +23,8 @@
 
 @end
 
+@interface MockSegmentedControl : UISegmentedControl
+
+@end
+
 #endif /* MockControl_h */

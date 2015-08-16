@@ -93,6 +93,9 @@
 		C9F7AAAE1B809A00002DA7B7 /* UILabel+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAAD1B809A00002DA7B7 /* UILabel+Signal.swift */; };
 		C9F7AAAF1B809A00002DA7B7 /* UILabel+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAAD1B809A00002DA7B7 /* UILabel+Signal.swift */; };
 		C9F7AAB11B809B0C002DA7B7 /* UILabel+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAB01B809B0C002DA7B7 /* UILabel+SignalTests.swift */; };
+		C9F7AAB31B809C64002DA7B7 /* UISegmentedControl+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAB21B809C64002DA7B7 /* UISegmentedControl+Signal.swift */; };
+		C9F7AAB41B809C64002DA7B7 /* UISegmentedControl+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAB21B809C64002DA7B7 /* UISegmentedControl+Signal.swift */; };
+		C9F7AAB61B809C73002DA7B7 /* UISegmentedControl+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAB51B809C73002DA7B7 /* UISegmentedControl+SignalTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -169,6 +172,8 @@
 		C9F7AAAB1B8098A8002DA7B7 /* UIImageView+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+SignalTests.swift"; sourceTree = "<group>"; };
 		C9F7AAAD1B809A00002DA7B7 /* UILabel+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Signal.swift"; sourceTree = "<group>"; };
 		C9F7AAB01B809B0C002DA7B7 /* UILabel+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+SignalTests.swift"; sourceTree = "<group>"; };
+		C9F7AAB21B809C64002DA7B7 /* UISegmentedControl+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Signal.swift"; sourceTree = "<group>"; };
+		C9F7AAB51B809C73002DA7B7 /* UISegmentedControl+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+SignalTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +213,7 @@
 				C9F7AAA31B80943F002DA7B7 /* UIDatePicker+Signal.swift */,
 				C9F7AAA81B8097DA002DA7B7 /* UIImageView+Signal.swift */,
 				C9F7AAAD1B809A00002DA7B7 /* UILabel+Signal.swift */,
+				C9F7AAB21B809C64002DA7B7 /* UISegmentedControl+Signal.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -274,6 +280,7 @@
 				C9F7AAA61B809543002DA7B7 /* UIDatePicker+SignalTests.swift */,
 				C9F7AAAB1B8098A8002DA7B7 /* UIImageView+SignalTests.swift */,
 				C9F7AAB01B809B0C002DA7B7 /* UILabel+SignalTests.swift */,
+				C9F7AAB51B809C73002DA7B7 /* UISegmentedControl+SignalTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -493,6 +500,7 @@
 				C9D9887A1B7B3ECF004559CD /* Signal.swift in Sources */,
 				C92948F71B7F8C6100BCBC7C /* NSNotificationCenter+Signal.swift in Sources */,
 				C92948EA1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */,
+				C9F7AAB31B809C64002DA7B7 /* UISegmentedControl+Signal.swift in Sources */,
 				C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */,
 				C92948ED1B7F759200BCBC7C /* SignalEvent.swift in Sources */,
 				C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */,
@@ -547,6 +555,8 @@
 				C92948F51B7F841600BCBC7C /* NSObject+SignalTests.swift in Sources */,
 				C9D9889D1B7B7982004559CD /* ObservableTests.swift in Sources */,
 				C9D988671B7B1B74004559CD /* BagTests.swift in Sources */,
+				C9F7AAB41B809C64002DA7B7 /* UISegmentedControl+Signal.swift in Sources */,
+				C9F7AAB61B809C73002DA7B7 /* UISegmentedControl+SignalTests.swift in Sources */,
 				C98CE7951B7CC5C90035CF1E /* SignalScheduler.swift in Sources */,
 				C9D988621B7B1946004559CD /* IncrementalKeyGeneratorTests.swift in Sources */,
 				C9D988601B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
