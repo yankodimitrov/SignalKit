@@ -28,38 +28,38 @@ public struct KeyboardState {
     
     public var beginFrame: CGRect {
         
-        guard let value = keyboardInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue else {
+        guard let frame = keyboardInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue else {
             return CGRectZero
         }
         
-        return value.CGRectValue()
+        return frame.CGRectValue()
     }
     
     public var endFrame: CGRect {
         
-        guard let value = keyboardInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
+        guard let frame = keyboardInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
             return CGRectZero
         }
         
-        return value.CGRectValue()
+        return frame.CGRectValue()
     }
     
     public var animationCurve: UIViewAnimationCurve? {
         
-        guard let number = keyboardInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber else {
+        guard let curve = keyboardInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber else {
             return nil
         }
         
-        return UIViewAnimationCurve(rawValue: number.integerValue)
+        return UIViewAnimationCurve(rawValue: curve.integerValue)
     }
     
     public var animationDuration: Double {
         
-        guard let number = keyboardInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber else {
+        guard let duration = keyboardInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber else {
             return 0
         }
         
-        return number.doubleValue
+        return duration.doubleValue
     }
     
     private let keyboardInfo: [NSObject: AnyObject]
