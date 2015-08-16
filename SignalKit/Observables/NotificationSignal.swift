@@ -11,21 +11,19 @@ import Foundation
 public final class NotificationSignal: NSObject, SignalType {
     public typealias Item = NSNotification
     
+    private let center: NSNotificationCenter
     private let notificationName: String
     private weak var object: AnyObject?
     private var isDisposed = false
     
-    private var center: NSNotificationCenter {
-        return  NSNotificationCenter.defaultCenter()
-    }
-    
     public var disposableSource: Disposable?
     public let dispatcher: Dispatcher<Item>
     
-    public init(notificationName: String, fromObject object: AnyObject? = nil, lock: LockType? = nil) {
+    public init(center: NSNotificationCenter, name: String, fromObject object: AnyObject? = nil, lock: LockType? = nil) {
         
+        self.center = center
         self.dispatcher = Dispatcher<Item>(dispatchRule: { _ in return { return nil }}, lock: lock)
-        self.notificationName = notificationName
+        self.notificationName = name
         self.object = object
         
         super.init()

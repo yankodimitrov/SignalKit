@@ -16,6 +16,6 @@ public extension SignalEventType where Sender: NSNotificationCenter {
     */
     public func notification(name: String, fromObject: AnyObject? = nil) -> NotificationSignal {
         
-        return NotificationSignal(notificationName: name, fromObject: fromObject)
+        return NotificationSignal(center: sender, name: name, fromObject: fromObject)
     }
 }

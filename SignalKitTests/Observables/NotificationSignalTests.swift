@@ -15,7 +15,7 @@ class NotificationSignalTests: XCTestCase {
     
     func testObserveForNotification() {
         
-        let signal = NotificationSignal(notificationName: notificationName)
+        let signal = NotificationSignal(center: center, name: notificationName)
         var called = false
         
         signal.addObserver { _ in called = true }
@@ -28,7 +28,7 @@ class NotificationSignalTests: XCTestCase {
     func testObserveForNotificationFromObject() {
         
         let person = Person(name: "Jack")
-        let signal = NotificationSignal(notificationName: notificationName, fromObject: person)
+        let signal = NotificationSignal(center: center, name: notificationName, fromObject: person)
         var called = false
         
         signal.addObserver { _ in called = true }
@@ -41,7 +41,7 @@ class NotificationSignalTests: XCTestCase {
     
     func testDispose() {
         
-        let signal = NotificationSignal(notificationName: notificationName)
+        let signal = NotificationSignal(center: center, name: notificationName)
         var called = false
         
         signal.addObserver { _ in called = true }
@@ -56,7 +56,7 @@ class NotificationSignalTests: XCTestCase {
         
         let disposableSource = MockDisposable()
         
-        let signal = NotificationSignal(notificationName: notificationName)
+        let signal = NotificationSignal(center: center, name: notificationName)
         
         signal.disposableSource = disposableSource
         
@@ -68,13 +68,13 @@ class NotificationSignalTests: XCTestCase {
     func testDispatchesOnlyNewNotifications() {
         
         let notification = NSNotification(name: notificationName, object: nil)
-        let signal = NotificationSignal(notificationName: notificationName)
+        let signal = NotificationSignal(center: center, name: notificationName)
         var result: NSNotification?
         
         center.postNotification(notification)
         
         signal.addObserver { result = $0 }
         
-        XCTAssertEqual(result, nil, "The dispatch rule should dispatch only the new notifications")
+        XCTAssertEqual(result, nil, "The dispatch rule should dispatch only new notifications")
     }
 }
