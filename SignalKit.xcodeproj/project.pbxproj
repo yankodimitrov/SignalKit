@@ -81,6 +81,9 @@
 		C9D988A81B7BCA4C004559CD /* SignalBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A71B7BCA4C004559CD /* SignalBagTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
+		C9F7AA9F1B809088002DA7B7 /* UIButton+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AA9E1B809088002DA7B7 /* UIButton+Signal.swift */; };
+		C9F7AAA01B809088002DA7B7 /* UIButton+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AA9E1B809088002DA7B7 /* UIButton+Signal.swift */; };
+		C9F7AAA21B8091AC002DA7B7 /* UIButton+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AAA11B8091AC002DA7B7 /* UIButton+SignalTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +152,8 @@
 		C9E7F28A1B567DF5001AB061 /* SignalKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SignalKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2901B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F29B1B567F3D001AB061 /* SignalKitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SignalKitTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		C9F7AA9E1B809088002DA7B7 /* UIButton+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Signal.swift"; sourceTree = "<group>"; };
+		C9F7AAA11B8091AC002DA7B7 /* UIButton+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+SignalTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				C92948FB1B7F994D00BCBC7C /* UIControl+Signal.swift */,
+				C9F7AA9E1B809088002DA7B7 /* UIButton+Signal.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				C92948FE1B7F9A9900BCBC7C /* UIControl+SignalTests.swift */,
+				C9F7AAA11B8091AC002DA7B7 /* UIButton+SignalTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -461,6 +468,7 @@
 			files = (
 				C9D988711B7B1F14004559CD /* SpinLock.swift in Sources */,
 				C92948FC1B7F994D00BCBC7C /* UIControl+Signal.swift in Sources */,
+				C9F7AA9F1B809088002DA7B7 /* UIButton+Signal.swift in Sources */,
 				C9D9887A1B7B3ECF004559CD /* Signal.swift in Sources */,
 				C92948F71B7F8C6100BCBC7C /* NSNotificationCenter+Signal.swift in Sources */,
 				C92948EA1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */,
@@ -494,6 +502,7 @@
 				C9D9888E1B7B587A004559CD /* KVOSignalTests.swift in Sources */,
 				C9D9889B1B7B6049004559CD /* NotificationSignalTests.swift in Sources */,
 				C9D988761B7B2B20004559CD /* DispatcherTests.swift in Sources */,
+				C9F7AAA01B809088002DA7B7 /* UIButton+Signal.swift in Sources */,
 				C92948EE1B7F759200BCBC7C /* SignalEvent.swift in Sources */,
 				C9D9885B1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886F1B7B1E52004559CD /* DisposableAction.swift in Sources */,
@@ -516,6 +525,7 @@
 				C9D988601B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
 				C9D988A11B7B7D10004559CD /* SignalTypeTests.swift in Sources */,
 				C98CE7971B7CCF350035CF1E /* SignalSchedulerTests.swift in Sources */,
+				C9F7AAA21B8091AC002DA7B7 /* UIButton+SignalTests.swift in Sources */,
 				C9D988571B7B1788004559CD /* Observable.swift in Sources */,
 				C9D988851B7B4D7F004559CD /* StubObservable.swift in Sources */,
 				C9D988531B7B1788004559CD /* Disposable.swift in Sources */,

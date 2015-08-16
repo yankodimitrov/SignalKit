@@ -11,7 +11,7 @@ import UIKit
 public extension SignalEventType where Sender: UIControl {
     
     /**
-        Observe the UIControl for control events
+        Observe for control events
     
     */
     public func events(controlEvents: UIControlEvents) -> ControlSignal<Sender> {

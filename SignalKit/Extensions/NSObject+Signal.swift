@@ -11,7 +11,7 @@ import Foundation
 public extension NSObjectProtocol {
     
     /**
-        Returns all available events for this type.
+        Returns the available events for this type.
     
     */
     public func observe() -> SignalEvent<Self> {

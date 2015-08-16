@@ -15,4 +15,8 @@
 
 @end
 
+@interface MockButton : UIButton
+
+@end
+
 #endif /* MockControl_h */
