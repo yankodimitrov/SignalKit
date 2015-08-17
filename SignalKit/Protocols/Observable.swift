@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol Observable {
+public protocol Observable: class {
     typealias Item
     
     var dispatcher: Dispatcher<Item> {get}

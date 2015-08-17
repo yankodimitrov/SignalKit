@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol SignalType: class, Observable, Disposable {
+public protocol SignalType: Observable, Disposable {
     
     var disposableSource: Disposable? {get set}
 }
@@ -193,6 +193,20 @@ public extension SignalType {
         compoundSignal.disposableSource = observer
         
         return compoundSignal
+    }
+    
+    /**
+        Bind the value to an Observable of the same type
+    
+    */
+    public func bindTo<T: Observable where T.Item == Item>(observable: T) -> Self {
+        
+        addObserver { [weak observable] in
+        
+            observable?.dispatch($0)
+        }
+        
+        return self
     }
 }
 

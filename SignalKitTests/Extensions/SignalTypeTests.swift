@@ -321,4 +321,26 @@ class SignalTypeTests: XCTestCase {
         
         XCTAssertEqual(result, correct, "Should dispatch new value only if it is not equal to the previous one.")
     }
+    
+    func testBindToObservable() {
+        
+        let observable = MockObservable<Int>()
+        let signal = MockSignal<Int>()
+        let correct = [400, 401]
+        var result = [Int]()
+        
+        signal.dispatch(400)
+        
+        signal
+            .bindTo(observable)
+            .addTo(signalsBag)
+        
+        observable.addObserver {
+            result.append($0)
+        }
+        
+        signal.dispatch(401)
+        
+        XCTAssertEqual(result, correct, "Should bind the signal value to an Observable of the same type")
+    }
 }
