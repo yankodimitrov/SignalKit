@@ -299,4 +299,26 @@ class SignalTypeTests: XCTestCase {
         
         XCTAssertEqual(result, correct, "Should dispatch true when some of the values are equal to true")
     }
+    
+    func testDistinct() {
+        
+        let signal = MockSignal<Int>()
+        let correct = [2, 55, 2]
+        var result = [Int]()
+        
+        signal.dispatch(2)
+        
+        signal
+            .distinct()
+            .next { result.append($0) }
+            .addTo(signalsBag)
+        
+        signal.dispatch(2)
+        signal.dispatch(2)
+        signal.dispatch(55)
+        signal.dispatch(2)
+        signal.dispatch(2)
+        
+        XCTAssertEqual(result, correct, "Should dispatch new value only if it is not equal to the previous one.")
+    }
 }

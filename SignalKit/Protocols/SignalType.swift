@@ -16,7 +16,7 @@ public protocol SignalType: class, Observable, Disposable {
 public extension SignalType {
     
     /**
-        Dispose the chain of signal operations
+        Dispose the chain of signal operations.
     
     */
     public func dispose() {
@@ -25,7 +25,7 @@ public extension SignalType {
     }
     
     /**
-        Adds a new observer to the signal to perform a side effect
+        Adds a new observer to the signal to perform a side effect.
     
     */
     public func next(observer: Item -> Void) -> Self {
@@ -36,7 +36,7 @@ public extension SignalType {
     }
     
     /**
-        Transforms a signal ot type Item to a signal of type U
+        Transforms a signal ot type Item to a signal of type U.
     
     */
     public func map<U>(transform: Item -> U) -> Signal<U> {
@@ -54,7 +54,7 @@ public extension SignalType {
     }
     
     /**
-        Filters the dispatched by the signal values using a predicate
+        Filters the dispatched by the signal values using a predicate.
     
     */
     public func filter(predicate: Item -> Bool) -> Signal<Item> {
@@ -75,7 +75,7 @@ public extension SignalType {
     }
     
     /**
-        Skips a certain number of dispatched by the signal values
+        Skips a certain number of dispatched by the signal values.
     
     */
     public func skip(var count: Int) -> Signal<Item> {
@@ -100,7 +100,7 @@ public extension SignalType {
     }
     
     /**
-        Delivers the signal on a given queue
+        Delivers the signal on a given queue.
     
     */
     public func deliverOn(queue: SignalScheduler.Queue) -> Signal<Item> {
@@ -123,7 +123,7 @@ public extension SignalType {
     
     /**
         Sends only the latest values that are not followed by
-        another values within the specified duration
+        another values within the specified duration.
     
     */
     public func debounce(seconds: Double, queue: SignalScheduler.Queue = .MainQueue) -> Signal<Item> {
@@ -145,7 +145,7 @@ public extension SignalType {
     }
     
     /**
-        Delays the dispatch of the signal
+        Delays the dispatch of the signal.
     
     */
     public func delay(seconds: Double, queue: SignalScheduler.Queue = .MainQueue) -> Signal<Item> {
@@ -167,7 +167,7 @@ public extension SignalType {
     }
     
     /**
-        Stores a signal or a chain of signal operations in a container
+        Stores a signal or a chain of signal operations in a container.
     
     */
     public func addTo(container: SignalContainerType) -> Disposable {
@@ -177,7 +177,7 @@ public extension SignalType {
     
     /**
         Combine the latest values of the current signal A and
-        another signal B in a signal of type (A, B)
+        another signal B in a signal of type (A, B).
     
     */
     public func combineLatestWith<T: SignalType>(signal: T) -> Signal<(Item, T.Item)> {
@@ -196,13 +196,41 @@ public extension SignalType {
     }
 }
 
+// MARK: - Distinct
+
+public extension SignalType where Item: Equatable {
+    
+    /**
+        Dispatches the new value only if it is not equal to the previous one.
+    
+    */
+    public func distinct() -> Signal<Item> {
+        
+        let signal = Signal<Item>()
+        var lastValue: Item?
+        
+        addObserver { [weak signal] value in
+            
+            if lastValue != value {
+                
+                lastValue = value
+                signal?.dispatch(value)
+            }
+        }
+        
+        signal.disposableSource = self
+        
+        return signal
+    }
+}
+
 // MARK: - SignalType (Bool, Bool)
 
 public extension SignalType where Item == (Bool, Bool) {
     
     /**
         Sends true if all values in a signal of tuple type (Bool, Bool)
-        are matching the predicate function
+        are matching the predicate function.
     
     */
     public func all(predicate: Bool -> Bool) -> Signal<Bool> {
@@ -212,7 +240,7 @@ public extension SignalType where Item == (Bool, Bool) {
     
     /**
         Sends true if at least one value in a signal of tuple type (Bool, Bool)
-        matches the predicate function
+        matches the predicate function.
     
     */
     public func some(predicate: Bool -> Bool) -> Signal<Bool> {
@@ -227,7 +255,7 @@ public extension SignalType where Item == (Bool, Bool, Bool) {
     
     /**
         Sends true if all values in a signal of tuple type (Bool, Bool, Bool)
-        are matching the predicate function
+        are matching the predicate function.
     
     */
     public func all(predicate: Bool -> Bool) -> Signal<Bool> {
@@ -237,7 +265,7 @@ public extension SignalType where Item == (Bool, Bool, Bool) {
     
     /**
         Sends true if at least one value in a signal of tuple type (Bool, Bool, Bool)
-        matches the predicate function
+        matches the predicate function.
     
     */
     public func some(predicate: Bool -> Bool) -> Signal<Bool> {
@@ -249,8 +277,7 @@ public extension SignalType where Item == (Bool, Bool, Bool) {
 // MARK: - Combine Latest
 
 /**
-    Combine the latest values of the current signal A and
-    another signal B in a signal of type (A, B)
+    Combine the latest values of signal A and signal B in a signal of type (A, B).
 
 */
 public func combineLatest<A: SignalType, B: SignalType>(a: A, _ b: B) -> Signal<(A.Item, B.Item)> {
@@ -259,7 +286,7 @@ public func combineLatest<A: SignalType, B: SignalType>(a: A, _ b: B) -> Signal<
 }
 
 /**
-    Combine the latest values of three signals A, B and C in a signal of type (A, B, C)
+    Combine the latest values of three signals A, B and C in a signal of type (A, B, C).
 
 */
 public func combineLatest<A: SignalType, B: SignalType, C: SignalType>(a: A, _ b: B, _ c: C) -> Signal<(A.Item, B.Item, C.Item)> {
