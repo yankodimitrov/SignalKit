@@ -54,7 +54,7 @@ public final class ObservableProperty<T>: Observable {
 public extension ObservableProperty {
     
     /**
-        Observes the observable property for value changes
+        Observe the observable property for value changes
     
     */
     public func observe() -> Signal<Item> {

@@ -23,7 +23,7 @@ public extension NSObjectProtocol {
 public extension SignalEventType where Sender: NSObject {
     
     /**
-        Observes for property change events using KVO.
+        Observe for property change events using KVO.
         Use the value parameter to send the initial signal value and
         to specify the type of the observable property.
     

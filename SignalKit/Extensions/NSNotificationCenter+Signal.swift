@@ -11,7 +11,7 @@ import Foundation
 public extension SignalEventType where Sender: NSNotificationCenter {
     
     /**
-        Observes the notification center for a given notification name.
+        Observe the notification center for a given notification name.
     
     */
     public func notification(name: String, fromObject: AnyObject? = nil) -> NotificationSignal {
