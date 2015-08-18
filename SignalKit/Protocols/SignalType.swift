@@ -167,7 +167,7 @@ public extension SignalType {
     }
     
     /**
-        Stores a signal or a chain of signal operations in a container.
+        Stores a chain of signal operations in a container.
     
     */
     public func addTo(container: SignalContainerType) -> Disposable {

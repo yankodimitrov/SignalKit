@@ -11,7 +11,7 @@ import UIKit
 public extension SignalType where Item == String {
     
     /**
-        Bind a String to the text property of UILabel
+        Bind a String value to the text property of UILabel
     
     */
     public func bindTo(textIn label: UILabel) -> Self {
