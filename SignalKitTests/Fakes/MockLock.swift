@@ -2,27 +2,27 @@
 //  MockLock.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 7/15/15.
-//  Copyright (c) 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 8/12/15.
+//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
 //
 
 import Foundation
 
 class MockLock: LockType {
     
-    var syncCounter = 0
-    var lockCalled = false
-    var unlockCalled = false
+    var synchronizationCounter = 0
+    var isLockCalled = false
+    var isUnlockCalled = false
     
     func lock() {
         
-        syncCounter += 1
-        lockCalled = true
+        synchronizationCounter += 1
+        isLockCalled = true
     }
     
     func unlock() {
         
-        syncCounter -= 1
-        unlockCalled = true
+        synchronizationCounter -= 1
+        isUnlockCalled = true
     }
 }

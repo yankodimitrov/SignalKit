@@ -2,15 +2,15 @@
 //  TokenGeneratorType.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 7/15/15.
-//  Copyright (c) 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 8/12/15.
+//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
 //
 
 import Foundation
 
-internal typealias Token = String
+typealias Token = String
 
-internal protocol TokenGeneratorType {
+protocol TokenGeneratorType {
     
     mutating func nextToken() -> Token
 }

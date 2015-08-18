@@ -2,14 +2,19 @@
 //  BagTests.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 7/15/15.
-//  Copyright (c) 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 8/12/15.
+//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
 //
 
-import UIKit
 import XCTest
 
 class BagTests: XCTestCase {
+    
+    class FakeGenerator: TokenGeneratorType {
+        func nextToken() -> Token {
+            return "1"
+        }
+    }
     
     func testBagIsInitiallyEmpty() {
         
@@ -20,16 +25,9 @@ class BagTests: XCTestCase {
     
     func testInsertItem() {
         
-        class FakeGenerator: TokenGeneratorType {
-            func nextToken() -> Token {
-                return "1"
-            }
-        }
-        
         var bag = Bag<String>(keyGenerator: FakeGenerator())
         
         let token = bag.insert("John")
-        
         
         XCTAssertEqual(token, "1", "Should be able to insert a new item in the bag")
         XCTAssertEqual(bag.count, 1, "Should contain one item")
@@ -79,7 +77,7 @@ class BagTests: XCTestCase {
         bag.insert(2)
         bag.insert(3)
         
-        for (key, item) in bag {
+        for (_, item) in bag {
             sum += item
         }
         

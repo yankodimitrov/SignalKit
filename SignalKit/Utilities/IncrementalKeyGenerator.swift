@@ -2,8 +2,8 @@
 //  IncrementalKeyGenerator.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 7/15/15.
-//  Copyright (c) 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 8/12/15.
+//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
 //
 
 import Foundation
@@ -13,8 +13,8 @@ import Foundation
     number of generated tokens and a step limit.
     For example a generator with step limit of <3> will produce
     the following sequence of tokens:
-    ["1", "2", "3", "31", "32", "33", "331"...].
 
+    ["1", "2", "3", "31", "32", "33", "331"...].
 */
 internal struct IncrementalKeyGenerator: TokenGeneratorType {
     
@@ -27,7 +27,12 @@ internal struct IncrementalKeyGenerator: TokenGeneratorType {
     }
     
     init(stepLimit: UInt16) {
-        assert(stepLimit > 0, "Step limit should be greather than zero")
+        
+        guard stepLimit > 0 else {
+            
+            self.stepLimit = UInt16.max
+            return
+        }
         
         self.stepLimit = stepLimit
     }

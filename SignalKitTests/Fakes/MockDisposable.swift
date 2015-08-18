@@ -2,18 +2,18 @@
 //  MockDisposable.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 7/15/15.
-//  Copyright (c) 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 8/12/15.
+//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
 //
 
 import Foundation
 
 class MockDisposable: Disposable {
     
-    var disposed = false
+    var isDisposeCalled = false
     
     func dispose() {
-    
-        disposed = true
+        
+        isDisposeCalled = true
     }
 }

@@ -2,21 +2,20 @@
 //  MockSignal.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 7/15/15.
-//  Copyright (c) 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 8/12/15.
+//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
 //
 
 import Foundation
 
-class MockSignal: SignalType {
+public final class MockSignal<T>: SignalType {
+    public typealias Item = T
     
-    var sourceSignal: SignalType?
-    var disposed = false
+    public var disposableSource: Disposable?
+    public let dispatcher: Dispatcher<Item>
     
-    func addDisposable(disposable: Disposable) {}
-    
-    func dispose() {
+    public init(lock: LockType? = nil) {
         
-        disposed = true
+        dispatcher = Dispatcher<Item>(lock: lock)
     }
 }

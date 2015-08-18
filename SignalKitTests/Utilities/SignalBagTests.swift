@@ -2,66 +2,49 @@
 //  SignalBagTests.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 7/15/15.
-//  Copyright (c) 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 8/12/15.
+//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
 //
 
-import UIKit
 import XCTest
 
 class SignalBagTests: XCTestCase {
-
-    var lock: MockLock!
-    var signal: MockSignal!
-    var container: SignalBag!
+    
+    var bag: SignalBag!
+    var signal: MockSignal<Int>!
     
     override func setUp() {
         super.setUp()
         
-        lock = MockLock()
-        signal = MockSignal()
-        container = SignalBag(lock: lock)
+        bag = SignalBag()
+        signal = MockSignal<Int>()
     }
     
     func testAddSignal() {
         
-        container.addSignal(signal)
+        bag.addSignal(signal)
         
-        XCTAssertEqual(container.signalsCount, 1, "Should add a signal to container")
-        XCTAssertEqual(lock.lockCalled, true, "Should perform lock")
-        XCTAssertEqual(lock.unlockCalled, true, "Should perform unlock")
-        XCTAssertEqual(lock.syncCounter, 0, "Should perform balanced calls to lock() / unlock()")
+        XCTAssertEqual(bag.signalsCount, 1, "Should add the signal to the bag")
     }
     
-    func testRemoveSignal() {
+    func testDisposeSignal() {
         
-        let item = container.addSignal(signal)
+        let disposable = bag.addSignal(signal)
         
-        lock.lockCalled = false
-        lock.unlockCalled = false
+        disposable.dispose()
         
-        item.dispose()
-        
-        XCTAssertEqual(container.signalsCount, 0, "Should remove a signal from the container")
-        XCTAssertEqual(lock.lockCalled, true, "Should perform lock")
-        XCTAssertEqual(lock.unlockCalled, true, "Should perform unlock")
-        XCTAssertEqual(lock.syncCounter, 0, "Should perform balanced calls to lock() / unlock()")
+        XCTAssertEqual(bag.signalsCount, 0, "Should remove the signal from the bag upon disposal")
     }
     
     func testRemoveSignals() {
         
-        let signalTwo = MockSignal()
-        let signalThree = MockSignal()
+        let signalTwo = MockSignal<String>()
         
-        container.addSignal(signal)
-        container.addSignal(signalTwo)
-        container.addSignal(signalThree)
+        bag.addSignal(signal)
+        bag.addSignal(signalTwo)
         
-        container.removeSignals()
+        bag.removeSignals()
         
-        XCTAssertEqual(container.signalsCount, 0, "Should remove all signals from the container")
-        XCTAssertEqual(lock.lockCalled, true, "Should perform lock")
-        XCTAssertEqual(lock.unlockCalled, true, "Should perform unlock")
-        XCTAssertEqual(lock.syncCounter, 0, "Should perform balanced calls to lock() / unlock()")
+        XCTAssertEqual(bag.signalsCount, 0, "Should remove all signals from the bag")
     }
 }

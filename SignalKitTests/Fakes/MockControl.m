@@ -2,12 +2,11 @@
 //  MockControl.m
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 7/15/15.
-//  Copyright (c) 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 8/12/15.
+//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
 #import "MockControl.h"
 
 @implementation MockControl
@@ -50,6 +49,17 @@
 
 @end
 
+@implementation MockSegmentedControl
+
+-(void)sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
+    
+    MockControl* control = [[MockControl alloc] init];
+    
+    [control sendAction:action to:target forEvent:event];
+}
+
+@end
+
 @implementation MockSlider
 
 -(void)sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
@@ -73,17 +83,6 @@
 @end
 
 @implementation MockTextField
-
--(void)sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
-    
-    MockControl* control = [[MockControl alloc] init];
-    
-    [control sendAction:action to:target forEvent:event];
-}
-
-@end
-
-@implementation MockSegmentedControl
 
 -(void)sendAction:(SEL)action to:(id)target forEvent:(UIEvent *)event {
     
