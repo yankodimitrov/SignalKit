@@ -251,7 +251,7 @@ combineLatest(signalA, signalB)
 Special operation on a signal of type <code>(Bool, Bool)</code> or <code>(Bool, Bool, Bool)</code>. Sends true if all values in a signal of tuple type are matching the predicate function. We can replace the above <code>combineLatestWith</code> map operation with:
 ```swift
 combineLatest(signalA, signalB)
-    .all { ($0 == true }
+    .all { $0 == true }
     .bindTo(enabled: loginButton)
     .addTo(signalsBag)
 ```
@@ -260,7 +260,7 @@ combineLatest(signalA, signalB)
 Similar to <code>all</code>, but send true if at least one value in a signal of tuple type <code>(Bool, Bool)</code> or <code>(Bool, Bool, Bool)</code> matches the predicate function:
 ```swift
 combineLatest(signalA, signalB, signalC)
-    .some { ($0 == true }
+    .some { $0 == true }
     .bindTo(enabled: loginButton)
     .addTo(signalsBag)
 ```
