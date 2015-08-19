@@ -234,7 +234,7 @@ let signalA = emailField.observe().text.map(isValidName)
 let signalB = passwordField.observe().text.map(isValidPassword)
 
 signalA.combineLatestWith(signalB)
-    .map { ($0.0 == $0.1) == true }
+    .map { $0.0 == true && $0.1 == true }
     .bindTo(enabled: loginButton)
     .addTo(signalsBag)
 ```
@@ -242,7 +242,7 @@ signalA.combineLatestWith(signalB)
 A free function variant of the <code>combineLatestWith</code> which combines two or three signals:
 ```swift
 combineLatest(signalA, signalB)
-    .map { ($0.0 == $0.1) == true }
+    .map { $0.0 == true && $0.1 == true }
     .bindTo(enabled: loginButton)
     .addTo(signalsBag)
 ```
