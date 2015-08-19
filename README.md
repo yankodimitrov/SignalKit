@@ -94,9 +94,9 @@ slider.observe().valueChanges
 ```
 
 
-### NSNotificaionCenter
+### NSNotificationCenter
 
-At this point you may already guess how we are going to observe for notifications posted on the <code>NSNotificaionCenter</code>:
+At this point you may already guess how we are going to observe for notifications posted on the <code>NSNotificationCenter</code>:
 
 ```swift
 let center = NSNotificationCenter.defaultCenter()
