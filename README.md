@@ -113,7 +113,7 @@ We can also observe for notifications posted by a certain object.
 
 Wouldn’t it be great if there was a easy way to observe for keyboard notifications and to get the keyboard data that is posted by the system with the notification?
 
-Well SignalKit comes with a handy <code>Keyboard</code> strucute that you can call the static method <code>observe()</code> to observe for the keyboard events. When keyboard notification is posted by the system you will get back a signal of type <code>KeyboardState</code> which you can query for the keyboard begin/end frames and animation curve and duration.
+Well SignalKit comes with a handy <code>Keyboard</code> structure that you can call the static method <code>observe()</code> to observe for the keyboard events. When keyboard notification is posted by the system you will get back a signal of type <code>KeyboardState</code> which you can query for the keyboard begin/end frames and animation curve and duration.
 
 ```swift
 Keyboard.observe().willShow

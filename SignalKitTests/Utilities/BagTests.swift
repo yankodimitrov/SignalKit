@@ -18,7 +18,7 @@ class BagTests: XCTestCase {
     
     func testBagIsInitiallyEmpty() {
         
-        var bag = Bag<Int>()
+        let bag = Bag<Int>()
         
         XCTAssertEqual(bag.count, 0, "Initially the bag should be empty")
     }
