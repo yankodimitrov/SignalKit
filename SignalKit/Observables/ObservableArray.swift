@@ -20,19 +20,14 @@ public final class ObservableArray<ElementType>: Observable {
     
     public typealias ObservationType = ObservableArrayEvent
     public let dispatcher: Dispatcher<ObservableArrayEvent>
-    
-    public var elements: [ElementType] {
-        didSet {
-            eventStrategy.replacedAllElements()
-        }
-    }
+    public var elements: [ElementType]
     
     internal var eventStrategy: ArrayEventStrategyType
     
     public init(elements: [ElementType], lock: LockType) {
         
         self.elements = elements
-        self.dispatcher = Dispatcher(lock: lock)
+        self.dispatcher = Dispatcher(dispatchRule: { _ in return { return nil }}, lock: lock)
         self.eventStrategy = ArraySerialEventStrategy(dispatcher: dispatcher)
     }
     
@@ -52,7 +47,7 @@ public extension ObservableArray {
     public func insertElements(newElements: [ElementType], atIndex index: Int) {
         
         elements.insertContentsOf(newElements, at: index)
-        eventStrategy.insertedElementsAtIndex(index, count: count)
+        eventStrategy.insertedElementsAtIndex(index, count: newElements.count)
     }
     
     public func replaceElementAtIndex(index: Int, withElement newElement: ElementType) {
@@ -74,6 +69,18 @@ public extension ObservableArray {
         
         elements.removeAll(keepCapacity: keepCapacity)
         eventStrategy.replacedAllElements()
+    }
+    
+    public func performBatchUpdate(update: (collection: ObservableArray<ElementType>) -> Void) {
+        
+        let batchStrategy = ArrayBatchEventStrategy(elementsCount: elements.count)
+        
+        eventStrategy = batchStrategy
+        
+        update(collection: self)
+        
+        eventStrategy = ArraySerialEventStrategy(dispatcher: dispatcher)
+        dispatcher.dispatch(batchStrategy.event)
     }
 }
 

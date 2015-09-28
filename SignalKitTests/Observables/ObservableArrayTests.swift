@@ -203,4 +203,68 @@ class ObservableArrayTests: XCTestCase {
         
         XCTAssertEqual(list.isEmpty, true, "Should remove all elements")
     }
+    
+    func testPerformBatchUpdate() {
+        
+        let expectedElements = [2, 3, 11, 22]
+        list.elements = [1, 2, 3]
+        
+        list.performBatchUpdate { collection in
+            
+            collection.append(11)
+            collection.append(22)
+            collection.removeAtIndex(0)
+        }
+        
+        XCTAssertEqual(list.elements, expectedElements, "Should perform a batch update")
+    }
+    
+    func testPerformBatchUpdateEvent() {
+        
+        var isEventDispatched = false
+        
+        list.elements = [1, 2, 3]
+        
+        list.addObserver { event in
+            
+            guard case let .Batch(inserted, updated, deleted) = event else { return }
+            
+            if inserted.subtract([2, 3]).count == 0 &&
+                updated.isEmpty &&
+                deleted.subtract([0]).count == 0 {
+                    
+                    isEventDispatched = true
+            }
+        }
+        
+        list.performBatchUpdate { collection in
+            
+            collection.append(11)
+            collection.append(22)
+            collection.removeAtIndex(0)
+        }
+        
+        XCTAssertEqual(isEventDispatched, true, "Should dispatch .Batch event when we perform a batch update")
+    }
+    
+    func testPerformBatchUpdateSwitchesBachToSerialEventStrategy() {
+        
+        var insertedIndexes = Set<Int>()
+        
+        list.elements = [1, 2, 3]
+        
+        list.addObserver { event in
+            guard case let ObservableArrayEvent.Insert(indexes) = event else { return }
+            
+            insertedIndexes = indexes
+        }
+        
+        list.performBatchUpdate { collection in
+            collection.removeAtIndex(0)
+        }
+        
+        list.insert(111, atIndex: 0)
+        
+        XCTAssertEqual(insertedIndexes.contains(0), true, "Should switch back to serial event strategy after the batch update")
+    }
 }
