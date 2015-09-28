@@ -1,5 +1,5 @@
 //
-//  SignalBag.swift
+//  DisposableBag.swift
 //  SignalKit
 //
 //  Created by Yanko Dimitrov on 8/12/15.
@@ -8,19 +8,19 @@
 
 import Foundation
 
-public final class SignalBag: SignalContainerType {
+public final class DisposableBag {
     
     private lazy var bag = Bag<Disposable>()
     
-    internal var signalsCount: Int {
+    internal var count: Int {
         return bag.count
     }
     
     public init() {}
     
-    public func addSignal<T: SignalType>(signal: T) -> Disposable {
+    public func addDisposable(disposable: Disposable) -> Disposable {
         
-        let token = self.bag.insert(signal)
+        let token = self.bag.insert(disposable)
         
         return DisposableAction { [weak self] in
             
@@ -28,7 +28,7 @@ public final class SignalBag: SignalContainerType {
         }
     }
     
-    public func removeSignals() {
+    public func removeAll() {
         
         bag.removeItems()
     }

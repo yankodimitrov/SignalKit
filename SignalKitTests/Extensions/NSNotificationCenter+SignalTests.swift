@@ -13,12 +13,12 @@ class NSNotificationCenter_SignalTests: XCTestCase {
     
     let center = NSNotificationCenter.defaultCenter()
     let notificationName = "TestNotificationName"
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
     }
     
     func testObserveNotificationName() {

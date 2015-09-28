@@ -12,13 +12,13 @@ import XCTest
 class UILabel_SignalTests: XCTestCase {
     
     var label: UILabel!
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
         label = UILabel()
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
     }
     
     func testBindToText() {

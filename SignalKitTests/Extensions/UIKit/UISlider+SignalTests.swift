@@ -12,12 +12,12 @@ import XCTest
 class UISlider_SignalTests: XCTestCase {
     
     var slider: MockSlider!
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
         slider = MockSlider()
         slider.maximumValue = 20
     }

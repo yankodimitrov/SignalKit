@@ -12,13 +12,13 @@ import XCTest
 class UIImageView_SignalTests: XCTestCase {
     
     var imageView: UIImageView!
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
         imageView = UIImageView()
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
     }
     
     func testBindToImageInImageView() {

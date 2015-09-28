@@ -12,13 +12,13 @@ import XCTest
 class NSObject_SignalTests: XCTestCase {
     
     var person: Person!
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
         person = Person(name: "")
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
     }
     
     func testObserveKeyPath() {

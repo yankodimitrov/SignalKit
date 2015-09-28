@@ -167,15 +167,6 @@ public extension SignalType {
     }
     
     /**
-        Stores a chain of signal operations in a container.
-    
-    */
-    public func addTo(container: SignalContainerType) -> Disposable {
-        
-        return container.addSignal(self)
-    }
-    
-    /**
         Combine the latest values of the current signal A and
         another signal B in a signal of type (A, B).
     

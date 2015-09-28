@@ -12,13 +12,13 @@ import XCTest
 class UISwitch_SignalTests: XCTestCase {
     
     var switchControl: MockSwitch!
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
         switchControl = MockSwitch()
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
     }
     
     func testObserveOnState() {

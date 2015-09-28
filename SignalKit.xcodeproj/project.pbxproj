@@ -24,7 +24,6 @@
 		C9D988521B7B1788004559CD /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884C1B7B1788004559CD /* Disposable.swift */; };
 		C9D988541B7B1788004559CD /* LockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884D1B7B1788004559CD /* LockType.swift */; };
 		C9D988561B7B1788004559CD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884E1B7B1788004559CD /* Observable.swift */; };
-		C9D988581B7B1788004559CD /* SignalContainerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884F1B7B1788004559CD /* SignalContainerType.swift */; };
 		C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988501B7B1788004559CD /* SignalType.swift */; };
 		C9D9885C1B7B1788004559CD /* TokenGeneratorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988511B7B1788004559CD /* TokenGeneratorType.swift */; };
 		C9D9885F1B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */; };
@@ -55,8 +54,8 @@
 		C9D9889F1B7B79A2004559CD /* MockObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9889E1B7B79A2004559CD /* MockObservable.swift */; };
 		C9D988A11B7B7D10004559CD /* SignalTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A01B7B7D10004559CD /* SignalTypeTests.swift */; };
 		C9D988A31B7B7D41004559CD /* MockSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A21B7B7D41004559CD /* MockSignal.swift */; };
-		C9D988A51B7BCA18004559CD /* SignalBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A41B7BCA18004559CD /* SignalBag.swift */; };
-		C9D988A81B7BCA4C004559CD /* SignalBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A71B7BCA4C004559CD /* SignalBagTests.swift */; };
+		C9D988A51B7BCA18004559CD /* DisposableBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A41B7BCA18004559CD /* DisposableBag.swift */; };
+		C9D988A81B7BCA4C004559CD /* DisposableBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988A71B7BCA4C004559CD /* DisposableBagTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 		C9F7AA9F1B809088002DA7B7 /* UIButton+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F7AA9E1B809088002DA7B7 /* UIButton+Signal.swift */; };
@@ -110,7 +109,6 @@
 		C9D9884C1B7B1788004559CD /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		C9D9884D1B7B1788004559CD /* LockType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockType.swift; sourceTree = "<group>"; };
 		C9D9884E1B7B1788004559CD /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		C9D9884F1B7B1788004559CD /* SignalContainerType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalContainerType.swift; sourceTree = "<group>"; };
 		C9D988501B7B1788004559CD /* SignalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalType.swift; sourceTree = "<group>"; };
 		C9D988511B7B1788004559CD /* TokenGeneratorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenGeneratorType.swift; sourceTree = "<group>"; };
 		C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementalKeyGenerator.swift; sourceTree = "<group>"; };
@@ -142,8 +140,8 @@
 		C9D9889E1B7B79A2004559CD /* MockObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockObservable.swift; sourceTree = "<group>"; };
 		C9D988A01B7B7D10004559CD /* SignalTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalTypeTests.swift; sourceTree = "<group>"; };
 		C9D988A21B7B7D41004559CD /* MockSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSignal.swift; sourceTree = "<group>"; };
-		C9D988A41B7BCA18004559CD /* SignalBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalBag.swift; sourceTree = "<group>"; };
-		C9D988A71B7BCA4C004559CD /* SignalBagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalBagTests.swift; sourceTree = "<group>"; };
+		C9D988A41B7BCA18004559CD /* DisposableBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableBag.swift; sourceTree = "<group>"; };
+		C9D988A71B7BCA4C004559CD /* DisposableBagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableBagTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 				C9D988501B7B1788004559CD /* SignalType.swift */,
 				C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */,
 				C9D9884D1B7B1788004559CD /* LockType.swift */,
-				C9D9884F1B7B1788004559CD /* SignalContainerType.swift */,
 				C9D988511B7B1788004559CD /* TokenGeneratorType.swift */,
 			);
 			path = Protocols;
@@ -258,7 +255,7 @@
 				C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */,
 				C98CE79B1B7E2AA70035CF1E /* CompoundObserver.swift */,
 				C9D988701B7B1F14004559CD /* SpinLock.swift */,
-				C9D988A41B7BCA18004559CD /* SignalBag.swift */,
+				C9D988A41B7BCA18004559CD /* DisposableBag.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -314,7 +311,7 @@
 				C9D988661B7B1B74004559CD /* BagTests.swift */,
 				C9D9886D1B7B1DE8004559CD /* DisposableActionTests.swift */,
 				C9D988751B7B2B20004559CD /* DispatcherTests.swift */,
-				C9D988A71B7BCA4C004559CD /* SignalBagTests.swift */,
+				C9D988A71B7BCA4C004559CD /* DisposableBagTests.swift */,
 				C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */,
 				C98CE79E1B7E2D1B0035CF1E /* CompoundObserverTests.swift */,
 			);
@@ -532,12 +529,11 @@
 				C9F7E85D1B80BD19000D5CC7 /* UITextView+Signal.swift in Sources */,
 				C9D988901B7B5A91004559CD /* ControlSignal.swift in Sources */,
 				C98CE79C1B7E2AA70035CF1E /* CompoundObserver.swift in Sources */,
-				C9D988581B7B1788004559CD /* SignalContainerType.swift in Sources */,
 				C9F7AABF1B80AB26002DA7B7 /* UISwitch+Signal.swift in Sources */,
 				C9D988641B7B1B2B004559CD /* Bag.swift in Sources */,
 				C9D9885C1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,
 				C92948F21B7F794000BCBC7C /* NSObject+Signal.swift in Sources */,
-				C9D988A51B7BCA18004559CD /* SignalBag.swift in Sources */,
+				C9D988A51B7BCA18004559CD /* DisposableBag.swift in Sources */,
 				C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,7 +576,7 @@
 				C9D988821B7B46DE004559CD /* ObservablePropertyTests.swift in Sources */,
 				C9D9886E1B7B1DE8004559CD /* DisposableActionTests.swift in Sources */,
 				C9D9889F1B7B79A2004559CD /* MockObservable.swift in Sources */,
-				C9D988A81B7BCA4C004559CD /* SignalBagTests.swift in Sources */,
+				C9D988A81B7BCA4C004559CD /* DisposableBagTests.swift in Sources */,
 				C9F7AABD1B80AAE2002DA7B7 /* UISwitch+SignalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

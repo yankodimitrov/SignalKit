@@ -12,13 +12,13 @@ import XCTest
 class UIButton_SignalTests: XCTestCase {
     
     var button: MockButton!
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
         button = MockButton()
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
     }
     
     func testObserveTapEvents() {

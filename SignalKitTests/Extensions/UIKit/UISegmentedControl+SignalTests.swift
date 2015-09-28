@@ -12,12 +12,12 @@ import XCTest
 class UISegmentedControl_SignalTests: XCTestCase {
     
     var segmentedControl: MockSegmentedControl!
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
         
         segmentedControl = MockSegmentedControl()
         segmentedControl.insertSegmentWithTitle("", atIndex: 0, animated: false)
