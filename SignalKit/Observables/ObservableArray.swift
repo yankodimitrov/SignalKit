@@ -130,4 +130,8 @@ extension ObservableArray {
     public subscript(subrange: Range<Int>) -> ArraySlice<ElementType> {
         return elements[subrange]
     }
+    
+    public func removeAtIndex(index: Int) -> ElementType {
+        return removeElementAtIndex(index)
+    }
 }

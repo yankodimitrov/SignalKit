@@ -185,4 +185,14 @@ class ObservableArrayTests: XCTestCase {
         
         XCTAssertEqual(list.elements[2], 3, "Should insert an element at index")
     }
+    
+    func testRemoveAtIndex() {
+        
+        list.elements = [1, 2]
+        
+        let element = list.removeAtIndex(0)
+        
+        XCTAssertEqual(list.count, 1, "Should remove the element")
+        XCTAssertEqual(element, 1, "Should return the removed element")
+    }
 }
