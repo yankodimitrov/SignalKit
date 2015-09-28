@@ -52,7 +52,7 @@ public extension ObservableArray {
     public func insertElements(newElements: [ElementType], atIndex index: Int) {
         
         elements.insertContentsOf(newElements, at: index)
-        eventStrategy.insertedElementsAtIndex(index, count: newElements.count)
+        eventStrategy.insertedElementsAtIndex(index, count: count)
     }
     
     public func replaceElementAtIndex(index: Int, withElement newElement: ElementType) {
@@ -110,5 +110,12 @@ extension ObservableArray: CollectionType {
         set {
             replaceElementAtIndex(index, withElement: newValue)
         }
+    }
+}
+
+extension ObservableArray {
+    
+    public func append(newElement: ElementType) {
+        insertElements([newElement], atIndex: count)
     }
 }

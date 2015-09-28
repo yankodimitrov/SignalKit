@@ -143,4 +143,17 @@ class ObservableArrayTests: XCTestCase {
         
         XCTAssertEqual(list.elements[0], 3, "Should update the element at index")
     }
+    
+    func testAppend() {
+        
+        let newElement = 111
+        
+        list.elements = [1, 2, 3]
+        list.append(newElement)
+        
+        let element = list[3]
+        
+        XCTAssertEqual(list.count, 4, "Should append the element")
+        XCTAssertEqual(element, newElement, "Should append the element")
+    }
 }
