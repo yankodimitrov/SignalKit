@@ -55,4 +55,9 @@ public extension ObservableArray {
         
         return elements.removeAtIndex(index)
     }
+    
+    public func removeAllElements(keepCapacity: Bool = false) {
+        
+        elements.removeAll(keepCapacity: keepCapacity)
+    }
 }
