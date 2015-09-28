@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import SignalKit
 
 class UITextView_SignalTests: XCTestCase {
     

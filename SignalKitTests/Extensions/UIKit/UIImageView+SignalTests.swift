@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import SignalKit
 
 class UIImageView_SignalTests: XCTestCase {
     

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import SignalKit
 
 class UITextField_SignalTests: XCTestCase {
     

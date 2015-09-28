@@ -7,6 +7,7 @@
 //
 
 import Foundation
+@testable import SignalKit
 
 public final class MockSignal<T>: SignalType {
     public typealias Item = T

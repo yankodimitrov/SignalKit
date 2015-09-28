@@ -7,6 +7,7 @@
 //
 
 import Foundation
+@testable import SignalKit
 
 class StubObservable<T>: Observable {
     typealias Item = T
