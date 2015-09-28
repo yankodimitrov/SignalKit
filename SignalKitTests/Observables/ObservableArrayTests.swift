@@ -195,4 +195,12 @@ class ObservableArrayTests: XCTestCase {
         XCTAssertEqual(list.count, 1, "Should remove the element")
         XCTAssertEqual(element, 1, "Should return the removed element")
     }
+    
+    func testRemoveAll() {
+        
+        list.elements = [1, 2]
+        list.removeAll()
+        
+        XCTAssertEqual(list.isEmpty, true, "Should remove all elements")
+    }
 }

@@ -134,4 +134,8 @@ extension ObservableArray {
     public func removeAtIndex(index: Int) -> ElementType {
         return removeElementAtIndex(index)
     }
+    
+    public func removeAll(keepCapacity: Bool = false) {
+        removeAllElements(keepCapacity)
+    }
 }
