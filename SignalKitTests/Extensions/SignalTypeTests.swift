@@ -23,6 +23,17 @@ class SignalTypeTests: XCTestCase {
         signalsBag = SignalBag()
     }
     
+    func testDispose() {
+        
+        let sourceSignal = MockSignal<Int>()
+        let signal = DummySignal<Int>()
+        
+        signal.disposableSource = sourceSignal
+        signal.dispose()
+        
+        XCTAssertEqual(sourceSignal.isDisposeCalled, true, "Should dispose the source signal")
+    }
+    
     func testNext() {
         
         var result = 0

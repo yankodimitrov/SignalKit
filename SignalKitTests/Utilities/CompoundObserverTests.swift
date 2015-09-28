@@ -91,4 +91,23 @@ class CompoundObserverTests: XCTestCase {
         
         XCTAssert(result.0 == 0 && result.1 == "", "Should dispose the observation")
     }
+    
+    func testDeinit() {
+        
+        var result = (0, "")
+        
+        func someFunc() {
+            var _ = CompoundObserver(observableA: signalA, observableB: signalB) {
+                
+                result = $0
+            }
+        }
+        
+        someFunc()
+        
+        signalA.dispatch(1)
+        signalB.dispatch("a")
+        
+        XCTAssert(result.0 == 0 && result.1 == "", "Should dispose the observations upon deinit")
+    }
 }

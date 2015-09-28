@@ -78,4 +78,17 @@ class NotificationSignalTests: XCTestCase {
         
         XCTAssertEqual(result, nil, "The dispatch rule should dispatch only new notifications")
     }
+    
+    func testDeinit() {
+        
+        var called = false
+        var signal: NotificationSignal? = NotificationSignal(center: center, name: notificationName)
+        
+        signal?.addObserver { _ in called = true }
+        signal = nil
+        
+        center.postNotificationName(notificationName, object: nil)
+        
+        XCTAssertEqual(called, false, "Should dispose the observation upon deinit")
+    }
 }

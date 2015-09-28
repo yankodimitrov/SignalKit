@@ -16,14 +16,21 @@ public extension SignalEventType where Sender: UITextView {
     */
     public var text: Signal<String> {
         
-        let notification = NotificationSignal(name: UITextViewTextDidChangeNotification, fromObject: sender)
+        let signal = Signal<String>()
+        let notificationSignal = NotificationSignal(name: UITextViewTextDidChangeNotification, fromObject: sender)
         
-        let signal = notification.map { [weak sender] _ in
+        notificationSignal.addObserver { [weak sender, weak signal] _ in
             
-            return sender?.text ?? ""
+            if let text = sender?.text {
+                signal?.dispatch(text)
+            }
         }
         
-        signal.dispatch(sender.text ?? "")
+        signal.disposableSource = notificationSignal
+        
+        if let text = sender.text {
+            signal.dispatch(text)
+        }
         
         return signal
     }
@@ -34,14 +41,21 @@ public extension SignalEventType where Sender: UITextView {
     */
     public var attributedText: Signal<NSAttributedString> {
         
-        let notification = NotificationSignal(name: UITextViewTextDidChangeNotification, fromObject: sender)
+        let signal = Signal<NSAttributedString>()
+        let notificationSignal = NotificationSignal(name: UITextViewTextDidChangeNotification, fromObject: sender)
         
-        let signal = notification.map { [weak sender] _ in
+        notificationSignal.addObserver { [weak sender, weak signal] _ in
             
-            return sender?.attributedText ?? NSAttributedString(string: "")
+            if let text = sender?.attributedText {
+                signal?.dispatch(text)
+            }
         }
         
-        signal.dispatch(sender.attributedText ?? NSAttributedString(string: ""))
+        signal.disposableSource = notificationSignal
+        
+        if let text = sender.attributedText {
+            signal.dispatch(text)
+        }
         
         return signal
     }

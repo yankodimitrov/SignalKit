@@ -21,6 +21,12 @@ class ObservablePropertyTests: XCTestCase {
         userName = ObservableProperty<String>(value: "", lock: lock)
     }
     
+    func testInitWithValue() {
+        
+        let name = ObservableProperty("John")
+        
+        XCTAssertEqual(name.value, "John", "Should init with value")
+    }
     
     func testValueChangeWillDispatch() {
         

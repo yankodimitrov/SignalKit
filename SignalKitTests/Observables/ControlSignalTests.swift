@@ -56,4 +56,18 @@ class ControlSignalTests: XCTestCase {
         
         XCTAssertEqual(disposableSource.isDisposeCalled, true, "Should call the disposable source to dispose")
     }
+    
+    func testDeinit() {
+        
+        var called = false
+        
+        var signal: ControlSignal<MockControl>? = ControlSignal(control: control, events: .ValueChanged)
+        
+        signal!.addObserver { _ in called = true }
+        signal = nil
+        
+        control.sendActionsForControlEvents(.ValueChanged)
+        
+        XCTAssertEqual(called, false, "Should dispose the observation upon deinit")
+    }
 }

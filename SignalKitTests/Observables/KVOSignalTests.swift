@@ -56,4 +56,30 @@ class KVOSignalTests: XCTestCase {
         
         XCTAssertEqual(disposableSource.isDisposeCalled, true, "Should call the disposable source to dispose")
     }
+    
+    func testObserveValueForKeyPathContext() {
+        
+        var otherContext = 0
+        let observer = KVOObserver(subject: person, keyPath: "name")
+        var isCalled = false
+        
+        observer.callback = { _ in isCalled = true }
+        
+        observer.observeValueForKeyPath("name", ofObject: person, change: [NSKeyValueChangeNewKey: "Jane"], context: &otherContext)
+        
+        XCTAssertEqual(isCalled, false, "Should dispatch changes only from the same context")
+    }
+    
+    func testDeinit() {
+        
+        var result = ""
+        var signal: KVOSignal<String>? = KVOSignal<String>(subject: person, keyPath: "name")
+        
+        signal?.addObserver { result = $0 }
+        signal = nil
+        
+        person.name = "John"
+        
+        XCTAssertEqual(result, "", "Should dispose the observation upon deinit")
+    }
 }
