@@ -71,6 +71,12 @@ public extension ObservableArray {
         eventStrategy.replacedAllElements()
     }
     
+    public func replaceElementsWith(newElements: [ElementType]) {
+        
+        elements = newElements
+        eventStrategy.replacedAllElements()
+    }
+    
     public func performBatchUpdate(update: (collection: ObservableArray<ElementType>) -> Void) {
         
         let batchStrategy = ArrayBatchEventStrategy(elementsCount: elements.count)

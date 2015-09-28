@@ -267,4 +267,13 @@ class ObservableArrayTests: XCTestCase {
         
         XCTAssertEqual(insertedIndexes.contains(0), true, "Should switch back to serial event strategy after the batch update")
     }
+    
+    func testReplaceElementsWith() {
+        
+        let newElements = [11, 22, 33]
+        
+        list.replaceElementsWith(newElements)
+        
+        XCTAssertEqual(list.elements, newElements, "Should replace all elements")
+    }
 }
