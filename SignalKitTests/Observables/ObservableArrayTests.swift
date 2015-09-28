@@ -51,4 +51,15 @@ class ObservableArrayTests: XCTestCase {
         
         XCTAssertEqual(list.elements, elements, "Should insert elements at index")
     }
+    
+    func testReplaceElementAtIndex() {
+        
+        list.elements = [1, 2]
+        
+        list.replaceElementAtIndex(0, withElement: 3)
+        
+        let element = list.elements[0]
+        
+        XCTAssertEqual(element, 3, "Should repalce element at index")
+    }
 }

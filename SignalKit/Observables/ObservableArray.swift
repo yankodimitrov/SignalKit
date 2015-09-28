@@ -45,4 +45,9 @@ public extension ObservableArray {
         
         elements.insertContentsOf(newElements, at: index)
     }
+    
+    public func replaceElementAtIndex(index: Int, withElement newElement: ElementType) {
+        
+        elements[index] = newElement
+    }
 }
