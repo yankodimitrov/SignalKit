@@ -19,6 +19,8 @@
 		C95FD51D1BB97D6D001BAF90 /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD51C1BB97D6D001BAF90 /* ObservableArray.swift */; settings = {ASSET_TAGS = (); }; };
 		C95FD51F1BB97D79001BAF90 /* ObservableArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD51E1BB97D79001BAF90 /* ObservableArrayTests.swift */; settings = {ASSET_TAGS = (); }; };
 		C95FD5211BB988B6001BAF90 /* ArrayEventStrategyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD5201BB988B6001BAF90 /* ArrayEventStrategyType.swift */; settings = {ASSET_TAGS = (); }; };
+		C95FD5251BB989FE001BAF90 /* ArraySerialEventStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD5241BB989FE001BAF90 /* ArraySerialEventStrategy.swift */; settings = {ASSET_TAGS = (); }; };
+		C95FD5271BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD5261BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift */; settings = {ASSET_TAGS = (); }; };
 		C97D68E31B80E76E00F1676F /* KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D68E21B80E76E00F1676F /* KeyboardTests.swift */; };
 		C97D68E51B80E78400F1676F /* KeyboardStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D68E41B80E78400F1676F /* KeyboardStateTests.swift */; };
 		C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */; };
@@ -108,6 +110,8 @@
 		C95FD51C1BB97D6D001BAF90 /* ObservableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArray.swift; sourceTree = "<group>"; };
 		C95FD51E1BB97D79001BAF90 /* ObservableArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArrayTests.swift; sourceTree = "<group>"; };
 		C95FD5201BB988B6001BAF90 /* ArrayEventStrategyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayEventStrategyType.swift; sourceTree = "<group>"; };
+		C95FD5241BB989FE001BAF90 /* ArraySerialEventStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArraySerialEventStrategy.swift; sourceTree = "<group>"; };
+		C95FD5261BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArraySerialEventStrategyTests.swift; sourceTree = "<group>"; };
 		C97D68E21B80E76E00F1676F /* KeyboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardTests.swift; sourceTree = "<group>"; };
 		C97D68E41B80E78400F1676F /* KeyboardStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardStateTests.swift; sourceTree = "<group>"; };
 		C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalScheduler.swift; sourceTree = "<group>"; };
@@ -198,6 +202,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C95FD5231BB989DE001BAF90 /* ArrayEventStrategies */ = {
+			isa = PBXGroup;
+			children = (
+				C95FD5241BB989FE001BAF90 /* ArraySerialEventStrategy.swift */,
+			);
+			path = ArrayEventStrategies;
+			sourceTree = "<group>";
+		};
 		C9D9882E1B7B0903004559CD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +248,7 @@
 				C9D9888F1B7B5A91004559CD /* ControlSignal.swift */,
 				C9D988971B7B5ECB004559CD /* NotificationSignal.swift */,
 				C95FD51C1BB97D6D001BAF90 /* ObservableArray.swift */,
+				C95FD5231BB989DE001BAF90 /* ArrayEventStrategies */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -311,6 +324,7 @@
 				C9D988921B7B5C09004559CD /* ControlSignalTests.swift */,
 				C9D9889A1B7B6049004559CD /* NotificationSignalTests.swift */,
 				C95FD51E1BB97D79001BAF90 /* ObservableArrayTests.swift */,
+				C95FD5261BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -526,6 +540,7 @@
 				C92948ED1B7F759200BCBC7C /* SignalEvent.swift in Sources */,
 				C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */,
 				C9F7AABA1B809F59002DA7B7 /* UISlider+Signal.swift in Sources */,
+				C95FD5251BB989FE001BAF90 /* ArraySerialEventStrategy.swift in Sources */,
 				C9D988731B7B2AD7004559CD /* Dispatcher.swift in Sources */,
 				C9D9887F1B7B445F004559CD /* ObservableProperty.swift in Sources */,
 				C9F7AAA41B80943F002DA7B7 /* UIDatePicker+Signal.swift in Sources */,
@@ -558,6 +573,7 @@
 			files = (
 				C9D9888E1B7B587A004559CD /* KVOSignalTests.swift in Sources */,
 				C9D9889B1B7B6049004559CD /* NotificationSignalTests.swift in Sources */,
+				C95FD5271BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift in Sources */,
 				C9F7AAA71B809543002DA7B7 /* UIDatePicker+SignalTests.swift in Sources */,
 				C9D988761B7B2B20004559CD /* DispatcherTests.swift in Sources */,
 				C9F7AAB81B809ECF002DA7B7 /* UISlider+SignalTests.swift in Sources */,
