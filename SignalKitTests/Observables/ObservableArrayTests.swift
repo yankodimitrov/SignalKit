@@ -11,6 +11,14 @@ import XCTest
 
 class ObservableArrayTests: XCTestCase {
 
+    var list: ObservableArray<Int>!
+    
+    override func setUp() {
+        super.setUp()
+        
+        list = ObservableArray<Int>()
+    }
+    
     func testInitWithElementsAndLock() {
         
         let elements = [1, 2]
@@ -33,5 +41,14 @@ class ObservableArrayTests: XCTestCase {
         let list = ObservableArray<Int>()
         
         XCTAssertEqual(list.elements.count, 0, "Should init with no elements")
+    }
+    
+    func testInsertElementsAtIndex() {
+        
+        let elements = [1, 2]
+        
+        list.insertElements(elements, atIndex: 0)
+        
+        XCTAssertEqual(list.elements, elements, "Should insert elements at index")
     }
 }

@@ -38,3 +38,11 @@ public final class ObservableArray<ElementType>: Observable {
         self.init([ElementType]())
     }
 }
+
+public extension ObservableArray {
+    
+    public func insertElements(newElements: [ElementType], atIndex index: Int) {
+        
+        elements.insertContentsOf(newElements, at: index)
+    }
+}
