@@ -10,6 +10,10 @@ import Foundation
 
 public enum ObservableArrayEvent {
     case Reset
+    case Insert (Set<Int>)
+    case Update (Set<Int>)
+    case Remove (Set<Int>)
+    case Batch (inserted: Set<Int>, updated: Set<Int>, removed: Set<Int>)
 }
 
 public final class ObservableArray<ElementType>: Observable {
