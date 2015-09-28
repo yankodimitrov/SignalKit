@@ -15,6 +15,7 @@
 		C92948FA1B7F8DCE00BCBC7C /* NSNotificationCenter+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948F91B7F8DCE00BCBC7C /* NSNotificationCenter+SignalTests.swift */; };
 		C92948FC1B7F994D00BCBC7C /* UIControl+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948FB1B7F994D00BCBC7C /* UIControl+Signal.swift */; };
 		C92948FF1B7F9A9900BCBC7C /* UIControl+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948FE1B7F9A9900BCBC7C /* UIControl+SignalTests.swift */; };
+		C95FD51B1BB97A9E001BAF90 /* SpinLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD51A1BB97A9E001BAF90 /* SpinLockTests.swift */; settings = {ASSET_TAGS = (); }; };
 		C97D68E31B80E76E00F1676F /* KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D68E21B80E76E00F1676F /* KeyboardTests.swift */; };
 		C97D68E51B80E78400F1676F /* KeyboardStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D68E41B80E78400F1676F /* KeyboardStateTests.swift */; };
 		C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */; };
@@ -100,6 +101,7 @@
 		C92948F91B7F8DCE00BCBC7C /* NSNotificationCenter+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNotificationCenter+SignalTests.swift"; sourceTree = "<group>"; };
 		C92948FB1B7F994D00BCBC7C /* UIControl+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Signal.swift"; sourceTree = "<group>"; };
 		C92948FE1B7F9A9900BCBC7C /* UIControl+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+SignalTests.swift"; sourceTree = "<group>"; };
+		C95FD51A1BB97A9E001BAF90 /* SpinLockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinLockTests.swift; sourceTree = "<group>"; };
 		C97D68E21B80E76E00F1676F /* KeyboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardTests.swift; sourceTree = "<group>"; };
 		C97D68E41B80E78400F1676F /* KeyboardStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardStateTests.swift; sourceTree = "<group>"; };
 		C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalScheduler.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				C9D988A71B7BCA4C004559CD /* DisposableBagTests.swift */,
 				C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */,
 				C98CE79E1B7E2D1B0035CF1E /* CompoundObserverTests.swift */,
+				C95FD51A1BB97A9E001BAF90 /* SpinLockTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				C9D988931B7B5C09004559CD /* ControlSignalTests.swift in Sources */,
 				C9D988961B7B5D18004559CD /* MockControl.m in Sources */,
 				C9F7E8581B80B612000D5CC7 /* UITextField+SignalTests.swift in Sources */,
+				C95FD51B1BB97A9E001BAF90 /* SpinLockTests.swift in Sources */,
 				C9D9888C1B7B5865004559CD /* Person.swift in Sources */,
 				C92948FF1B7F9A9900BCBC7C /* UIControl+SignalTests.swift in Sources */,
 				C92948F51B7F841600BCBC7C /* NSObject+SignalTests.swift in Sources */,
