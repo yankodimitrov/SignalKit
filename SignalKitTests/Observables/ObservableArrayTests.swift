@@ -177,4 +177,12 @@ class ObservableArrayTests: XCTestCase {
         
         XCTAssertEqual(elements, list.elements[0...1], "Should return the sub range array slice")
     }
+    
+    func testInsert() {
+        
+        list.elements = [1, 2]
+        list.insert(3, atIndex: 2)
+        
+        XCTAssertEqual(list.elements[2], 3, "Should insert an element at index")
+    }
 }
