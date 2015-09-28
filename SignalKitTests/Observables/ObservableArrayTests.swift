@@ -157,6 +157,18 @@ class ObservableArrayTests: XCTestCase {
         XCTAssertEqual(element, newElement, "Should append the element")
     }
     
+    func testAppendContentsOf() {
+        
+        let newElements = [11, 22]
+        
+        list.elements = [1, 2, 3]
+        list.appendContentsOf(newElements)
+        
+        XCTAssertEqual(list.count, 5, "Should append the elements")
+        XCTAssertEqual(list[3], 11, "Should contain the newly appended element")
+        XCTAssertEqual(list[4], 22, "Should contain the newly appended element")
+    }
+    
     func testSubrange() {
         
         list.elements = [1, 2, 3]
