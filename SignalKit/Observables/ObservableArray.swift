@@ -50,4 +50,9 @@ public extension ObservableArray {
         
         elements[index] = newElement
     }
+    
+    public func removeElementAtIndex(index: Int) -> ElementType {
+        
+        return elements.removeAtIndex(index)
+    }
 }

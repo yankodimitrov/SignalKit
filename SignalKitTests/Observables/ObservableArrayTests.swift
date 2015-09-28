@@ -62,4 +62,14 @@ class ObservableArrayTests: XCTestCase {
         
         XCTAssertEqual(element, 3, "Should repalce element at index")
     }
+    
+    func testRemoveElementAtIndex() {
+        
+        list.elements = [1, 2]
+        
+        let element = list.removeElementAtIndex(0)
+        
+        XCTAssertEqual(list.elements.count, 1, "Should remove element at index")
+        XCTAssertEqual(element, 1, "Should contain the removed element")
+    }
 }
