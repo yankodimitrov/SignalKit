@@ -118,4 +118,8 @@ extension ObservableArray {
     public func append(newElement: ElementType) {
         insertElements([newElement], atIndex: count)
     }
+    
+    public subscript(subrange: Range<Int>) -> ArraySlice<ElementType> {
+        return elements[subrange]
+    }
 }

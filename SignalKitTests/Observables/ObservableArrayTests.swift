@@ -156,4 +156,13 @@ class ObservableArrayTests: XCTestCase {
         XCTAssertEqual(list.count, 4, "Should append the element")
         XCTAssertEqual(element, newElement, "Should append the element")
     }
+    
+    func testSubrange() {
+        
+        list.elements = [1, 2, 3]
+        
+        let elements = list[0...1]
+        
+        XCTAssertEqual(elements, list.elements[0...1], "Should return the sub range array slice")
+    }
 }
