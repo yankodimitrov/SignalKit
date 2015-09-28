@@ -126,7 +126,7 @@ extension ObservableArray: CollectionType {
     }
 }
 
-extension ObservableArray {
+public extension ObservableArray {
     
     public func append(newElement: ElementType) {
         insertElements([newElement], atIndex: count)
