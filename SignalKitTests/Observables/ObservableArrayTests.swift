@@ -81,4 +81,66 @@ class ObservableArrayTests: XCTestCase {
         
         XCTAssertEqual(list.elements.isEmpty, true, "Should remove all elements")
     }
+    
+    func testStartIndex() {
+        
+        XCTAssertEqual(list.startIndex, list.elements.startIndex, "Should return the elements start index")
+    }
+    
+    func testEndIndex() {
+        
+        XCTAssertEqual(list.endIndex, list.elements.endIndex, "Should return the elements end index")
+    }
+    
+    func testIsEmpty() {
+       
+        XCTAssertEqual(list.isEmpty, list.elements.isEmpty, "Should return the elements isEmpty value")
+    }
+    
+    func testCount() {
+        
+        XCTAssertEqual(list.count, list.elements.count, "Should return the elements count")
+    }
+    
+    func testUnderestimateCount() {
+        
+        XCTAssertEqual(list.underestimateCount(), list.elements.underestimateCount(), "Should return the elements underestimate count value")
+    }
+    
+    func testGenerate() {
+        
+        var count = 0
+        let array = ObservableArray<ObservableArray<Int>>()
+        let first = ObservableArray([1, 2])
+        let second = ObservableArray([3, 4])
+        
+        array.elements = [first, second]
+        
+        for section in array {
+            
+            for value in section {
+                count += value
+            }
+        }
+        
+        XCTAssertEqual(count, 10, "Should return IndexingGenerator for the elements")
+    }
+    
+    func testSubscriptGet() {
+        
+        list.elements = [1, 2]
+        
+        let element = list[1]
+        
+        XCTAssertEqual(element, 2, "Should return the element at index 1")
+    }
+    
+    func testSubscriptUpdate() {
+        
+        list.elements = [1, 2]
+        
+        list[0] = 3
+        
+        XCTAssertEqual(list.elements[0], 3, "Should update the element at index")
+    }
 }
