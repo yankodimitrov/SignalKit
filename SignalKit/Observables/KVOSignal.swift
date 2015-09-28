@@ -12,19 +12,19 @@ private var ObserverContext = 0
 
 public final class KVOSignal<T>: SignalType {
     
-    public typealias Item = T
+    public typealias ObservationType = T
     public var disposableSource: Disposable?
-    public let dispatcher: Dispatcher<Item>
+    public let dispatcher: Dispatcher<ObservationType>
     
     private let observer: KVOObserver
     
     public init(subject: NSObject, keyPath: String, lock: LockType? = nil) {
         
-        dispatcher = Dispatcher<Item>(lock: lock)
+        dispatcher = Dispatcher<ObservationType>(lock: lock)
         observer = KVOObserver(subject: subject, keyPath: keyPath)
         observer.callback = { [weak self] value in
             
-            if let value = value as? Item {
+            if let value = value as? ObservationType {
                 self?.dispatch(value)
             }
         }

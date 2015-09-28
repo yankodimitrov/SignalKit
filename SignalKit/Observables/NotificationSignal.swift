@@ -10,15 +10,15 @@ import Foundation
 
 public final class NotificationSignal: SignalType {
     
-    public typealias Item = NSNotification
+    public typealias ObservationType = NSNotification
     public var disposableSource: Disposable?
-    public let dispatcher: Dispatcher<Item>
+    public let dispatcher: Dispatcher<ObservationType>
     
     private let observer: NotificationObserver
     
     public init(center: NSNotificationCenter, name: String, fromObject object: AnyObject? = nil, lock: LockType? = nil) {
         
-        dispatcher = Dispatcher<Item>(dispatchRule: { _ in return { return nil }}, lock: lock)
+        dispatcher = Dispatcher<ObservationType>(dispatchRule: { _ in return { return nil }}, lock: lock)
         observer = NotificationObserver(center: center, name: name, fromObject: object)
         
         observer.callback = { [weak self] notification in

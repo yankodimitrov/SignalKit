@@ -28,7 +28,7 @@ public extension SignalType {
         Adds a new observer to the signal to perform a side effect.
     
     */
-    public func next(observer: Item -> Void) -> Self {
+    public func next(observer: ObservationType -> Void) -> Self {
         
         addObserver(observer)
         
@@ -36,10 +36,10 @@ public extension SignalType {
     }
     
     /**
-        Transforms a signal ot type Item to a signal of type U.
+        Transforms a signal ot type ObservationType to a signal of type U.
     
     */
-    public func map<U>(transform: Item -> U) -> Signal<U> {
+    public func map<U>(transform: ObservationType -> U) -> Signal<U> {
         
         let signal = Signal<U>()
         
@@ -57,9 +57,9 @@ public extension SignalType {
         Filters the dispatched by the signal values using a predicate.
     
     */
-    public func filter(predicate: Item -> Bool) -> Signal<Item> {
+    public func filter(predicate: ObservationType -> Bool) -> Signal<ObservationType> {
         
-        let signal = Signal<Item>()
+        let signal = Signal<ObservationType>()
         
         addObserver { [weak signal] in
             
@@ -78,9 +78,9 @@ public extension SignalType {
         Skips a certain number of dispatched by the signal values.
     
     */
-    public func skip(var count: Int) -> Signal<Item> {
+    public func skip(var count: Int) -> Signal<ObservationType> {
         
-        let signal = Signal<Item>()
+        let signal = Signal<ObservationType>()
         
         addObserver { [weak signal] in
             
@@ -103,9 +103,9 @@ public extension SignalType {
         Delivers the signal on a given queue.
     
     */
-    public func deliverOn(queue: SignalScheduler.Queue) -> Signal<Item> {
+    public func deliverOn(queue: SignalScheduler.Queue) -> Signal<ObservationType> {
         
-        let signal = Signal<Item>()
+        let signal = Signal<ObservationType>()
         let scheduler = SignalScheduler(queue: queue)
         
         addObserver { [weak signal] value in
@@ -126,9 +126,9 @@ public extension SignalType {
         another values within the specified duration.
     
     */
-    public func debounce(seconds: Double, queue: SignalScheduler.Queue = .MainQueue) -> Signal<Item> {
+    public func debounce(seconds: Double, queue: SignalScheduler.Queue = .MainQueue) -> Signal<ObservationType> {
         
-        let signal = Signal<Item>()
+        let signal = Signal<ObservationType>()
         var scheduler = SignalScheduler(queue: queue)
         
         addObserver { [weak signal] value in
@@ -148,9 +148,9 @@ public extension SignalType {
         Delays the dispatch of the signal.
     
     */
-    public func delay(seconds: Double, queue: SignalScheduler.Queue = .MainQueue) -> Signal<Item> {
+    public func delay(seconds: Double, queue: SignalScheduler.Queue = .MainQueue) -> Signal<ObservationType> {
         
-        let signal = Signal<Item>()
+        let signal = Signal<ObservationType>()
         let scheduler = SignalScheduler(queue: queue)
         
         addObserver { [weak signal] value in
@@ -180,9 +180,9 @@ public extension SignalType {
         another signal B in a signal of type (A, B).
     
     */
-    public func combineLatestWith<T: SignalType>(signal: T) -> Signal<(Item, T.Item)> {
+    public func combineLatestWith<T: SignalType>(signal: T) -> Signal<(ObservationType, T.ObservationType)> {
         
-        let compoundSignal = Signal<(Item, T.Item)>()
+        let compoundSignal = Signal<(ObservationType, T.ObservationType)>()
         
         let observer = CompoundObserver(observableA: self, observableB: signal) {
             [weak compoundSignal] in
@@ -199,7 +199,7 @@ public extension SignalType {
         Bind the value to an Observable of the same type
     
     */
-    public func bindTo<T: Observable where T.Item == Item>(observable: T) -> Self {
+    public func bindTo<T: Observable where T.ObservationType == ObservationType>(observable: T) -> Self {
         
         addObserver { [weak observable] in
         
@@ -212,16 +212,16 @@ public extension SignalType {
 
 // MARK: - Distinct
 
-public extension SignalType where Item: Equatable {
+public extension SignalType where ObservationType: Equatable {
     
     /**
         Dispatches the new value only if it is not equal to the previous one.
     
     */
-    public func distinct() -> Signal<Item> {
+    public func distinct() -> Signal<ObservationType> {
         
-        let signal = Signal<Item>()
-        var lastValue: Item?
+        let signal = Signal<ObservationType>()
+        var lastValue: ObservationType?
         
         addObserver { [weak signal] value in
             
@@ -240,7 +240,7 @@ public extension SignalType where Item: Equatable {
 
 // MARK: - SignalType (Bool, Bool)
 
-public extension SignalType where Item == (Bool, Bool) {
+public extension SignalType where ObservationType == (Bool, Bool) {
     
     /**
         Sends true if all values in a signal of tuple type (Bool, Bool)
@@ -265,7 +265,7 @@ public extension SignalType where Item == (Bool, Bool) {
 
 // MARK: - SignalType (Bool, Bool, Bool)
 
-public extension SignalType where Item == (Bool, Bool, Bool) {
+public extension SignalType where ObservationType == (Bool, Bool, Bool) {
     
     /**
         Sends true if all values in a signal of tuple type (Bool, Bool, Bool)
@@ -294,7 +294,7 @@ public extension SignalType where Item == (Bool, Bool, Bool) {
     Combine the latest values of signal A and signal B in a signal of type (A, B).
 
 */
-public func combineLatest<A: SignalType, B: SignalType>(a: A, _ b: B) -> Signal<(A.Item, B.Item)> {
+public func combineLatest<A: SignalType, B: SignalType>(a: A, _ b: B) -> Signal<(A.ObservationType, B.ObservationType)> {
     
     return a.combineLatestWith(b)
 }
@@ -303,7 +303,7 @@ public func combineLatest<A: SignalType, B: SignalType>(a: A, _ b: B) -> Signal<
     Combine the latest values of three signals A, B and C in a signal of type (A, B, C).
 
 */
-public func combineLatest<A: SignalType, B: SignalType, C: SignalType>(a: A, _ b: B, _ c: C) -> Signal<(A.Item, B.Item, C.Item)> {
+public func combineLatest<A: SignalType, B: SignalType, C: SignalType>(a: A, _ b: B, _ c: C) -> Signal<(A.ObservationType, B.ObservationType, C.ObservationType)> {
     
     return combineLatest( combineLatest(a, b), c).map { ($0.0.0, $0.0.1, $0.1) }
 }

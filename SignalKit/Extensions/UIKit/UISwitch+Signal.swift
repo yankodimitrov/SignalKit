@@ -24,7 +24,7 @@ public extension SignalEventType where Sender: UISwitch {
     }
 }
 
-public extension SignalType where Item == Bool {
+public extension SignalType where ObservationType == Bool {
     
     /**
         Bind a Bool to the on state of UISwitch

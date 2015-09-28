@@ -61,7 +61,7 @@ public extension SignalEventType where Sender: UITextView {
     }
 }
 
-public extension SignalType where Item == String {
+public extension SignalType where ObservationType == String {
     
     /**
         Bind a String value to the text property of UITextView
@@ -78,7 +78,7 @@ public extension SignalType where Item == String {
     }
 }
 
-public extension SignalType where Item == NSAttributedString {
+public extension SignalType where ObservationType == NSAttributedString {
     
     /**
         Bind a NSAttributedString to the attributed text property of UITextView

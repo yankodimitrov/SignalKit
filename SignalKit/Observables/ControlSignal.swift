@@ -10,16 +10,16 @@ import Foundation
 
 public final class ControlSignal<T: UIControl>: SignalType {
     
-    public typealias Item = T
+    public typealias ObservationType = T
     public var disposableSource: Disposable?
-    public let dispatcher: Dispatcher<Item>
+    public let dispatcher: Dispatcher<ObservationType>
     
     private weak var control: T?
     private let observer: ControlObserver
     
     public init(control: T, events: UIControlEvents, lock: LockType? = nil) {
         
-        self.dispatcher = Dispatcher<Item>(dispatchRule: {(v: T) in return { [weak v] in return v} }, lock: lock)
+        self.dispatcher = Dispatcher<ObservationType>(dispatchRule: {(v: T) in return { [weak v] in return v} }, lock: lock)
         self.control = control
         self.observer = ControlObserver(control: control, events: events)
         

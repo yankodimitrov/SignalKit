@@ -9,16 +9,16 @@
 import Foundation
 
 public final class Signal<T>: SignalType {
-    public typealias Item = T
+    public typealias ObservationType = T
     
     private var observer: Disposable?
     
     public var disposableSource: Disposable?
-    public let dispatcher: Dispatcher<Item>
+    public let dispatcher: Dispatcher<ObservationType>
     
     public init(lock: LockType? = nil) {
         
-        dispatcher = Dispatcher<Item>(lock: lock)
+        dispatcher = Dispatcher<ObservationType>(lock: lock)
     }
     
     deinit {
@@ -26,7 +26,7 @@ public final class Signal<T>: SignalType {
         dispose()
     }
     
-    public func observe<U where U:Observable, U.Item == Item>(observable: U) {
+    public func observe<U where U:Observable, U.ObservationType == ObservationType>(observable: U) {
         
         dispose()
         

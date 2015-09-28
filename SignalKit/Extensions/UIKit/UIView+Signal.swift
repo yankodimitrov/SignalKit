@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalType where Item == UIColor {
+public extension SignalType where ObservationType == UIColor {
     
     /**
         Bind a UIColor to the background color of UIView
@@ -25,7 +25,7 @@ public extension SignalType where Item == UIColor {
     }
 }
 
-public extension SignalType where Item == CGFloat {
+public extension SignalType where ObservationType == CGFloat {
     
     /**
        Bind a CGFloat value to the alpha property of UIView
@@ -42,7 +42,7 @@ public extension SignalType where Item == CGFloat {
     }
 }
 
-public extension SignalType where Item == Bool {
+public extension SignalType where ObservationType == Bool {
     
     /**
         Bind a Boolean value to the hidden property of UIView
