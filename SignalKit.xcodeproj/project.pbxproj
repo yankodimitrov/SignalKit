@@ -18,6 +18,7 @@
 		C95FD51B1BB97A9E001BAF90 /* SpinLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD51A1BB97A9E001BAF90 /* SpinLockTests.swift */; settings = {ASSET_TAGS = (); }; };
 		C95FD51D1BB97D6D001BAF90 /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD51C1BB97D6D001BAF90 /* ObservableArray.swift */; settings = {ASSET_TAGS = (); }; };
 		C95FD51F1BB97D79001BAF90 /* ObservableArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD51E1BB97D79001BAF90 /* ObservableArrayTests.swift */; settings = {ASSET_TAGS = (); }; };
+		C95FD5211BB988B6001BAF90 /* ArrayEventStrategyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD5201BB988B6001BAF90 /* ArrayEventStrategyType.swift */; settings = {ASSET_TAGS = (); }; };
 		C97D68E31B80E76E00F1676F /* KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D68E21B80E76E00F1676F /* KeyboardTests.swift */; };
 		C97D68E51B80E78400F1676F /* KeyboardStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D68E41B80E78400F1676F /* KeyboardStateTests.swift */; };
 		C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */; };
@@ -106,6 +107,7 @@
 		C95FD51A1BB97A9E001BAF90 /* SpinLockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinLockTests.swift; sourceTree = "<group>"; };
 		C95FD51C1BB97D6D001BAF90 /* ObservableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArray.swift; sourceTree = "<group>"; };
 		C95FD51E1BB97D79001BAF90 /* ObservableArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArrayTests.swift; sourceTree = "<group>"; };
+		C95FD5201BB988B6001BAF90 /* ArrayEventStrategyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayEventStrategyType.swift; sourceTree = "<group>"; };
 		C97D68E21B80E76E00F1676F /* KeyboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardTests.swift; sourceTree = "<group>"; };
 		C97D68E41B80E78400F1676F /* KeyboardStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardStateTests.swift; sourceTree = "<group>"; };
 		C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalScheduler.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */,
 				C9D9884D1B7B1788004559CD /* LockType.swift */,
 				C9D988511B7B1788004559CD /* TokenGeneratorType.swift */,
+				C95FD5201BB988B6001BAF90 /* ArrayEventStrategyType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				C9F7AAA91B8097DA002DA7B7 /* UIImageView+Signal.swift in Sources */,
 				C9D9885F1B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
 				C9D988561B7B1788004559CD /* Observable.swift in Sources */,
+				C95FD5211BB988B6001BAF90 /* ArrayEventStrategyType.swift in Sources */,
 				C9D988521B7B1788004559CD /* Disposable.swift in Sources */,
 				C9F7E85D1B80BD19000D5CC7 /* UITextView+Signal.swift in Sources */,
 				C9D988901B7B5A91004559CD /* ControlSignal.swift in Sources */,
