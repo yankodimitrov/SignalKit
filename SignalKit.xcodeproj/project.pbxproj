@@ -21,6 +21,8 @@
 		C95FD5211BB988B6001BAF90 /* ArrayEventStrategyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD5201BB988B6001BAF90 /* ArrayEventStrategyType.swift */; settings = {ASSET_TAGS = (); }; };
 		C95FD5251BB989FE001BAF90 /* ArraySerialEventStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD5241BB989FE001BAF90 /* ArraySerialEventStrategy.swift */; settings = {ASSET_TAGS = (); }; };
 		C95FD5271BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD5261BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift */; settings = {ASSET_TAGS = (); }; };
+		C95FD5291BB98E0C001BAF90 /* ArrayBatchEventStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD5281BB98E0C001BAF90 /* ArrayBatchEventStrategy.swift */; settings = {ASSET_TAGS = (); }; };
+		C95FD52B1BB98E1C001BAF90 /* ArrayBatchEventStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD52A1BB98E1C001BAF90 /* ArrayBatchEventStrategyTests.swift */; settings = {ASSET_TAGS = (); }; };
 		C97D68E31B80E76E00F1676F /* KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D68E21B80E76E00F1676F /* KeyboardTests.swift */; };
 		C97D68E51B80E78400F1676F /* KeyboardStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D68E41B80E78400F1676F /* KeyboardStateTests.swift */; };
 		C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */; };
@@ -112,6 +114,8 @@
 		C95FD5201BB988B6001BAF90 /* ArrayEventStrategyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayEventStrategyType.swift; sourceTree = "<group>"; };
 		C95FD5241BB989FE001BAF90 /* ArraySerialEventStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArraySerialEventStrategy.swift; sourceTree = "<group>"; };
 		C95FD5261BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArraySerialEventStrategyTests.swift; sourceTree = "<group>"; };
+		C95FD5281BB98E0C001BAF90 /* ArrayBatchEventStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayBatchEventStrategy.swift; sourceTree = "<group>"; };
+		C95FD52A1BB98E1C001BAF90 /* ArrayBatchEventStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayBatchEventStrategyTests.swift; sourceTree = "<group>"; };
 		C97D68E21B80E76E00F1676F /* KeyboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardTests.swift; sourceTree = "<group>"; };
 		C97D68E41B80E78400F1676F /* KeyboardStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardStateTests.swift; sourceTree = "<group>"; };
 		C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalScheduler.swift; sourceTree = "<group>"; };
@@ -206,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				C95FD5241BB989FE001BAF90 /* ArraySerialEventStrategy.swift */,
+				C95FD5281BB98E0C001BAF90 /* ArrayBatchEventStrategy.swift */,
 			);
 			path = ArrayEventStrategies;
 			sourceTree = "<group>";
@@ -325,6 +330,7 @@
 				C9D9889A1B7B6049004559CD /* NotificationSignalTests.swift */,
 				C95FD51E1BB97D79001BAF90 /* ObservableArrayTests.swift */,
 				C95FD5261BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift */,
+				C95FD52A1BB98E1C001BAF90 /* ArrayBatchEventStrategyTests.swift */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -563,6 +569,7 @@
 				C9D9885C1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,
 				C92948F21B7F794000BCBC7C /* NSObject+Signal.swift in Sources */,
 				C9D988A51B7BCA18004559CD /* DisposableBag.swift in Sources */,
+				C95FD5291BB98E0C001BAF90 /* ArrayBatchEventStrategy.swift in Sources */,
 				C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,6 +592,7 @@
 				C9D988961B7B5D18004559CD /* MockControl.m in Sources */,
 				C9F7E8581B80B612000D5CC7 /* UITextField+SignalTests.swift in Sources */,
 				C95FD51B1BB97A9E001BAF90 /* SpinLockTests.swift in Sources */,
+				C95FD52B1BB98E1C001BAF90 /* ArrayBatchEventStrategyTests.swift in Sources */,
 				C9D9888C1B7B5865004559CD /* Person.swift in Sources */,
 				C92948FF1B7F9A9900BCBC7C /* UIControl+SignalTests.swift in Sources */,
 				C92948F51B7F841600BCBC7C /* NSObject+SignalTests.swift in Sources */,
