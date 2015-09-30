@@ -58,9 +58,11 @@ public extension ObservableArray {
     
     public func removeElementAtIndex(index: Int) -> ElementType {
         
-        defer { eventStrategy.removedElementAtIndex(index) }
+        let element = elements.removeAtIndex(index)
         
-        return elements.removeAtIndex(index)
+        eventStrategy.removedElementAtIndex(index)
+        
+        return element
     }
     
     public func removeAllElements(keepCapacity: Bool = false) {
