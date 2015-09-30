@@ -93,7 +93,7 @@ class ArrayBindingObserverTests: XCTestCase {
             collection.removeAtIndex(0)
         }
         
-        XCTAssertEqual(strategy.isBatchUpdateCalled, true, "Should call the strategy to perform batch update")
+        XCTAssertEqual(strategy.isBatchUpdateCalled, true, "Should call the strategy to perform a batch update")
     }
     
     func testObserveNewSections() {
@@ -191,7 +191,7 @@ class ArrayBindingObserverTests: XCTestCase {
             collection.removeAtIndex(0)
         }
         
-        XCTAssertEqual(strategy.isBatchUpdateCalled, true, "Should call the strategy to perform batch update")
+        XCTAssertEqual(strategy.isBatchUpdateCalled, true, "Should call the strategy to perform a batch update")
     }
     
     func testDispose() {
@@ -200,7 +200,7 @@ class ArrayBindingObserverTests: XCTestCase {
         
         array.replaceElementsWith([])
         
-        XCTAssertEqual(strategy.isReloadAllSectionsCalled, false, "Should dispose the observation upon disposal")
+        XCTAssertEqual(strategy.isReloadAllSectionsCalled, false, "Should dispose the observations upon disposal")
         
     }
     
@@ -214,6 +214,6 @@ class ArrayBindingObserverTests: XCTestCase {
         
         array.replaceElementsWith([])
         
-        XCTAssertEqual(fakeStrategy.isReloadAllSectionsCalled, false, "Should dispose the observation upon deinit")
+        XCTAssertEqual(fakeStrategy.isReloadAllSectionsCalled, false, "Should dispose the observations upon deinit")
     }
 }

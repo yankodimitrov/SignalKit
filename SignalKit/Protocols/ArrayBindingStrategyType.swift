@@ -11,15 +11,13 @@ import Foundation
 internal protocol ArrayBindingStrategyType {
     
     func reloadAllSections()
-    func reloadRowsInSections(sections: NSIndexSet)
-    
     func insertSections(sections: NSIndexSet)
-    func insertRowsAtIndexPaths(paths: [NSIndexPath])
-    
     func reloadSections(sections: NSIndexSet)
-    func reloadRowsAtIndexPaths(paths: [NSIndexPath])
-    
     func deleteSections(sections: NSIndexSet)
+    
+    func reloadRowsInSections(sections: NSIndexSet)
+    func insertRowsAtIndexPaths(paths: [NSIndexPath])
+    func reloadRowsAtIndexPaths(paths: [NSIndexPath])
     func deleteRowsAtIndexPaths(paths: [NSIndexPath])
     
     func performBatchUpdate(update: () -> Void)
