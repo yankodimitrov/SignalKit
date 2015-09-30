@@ -32,6 +32,9 @@
 		C98FD9F01BBC4BFC004772C6 /* ArrayBindingStrategyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9EF1BBC4BFC004772C6 /* ArrayBindingStrategyType.swift */; settings = {ASSET_TAGS = (); }; };
 		C98FD9F41BBC5B4E004772C6 /* NSIndexSet+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9F31BBC5B4E004772C6 /* NSIndexSet+Signal.swift */; settings = {ASSET_TAGS = (); }; };
 		C98FD9F61BBC5B90004772C6 /* NSIndexSet+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9F51BBC5B90004772C6 /* NSIndexSet+SignalTests.swift */; settings = {ASSET_TAGS = (); }; };
+		C98FD9F81BBC5C30004772C6 /* ArrayBindingObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9F71BBC5C30004772C6 /* ArrayBindingObserver.swift */; settings = {ASSET_TAGS = (); }; };
+		C98FD9FA1BBC5C3B004772C6 /* ArrayBindingObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9F91BBC5C3B004772C6 /* ArrayBindingObserverTests.swift */; settings = {ASSET_TAGS = (); }; };
+		C98FD9FC1BBC7ADA004772C6 /* MockBindingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9FB1BBC7ADA004772C6 /* MockBindingStrategy.swift */; settings = {ASSET_TAGS = (); }; };
 		C9D988521B7B1788004559CD /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884C1B7B1788004559CD /* Disposable.swift */; };
 		C9D988541B7B1788004559CD /* LockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884D1B7B1788004559CD /* LockType.swift */; };
 		C9D988561B7B1788004559CD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884E1B7B1788004559CD /* Observable.swift */; };
@@ -128,6 +131,9 @@
 		C98FD9EF1BBC4BFC004772C6 /* ArrayBindingStrategyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayBindingStrategyType.swift; sourceTree = "<group>"; };
 		C98FD9F31BBC5B4E004772C6 /* NSIndexSet+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSIndexSet+Signal.swift"; sourceTree = "<group>"; };
 		C98FD9F51BBC5B90004772C6 /* NSIndexSet+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSIndexSet+SignalTests.swift"; sourceTree = "<group>"; };
+		C98FD9F71BBC5C30004772C6 /* ArrayBindingObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayBindingObserver.swift; sourceTree = "<group>"; };
+		C98FD9F91BBC5C3B004772C6 /* ArrayBindingObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayBindingObserverTests.swift; sourceTree = "<group>"; };
+		C98FD9FB1BBC7ADA004772C6 /* MockBindingStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBindingStrategy.swift; sourceTree = "<group>"; };
 		C9D9884C1B7B1788004559CD /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		C9D9884D1B7B1788004559CD /* LockType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockType.swift; sourceTree = "<group>"; };
 		C9D9884E1B7B1788004559CD /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
@@ -292,6 +298,7 @@
 				C98CE79B1B7E2AA70035CF1E /* CompoundObserver.swift */,
 				C9D988701B7B1F14004559CD /* SpinLock.swift */,
 				C9D988A41B7BCA18004559CD /* DisposableBag.swift */,
+				C98FD9F71BBC5C30004772C6 /* ArrayBindingObserver.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -355,6 +362,7 @@
 				C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */,
 				C98CE79E1B7E2D1B0035CF1E /* CompoundObserverTests.swift */,
 				C95FD51A1BB97A9E001BAF90 /* SpinLockTests.swift */,
+				C98FD9F91BBC5C3B004772C6 /* ArrayBindingObserverTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -370,6 +378,7 @@
 				C9D988A21B7B7D41004559CD /* MockSignal.swift */,
 				C9D988941B7B5C79004559CD /* MockControl.h */,
 				C9D988951B7B5D18004559CD /* MockControl.m */,
+				C98FD9FB1BBC7ADA004772C6 /* MockBindingStrategy.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -553,6 +562,7 @@
 				C92948EA1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */,
 				C9F7AAB31B809C64002DA7B7 /* UISegmentedControl+Signal.swift in Sources */,
 				C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */,
+				C98FD9F81BBC5C30004772C6 /* ArrayBindingObserver.swift in Sources */,
 				C92948ED1B7F759200BCBC7C /* SignalEvent.swift in Sources */,
 				C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */,
 				C9F7AABA1B809F59002DA7B7 /* UISlider+Signal.swift in Sources */,
@@ -601,6 +611,7 @@
 				C9F7AAAC1B8098A8002DA7B7 /* UIImageView+SignalTests.swift in Sources */,
 				C9D988A31B7B7D41004559CD /* MockSignal.swift in Sources */,
 				C9D988931B7B5C09004559CD /* ControlSignalTests.swift in Sources */,
+				C98FD9FC1BBC7ADA004772C6 /* MockBindingStrategy.swift in Sources */,
 				C9D988961B7B5D18004559CD /* MockControl.m in Sources */,
 				C9F7E8581B80B612000D5CC7 /* UITextField+SignalTests.swift in Sources */,
 				C95FD51B1BB97A9E001BAF90 /* SpinLockTests.swift in Sources */,
@@ -620,6 +631,7 @@
 				C9F7E8601B80C9CF000D5CC7 /* UITextView+SignalTests.swift in Sources */,
 				C9D9887D1B7B4375004559CD /* SignalTests.swift in Sources */,
 				C92948FA1B7F8DCE00BCBC7C /* NSNotificationCenter+SignalTests.swift in Sources */,
+				C98FD9FA1BBC5C3B004772C6 /* ArrayBindingObserverTests.swift in Sources */,
 				C97D68E51B80E78400F1676F /* KeyboardStateTests.swift in Sources */,
 				C97D68E31B80E76E00F1676F /* KeyboardTests.swift in Sources */,
 				C98CE79F1B7E2D1B0035CF1E /* CompoundObserverTests.swift in Sources */,
