@@ -8,6 +8,23 @@
 
 import UIKit
 
+public extension ArrayBindingObserver {
+    
+    /**
+        Bind the changes in the ObservableArray to a UITableView
+    
+    */
+    public func bindTo(tableView tableView: UITableView, dataSource: UITableViewDataSource) -> Disposable {
+        
+        bindingStrategy = TableViewBindingStrategy(tableView: tableView)
+        
+        tableView.dataSource = dataSource
+        tableView.reloadData()
+        
+        return self
+    }
+}
+
 internal final class TableViewBindingStrategy: ArrayBindingStrategyType {
     
     private weak var tableView: UITableView?
