@@ -8,7 +8,7 @@
 
 import Foundation
 
-internal final class ArrayBindingObserver<T>: Disposable {
+public final class ArrayBindingObserver<T>: Disposable {
     
     internal var bindingStrategy: ArrayBindingStrategyType?
     
@@ -16,12 +16,19 @@ internal final class ArrayBindingObserver<T>: Disposable {
     private lazy var sectionObservers = [Disposable]()
     private var arrayObserver: Disposable?
     
-    init(array: ObservableArray<ObservableArray<T>>) {
+    public init(array: ObservableArray<ObservableArray<T>>) {
         
         self.array = array
         
         observeForArrayEvent()
         setupSectionObservers()
+    }
+    
+    public convenience init(array: ObservableArray<T>) {
+        
+        let sectionsArray = ObservableArray<ObservableArray<T>>([array])
+        
+        self.init(array: sectionsArray)
     }
     
     deinit {
@@ -123,7 +130,7 @@ internal final class ArrayBindingObserver<T>: Disposable {
         return indexes.map { NSIndexPath(forItem: $0, inSection: section) }
     }
     
-    func dispose() {
+    public func dispose() {
         
         arrayObserver?.dispose()
         disposeSectionObservers()

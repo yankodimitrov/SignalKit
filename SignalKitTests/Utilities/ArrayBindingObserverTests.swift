@@ -206,7 +206,7 @@ class ArrayBindingObserverTests: XCTestCase {
     
     func testDeinit() {
         
-        var observer: ArrayBindingObserver? = ArrayBindingObserver(array: array)
+        var observer: ArrayBindingObserver<Int>? = ArrayBindingObserver(array: array)
         let fakeStrategy = MockBindingStrategy()
         
         observer?.bindingStrategy = fakeStrategy
@@ -215,5 +215,27 @@ class ArrayBindingObserverTests: XCTestCase {
         array.replaceElementsWith([])
         
         XCTAssertEqual(fakeStrategy.isReloadAllSectionsCalled, false, "Should dispose the observations upon deinit")
+    }
+    
+    func testInitWithSingleDimensionalArray() {
+        
+        let array = ObservableArray<Int>([1, 2])
+        let observer = ArrayBindingObserver(array: array)
+        let strategy = MockBindingStrategy()
+        let expectedPaths = [NSIndexPath(forItem: 2, inSection: 0)]
+        var result = false
+        
+        observer.bindingStrategy = strategy
+        
+        strategy.rowsInsertCallback = { paths in
+        
+            if paths == expectedPaths {
+                result = true
+            }
+        }
+        
+        array.append(3)
+        
+        XCTAssertEqual(result, true, "Should init with single dimensional array")
     }
 }
