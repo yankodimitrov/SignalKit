@@ -12,6 +12,8 @@
 		C924E2DB1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2DA1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift */; settings = {ASSET_TAGS = (); }; };
 		C924E2DD1BBD63BE00400D2D /* UITableView+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2DC1BBD63BE00400D2D /* UITableView+SignalTests.swift */; settings = {ASSET_TAGS = (); }; };
 		C924E2DF1BBD664900400D2D /* MockTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
+		C924E2E11BBD68A100400D2D /* MockCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
+		C924E2E31BBD68ED00400D2D /* UICollectionView+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2E21BBD68ED00400D2D /* UICollectionView+SignalTests.swift */; settings = {ASSET_TAGS = (); }; };
 		C92948EA1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */; };
 		C92948ED1B7F759200BCBC7C /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948EC1B7F759100BCBC7C /* SignalEvent.swift */; };
 		C92948F21B7F794000BCBC7C /* NSObject+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948F11B7F794000BCBC7C /* NSObject+Signal.swift */; };
@@ -119,6 +121,8 @@
 		C924E2DA1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewBindingStrategyTests.swift; sourceTree = "<group>"; };
 		C924E2DC1BBD63BE00400D2D /* UITableView+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+SignalTests.swift"; sourceTree = "<group>"; };
 		C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTableViewDataSource.swift; sourceTree = "<group>"; };
+		C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		C924E2E21BBD68ED00400D2D /* UICollectionView+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+SignalTests.swift"; sourceTree = "<group>"; };
 		C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEventType.swift; sourceTree = "<group>"; };
 		C92948EC1B7F759100BCBC7C /* SignalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvent.swift; sourceTree = "<group>"; };
 		C92948F11B7F794000BCBC7C /* NSObject+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Signal.swift"; sourceTree = "<group>"; };
@@ -353,6 +357,7 @@
 				C98FD9FF1BBC8460004772C6 /* TableViewBindingStrategyTests.swift */,
 				C924E2DA1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift */,
 				C924E2DC1BBD63BE00400D2D /* UITableView+SignalTests.swift */,
+				C924E2E21BBD68ED00400D2D /* UICollectionView+SignalTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				C98FDA011BBC852C004772C6 /* MockTableView.swift */,
 				C924E2D81BBD535300400D2D /* MockCollectionView.swift */,
 				C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */,
+				C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9D9888E1B7B587A004559CD /* KVOSignalTests.swift in Sources */,
+				C924E2E11BBD68A100400D2D /* MockCollectionViewDataSource.swift in Sources */,
 				C98FD9F61BBC5B90004772C6 /* NSIndexSet+SignalTests.swift in Sources */,
 				C9D9889B1B7B6049004559CD /* NotificationSignalTests.swift in Sources */,
 				C95FD5271BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift in Sources */,
@@ -668,6 +675,7 @@
 				C98CE79F1B7E2D1B0035CF1E /* CompoundObserverTests.swift in Sources */,
 				C9D988871B7B4DC3004559CD /* MockDisposable.swift in Sources */,
 				C924E2DF1BBD664900400D2D /* MockTableViewDataSource.swift in Sources */,
+				C924E2E31BBD68ED00400D2D /* UICollectionView+SignalTests.swift in Sources */,
 				C9F7AAB11B809B0C002DA7B7 /* UILabel+SignalTests.swift in Sources */,
 				C9D988821B7B46DE004559CD /* ObservablePropertyTests.swift in Sources */,
 				C9D9886E1B7B1DE8004559CD /* DisposableActionTests.swift in Sources */,

@@ -8,6 +8,23 @@
 
 import UIKit
 
+public extension ArrayBindingObserver {
+    
+    /**
+        Bind the changes in the ObservableArray to a UICollectionView
+    
+    */
+    public func bindTo(collectionView collectionView: UICollectionView, dataSource: UICollectionViewDataSource) -> Disposable {
+        
+        bindingStrategy = CollectionViewBindingStrategy(collectionView: collectionView)
+        
+        collectionView.dataSource = dataSource
+        collectionView.reloadData()
+        
+        return self
+    }
+}
+
 internal final class CollectionViewBindingStrategy: ArrayBindingStrategyType {
     
     private weak var collectionView: UICollectionView?

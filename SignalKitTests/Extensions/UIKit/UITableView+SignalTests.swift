@@ -19,8 +19,8 @@ class UITableView_SignalTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        tableView = MockTableView()
         list = ObservableArray([1, 2, 3])
+        tableView = MockTableView()
         signalsBag = DisposableBag()
         dataSource = MockTableViewDataSource()
     }
@@ -35,6 +35,6 @@ class UITableView_SignalTests: XCTestCase {
         
         XCTAssertEqual(tableView.isInsertRowsCalled, true, "Should bind the changes in observable array to table view")
         XCTAssertEqual(tableView.isReloadDataCalled, true, "Should call the table view to reload data")
-        XCTAssert(tableView.dataSource === dataSource, "Should set the data source")
+        XCTAssert(tableView.dataSource === dataSource, "Should set the table view data source")
     }
 }
