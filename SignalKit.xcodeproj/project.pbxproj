@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C924E2D71BBD521C00400D2D /* UICollectionView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2D61BBD521C00400D2D /* UICollectionView+Signal.swift */; settings = {ASSET_TAGS = (); }; };
+		C924E2D91BBD535300400D2D /* MockCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2D81BBD535300400D2D /* MockCollectionView.swift */; settings = {ASSET_TAGS = (); }; };
+		C924E2DB1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2DA1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift */; settings = {ASSET_TAGS = (); }; };
 		C92948EA1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */; };
 		C92948ED1B7F759200BCBC7C /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948EC1B7F759100BCBC7C /* SignalEvent.swift */; };
 		C92948F21B7F794000BCBC7C /* NSObject+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948F11B7F794000BCBC7C /* NSObject+Signal.swift */; };
@@ -109,6 +112,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C924E2D61BBD521C00400D2D /* UICollectionView+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Signal.swift"; sourceTree = "<group>"; };
+		C924E2D81BBD535300400D2D /* MockCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionView.swift; sourceTree = "<group>"; };
+		C924E2DA1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewBindingStrategyTests.swift; sourceTree = "<group>"; };
 		C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEventType.swift; sourceTree = "<group>"; };
 		C92948EC1B7F759100BCBC7C /* SignalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvent.swift; sourceTree = "<group>"; };
 		C92948F11B7F794000BCBC7C /* NSObject+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Signal.swift"; sourceTree = "<group>"; };
@@ -260,6 +266,7 @@
 				C9F7E85C1B80BD19000D5CC7 /* UITextView+Signal.swift */,
 				C9F7E8611B80CD64000D5CC7 /* UIView+Signal.swift */,
 				C98FD9FD1BBC800D004772C6 /* UITableView+Signal.swift */,
+				C924E2D61BBD521C00400D2D /* UICollectionView+Signal.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -340,6 +347,7 @@
 				C97D68E21B80E76E00F1676F /* KeyboardTests.swift */,
 				C97D68E41B80E78400F1676F /* KeyboardStateTests.swift */,
 				C98FD9FF1BBC8460004772C6 /* TableViewBindingStrategyTests.swift */,
+				C924E2DA1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -388,6 +396,7 @@
 				C9D988951B7B5D18004559CD /* MockControl.m */,
 				C98FD9FB1BBC7ADA004772C6 /* MockBindingStrategy.swift */,
 				C98FDA011BBC852C004772C6 /* MockTableView.swift */,
+				C924E2D81BBD535300400D2D /* MockCollectionView.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -591,6 +600,7 @@
 				C9D9885F1B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
 				C9D988561B7B1788004559CD /* Observable.swift in Sources */,
 				C95FD5211BB988B6001BAF90 /* ArrayEventStrategyType.swift in Sources */,
+				C924E2D71BBD521C00400D2D /* UICollectionView+Signal.swift in Sources */,
 				C9D988521B7B1788004559CD /* Disposable.swift in Sources */,
 				C9F7E85D1B80BD19000D5CC7 /* UITextView+Signal.swift in Sources */,
 				C9D988901B7B5A91004559CD /* ControlSignal.swift in Sources */,
@@ -615,6 +625,7 @@
 				C95FD5271BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift in Sources */,
 				C9F7AAA71B809543002DA7B7 /* UIDatePicker+SignalTests.swift in Sources */,
 				C9D988761B7B2B20004559CD /* DispatcherTests.swift in Sources */,
+				C924E2DB1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift in Sources */,
 				C9F7AAB81B809ECF002DA7B7 /* UISlider+SignalTests.swift in Sources */,
 				C9D988781B7B334B004559CD /* MockLock.swift in Sources */,
 				C95FD51F1BB97D79001BAF90 /* ObservableArrayTests.swift in Sources */,
@@ -623,6 +634,7 @@
 				C9D988931B7B5C09004559CD /* ControlSignalTests.swift in Sources */,
 				C98FD9FC1BBC7ADA004772C6 /* MockBindingStrategy.swift in Sources */,
 				C98FDA021BBC852C004772C6 /* MockTableView.swift in Sources */,
+				C924E2D91BBD535300400D2D /* MockCollectionView.swift in Sources */,
 				C9D988961B7B5D18004559CD /* MockControl.m in Sources */,
 				C98FDA001BBC8460004772C6 /* TableViewBindingStrategyTests.swift in Sources */,
 				C9F7E8581B80B612000D5CC7 /* UITextField+SignalTests.swift in Sources */,
