@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalType where Item == String {
+public extension SignalType where ObservationType == String {
     
     /**
         Bind a String value to the text property of UILabel
@@ -25,7 +25,7 @@ public extension SignalType where Item == String {
     }
 }
 
-public extension SignalType where Item == NSAttributedString {
+public extension SignalType where ObservationType == NSAttributedString {
     
     /**
         Bind a NSAttributedString to the atrributedText property of UILabel

@@ -7,19 +7,31 @@
 //
 
 import XCTest
+@testable import SignalKit
 
 class SignalTypeTests: XCTestCase {
     
     var signal: MockSignal<Int>!
     var chain: Disposable?
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
         signal = MockSignal<Int>()
         chain = nil
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
+    }
+    
+    func testDispose() {
+        
+        let sourceSignal = MockSignal<Int>()
+        let signal = DummySignal<Int>()
+        
+        signal.disposableSource = sourceSignal
+        signal.dispose()
+        
+        XCTAssertEqual(sourceSignal.isDisposeCalled, true, "Should dispose the source signal")
     }
     
     func testNext() {

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import SignalKit
 
 class IncrementalKeyGeneratorTests: XCTestCase {
     
@@ -29,5 +30,12 @@ class IncrementalKeyGeneratorTests: XCTestCase {
         let token = generator.nextToken() // step limit is 2 -> "21"
         
         XCTAssertEqual(token, "21", "Should generate incremental sequence of tokens")
+    }
+    
+    func testInitWithStepLimit() {
+        
+        let generator = IncrementalKeyGenerator(stepLimit: 0)
+        
+        XCTAssertEqual(generator.stepLimit, UInt16.max, "Should set the step limit to UInt16.max when we pass zero for the step limit value")
     }
 }

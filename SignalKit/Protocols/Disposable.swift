@@ -12,3 +12,15 @@ public protocol Disposable {
     
     func dispose()
 }
+
+public extension Disposable {
+    
+    /**
+        Stores a disposable in a container
+    
+    */
+    public func addTo(container: DisposableBag) -> Disposable {
+        
+        return container.addDisposable(self)
+    }
+}

@@ -7,17 +7,18 @@
 //
 
 import XCTest
+@testable import SignalKit
 
 class UITextField_SignalTests: XCTestCase {
     
     var textField: MockTextField!
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
         textField = MockTextField()
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
     }
     
     func testObserveText() {

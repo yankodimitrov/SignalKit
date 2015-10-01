@@ -7,17 +7,18 @@
 //
 
 import XCTest
+@testable import SignalKit
 
 class UIDatePicker_SignalTests: XCTestCase {
 
     var picker: MockDatePicker!
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
         picker = MockDatePicker()
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
     }
     
     func testObserveDateChangeEvents() {

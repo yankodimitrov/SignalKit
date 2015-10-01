@@ -7,17 +7,18 @@
 //
 
 import XCTest
+@testable import SignalKit
 
 class UIControl_SignalTests: XCTestCase {
 
     var control: MockControl!
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
         control = MockControl()
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
     }
     
     func testObserveControlEvent() {

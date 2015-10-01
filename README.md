@@ -25,10 +25,10 @@ let button = UIButton()
 button.observe().tapEvent.next { _ in print("Tap!") }
 ```
 
-Now in order to preserve the chain of operations we need to store it in a property or we can use an instance of the <code>SignalBag</code> class:
+Now in order to preserve the chain of operations we need to store it in a property or we can use an instance of the <code>DisposableBag</code> class:
 
 ```swift
-let signalsBag = SignalBag()
+let signalsBag = DisposableBag()
 ...
 name.observe()
     .bindTo(textIn: nameLabel)
@@ -121,11 +121,8 @@ Keyboard.observe().willShow
     .addTo(signalsBag)
 ```
 
-
-### Custom events
-
-#### ObservablePropety
-Observable property is a thread safe <code>Observable</code> implementation that have a notion of a current value. You can get the current <code>value</code> and if you set a value it will be dispatched to all observers. Alternatively you can call <code>dispatch(newValue)</code> to notify the observers:
+### ObservablePropety
+`ObservablePropety` is an `Observable` protocol implementation that have a notion of a current value. If you change the value it will be dispatched to all observers:
 
 ```swift
 // ViewModel
@@ -141,6 +138,45 @@ name.observe()
 name.value = "John" // prints "Name: John"
 ```
 
+### ObservableArray
+When we alter the contents of the `ObservableArray` a new `ObservableArrayEvent` will be dispatched to all of its observers. We can also perform a batch update which will dispatch a single `ObservableArrayEvent.Batch` event with associated values for all inserted, updated and removed indexes.
+
+#### UITableView and UICollectionView bindings
+We can bind the changes in `ObservableArray` to `UITableView` or `UICollectionView`:
+
+```swift
+let list = ObservableArray([1, 2, 3])
+let dataSource = MyCollectionViewDataSource(items: list)
+let collectionView = UICollectionView(...)
+
+list.observe()
+	.bindTo(collectionView: collectionView, dataSource: dataSource)
+    .addTo(signalsBag)
+
+list.append(4)
+list.removeAtIndex(0)
+```
+*Note: If we need only one section of rows/items we can use a single dimensional array as shown above.*
+
+#### Batch Updates
+Batch updates in `ObservableArray` will reflect to batch updates in the binded `UITableView` or `UICollectionView`:
+
+```swift
+let sectionOne = ObservableArray([1, 2])
+let sectionTwo = ObservableArray([3, 4])
+let list = ObservableArray<ObservableArray<Int>>([sectionOne, sectionTwo])
+
+list.observe()
+	.bindTo(tableView: tableView, dataSource: dataSource)
+    .addTo(signalsBag)
+
+list.performBatchUpdate { collection in
+    
+    collection[0].append(22)
+    collection[0].removeAtIndex(0)
+    collection.removeAtIndex(1)
+}
+``` 
 
 ### Signal Operations
 
@@ -211,9 +247,9 @@ name.observe().bindTo(anotherName)
 *Note: There are special bindTo(...) extensions for the UIKit UI components like UIView, UIControl and more.* 
 
 #### addTo
-Stores a chain of signal operations in a container that conforms to the <code>SignalContainerType</code> protocol:
+Stores a chain of signal operations in a `DisposableBag`:
 ```swift
-let signalsBag = SignalBag()
+let signalsBag = DisposableBag()
 
 name.observe().next { print($0) }.addTo(signalsBag)
 ```
@@ -278,7 +314,7 @@ I will really love to include extensions for AppKit and WatchKit. Any help with 
 
 ## Installation
 
-SignalKit requires Swift 2.0 and XCode 7 beta 5
+SignalKit requires Swift 2.0 and XCode 7
 
 #### Carthage
 Add the following line to your [Cartfile](https://github.com/carthage/carthage)

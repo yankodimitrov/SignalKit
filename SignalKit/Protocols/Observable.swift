@@ -9,23 +9,23 @@
 import Foundation
 
 public protocol Observable: class {
-    typealias Item
+    typealias ObservationType
     
-    var dispatcher: Dispatcher<Item> {get}
+    var dispatcher: Dispatcher<ObservationType> {get}
     
-    func addObserver(observer: Item -> Void) -> Disposable
-    func dispatch(item: Item)
+    func addObserver(observer: ObservationType -> Void) -> Disposable
+    func dispatch(item: ObservationType)
     func removeObservers()
 }
 
 public extension Observable {
     
-    public func addObserver(observer: Item -> Void) -> Disposable {
+    public func addObserver(observer: ObservationType -> Void) -> Disposable {
         
         return dispatcher.addObserver(observer)
     }
     
-    public func dispatch(item: Item) {
+    public func dispatch(item: ObservationType) {
         
         dispatcher.dispatch(item)
     }

@@ -13,14 +13,14 @@ internal final class CompoundObserver<T: Observable, U: Observable>: Disposable 
     private let observableA: T
     private let observableB: U
     
-    private var latestA: T.Item?
-    private var latestB: U.Item?
+    private var latestA: T.ObservationType?
+    private var latestB: U.ObservationType?
     private var subscriptionA: Disposable?
     private var subscriptionB: Disposable?
     
-    private let callback: ((T.Item, U.Item)) -> Void
+    private let callback: ((T.ObservationType, U.ObservationType)) -> Void
     
-    init(observableA: T, observableB: U, callback: ( (T.Item, U.Item) ) -> Void) {
+    init(observableA: T, observableB: U, callback: ( (T.ObservationType, U.ObservationType) ) -> Void) {
         
         self.observableA = observableA
         self.observableB = observableB

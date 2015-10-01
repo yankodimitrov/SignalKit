@@ -18,7 +18,9 @@ public extension SignalEventType where Sender: UITextField {
         
         let signal = ControlSignal(control: sender, events: .EditingChanged).map { $0.text ?? "" }
         
-        signal.dispatch(sender.text ?? "")
+        if let text = sender.text {
+            signal.dispatch(text)
+        }
         
         return signal
     }

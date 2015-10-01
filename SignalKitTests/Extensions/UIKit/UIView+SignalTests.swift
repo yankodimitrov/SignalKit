@@ -7,17 +7,18 @@
 //
 
 import XCTest
+@testable import SignalKit
 
 class UIView_SignalTests: XCTestCase {
     
     var view: UIView!
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
         view = UIView()
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
     }
     
     func testBindToBackgroundColor() {

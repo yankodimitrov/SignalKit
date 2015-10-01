@@ -7,16 +7,17 @@
 //
 
 import XCTest
+@testable import SignalKit
 
 class KeyboardTests: XCTestCase {
 
     let center = NSNotificationCenter.defaultCenter()
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
     }
     
     func testObserveWillShow() {

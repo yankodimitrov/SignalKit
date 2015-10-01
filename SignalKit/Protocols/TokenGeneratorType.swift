@@ -8,9 +8,9 @@
 
 import Foundation
 
-typealias Token = String
+internal typealias Token = String
 
-protocol TokenGeneratorType {
+internal protocol TokenGeneratorType {
     
     mutating func nextToken() -> Token
 }

@@ -18,7 +18,8 @@ import Foundation
 */
 internal struct IncrementalKeyGenerator: TokenGeneratorType {
     
-    private let stepLimit: UInt16
+    internal let stepLimit: UInt16
+    
     private var counter: UInt16 = 0
     private var tokenPrefix = ""
     

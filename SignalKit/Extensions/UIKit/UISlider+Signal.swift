@@ -24,7 +24,7 @@ public extension SignalEventType where Sender: UISlider {
     }
 }
 
-public extension SignalType where Item == Float {
+public extension SignalType where ObservationType == Float {
     
     /**
         Bind a Float to the value property of UISlider

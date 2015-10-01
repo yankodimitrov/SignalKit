@@ -7,18 +7,19 @@
 //
 
 import XCTest
+@testable import SignalKit
 
 class UITextView_SignalTests: XCTestCase {
     
     let center = NSNotificationCenter.defaultCenter()
     var textView: UITextView!
-    var signalsBag: SignalBag!
+    var signalsBag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
         textView = UITextView()
-        signalsBag = SignalBag()
+        signalsBag = DisposableBag()
     }
     
     func testObserveText() {

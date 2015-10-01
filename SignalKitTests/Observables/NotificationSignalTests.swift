@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import SignalKit
 
 class NotificationSignalTests: XCTestCase {
     
@@ -76,5 +77,18 @@ class NotificationSignalTests: XCTestCase {
         signal.addObserver { result = $0 }
         
         XCTAssertEqual(result, nil, "The dispatch rule should dispatch only new notifications")
+    }
+    
+    func testDeinit() {
+        
+        var called = false
+        var signal: NotificationSignal? = NotificationSignal(center: center, name: notificationName)
+        
+        signal?.addObserver { _ in called = true }
+        signal = nil
+        
+        center.postNotificationName(notificationName, object: nil)
+        
+        XCTAssertEqual(called, false, "Should dispose the observation upon deinit")
     }
 }

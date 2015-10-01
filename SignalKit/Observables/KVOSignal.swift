@@ -10,25 +10,24 @@ import Foundation
 
 private var ObserverContext = 0
 
-public final class KVOSignal<T>: NSObject, SignalType {
-    public typealias Item = T
+public final class KVOSignal<T>: SignalType {
     
-    private weak var subject: NSObject?
-    private let keyPath: String
-    private var isDisposed = false
-    
+    public typealias ObservationType = T
     public var disposableSource: Disposable?
-    public let dispatcher: Dispatcher<Item>
+    public let dispatcher: Dispatcher<ObservationType>
+    
+    private let observer: KVOObserver
     
     public init(subject: NSObject, keyPath: String, lock: LockType? = nil) {
         
-        self.subject = subject
-        self.keyPath = keyPath
-        self.dispatcher = Dispatcher<Item>(lock: lock)
-        
-        super.init()
-        
-        subject.addObserver(self, forKeyPath: keyPath, options: .New, context: &ObserverContext)
+        dispatcher = Dispatcher<ObservationType>(lock: lock)
+        observer = KVOObserver(subject: subject, keyPath: keyPath)
+        observer.callback = { [weak self] value in
+            
+            if let value = value as? ObservationType {
+                self?.dispatch(value)
+            }
+        }
     }
     
     deinit {
@@ -36,25 +35,43 @@ public final class KVOSignal<T>: NSObject, SignalType {
         dispose()
     }
     
-    public override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    public func dispose() {
+        
+        observer.dispose()
+        disposableSource?.dispose()
+    }
+}
+
+internal final class KVOObserver: NSObject, Disposable {
+    
+    private weak var subject: NSObject?
+    private let keyPath: String
+    private var isDisposed = false
+    internal var callback: ((value: AnyObject) -> Void)?
+    init(subject: NSObject, keyPath: String) {
+        
+        self.subject = subject
+        self.keyPath = keyPath
+        
+        super.init()
+        
+        subject.addObserver(self, forKeyPath: keyPath, options: .New, context: &ObserverContext)
+    }
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         
         guard context == &ObserverContext, let value: AnyObject = change?[NSKeyValueChangeNewKey] else {
             return
         }
         
-        if let value = value as? Item {
-            
-            dispatch(value)
-        }
+        callback?(value: value)
     }
     
-    public func dispose() {
+    func dispose() {
         
         guard !isDisposed else { return }
         
         subject?.removeObserver(self, forKeyPath: keyPath)
         isDisposed = true
-        
-        disposableSource?.dispose()
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import SignalKit
 
 class ObservablePropertyTests: XCTestCase {
     
@@ -20,6 +21,12 @@ class ObservablePropertyTests: XCTestCase {
         userName = ObservableProperty<String>(value: "", lock: lock)
     }
     
+    func testInitWithValue() {
+        
+        let name = ObservableProperty("John")
+        
+        XCTAssertEqual(name.value, "John", "Should init with value")
+    }
     
     func testValueChangeWillDispatch() {
         
@@ -43,25 +50,6 @@ class ObservablePropertyTests: XCTestCase {
         userName.dispatch("John")
         
         XCTAssertEqual(userName.value, "John", "Dispatch should update the current value")
-    }
-    
-    func testAtomicValueSetter() {
-        
-        userName.value = "John"
-        
-        XCTAssertEqual(lock.isLockCalled, true, "Should lock")
-        XCTAssertEqual(lock.isUnlockCalled, true, "Should unlock")
-        XCTAssertEqual(lock.synchronizationCounter, 0, "Should perform balanced lock/unlock")
-    }
-    
-    func testAtomicValueGetter() {
-        
-        let name = userName.value
-        
-        XCTAssertEqual(name, "", "Should return the current value")
-        XCTAssertEqual(lock.isLockCalled, true, "Should lock")
-        XCTAssertEqual(lock.isUnlockCalled, true, "Should unlock")
-        XCTAssertEqual(lock.synchronizationCounter, 0, "Should perform balanced lock/unlock")
     }
     
     func testObserve() {

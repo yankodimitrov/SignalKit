@@ -8,27 +8,23 @@
 
 import Foundation
 
-public final class NotificationSignal: NSObject, SignalType {
-    public typealias Item = NSNotification
+public final class NotificationSignal: SignalType {
     
-    private let center: NSNotificationCenter
-    private let notificationName: String
-    private weak var object: AnyObject?
-    private var isDisposed = false
-    
+    public typealias ObservationType = NSNotification
     public var disposableSource: Disposable?
-    public let dispatcher: Dispatcher<Item>
+    public let dispatcher: Dispatcher<ObservationType>
+    
+    private let observer: NotificationObserver
     
     public init(center: NSNotificationCenter, name: String, fromObject object: AnyObject? = nil, lock: LockType? = nil) {
         
-        self.center = center
-        self.dispatcher = Dispatcher<Item>(dispatchRule: { _ in return { return nil }}, lock: lock)
-        self.notificationName = name
-        self.object = object
+        dispatcher = Dispatcher<ObservationType>(dispatchRule: { _ in return { return nil }}, lock: lock)
+        observer = NotificationObserver(center: center, name: name, fromObject: object)
         
-        super.init()
-        
-        center.addObserver(self, selector: "notificationHandler:", name: notificationName, object: object)
+        observer.callback = { [weak self] notification in
+            
+            self?.dispatch(notification)
+        }
     }
     
     /**
@@ -47,19 +43,43 @@ public final class NotificationSignal: NSObject, SignalType {
         dispose()
     }
     
-    public func notificationHandler(notification: NSNotification) {
-        
-        dispatch(notification)
-    }
-    
     public func dispose() {
         
+        observer.dispose()
+        disposableSource?.dispose()
+    }
+}
+
+internal final class NotificationObserver: NSObject, Disposable {
+    
+    private let center: NSNotificationCenter
+    private let notificationName: String
+    private weak var object: AnyObject?
+    private var isDisposed = false
+    
+    internal var callback: ((notification: NSNotification) -> Void)?
+    
+    init(center: NSNotificationCenter, name: String, fromObject object: AnyObject? = nil) {
+        
+        self.center = center
+        self.object = object
+        self.notificationName = name
+        
+        super.init()
+        
+        center.addObserver(self, selector: "notificationHandler:", name: notificationName, object: object)
+    }
+    
+    func notificationHandler(notification: NSNotification) {
+        
+        callback?(notification: notification)
+    }
+    
+    func dispose() {
         guard !isDisposed else { return }
         
         center.removeObserver(self, name: notificationName, object: object)
         object = nil
         isDisposed = true
-        
-        disposableSource?.dispose()
     }
 }
