@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SignalKit"
-  s.version      = "1.0.0"
+  s.version      = "2.0.0"
   s.summary      = "SignalKit is a type safe event and binding framework"
 
   s.description  = <<-DESC
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
 
   s.source       = { :git => "https://github.com/yankodimitrov/SignalKit.git", :tag => "v#{s.version}" }
-  s.source_files  = ["SignalKit", "SignalKit/Observables", "SignalKit/Protocols", "SignalKit/Utilities", "SignalKit/Extensions", "SignalKit/Extensions/UIKit"]
+  s.source_files  = ["SignalKit", "SignalKit/Observables", "SignalKit/Observables/ArrayEventStrategies", "SignalKit/Protocols", "SignalKit/Utilities", "SignalKit/Extensions", "SignalKit/Extensions/UIKit"]
   
   s.requires_arc = true
 
