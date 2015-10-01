@@ -276,4 +276,11 @@ class ObservableArrayTests: XCTestCase {
         
         XCTAssertEqual(list.elements, newElements, "Should replace all elements")
     }
+    
+    func testObserve() {
+        
+        let observer = list.observe()
+        
+        XCTAssert(observer.array[0] === list, "Should return an ArrayBindingObserver for the observable array")
+    }
 }

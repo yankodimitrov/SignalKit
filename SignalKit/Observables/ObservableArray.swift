@@ -152,3 +152,16 @@ public extension ObservableArray {
         removeAllElements(keepCapacity)
     }
 }
+
+public extension ObservableArray {
+    
+    /**
+        Returns an observer for the changes in the observable array that you can 
+        bind to a table or collection view.
+    
+    */
+    public func observe() -> ArrayBindingObserver<ElementType> {
+        
+        return ArrayBindingObserver(array: self)
+    }
+}

@@ -11,8 +11,8 @@ import Foundation
 public final class ArrayBindingObserver<T>: Disposable {
     
     internal var bindingStrategy: ArrayBindingStrategyType?
+    internal let array: ObservableArray<ObservableArray<T>>
     
-    private let array: ObservableArray<ObservableArray<T>>
     private lazy var sectionObservers = [Disposable]()
     private var arrayObserver: Disposable?
     
