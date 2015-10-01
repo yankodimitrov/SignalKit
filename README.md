@@ -319,7 +319,7 @@ SignalKit requires Swift 2.0 and XCode 7
 #### Carthage
 Add the following line to your [Cartfile](https://github.com/carthage/carthage)
 ```swift
-github "yankodimitrov/SignalKit"
+github "yankodimitrov/SignalKit" "master"
 ```
 
 #### CocoaPods
