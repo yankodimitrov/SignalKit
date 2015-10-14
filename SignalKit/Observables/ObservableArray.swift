@@ -153,6 +153,7 @@ public extension ObservableArray {
     }
 }
 
+@available(OSX 10.11, *)
 public extension ObservableArray {
     
     /**

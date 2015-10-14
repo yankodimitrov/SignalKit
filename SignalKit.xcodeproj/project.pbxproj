@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59CC26421BCDF50600F23947 /* ControlSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC26411BCDF50600F23947 /* ControlSignal.swift */; settings = {ASSET_TAGS = (); }; };
 		C924E2D71BBD521C00400D2D /* UICollectionView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2D61BBD521C00400D2D /* UICollectionView+Signal.swift */; settings = {ASSET_TAGS = (); }; };
 		C924E2D91BBD535300400D2D /* MockCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2D81BBD535300400D2D /* MockCollectionView.swift */; settings = {ASSET_TAGS = (); }; };
 		C924E2DB1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2DA1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift */; settings = {ASSET_TAGS = (); }; };
@@ -69,7 +70,6 @@
 		C9D988891B7B55C0004559CD /* KVOSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988881B7B55C0004559CD /* KVOSignal.swift */; };
 		C9D9888C1B7B5865004559CD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9888B1B7B5865004559CD /* Person.swift */; };
 		C9D9888E1B7B587A004559CD /* KVOSignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9888D1B7B587A004559CD /* KVOSignalTests.swift */; };
-		C9D988901B7B5A91004559CD /* ControlSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9888F1B7B5A91004559CD /* ControlSignal.swift */; };
 		C9D988931B7B5C09004559CD /* ControlSignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988921B7B5C09004559CD /* ControlSignalTests.swift */; };
 		C9D988961B7B5D18004559CD /* MockControl.m in Sources */ = {isa = PBXBuildFile; fileRef = C9D988951B7B5D18004559CD /* MockControl.m */; };
 		C9D988981B7B5ECB004559CD /* NotificationSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D988971B7B5ECB004559CD /* NotificationSignal.swift */; };
@@ -116,6 +116,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		59CC26411BCDF50600F23947 /* ControlSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlSignal.swift; sourceTree = "<group>"; };
 		C924E2D61BBD521C00400D2D /* UICollectionView+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Signal.swift"; sourceTree = "<group>"; };
 		C924E2D81BBD535300400D2D /* MockCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionView.swift; sourceTree = "<group>"; };
 		C924E2DA1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewBindingStrategyTests.swift; sourceTree = "<group>"; };
@@ -178,7 +179,6 @@
 		C9D988881B7B55C0004559CD /* KVOSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOSignal.swift; sourceTree = "<group>"; };
 		C9D9888B1B7B5865004559CD /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C9D9888D1B7B587A004559CD /* KVOSignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KVOSignalTests.swift; sourceTree = "<group>"; };
-		C9D9888F1B7B5A91004559CD /* ControlSignal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlSignal.swift; sourceTree = "<group>"; };
 		C9D988921B7B5C09004559CD /* ControlSignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlSignalTests.swift; sourceTree = "<group>"; };
 		C9D988941B7B5C79004559CD /* MockControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockControl.h; sourceTree = "<group>"; };
 		C9D988951B7B5D18004559CD /* MockControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockControl.m; sourceTree = "<group>"; };
@@ -238,6 +238,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59CC26401BCDF50600F23947 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				59CC26411BCDF50600F23947 /* ControlSignal.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		C95FD5231BB989DE001BAF90 /* ArrayEventStrategies */ = {
 			isa = PBXGroup;
 			children = (
@@ -282,13 +290,13 @@
 		C9D988301B7B0903004559CD /* Observables */ = {
 			isa = PBXGroup;
 			children = (
-				C9D988791B7B3ECF004559CD /* Signal.swift */,
-				C9D9887E1B7B445F004559CD /* ObservableProperty.swift */,
+				C95FD5231BB989DE001BAF90 /* ArrayEventStrategies */,
 				C9D988881B7B55C0004559CD /* KVOSignal.swift */,
-				C9D9888F1B7B5A91004559CD /* ControlSignal.swift */,
 				C9D988971B7B5ECB004559CD /* NotificationSignal.swift */,
 				C95FD51C1BB97D6D001BAF90 /* ObservableArray.swift */,
-				C95FD5231BB989DE001BAF90 /* ArrayEventStrategies */,
+				C9D9887E1B7B445F004559CD /* ObservableProperty.swift */,
+				C9D988791B7B3ECF004559CD /* Signal.swift */,
+				59CC26401BCDF50600F23947 /* UIKit */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -594,6 +602,7 @@
 				C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */,
 				C98FD9F81BBC5C30004772C6 /* ArrayBindingObserver.swift in Sources */,
 				C92948ED1B7F759200BCBC7C /* SignalEvent.swift in Sources */,
+				59CC26421BCDF50600F23947 /* ControlSignal.swift in Sources */,
 				C98FD9FE1BBC800D004772C6 /* UITableView+Signal.swift in Sources */,
 				C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */,
 				C9F7AABA1B809F59002DA7B7 /* UISlider+Signal.swift in Sources */,
@@ -615,7 +624,6 @@
 				C924E2D71BBD521C00400D2D /* UICollectionView+Signal.swift in Sources */,
 				C9D988521B7B1788004559CD /* Disposable.swift in Sources */,
 				C9F7E85D1B80BD19000D5CC7 /* UITextView+Signal.swift in Sources */,
-				C9D988901B7B5A91004559CD /* ControlSignal.swift in Sources */,
 				C98CE79C1B7E2AA70035CF1E /* CompoundObserver.swift in Sources */,
 				C9F7AABF1B80AB26002DA7B7 /* UISwitch+Signal.swift in Sources */,
 				C9D988641B7B1B2B004559CD /* Bag.swift in Sources */,

@@ -6,7 +6,11 @@
 //  Copyright (c) 2015 Yanko Dimitrov. All rights reserved.
 //
 
+#if TARGET_OS_IPHONE
+
 #import <UIKit/UIKit.h>
+
+#endif
 
 //! Project version number for SignalKit.
 FOUNDATION_EXPORT double SignalKitVersionNumber;

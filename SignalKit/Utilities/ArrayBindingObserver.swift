@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(OSX 10.11, *)
 public final class ArrayBindingObserver<T>: Disposable {
     
     internal var bindingStrategy: ArrayBindingStrategyType?
