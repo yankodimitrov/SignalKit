@@ -112,4 +112,24 @@ class CollectionChangeSetTests: XCTestCase {
         
         XCTAssertEqual(operations.contains(.Reset), true, "Should contain the reset operation")
     }
+    
+    func testInsertItemAtIndexInSection() {
+        
+        changeSet.insertItemAtIndex(10, inSection: 1)
+        
+        let operations = changeSet.operationsSetForSection(1)
+        
+        XCTAssertEqual(operations.contains(.Insert(index: 10)), true, "Should contain the insert operation")
+    }
+    
+    func testInsertItemAtIndexWillReturnIfThereIsResetOperation() {
+        
+        changeSet.replaceItemsInSection(0)
+        changeSet.insertItemAtIndex(2, inSection: 0)
+        
+        let operations = changeSet.operationsSetForSection(0)
+
+        XCTAssertEqual(operations.count, 1, "Should contain only one operation")
+        XCTAssertEqual(operations.contains(.Reset), true, "Should contain reset operation")
+    }
 }
