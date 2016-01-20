@@ -53,17 +53,20 @@ extension CollectionChangeSet {
 
 extension CollectionChangeSet {
     
-    private mutating func prepareOperationsSetForSection(section: Int) {
-    
-        guard sectionsOperations[section] == nil else { return }
+    private mutating func operationsSetForSection(section: Int) -> Set<ListOperation> {
         
-        sectionsOperations[section] = Set()
+        guard let section = sectionsOperations[section] else { return Set() }
+        
+        return section
     }
     
     public mutating func replacedItemsInSection(section: Int) {
         
-        prepareOperationsSetForSection(section)
+        var operations = operationsSetForSection(section)
         
-        sectionsOperations[section]?.insert(.Reset)
+        operations.removeAll(keepCapacity: false)
+        operations.insert(.Reset)
+        
+        sectionsOperations[section] = operations
     }
 }
