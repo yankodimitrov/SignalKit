@@ -48,3 +48,22 @@ extension CollectionChangeSet {
         collectionOperations.insert(.Remove(index: index))
     }
 }
+
+// MARK: - Sections Items Operations
+
+extension CollectionChangeSet {
+    
+    private mutating func prepareOperationsSetForSection(section: Int) {
+    
+        guard sectionsOperations[section] == nil else { return }
+        
+        sectionsOperations[section] = Set()
+    }
+    
+    public mutating func replacedItemsInSection(section: Int) {
+        
+        prepareOperationsSetForSection(section)
+        
+        sectionsOperations[section]?.insert(.Reset)
+    }
+}
