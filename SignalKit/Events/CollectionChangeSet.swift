@@ -89,4 +89,14 @@ extension CollectionChangeSet {
         operations.insert(.Update(index: index))
         sectionsOperations[inSection] = operations
     }
+    
+    public mutating func removeItemAtIndex(index: Int, inSection: Int) {
+        
+        var operations = operationsSetForSection(inSection)
+        
+        guard !operations.contains(.Reset) else { return }
+        
+        operations.insert(.Remove(index: index))
+        sectionsOperations[inSection] = operations
+    }
 }
