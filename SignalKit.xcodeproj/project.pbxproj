@@ -12,6 +12,7 @@
 		C914CEB31C4FB0FE005C14BD /* ListOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB21C4FB0FE005C14BD /* ListOperationTests.swift */; };
 		C914CEB71C4FB66B005C14BD /* CollectionChangeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB61C4FB66B005C14BD /* CollectionChangeSet.swift */; };
 		C914CEB91C4FB71E005C14BD /* CollectionChangeSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB81C4FB71E005C14BD /* CollectionChangeSetTests.swift */; };
+		C914CEBB1C4FF0CF005C14BD /* ObservableCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEBA1C4FF0CF005C14BD /* ObservableCollectionType.swift */; };
 		C924E2D91BBD535300400D2D /* MockCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2D81BBD535300400D2D /* MockCollectionView.swift */; };
 		C924E2DF1BBD664900400D2D /* MockTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */; };
 		C924E2E11BBD68A100400D2D /* MockCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */; };
@@ -108,6 +109,7 @@
 		C914CEB21C4FB0FE005C14BD /* ListOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOperationTests.swift; sourceTree = "<group>"; };
 		C914CEB61C4FB66B005C14BD /* CollectionChangeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeSet.swift; sourceTree = "<group>"; };
 		C914CEB81C4FB71E005C14BD /* CollectionChangeSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeSetTests.swift; sourceTree = "<group>"; };
+		C914CEBA1C4FF0CF005C14BD /* ObservableCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableCollectionType.swift; sourceTree = "<group>"; };
 		C924E2D81BBD535300400D2D /* MockCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionView.swift; sourceTree = "<group>"; };
 		C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTableViewDataSource.swift; sourceTree = "<group>"; };
 		C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */,
 				C9D9884D1B7B1788004559CD /* LockType.swift */,
 				C9D988511B7B1788004559CD /* TokenGeneratorType.swift */,
+				C914CEBA1C4FF0CF005C14BD /* ObservableCollectionType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */,
 				C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */,
 				C9F7AABA1B809F59002DA7B7 /* UISlider+Signal.swift in Sources */,
+				C914CEBB1C4FF0CF005C14BD /* ObservableCollectionType.swift in Sources */,
 				C9D988731B7B2AD7004559CD /* Dispatcher.swift in Sources */,
 				C98FD9F41BBC5B4E004772C6 /* NSIndexSet+Signal.swift in Sources */,
 				C914CEB11C4FAD62005C14BD /* ListOperation.swift in Sources */,
