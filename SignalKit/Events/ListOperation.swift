@@ -38,3 +38,24 @@ public func ==(lhs: ListOperation, rhs: ListOperation) -> Bool {
         return false
     }
 }
+
+extension ListOperation: Hashable {
+    
+    public var hashValue: Int {
+        
+        switch self {
+            
+        case .Reset:
+            return 0.hashValue
+        
+        case let .Insert(index):
+            return 1.hashValue ^ index.hashValue
+            
+        case let .Update(index):
+            return 2.hashValue ^ index.hashValue
+            
+        case let .Remove(index):
+            return 3.hashValue ^ index.hashValue
+        }
+    }
+}
