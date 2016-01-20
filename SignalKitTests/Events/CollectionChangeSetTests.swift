@@ -172,4 +172,35 @@ class CollectionChangeSetTests: XCTestCase {
         XCTAssertEqual(operations.count, 1, "Should contain only one operation")
         XCTAssertEqual(operations.contains(.Reset), true, "Should contain reset operation")
     }
+    
+    func testInsertMultipleItemsAtIndex() {
+        
+        let expectedIndexes = Set([5, 6, 7, 8])
+        var indexes = Set<Int>()
+        
+        changeSet.insertItemsInRange(5..<9, inSection: 0)
+        
+        let operations = changeSet.operationsSetForSection(0)
+        
+        for operation in operations {
+            
+            if case let .Insert(index) = operation {
+                
+                indexes.insert(index)
+            }
+        }
+        
+        XCTAssertEqual(indexes, expectedIndexes, "Should contain the inserted indexes")
+    }
+    
+    func testInsertMultipleItemsAtIndexWillReturnIfThereIsResetOperation() {
+        
+        changeSet.replaceItemsInSection(1)
+        changeSet.insertItemsInRange(0..<2, inSection: 1)
+        
+        let operations = changeSet.operationsSetForSection(1)
+        
+        XCTAssertEqual(operations.count, 1, "Should contain only one operation")
+        XCTAssertEqual(operations.contains(.Reset), true, "Should contain the reset operation")
+    }
 }
