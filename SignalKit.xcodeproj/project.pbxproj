@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C914CEAE1C4FAD09005C14BD /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEAD1C4FAD09005C14BD /* SignalEvent.swift */; };
 		C924E2D91BBD535300400D2D /* MockCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2D81BBD535300400D2D /* MockCollectionView.swift */; };
 		C924E2DF1BBD664900400D2D /* MockTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */; };
 		C924E2E11BBD68A100400D2D /* MockCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */; };
 		C92948EA1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */; };
-		C92948ED1B7F759200BCBC7C /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948EC1B7F759100BCBC7C /* SignalEvent.swift */; };
 		C92948F21B7F794000BCBC7C /* NSObject+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948F11B7F794000BCBC7C /* NSObject+Signal.swift */; };
 		C92948F51B7F841600BCBC7C /* NSObject+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948F41B7F841600BCBC7C /* NSObject+SignalTests.swift */; };
 		C92948F71B7F8C6100BCBC7C /* NSNotificationCenter+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948F61B7F8C6100BCBC7C /* NSNotificationCenter+Signal.swift */; };
@@ -99,11 +99,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C914CEAD1C4FAD09005C14BD /* SignalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvent.swift; sourceTree = "<group>"; };
 		C924E2D81BBD535300400D2D /* MockCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionView.swift; sourceTree = "<group>"; };
 		C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTableViewDataSource.swift; sourceTree = "<group>"; };
 		C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEventType.swift; sourceTree = "<group>"; };
-		C92948EC1B7F759100BCBC7C /* SignalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvent.swift; sourceTree = "<group>"; };
 		C92948F11B7F794000BCBC7C /* NSObject+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Signal.swift"; sourceTree = "<group>"; };
 		C92948F41B7F841600BCBC7C /* NSObject+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+SignalTests.swift"; sourceTree = "<group>"; };
 		C92948F61B7F8C6100BCBC7C /* NSNotificationCenter+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNotificationCenter+Signal.swift"; sourceTree = "<group>"; };
@@ -204,6 +204,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C914CEAC1C4FAD09005C14BD /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				C914CEAD1C4FAD09005C14BD /* SignalEvent.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		C914CEAF1C4FAD11005C14BD /* Events */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
 		C9D9882E1B7B0903004559CD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,7 +279,6 @@
 			children = (
 				C9D988631B7B1B2B004559CD /* Bag.swift */,
 				C9D988721B7B2AD7004559CD /* Dispatcher.swift */,
-				C92948EC1B7F759100BCBC7C /* SignalEvent.swift */,
 				C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */,
 				C9D9886B1B7B1D41004559CD /* DisposableAction.swift */,
 				C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */,
@@ -377,6 +391,7 @@
 			children = (
 				C9D988311B7B0903004559CD /* Protocols */,
 				C9D988301B7B0903004559CD /* Observables */,
+				C914CEAC1C4FAD09005C14BD /* Events */,
 				C9D988321B7B0903004559CD /* Utilities */,
 				C9D9882E1B7B0903004559CD /* Extensions */,
 				C9E7F2821B567DF5001AB061 /* Supporting Files */,
@@ -398,6 +413,7 @@
 			children = (
 				C9D988681B7B1C25004559CD /* Fakes */,
 				C9D988351B7B0950004559CD /* Observables */,
+				C914CEAF1C4FAD11005C14BD /* Events */,
 				C9D988361B7B0950004559CD /* Utilities */,
 				C9D988331B7B0950004559CD /* Extensions */,
 				C9E7F28F1B567DF5001AB061 /* Supporting Files */,
@@ -526,13 +542,13 @@
 				C92948FC1B7F994D00BCBC7C /* UIControl+Signal.swift in Sources */,
 				C9F7E8671B80D4DA000D5CC7 /* Keyboard.swift in Sources */,
 				C9F7AA9F1B809088002DA7B7 /* UIButton+Signal.swift in Sources */,
+				C914CEAE1C4FAD09005C14BD /* SignalEvent.swift in Sources */,
 				C9F7E85A1B80B64F000D5CC7 /* UITextField+Signal.swift in Sources */,
 				C9D9887A1B7B3ECF004559CD /* Signal.swift in Sources */,
 				C92948F71B7F8C6100BCBC7C /* NSNotificationCenter+Signal.swift in Sources */,
 				C92948EA1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */,
 				C9F7AAB31B809C64002DA7B7 /* UISegmentedControl+Signal.swift in Sources */,
 				C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */,
-				C92948ED1B7F759200BCBC7C /* SignalEvent.swift in Sources */,
 				C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */,
 				C9F7AABA1B809F59002DA7B7 /* UISlider+Signal.swift in Sources */,
 				C9D988731B7B2AD7004559CD /* Dispatcher.swift in Sources */,
