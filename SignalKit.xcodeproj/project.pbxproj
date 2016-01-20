@@ -10,6 +10,8 @@
 		C914CEAE1C4FAD09005C14BD /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEAD1C4FAD09005C14BD /* SignalEvent.swift */; };
 		C914CEB11C4FAD62005C14BD /* ListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB01C4FAD62005C14BD /* ListOperation.swift */; };
 		C914CEB31C4FB0FE005C14BD /* ListOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB21C4FB0FE005C14BD /* ListOperationTests.swift */; };
+		C914CEB71C4FB66B005C14BD /* CollectionChangeset.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB61C4FB66B005C14BD /* CollectionChangeset.swift */; };
+		C914CEB91C4FB71E005C14BD /* CollectionChangesetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB81C4FB71E005C14BD /* CollectionChangesetTests.swift */; };
 		C924E2D91BBD535300400D2D /* MockCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2D81BBD535300400D2D /* MockCollectionView.swift */; };
 		C924E2DF1BBD664900400D2D /* MockTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */; };
 		C924E2E11BBD68A100400D2D /* MockCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */; };
@@ -104,6 +106,8 @@
 		C914CEAD1C4FAD09005C14BD /* SignalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvent.swift; sourceTree = "<group>"; };
 		C914CEB01C4FAD62005C14BD /* ListOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOperation.swift; sourceTree = "<group>"; };
 		C914CEB21C4FB0FE005C14BD /* ListOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOperationTests.swift; sourceTree = "<group>"; };
+		C914CEB61C4FB66B005C14BD /* CollectionChangeset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeset.swift; sourceTree = "<group>"; };
+		C914CEB81C4FB71E005C14BD /* CollectionChangesetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangesetTests.swift; sourceTree = "<group>"; };
 		C924E2D81BBD535300400D2D /* MockCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionView.swift; sourceTree = "<group>"; };
 		C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTableViewDataSource.swift; sourceTree = "<group>"; };
 		C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			children = (
 				C914CEAD1C4FAD09005C14BD /* SignalEvent.swift */,
 				C914CEB01C4FAD62005C14BD /* ListOperation.swift */,
+				C914CEB61C4FB66B005C14BD /* CollectionChangeset.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				C914CEB21C4FB0FE005C14BD /* ListOperationTests.swift */,
+				C914CEB81C4FB71E005C14BD /* CollectionChangesetTests.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -546,6 +552,7 @@
 			files = (
 				C9D988711B7B1F14004559CD /* SpinLock.swift in Sources */,
 				C92948FC1B7F994D00BCBC7C /* UIControl+Signal.swift in Sources */,
+				C914CEB71C4FB66B005C14BD /* CollectionChangeset.swift in Sources */,
 				C9F7E8671B80D4DA000D5CC7 /* Keyboard.swift in Sources */,
 				C9F7AA9F1B809088002DA7B7 /* UIButton+Signal.swift in Sources */,
 				C914CEAE1C4FAD09005C14BD /* SignalEvent.swift in Sources */,
@@ -629,6 +636,7 @@
 				C9D9886E1B7B1DE8004559CD /* DisposableActionTests.swift in Sources */,
 				C9D9889F1B7B79A2004559CD /* MockObservable.swift in Sources */,
 				C9D988A81B7BCA4C004559CD /* DisposableBagTests.swift in Sources */,
+				C914CEB91C4FB71E005C14BD /* CollectionChangesetTests.swift in Sources */,
 				C9F7AABD1B80AAE2002DA7B7 /* UISwitch+SignalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
