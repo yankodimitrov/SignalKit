@@ -203,4 +203,16 @@ class CollectionChangeSetTests: XCTestCase {
         XCTAssertEqual(operations.count, 1, "Should contain only one operation")
         XCTAssertEqual(operations.contains(.Reset), true, "Should contain the reset operation")
     }
+    
+    func testShouldReloadData() {
+        
+        changeSet.replaceAllSections()
+        
+        XCTAssertEqual(changeSet.shouldReloadData(), true, "Should be equal to true")
+    }
+    
+    func testShouldReloadDataReturnsFalse() {
+        
+        XCTAssertEqual(changeSet.shouldReloadData(), false, "Should be equal to false")
+    }
 }

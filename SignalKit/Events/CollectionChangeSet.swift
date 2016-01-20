@@ -114,3 +114,15 @@ extension CollectionChangeSet {
         sectionsOperations[inSection] = operations
     }
 }
+
+// MARK: - Other
+
+extension CollectionChangeSet {
+    
+    public mutating func shouldReloadData() -> Bool {
+        
+        guard !collectionOperations.contains(.Reset) else { return true }
+        
+        return false
+    }
+}
