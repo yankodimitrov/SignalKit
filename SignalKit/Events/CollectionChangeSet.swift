@@ -25,4 +25,12 @@ extension CollectionChangeSet {
         collectionOperations.removeAll(keepCapacity: false)
         collectionOperations.insert(.Reset)
     }
+    
+    public mutating func insertedSectionAtIndex(index: Int) {
+        
+        guard !collectionOperations.contains(.Reset) else { return }
+        
+        collectionOperations.insert(.Insert(index: index))
+        sectionsOperations[index] = Set()
+    }
 }
