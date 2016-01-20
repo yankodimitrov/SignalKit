@@ -33,4 +33,11 @@ extension CollectionChangeSet {
         collectionOperations.insert(.Insert(index: index))
         sectionsOperations[index] = Set()
     }
+    
+    public mutating func updatedSectionAtIndex(index: Int) {
+        
+        guard !collectionOperations.contains(.Reset) else { return }
+        
+        collectionOperations.insert(.Update(index: index))
+    }
 }
