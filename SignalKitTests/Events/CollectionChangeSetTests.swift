@@ -11,22 +11,22 @@ import XCTest
 
 class CollectionChangeSetTests: XCTestCase {
 
-    func testReplacedAllSections() {
+    func testReplaceAllSections() {
         
         var changeSet = CollectionChangeSet()
         
-        changeSet.replacedAllSections()
+        changeSet.replaceAllSections()
         
         let operations = changeSet.collectionOperations
         
         XCTAssertEqual(operations.contains(.Reset), true, "Should contain the reset operation")
     }
     
-    func testInsertedSectionAtIndex() {
+    func testInsertSectionAtIndex() {
         
         var changeSet = CollectionChangeSet()
         
-        changeSet.insertedSectionAtIndex(1)
+        changeSet.insertSectionAtIndex(1)
         
         let operations = changeSet.collectionOperations
         let sectionOperations = changeSet.sectionsOperations[1]
@@ -35,12 +35,12 @@ class CollectionChangeSetTests: XCTestCase {
         XCTAssertEqual(sectionOperations?.isEmpty, true, "Should insert a new section")
     }
     
-    func testInsertedSectionAtIndexReturnsIfThereIsResetOperation() {
+    func testInsertSectionAtIndexReturnsIfThereIsResetOperation() {
         
         var changeSet = CollectionChangeSet()
         
-        changeSet.replacedAllSections()
-        changeSet.insertedSectionAtIndex(0)
+        changeSet.replaceAllSections()
+        changeSet.insertSectionAtIndex(0)
         
         let operations = changeSet.collectionOperations
         
@@ -48,13 +48,13 @@ class CollectionChangeSetTests: XCTestCase {
         XCTAssertEqual(operations.count, 1, "Should contain only one operations")
     }
     
-    func testReplacedAllSectionsRemovesAllPreviousOperations() {
+    func testReplaceAllSectionsRemovesAllPreviousOperations() {
         
         var changeSet = CollectionChangeSet()
         
-        changeSet.insertedSectionAtIndex(1)
-        changeSet.insertedSectionAtIndex(2)
-        changeSet.replacedAllSections()
+        changeSet.insertSectionAtIndex(1)
+        changeSet.insertSectionAtIndex(2)
+        changeSet.replaceAllSections()
         
         let operations = changeSet.collectionOperations
         
@@ -62,11 +62,11 @@ class CollectionChangeSetTests: XCTestCase {
         XCTAssertEqual(operations.contains(.Reset), true, "Should contain the reset operation")
     }
     
-    func testUpdatedSectionAtIndex() {
+    func testUpdateSectionAtIndex() {
         
         var changeSet = CollectionChangeSet()
         
-        changeSet.updatedSectionAtIndex(2)
+        changeSet.updateSectionAtIndex(2)
         
         let operations = changeSet.collectionOperations
         
@@ -74,12 +74,12 @@ class CollectionChangeSetTests: XCTestCase {
         XCTAssertEqual(operations.contains(.Update(index: 2)), true, "Should contain the update operation")
     }
     
-    func testUpdatedSectionAtIndexReturnsIfThereIsResetOperation() {
+    func testUpdateSectionAtIndexReturnsIfThereIsResetOperation() {
         
         var changeSet = CollectionChangeSet()
         
-        changeSet.replacedAllSections()
-        changeSet.updatedSectionAtIndex(2)
+        changeSet.replaceAllSections()
+        changeSet.updateSectionAtIndex(2)
         
         let operations = changeSet.collectionOperations
         
@@ -87,11 +87,11 @@ class CollectionChangeSetTests: XCTestCase {
         XCTAssertEqual(operations.contains(.Reset), true, "Should contain the reset operation")
     }
     
-    func testRemovedSectionAtIndex() {
+    func testRemoveSectionAtIndex() {
         
         var changeSet = CollectionChangeSet()
         
-        changeSet.removedSectionAtIndex(2)
+        changeSet.removeSectionAtIndex(2)
         
         let operations = changeSet.collectionOperations
         
@@ -99,12 +99,12 @@ class CollectionChangeSetTests: XCTestCase {
         XCTAssertEqual(operations.contains(.Remove(index: 2)), true, "Should contain the remove operation")
     }
     
-    func testRemovedSectionAtIndexReturnsIfThereIsResetOperation() {
+    func testRemoveSectionAtIndexReturnsIfThereIsResetOperation() {
         
         var changeSet = CollectionChangeSet()
         
-        changeSet.replacedAllSections()
-        changeSet.removedSectionAtIndex(22)
+        changeSet.replaceAllSections()
+        changeSet.removeSectionAtIndex(22)
         
         let operations = changeSet.collectionOperations
         
@@ -112,11 +112,11 @@ class CollectionChangeSetTests: XCTestCase {
         XCTAssertEqual(operations.contains(.Reset), true, "Should contain the reset operation")
     }
     
-    func testReplacedItemsInSection() {
+    func testReplaceItemsInSection() {
         
         var changeSet = CollectionChangeSet()
         
-        changeSet.replacedItemsInSection(0)
+        changeSet.replaceItemsInSection(0)
         
         let operations = changeSet.sectionsOperations
         

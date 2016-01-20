@@ -20,13 +20,13 @@ public struct CollectionChangeSet {
 
 extension CollectionChangeSet {
     
-    public mutating func replacedAllSections() {
+    public mutating func replaceAllSections() {
         
         collectionOperations.removeAll(keepCapacity: false)
         collectionOperations.insert(.Reset)
     }
     
-    public mutating func insertedSectionAtIndex(index: Int) {
+    public mutating func insertSectionAtIndex(index: Int) {
         
         guard !collectionOperations.contains(.Reset) else { return }
         
@@ -34,14 +34,14 @@ extension CollectionChangeSet {
         sectionsOperations[index] = Set()
     }
     
-    public mutating func updatedSectionAtIndex(index: Int) {
+    public mutating func updateSectionAtIndex(index: Int) {
         
         guard !collectionOperations.contains(.Reset) else { return }
         
         collectionOperations.insert(.Update(index: index))
     }
     
-    public mutating func removedSectionAtIndex(index: Int) {
+    public mutating func removeSectionAtIndex(index: Int) {
         
         guard !collectionOperations.contains(.Reset) else { return }
         
@@ -60,7 +60,7 @@ extension CollectionChangeSet {
         return section
     }
     
-    public mutating func replacedItemsInSection(section: Int) {
+    public mutating func replaceItemsInSection(section: Int) {
         
         var operations = operationsSetForSection(section)
         
