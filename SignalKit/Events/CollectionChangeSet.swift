@@ -40,4 +40,11 @@ extension CollectionChangeSet {
         
         collectionOperations.insert(.Update(index: index))
     }
+    
+    public mutating func removedSectionAtIndex(index: Int) {
+        
+        guard !collectionOperations.contains(.Reset) else { return }
+        
+        collectionOperations.insert(.Remove(index: index))
+    }
 }

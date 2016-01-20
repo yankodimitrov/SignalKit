@@ -86,4 +86,29 @@ class CollectionChangeSetTests: XCTestCase {
         XCTAssertEqual(operations.count, 1, "Should contain only one operation")
         XCTAssertEqual(operations.contains(.Reset), true, "Should contain the reset operation")
     }
+    
+    func testRemovedSectionAtIndex() {
+        
+        var changeSet = CollectionChangeSet()
+        
+        changeSet.removedSectionAtIndex(2)
+        
+        let operations = changeSet.collectionOperations
+        
+        XCTAssertEqual(operations.count, 1, "Should contain only one operation")
+        XCTAssertEqual(operations.contains(.Remove(index: 2)), true, "Should contain the remove operation")
+    }
+    
+    func testRemovedSectionAtIndexReturnsIfThereIsResetOperation() {
+        
+        var changeSet = CollectionChangeSet()
+        
+        changeSet.replacedAllSections()
+        changeSet.removedSectionAtIndex(22)
+        
+        let operations = changeSet.collectionOperations
+        
+        XCTAssertEqual(operations.count, 1, "Should contain only one operation")
+        XCTAssertEqual(operations.contains(.Reset), true, "Should contain the reset operation")
+    }
 }
