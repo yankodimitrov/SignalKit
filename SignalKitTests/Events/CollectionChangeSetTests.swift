@@ -11,9 +11,15 @@ import XCTest
 
 class CollectionChangeSetTests: XCTestCase {
 
-    func testReplaceAllSections() {
+    var changeSet: CollectionChangeSet!
+    
+    override func setUp() {
+        super.setUp()
         
-        var changeSet = CollectionChangeSet()
+        changeSet = CollectionChangeSet()
+    }
+    
+    func testReplaceAllSections() {
         
         changeSet.replaceAllSections()
         
@@ -23,8 +29,6 @@ class CollectionChangeSetTests: XCTestCase {
     }
     
     func testInsertSectionAtIndex() {
-        
-        var changeSet = CollectionChangeSet()
         
         changeSet.insertSectionAtIndex(1)
         
@@ -37,8 +41,6 @@ class CollectionChangeSetTests: XCTestCase {
     
     func testInsertSectionAtIndexReturnsIfThereIsResetOperation() {
         
-        var changeSet = CollectionChangeSet()
-        
         changeSet.replaceAllSections()
         changeSet.insertSectionAtIndex(0)
         
@@ -49,8 +51,6 @@ class CollectionChangeSetTests: XCTestCase {
     }
     
     func testReplaceAllSectionsRemovesAllPreviousOperations() {
-        
-        var changeSet = CollectionChangeSet()
         
         changeSet.insertSectionAtIndex(1)
         changeSet.insertSectionAtIndex(2)
@@ -64,8 +64,6 @@ class CollectionChangeSetTests: XCTestCase {
     
     func testUpdateSectionAtIndex() {
         
-        var changeSet = CollectionChangeSet()
-        
         changeSet.updateSectionAtIndex(2)
         
         let operations = changeSet.collectionOperations
@@ -75,8 +73,6 @@ class CollectionChangeSetTests: XCTestCase {
     }
     
     func testUpdateSectionAtIndexReturnsIfThereIsResetOperation() {
-        
-        var changeSet = CollectionChangeSet()
         
         changeSet.replaceAllSections()
         changeSet.updateSectionAtIndex(2)
@@ -89,8 +85,6 @@ class CollectionChangeSetTests: XCTestCase {
     
     func testRemoveSectionAtIndex() {
         
-        var changeSet = CollectionChangeSet()
-        
         changeSet.removeSectionAtIndex(2)
         
         let operations = changeSet.collectionOperations
@@ -100,8 +94,6 @@ class CollectionChangeSetTests: XCTestCase {
     }
     
     func testRemoveSectionAtIndexReturnsIfThereIsResetOperation() {
-        
-        var changeSet = CollectionChangeSet()
         
         changeSet.replaceAllSections()
         changeSet.removeSectionAtIndex(22)
@@ -114,13 +106,10 @@ class CollectionChangeSetTests: XCTestCase {
     
     func testReplaceItemsInSection() {
         
-        var changeSet = CollectionChangeSet()
-        
         changeSet.replaceItemsInSection(0)
         
-        let operations = changeSet.sectionsOperations
+        let operations = changeSet.operationsSetForSection(0)
         
-        XCTAssert(operations[0] != nil, "Should insert a new set at index 0")
-        XCTAssertEqual(operations[0]?.contains(.Reset), true, "Should contain the reset operation")
+        XCTAssertEqual(operations.contains(.Reset), true, "Should contain the reset operation")
     }
 }
