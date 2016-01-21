@@ -28,7 +28,7 @@ class UITextView_SignalTests: XCTestCase {
         
         textView.observe().text
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         textView.text = "John"
         center.postNotificationName(UITextViewTextDidChangeNotification, object: textView)
@@ -44,7 +44,7 @@ class UITextView_SignalTests: XCTestCase {
         
         textView.observe().text
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         XCTAssertEqual(result, "John", "Should dispatch the current text from UITextView")
     }
@@ -56,7 +56,7 @@ class UITextView_SignalTests: XCTestCase {
         
         textView.observe().attributedText
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         textView.attributedText = newText
         center.postNotificationName(UITextViewTextDidChangeNotification, object: textView)
@@ -73,7 +73,7 @@ class UITextView_SignalTests: XCTestCase {
         
         textView.observe().attributedText
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         XCTAssertEqual(result.string, "John", "Should dispatch the current attribured text from UITextView")
     }
@@ -84,7 +84,7 @@ class UITextView_SignalTests: XCTestCase {
         
         signal.dispatch("Jack")
         
-        signal.bindTo(textIn: textView).addTo(signalsBag)
+        signal.bindTo(textIn: textView).disposeWith(signalsBag)
         
         XCTAssertEqual(textView.text, "Jack", "Should bind a String to the text property of UITextView")
     }
@@ -96,7 +96,7 @@ class UITextView_SignalTests: XCTestCase {
         
         signal.dispatch(text)
         
-        signal.bindTo(attributedTextIn: textView).addTo(signalsBag)
+        signal.bindTo(attributedTextIn: textView).disposeWith(signalsBag)
         
         XCTAssertEqual(textView.attributedText.string, "Jack", "Should bind a NSAtrributedString to the attributed text property of UITextView")
     }

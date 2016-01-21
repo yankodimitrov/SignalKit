@@ -28,7 +28,7 @@ class UISlider_SignalTests: XCTestCase {
         
         slider.observe().valueChanges
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         slider.value = 10
         slider.sendActionsForControlEvents(.ValueChanged)
@@ -44,7 +44,7 @@ class UISlider_SignalTests: XCTestCase {
         
         slider.observe().valueChanges
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         XCTAssertEqual(result, 10, "Should dispatch the current value from UISlider")
     }
@@ -55,7 +55,7 @@ class UISlider_SignalTests: XCTestCase {
         
         signal.dispatch(5)
         
-        signal.bindTo(valueIn: slider).addTo(signalsBag)
+        signal.bindTo(valueIn: slider).disposeWith(signalsBag)
         
         XCTAssertEqual(slider.value, 5, "Should bind a Float value to the value property of UISlider")
     }

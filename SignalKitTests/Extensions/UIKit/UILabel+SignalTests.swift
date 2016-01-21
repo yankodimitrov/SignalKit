@@ -27,7 +27,7 @@ class UILabel_SignalTests: XCTestCase {
         
         signal.dispatch("Jack")
         
-        signal.bindTo(textIn: label).addTo(signalsBag)
+        signal.bindTo(textIn: label).disposeWith(signalsBag)
         
         XCTAssertEqual(label.text, "Jack", "Should bind a String value to the text property of UILabel")
     }
@@ -39,7 +39,7 @@ class UILabel_SignalTests: XCTestCase {
         
         signal.dispatch(attributedString)
         
-        signal.bindTo(attributedTextIn: label).addTo(signalsBag)
+        signal.bindTo(attributedTextIn: label).disposeWith(signalsBag)
         
         XCTAssertEqual(label.attributedText!, attributedString, "Should bind a NSAttributedString to the attributedText property of UILabel")
     }

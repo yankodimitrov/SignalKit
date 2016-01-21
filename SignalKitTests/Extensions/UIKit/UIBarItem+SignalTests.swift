@@ -28,7 +28,7 @@ class UIBarItem_SignalTests: XCTestCase {
         
         barItem.enabled = true
         
-        signal.bindTo(enabled: barItem).addTo(signalsBag)
+        signal.bindTo(enabled: barItem).disposeWith(signalsBag)
         
         signal.dispatch(false)
         

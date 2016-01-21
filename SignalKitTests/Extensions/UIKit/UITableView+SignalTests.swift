@@ -31,7 +31,7 @@ class UITableView_SignalTests: XCTestCase {
         
         collection.observe()
             .bindTo(tableView: tableView)
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         collection.changeSetSignal.dispatch(changeSet)
         

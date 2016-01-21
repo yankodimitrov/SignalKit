@@ -31,7 +31,7 @@ class UICollectionView_SignalTests: XCTestCase {
         
         collection.observe()
             .bindTo(collectionView: collectionView)
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         collection.changeSetSignal.dispatch(changeSet)
         

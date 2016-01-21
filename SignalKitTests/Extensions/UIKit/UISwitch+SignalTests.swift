@@ -29,7 +29,7 @@ class UISwitch_SignalTests: XCTestCase {
         
         switchControl.observe().onState
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         switchControl.on = true
         switchControl.sendActionsForControlEvents(.ValueChanged)
@@ -45,7 +45,7 @@ class UISwitch_SignalTests: XCTestCase {
         
         switchControl.observe().onState
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         XCTAssertEqual(result, true, "Should dispatch the current on/off state in UISwitch")
     }
@@ -56,7 +56,7 @@ class UISwitch_SignalTests: XCTestCase {
         
         signal.dispatch(true)
         
-        signal.bindTo(onStateIn: switchControl).addTo(signalsBag)
+        signal.bindTo(onStateIn: switchControl).disposeWith(signalsBag)
         
         XCTAssertEqual(switchControl.on, true, "Should bind a boolean value to the on/off state in UISwitch")
     }

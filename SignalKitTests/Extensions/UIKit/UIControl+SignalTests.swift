@@ -28,7 +28,7 @@ class UIControl_SignalTests: XCTestCase {
         control.observe()
             .events(.ValueChanged)
             .next { _ in called = true }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         control.sendActionsForControlEvents(.ValueChanged)
         
@@ -42,7 +42,7 @@ class UIControl_SignalTests: XCTestCase {
         control.observe()
             .events([.ValueChanged, .TouchUpInside])
             .next { _ in called = true }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         control.sendActionsForControlEvents(.TouchUpInside)
         
@@ -57,7 +57,7 @@ class UIControl_SignalTests: XCTestCase {
         
         signal
             .bindTo(enabled: control)
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         signal.dispatch(false)
         

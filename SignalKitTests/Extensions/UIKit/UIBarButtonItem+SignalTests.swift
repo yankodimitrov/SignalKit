@@ -27,9 +27,7 @@ class UIBarButtonItem_SignalTests: XCTestCase {
         
         button.observe().tapEvent
             .next { _ in isCalled = true }
-            .addTo(disposableBag)
-        
-        print("selector: \(button.action)")
+            .disposeWith(disposableBag)
         
         button.target?.performSelector(button.action, withObject: button)
         

@@ -28,7 +28,7 @@ class UIView_SignalTests: XCTestCase {
         
         signal.dispatch(color)
         
-        signal.bindTo(backgroundColorIn: view).addTo(signalsBag)
+        signal.bindTo(backgroundColorIn: view).disposeWith(signalsBag)
         
         XCTAssertEqual(view.backgroundColor!, color, "Should bind a UIColor to the background color property of UIView")
     }
@@ -41,7 +41,7 @@ class UIView_SignalTests: XCTestCase {
         
         signal.dispatch(0.5)
         
-        signal.bindTo(alphaIn: view).addTo(signalsBag)
+        signal.bindTo(alphaIn: view).disposeWith(signalsBag)
         
         XCTAssertEqual(view.alpha, 0.5, "Should bind a CGFloat value to the alpha property of UIView")
     }
@@ -54,7 +54,7 @@ class UIView_SignalTests: XCTestCase {
         
         signal.dispatch(true)
         
-        signal.bindTo(hiddenStateIn: view).addTo(signalsBag)
+        signal.bindTo(hiddenStateIn: view).disposeWith(signalsBag)
         
         XCTAssertEqual(view.hidden, true, "Should bind a Boolean value to the hidden property of UIView")
     }
