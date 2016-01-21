@@ -44,7 +44,7 @@ extension TableViewBindingObserver {
     }
     
     private func handleCollectionChangeSet(changeSet: CollectionChangeSet) {
-        print("handle")
+        
         let handler = CollectionChangeSetHandler()
         
         handler.handleChangeSet(changeSet)
