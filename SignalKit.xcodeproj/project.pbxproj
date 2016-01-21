@@ -22,6 +22,8 @@
 		C91D55551C511AA0009CB7F5 /* UIBarItem+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D55541C511AA0009CB7F5 /* UIBarItem+SignalTests.swift */; };
 		C91D555B1C514979009CB7F5 /* DisposableActionTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D555A1C514979009CB7F5 /* DisposableActionTarget.swift */; };
 		C91D555D1C514D08009CB7F5 /* DisposableActionTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D555C1C514D08009CB7F5 /* DisposableActionTargetTests.swift */; };
+		C91D555F1C514E7F009CB7F5 /* UIBarButtonItem+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D555E1C514E7F009CB7F5 /* UIBarButtonItem+Signal.swift */; };
+		C91D55611C515141009CB7F5 /* UIBarButtonItem+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D55601C515141009CB7F5 /* UIBarButtonItem+SignalTests.swift */; };
 		C92322EF1C50DF0B00CA1A2C /* TableViewBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322EE1C50DF0B00CA1A2C /* TableViewBinding.swift */; };
 		C92322F11C50DFF500CA1A2C /* TableViewBindingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322F01C50DFF500CA1A2C /* TableViewBindingTests.swift */; };
 		C92322F31C50EAA400CA1A2C /* CollectionChangeSetHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322F21C50EAA400CA1A2C /* CollectionChangeSetHandler.swift */; };
@@ -132,6 +134,8 @@
 		C91D55541C511AA0009CB7F5 /* UIBarItem+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarItem+SignalTests.swift"; sourceTree = "<group>"; };
 		C91D555A1C514979009CB7F5 /* DisposableActionTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableActionTarget.swift; sourceTree = "<group>"; };
 		C91D555C1C514D08009CB7F5 /* DisposableActionTargetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableActionTargetTests.swift; sourceTree = "<group>"; };
+		C91D555E1C514E7F009CB7F5 /* UIBarButtonItem+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Signal.swift"; sourceTree = "<group>"; };
+		C91D55601C515141009CB7F5 /* UIBarButtonItem+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+SignalTests.swift"; sourceTree = "<group>"; };
 		C92322EE1C50DF0B00CA1A2C /* TableViewBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBinding.swift; sourceTree = "<group>"; };
 		C92322F01C50DFF500CA1A2C /* TableViewBindingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBindingTests.swift; sourceTree = "<group>"; };
 		C92322F21C50EAA400CA1A2C /* CollectionChangeSetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeSetHandler.swift; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 				C92322F81C510D1E00CA1A2C /* UITableView+Signal.swift */,
 				C91D554E1C511738009CB7F5 /* UICollectionView+Signal.swift */,
 				C91D55521C511A49009CB7F5 /* UIBarItem+Signal.swift */,
+				C91D555E1C514E7F009CB7F5 /* UIBarButtonItem+Signal.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -387,6 +392,7 @@
 				C91D55481C511098009CB7F5 /* UITableView+SignalTests.swift */,
 				C91D55501C5117A5009CB7F5 /* UICollectionView+SignalTests.swift */,
 				C91D55541C511AA0009CB7F5 /* UIBarItem+SignalTests.swift */,
+				C91D55601C515141009CB7F5 /* UIBarButtonItem+SignalTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -633,6 +639,7 @@
 				C9F7AAA41B80943F002DA7B7 /* UIDatePicker+Signal.swift in Sources */,
 				C9D988891B7B55C0004559CD /* KVOSignal.swift in Sources */,
 				C91D55531C511A49009CB7F5 /* UIBarItem+Signal.swift in Sources */,
+				C91D555F1C514E7F009CB7F5 /* UIBarButtonItem+Signal.swift in Sources */,
 				C91D555B1C514979009CB7F5 /* DisposableActionTarget.swift in Sources */,
 				C9D988541B7B1788004559CD /* LockType.swift in Sources */,
 				C9F7AAAE1B809A00002DA7B7 /* UILabel+Signal.swift in Sources */,
@@ -710,6 +717,7 @@
 				C9D988A81B7BCA4C004559CD /* DisposableBagTests.swift in Sources */,
 				C914CEB91C4FB71E005C14BD /* CollectionChangeSetTests.swift in Sources */,
 				C9F7AABD1B80AAE2002DA7B7 /* UISwitch+SignalTests.swift in Sources */,
+				C91D55611C515141009CB7F5 /* UIBarButtonItem+SignalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

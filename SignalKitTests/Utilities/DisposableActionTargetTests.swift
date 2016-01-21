@@ -20,7 +20,7 @@ class DisposableActionTargetTests: XCTestCase {
             isActionCalled = true
         }
         
-        actionTarget.handleAction(sender: NSObject())
+        actionTarget.handleAction(NSObject())
         
         XCTAssertEqual(isActionCalled, true, "Should call the action callback")
     }
@@ -35,7 +35,7 @@ class DisposableActionTargetTests: XCTestCase {
         }
         
         actionTarget.dispose()
-        actionTarget.handleAction(sender: NSObject())
+        actionTarget.handleAction(NSObject())
 
         XCTAssertEqual(isActionCalled, false, "Should dispose the callback")
     }

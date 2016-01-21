@@ -22,7 +22,7 @@ public final class DisposableActionTarget: NSObject {
         callback = actionCallback
     }
     
-    public func handleAction(sender sender: AnyObject) {
+    public func handleAction(sender: AnyObject) {
         
         callback?(sender)
     }
