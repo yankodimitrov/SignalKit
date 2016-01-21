@@ -22,6 +22,7 @@ public extension SignalEventType where Sender: UITextView {
         notificationSignal.addObserver { [weak sender, weak signal] _ in
             
             if let text = sender?.text {
+                
                 signal?.dispatch(text)
             }
         }
@@ -29,6 +30,7 @@ public extension SignalEventType where Sender: UITextView {
         signal.disposableSource = notificationSignal
         
         if let text = sender.text {
+            
             signal.dispatch(text)
         }
         
@@ -47,6 +49,7 @@ public extension SignalEventType where Sender: UITextView {
         notificationSignal.addObserver { [weak sender, weak signal] _ in
             
             if let text = sender?.attributedText {
+                
                 signal?.dispatch(text)
             }
         }
@@ -54,6 +57,7 @@ public extension SignalEventType where Sender: UITextView {
         signal.disposableSource = notificationSignal
         
         if let text = sender.attributedText {
+            
             signal.dispatch(text)
         }
         
