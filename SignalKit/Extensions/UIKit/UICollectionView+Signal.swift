@@ -16,7 +16,7 @@ public extension SignalEventType where Sender: ObservableCollectionType {
      */
     public func bindTo(collectionView collectionView: UICollectionView) -> Disposable {
         
-        let binding = CollectionViewBindingObserver()
+        let binding = CollectionViewBinding()
         
         binding.collectionView = collectionView
         binding.observeCollection(sender)

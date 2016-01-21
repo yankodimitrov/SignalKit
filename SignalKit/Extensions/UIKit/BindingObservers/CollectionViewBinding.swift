@@ -1,5 +1,5 @@
 //
-//  CollectionViewBindingObserver.swift
+//  CollectionViewBinding.swift
 //  SignalKit
 //
 //  Created by Yanko Dimitrov on 1/21/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal final class CollectionViewBindingObserver {
+internal final class CollectionViewBinding {
     
     internal weak var collectionView: UICollectionView?
     internal var observer: Disposable?
@@ -21,7 +21,7 @@ internal final class CollectionViewBindingObserver {
 
 // MARK: - Disposable
 
-extension CollectionViewBindingObserver: Disposable {
+extension CollectionViewBinding: Disposable {
     
     internal func dispose() {
         
@@ -32,7 +32,7 @@ extension CollectionViewBindingObserver: Disposable {
 
 // MARK: - Observe ObservableCollectionType
 
-extension CollectionViewBindingObserver {
+extension CollectionViewBinding {
     
     internal func observeCollection(collection: ObservableCollectionType) {
         

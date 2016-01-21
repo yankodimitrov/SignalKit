@@ -1,5 +1,5 @@
 //
-//  CollectionViewBindingObserverTests.swift
+//  CollectionViewBindingTests.swift
 //  SignalKit
 //
 //  Created by Yanko Dimitrov on 1/21/16.
@@ -9,40 +9,40 @@
 import XCTest
 @testable import SignalKit
 
-class CollectionViewBindingObserverTests: XCTestCase {
+class CollectionViewBindingTests: XCTestCase {
     
-    var bindingObserver: CollectionViewBindingObserver!
+    var binding: CollectionViewBinding!
     var collection: MockObservableCollection!
     var collectionView: MockCollectionView!
     
     override func setUp() {
         super.setUp()
         
-        bindingObserver = CollectionViewBindingObserver()
+        binding = CollectionViewBinding()
         collection = MockObservableCollection()
         collectionView = MockCollectionView()
         
-        bindingObserver.collectionView = collectionView
-        bindingObserver.observeCollection(collection)
+        binding.collectionView = collectionView
+        binding.observeCollection(collection)
     }
     
     func testDisposeBindingObserver() {
         
         let fakeDisposable = MockDisposable()
         
-        bindingObserver.observer = fakeDisposable
+        binding.observer = fakeDisposable
         
-        bindingObserver.dispose()
+        binding.dispose()
         
         XCTAssertEqual(fakeDisposable.isDisposeCalled, true, "Should dispose the binding")
-        XCTAssert(bindingObserver.observer == nil, "Should set the disposable observer to nil")
+        XCTAssert(binding.observer == nil, "Should set the disposable observer to nil")
     }
     
     func testDisposeOnDeinit() {
         
         let fakeDisposable = MockDisposable()
         
-        var bindingObserver: CollectionViewBindingObserver? = CollectionViewBindingObserver()
+        var bindingObserver: CollectionViewBinding? = CollectionViewBinding()
         
         bindingObserver?.observer = fakeDisposable
         
