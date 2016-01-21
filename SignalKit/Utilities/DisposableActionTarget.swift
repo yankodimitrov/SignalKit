@@ -12,6 +12,11 @@ public final class DisposableActionTarget: NSObject {
     
     internal private(set) var callback: (AnyObject -> Void)?
     
+    public var actionSelector: Selector {
+        
+        return "handleAction:"
+    }
+    
     public init(actionCallback: AnyObject -> Void) {
         
         callback = actionCallback

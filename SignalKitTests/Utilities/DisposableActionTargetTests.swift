@@ -39,4 +39,13 @@ class DisposableActionTargetTests: XCTestCase {
 
         XCTAssertEqual(isActionCalled, false, "Should dispose the callback")
     }
+    
+    func testActionSelector() {
+        
+        let expectedSelector = Selector("handleAction:")
+        
+        let actionTarget = DisposableActionTarget(actionCallback: { _ in })
+        
+        XCTAssertEqual(actionTarget.actionSelector, expectedSelector, "Should return the expected selector signature")
+    }
 }
