@@ -15,7 +15,7 @@ public protocol ObservableCollectionType {
 
 extension ObservableCollectionType {
     
-    public func observe() -> SignalEvent<ObservableCollectionType> {
+    public func observe() -> SignalEvent<Self> {
         
         return SignalEvent(sender: self)
     }
