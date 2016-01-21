@@ -163,16 +163,4 @@ class CollectionChangeSetTests: XCTestCase {
         
         XCTAssertEqual(indexes, expectedIndexes, "Should contain the inserted indexes")
     }
-    
-    func testShouldReloadData() {
-        
-        changeSet.replaceAllSections()
-        
-        XCTAssertEqual(changeSet.shouldReloadData(), true, "Should be equal to true")
-    }
-    
-    func testShouldReloadDataReturnsFalse() {
-        
-        XCTAssertEqual(changeSet.shouldReloadData(), false, "Should be equal to false")
-    }
 }
