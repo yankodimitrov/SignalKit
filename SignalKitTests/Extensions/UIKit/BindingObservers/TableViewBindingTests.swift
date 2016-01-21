@@ -1,5 +1,5 @@
 //
-//  TableViewBindingObserverTests.swift
+//  TableViewBindingTests.swift
 //  SignalKit
 //
 //  Created by Yanko Dimitrov on 1/21/16.
@@ -9,40 +9,40 @@
 import XCTest
 @testable import SignalKit
 
-class TableViewBindingObserverTests: XCTestCase {
+class TableViewBindingTests: XCTestCase {
 
-    var bindingObserver: TableViewBindingObserver!
+    var binding: TableViewBinding!
     var collection: MockObservableCollection!
     var tableView: MockTableView!
     
     override func setUp() {
         super.setUp()
         
-        bindingObserver = TableViewBindingObserver()
+        binding = TableViewBinding()
         collection = MockObservableCollection()
         tableView = MockTableView()
         
-        bindingObserver.tableView = tableView
-        bindingObserver.observeCollection(collection)
+        binding.tableView = tableView
+        binding.observeCollection(collection)
     }
     
     func testDisposeBindingObserver() {
         
         let fakeDisposable = MockDisposable()
         
-        bindingObserver.observer = fakeDisposable
+        binding.observer = fakeDisposable
         
-        bindingObserver.dispose()
+        binding.dispose()
         
         XCTAssertEqual(fakeDisposable.isDisposeCalled, true, "Should dispose the binding")
-        XCTAssert(bindingObserver.observer == nil, "Should set the disposable observer to nil")
+        XCTAssert(binding.observer == nil, "Should set the disposable observer to nil")
     }
     
     func testDisposeOnDeinit() {
         
         let fakeDisposable = MockDisposable()
         
-        var bindingObserver: TableViewBindingObserver? = TableViewBindingObserver()
+        var bindingObserver: TableViewBinding? = TableViewBinding()
         
         bindingObserver?.observer = fakeDisposable
         

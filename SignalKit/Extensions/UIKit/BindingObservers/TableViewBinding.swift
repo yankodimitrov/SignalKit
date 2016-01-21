@@ -1,5 +1,5 @@
 //
-//  TableViewBindingObserver.swift
+//  TableViewBinding.swift
 //  SignalKit
 //
 //  Created by Yanko Dimitrov on 1/21/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-internal final class TableViewBindingObserver {
+internal final class TableViewBinding {
     
     internal weak var tableView: UITableView?
     internal var observer: Disposable?
@@ -22,7 +22,7 @@ internal final class TableViewBindingObserver {
 
 // MARK: - Disposable
 
-extension TableViewBindingObserver: Disposable {
+extension TableViewBinding: Disposable {
     
     internal func dispose() {
         
@@ -33,7 +33,7 @@ extension TableViewBindingObserver: Disposable {
 
 // MARK: - Observe ObservableCollectionType
 
-extension TableViewBindingObserver {
+extension TableViewBinding {
     
     internal func observeCollection(collection: ObservableCollectionType) {
         

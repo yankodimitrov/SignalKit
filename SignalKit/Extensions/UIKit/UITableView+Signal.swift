@@ -16,13 +16,13 @@ public extension SignalEventType where Sender: ObservableCollectionType {
     */
     public func bindTo(tableView tableView: UITableView, rowAnimation: UITableViewRowAnimation = .Automatic) -> Disposable {
         
-        let tableViewBinding = TableViewBindingObserver()
+        let binding = TableViewBinding()
         
-        tableViewBinding.tableView = tableView
-        tableViewBinding.rowAnimation = rowAnimation
+        binding.tableView = tableView
+        binding.rowAnimation = rowAnimation
         
-        tableViewBinding.observeCollection(sender)
+        binding.observeCollection(sender)
         
-        return tableViewBinding
+        return binding
     }
 }
