@@ -12,7 +12,10 @@ internal final class TableViewBindingObserver {
     
     internal weak var tableView: UITableView?
     internal var observer: Disposable?
+    internal var rowAnimation = UITableViewRowAnimation.Automatic
 }
+
+// MARK: - Disposable
 
 extension TableViewBindingObserver: Disposable {
     
