@@ -14,6 +14,8 @@
 		C914CEB91C4FB71E005C14BD /* CollectionChangeSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB81C4FB71E005C14BD /* CollectionChangeSetTests.swift */; };
 		C914CEBB1C4FF0CF005C14BD /* ObservableCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEBA1C4FF0CF005C14BD /* ObservableCollectionType.swift */; };
 		C91D55491C511098009CB7F5 /* UITableView+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D55481C511098009CB7F5 /* UITableView+SignalTests.swift */; };
+		C91D554B1C51136B009CB7F5 /* CollectionViewBindingObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D554A1C51136B009CB7F5 /* CollectionViewBindingObserver.swift */; };
+		C91D554D1C5113BD009CB7F5 /* CollectionViewBindingObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D554C1C5113BD009CB7F5 /* CollectionViewBindingObserverTests.swift */; };
 		C92322EF1C50DF0B00CA1A2C /* TableViewBindingObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322EE1C50DF0B00CA1A2C /* TableViewBindingObserver.swift */; };
 		C92322F11C50DFF500CA1A2C /* TableViewBindingObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322F01C50DFF500CA1A2C /* TableViewBindingObserverTests.swift */; };
 		C92322F31C50EAA400CA1A2C /* CollectionChangeSetHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322F21C50EAA400CA1A2C /* CollectionChangeSetHandler.swift */; };
@@ -116,6 +118,8 @@
 		C914CEB81C4FB71E005C14BD /* CollectionChangeSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeSetTests.swift; sourceTree = "<group>"; };
 		C914CEBA1C4FF0CF005C14BD /* ObservableCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableCollectionType.swift; sourceTree = "<group>"; };
 		C91D55481C511098009CB7F5 /* UITableView+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+SignalTests.swift"; sourceTree = "<group>"; };
+		C91D554A1C51136B009CB7F5 /* CollectionViewBindingObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewBindingObserver.swift; sourceTree = "<group>"; };
+		C91D554C1C5113BD009CB7F5 /* CollectionViewBindingObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewBindingObserverTests.swift; sourceTree = "<group>"; };
 		C92322EE1C50DF0B00CA1A2C /* TableViewBindingObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBindingObserver.swift; sourceTree = "<group>"; };
 		C92322F01C50DFF500CA1A2C /* TableViewBindingObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBindingObserverTests.swift; sourceTree = "<group>"; };
 		C92322F21C50EAA400CA1A2C /* CollectionChangeSetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeSetHandler.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				C92322EE1C50DF0B00CA1A2C /* TableViewBindingObserver.swift */,
+				C91D554A1C51136B009CB7F5 /* CollectionViewBindingObserver.swift */,
 			);
 			path = BindingObservers;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				C92322F01C50DFF500CA1A2C /* TableViewBindingObserverTests.swift */,
+				C91D554C1C5113BD009CB7F5 /* CollectionViewBindingObserverTests.swift */,
 			);
 			path = BindingObservers;
 			sourceTree = "<group>";
@@ -590,6 +596,7 @@
 				C914CEB71C4FB66B005C14BD /* CollectionChangeSet.swift in Sources */,
 				C9F7E8671B80D4DA000D5CC7 /* Keyboard.swift in Sources */,
 				C9F7AA9F1B809088002DA7B7 /* UIButton+Signal.swift in Sources */,
+				C91D554B1C51136B009CB7F5 /* CollectionViewBindingObserver.swift in Sources */,
 				C92322F91C510D1E00CA1A2C /* UITableView+Signal.swift in Sources */,
 				C914CEAE1C4FAD09005C14BD /* SignalEvent.swift in Sources */,
 				C9F7E85A1B80B64F000D5CC7 /* UITextField+Signal.swift in Sources */,
@@ -654,6 +661,7 @@
 				C92948FF1B7F9A9900BCBC7C /* UIControl+SignalTests.swift in Sources */,
 				C92948F51B7F841600BCBC7C /* NSObject+SignalTests.swift in Sources */,
 				C9D9889D1B7B7982004559CD /* ObservableTests.swift in Sources */,
+				C91D554D1C5113BD009CB7F5 /* CollectionViewBindingObserverTests.swift in Sources */,
 				C9D988671B7B1B74004559CD /* BagTests.swift in Sources */,
 				C9F7AAB61B809C73002DA7B7 /* UISegmentedControl+SignalTests.swift in Sources */,
 				C9D988621B7B1946004559CD /* IncrementalKeyGeneratorTests.swift in Sources */,
