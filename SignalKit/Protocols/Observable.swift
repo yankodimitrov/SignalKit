@@ -35,3 +35,16 @@ public extension Observable {
         dispatcher.removeObservers()
     }
 }
+
+public extension Observable {
+    
+    public func dispatch(item: ObservationType, onQueue: SignalScheduler.Queue) {
+        
+        let scheduler = SignalScheduler(queue: onQueue)
+        
+        scheduler.dispatchAsync({ [weak self] in
+            
+            self?.dispatcher.dispatch(item)
+        })
+    }
+}
