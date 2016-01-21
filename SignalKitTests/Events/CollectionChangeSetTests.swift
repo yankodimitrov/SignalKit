@@ -72,7 +72,9 @@ class CollectionChangeSetTests: XCTestCase {
         XCTAssertEqual(operations.contains(.Update(index: 2)), true, "Should contain the update operation")
     }
     
-    func testUpdateSectionAtIndexReturnsIfThereIsResetOperation() {
+    func testUpdatedSectionAtIndexReturnsIfThereIsResetOperation() {
+        
+        var changeSet = CollectionChangeSet()
         
         changeSet.replaceAllSections()
         changeSet.updateSectionAtIndex(2)
@@ -93,7 +95,9 @@ class CollectionChangeSetTests: XCTestCase {
         XCTAssertEqual(operations.contains(.Remove(index: 2)), true, "Should contain the remove operation")
     }
     
-    func testRemoveSectionAtIndexReturnsIfThereIsResetOperation() {
+    func testRemovedSectionAtIndexReturnsIfThereIsResetOperation() {
+        
+        var changeSet = CollectionChangeSet()
         
         changeSet.replaceAllSections()
         changeSet.removeSectionAtIndex(22)
@@ -104,73 +108,39 @@ class CollectionChangeSetTests: XCTestCase {
         XCTAssertEqual(operations.contains(.Reset), true, "Should contain the reset operation")
     }
     
-    func testReplaceItemsInSection() {
-        
-        changeSet.replaceItemsInSection(0)
-        
-        let operations = changeSet.operationsSetForSection(0)
-        
-        XCTAssertEqual(operations.contains(.Reset), true, "Should contain the reset operation")
-    }
-    
     func testInsertItemAtIndexInSection() {
         
         changeSet.insertItemAtIndex(10, inSection: 1)
         
-        let operations = changeSet.operationsSetForSection(1)
+        let operations = changeSet.sectionsOperations[1]
         
-        XCTAssertEqual(operations.contains(.Insert(index: 10)), true, "Should contain the insert operation")
+        XCTAssertEqual(operations?.contains(.Insert(index: 10)), true, "Should contain the insert operation")
     }
     
-    func testInsertItemAtIndexWillReturnIfThereIsResetOperation() {
+    func testPrepareOperationsSetForSection() {
         
-        changeSet.replaceItemsInSection(0)
-        changeSet.insertItemAtIndex(2, inSection: 0)
+        changeSet.insertItemAtIndex(0, inSection: 0)
+        changeSet.prepareOperationsSetForSection(0)
         
-        let operations = changeSet.operationsSetForSection(0)
-
-        XCTAssertEqual(operations.count, 1, "Should contain only one operation")
-        XCTAssertEqual(operations.contains(.Reset), true, "Should contain reset operation")
+        XCTAssertEqual(changeSet.sectionsOperations[0]?.count, 1, "Should contain the section operations")
     }
     
     func testUpdateItemAtIndexInSection() {
         
         changeSet.updateItemAtIndex(10, inSection: 1)
         
-        let operations = changeSet.operationsSetForSection(1)
+        let operations = changeSet.sectionsOperations[1]
         
-        XCTAssertEqual(operations.contains(.Update(index: 10)), true, "Should contain the update operation")
-    }
-    
-    func testUpdateItemAtIndexWillReturnIfThereIsResetOperation() {
-        
-        changeSet.replaceItemsInSection(0)
-        changeSet.updateItemAtIndex(0, inSection: 0)
-        
-        let operations = changeSet.operationsSetForSection(0)
-        
-        XCTAssertEqual(operations.count, 1, "Should contain only one operation")
-        XCTAssertEqual(operations.contains(.Reset), true, "Should contain reset operation")
+        XCTAssertEqual(operations?.contains(.Update(index: 10)), true, "Should contain the update operation")
     }
     
     func testRemoveItemAtIndexInSection() {
         
         changeSet.removeItemAtIndex(55, inSection: 1)
         
-        let operations = changeSet.operationsSetForSection(1)
+        let operations = changeSet.sectionsOperations[1]
         
-        XCTAssertEqual(operations.contains(.Remove(index: 55)), true, "Should contain the remove operation")
-    }
-    
-    func testRemoveItemAtIndexWillReturnIfThereIsResetOperation() {
-        
-        changeSet.replaceItemsInSection(0)
-        changeSet.removeItemAtIndex(0, inSection: 0)
-        
-        let operations = changeSet.operationsSetForSection(0)
-        
-        XCTAssertEqual(operations.count, 1, "Should contain only one operation")
-        XCTAssertEqual(operations.contains(.Reset), true, "Should contain reset operation")
+        XCTAssertEqual(operations?.contains(.Remove(index: 55)), true, "Should contain the remove operation")
     }
     
     func testInsertMultipleItemsAtIndex() {
@@ -180,28 +150,18 @@ class CollectionChangeSetTests: XCTestCase {
         
         changeSet.insertItemsInRange(5..<9, inSection: 0)
         
-        let operations = changeSet.operationsSetForSection(0)
+        if let operations = changeSet.sectionsOperations[0] {
         
-        for operation in operations {
-            
-            if case let .Insert(index) = operation {
+            for operation in operations {
                 
-                indexes.insert(index)
+                if case let .Insert(index) = operation {
+                    
+                    indexes.insert(index)
+                }
             }
         }
         
         XCTAssertEqual(indexes, expectedIndexes, "Should contain the inserted indexes")
-    }
-    
-    func testInsertMultipleItemsAtIndexWillReturnIfThereIsResetOperation() {
-        
-        changeSet.replaceItemsInSection(1)
-        changeSet.insertItemsInRange(0..<2, inSection: 1)
-        
-        let operations = changeSet.operationsSetForSection(1)
-        
-        XCTAssertEqual(operations.count, 1, "Should contain only one operation")
-        XCTAssertEqual(operations.contains(.Reset), true, "Should contain the reset operation")
     }
     
     func testShouldReloadData() {

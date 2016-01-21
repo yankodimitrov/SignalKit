@@ -53,65 +53,39 @@ extension CollectionChangeSet {
 
 extension CollectionChangeSet {
     
-    public mutating func operationsSetForSection(section: Int) -> Set<ListOperation> {
+    internal mutating func prepareOperationsSetForSection(section: Int) {
         
-        guard let sectionOperations = sectionsOperations[section] else { return Set() }
+        guard sectionsOperations[section] == nil else { return }
         
-        return sectionOperations
-    }
-    
-    public mutating func replaceItemsInSection(section: Int) {
-        
-        var operations = operationsSetForSection(section)
-        
-        operations.removeAll(keepCapacity: false)
-        operations.insert(.Reset)
-        
-        sectionsOperations[section] = operations
+        sectionsOperations[section] = Set()
     }
     
     public mutating func insertItemAtIndex(index: Int, inSection: Int) {
         
-        var operations = operationsSetForSection(inSection)
-        
-        guard !operations.contains(.Reset) else { return }
-        
-        operations.insert(.Insert(index: index))
-        sectionsOperations[inSection] = operations
+        prepareOperationsSetForSection(inSection)
+        sectionsOperations[inSection]?.insert(.Insert(index: index))
     }
     
     public mutating func updateItemAtIndex(index: Int, inSection: Int) {
         
-        var operations = operationsSetForSection(inSection)
-        
-        guard !operations.contains(.Reset) else { return }
-        
-        operations.insert(.Update(index: index))
-        sectionsOperations[inSection] = operations
+        prepareOperationsSetForSection(inSection)
+        sectionsOperations[inSection]?.insert(.Update(index: index))
     }
     
     public mutating func removeItemAtIndex(index: Int, inSection: Int) {
         
-        var operations = operationsSetForSection(inSection)
-        
-        guard !operations.contains(.Reset) else { return }
-        
-        operations.insert(.Remove(index: index))
-        sectionsOperations[inSection] = operations
+        prepareOperationsSetForSection(inSection)
+        sectionsOperations[inSection]?.insert(.Remove(index: index))
     }
     
     public mutating func insertItemsInRange(range: Range<Int>, inSection: Int) {
         
-        var operations = operationsSetForSection(inSection)
-        
-        guard !operations.contains(.Reset) else { return }
+        prepareOperationsSetForSection(inSection)
         
         for index in range {
             
-            operations.insert(.Insert(index: index))
+            sectionsOperations[inSection]?.insert(.Insert(index: index))
         }
-        
-        sectionsOperations[inSection] = operations
     }
 }
 
