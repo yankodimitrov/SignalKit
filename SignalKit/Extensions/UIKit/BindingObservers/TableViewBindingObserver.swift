@@ -11,5 +11,14 @@ import UIKit
 internal final class TableViewBindingObserver {
     
     internal weak var tableView: UITableView?
-    private var observer: Disposable?
+    internal var observer: Disposable?
+}
+
+extension TableViewBindingObserver: Disposable {
+    
+    func dispose() {
+        
+        observer?.dispose()
+        observer = nil
+    }
 }
