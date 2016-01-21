@@ -13,6 +13,7 @@
 		C914CEB71C4FB66B005C14BD /* CollectionChangeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB61C4FB66B005C14BD /* CollectionChangeSet.swift */; };
 		C914CEB91C4FB71E005C14BD /* CollectionChangeSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB81C4FB71E005C14BD /* CollectionChangeSetTests.swift */; };
 		C914CEBB1C4FF0CF005C14BD /* ObservableCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEBA1C4FF0CF005C14BD /* ObservableCollectionType.swift */; };
+		C92322EF1C50DF0B00CA1A2C /* TableViewBindingObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322EE1C50DF0B00CA1A2C /* TableViewBindingObserver.swift */; };
 		C924E2D91BBD535300400D2D /* MockCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2D81BBD535300400D2D /* MockCollectionView.swift */; };
 		C924E2DF1BBD664900400D2D /* MockTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */; };
 		C924E2E11BBD68A100400D2D /* MockCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */; };
@@ -110,6 +111,7 @@
 		C914CEB61C4FB66B005C14BD /* CollectionChangeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeSet.swift; sourceTree = "<group>"; };
 		C914CEB81C4FB71E005C14BD /* CollectionChangeSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeSetTests.swift; sourceTree = "<group>"; };
 		C914CEBA1C4FF0CF005C14BD /* ObservableCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableCollectionType.swift; sourceTree = "<group>"; };
+		C92322EE1C50DF0B00CA1A2C /* TableViewBindingObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBindingObserver.swift; sourceTree = "<group>"; };
 		C924E2D81BBD535300400D2D /* MockCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionView.swift; sourceTree = "<group>"; };
 		C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTableViewDataSource.swift; sourceTree = "<group>"; };
 		C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -233,6 +235,21 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
+		C92322EC1C50DED100CA1A2C /* BindingObservers */ = {
+			isa = PBXGroup;
+			children = (
+				C92322EE1C50DF0B00CA1A2C /* TableViewBindingObserver.swift */,
+			);
+			path = BindingObservers;
+			sourceTree = "<group>";
+		};
+		C92322ED1C50DEE000CA1A2C /* BindingObservers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BindingObservers;
+			sourceTree = "<group>";
+		};
 		C9D9882E1B7B0903004559CD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +264,7 @@
 		C9D9882F1B7B0903004559CD /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C92322EC1C50DED100CA1A2C /* BindingObservers */,
 				C9F7E8661B80D4DA000D5CC7 /* Keyboard.swift */,
 				C92948FB1B7F994D00BCBC7C /* UIControl+Signal.swift */,
 				C9F7AA9E1B809088002DA7B7 /* UIButton+Signal.swift */,
@@ -320,6 +338,7 @@
 		C9D988341B7B0950004559CD /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C92322ED1C50DEE000CA1A2C /* BindingObservers */,
 				C92948FE1B7F9A9900BCBC7C /* UIControl+SignalTests.swift */,
 				C9F7AAA11B8091AC002DA7B7 /* UIButton+SignalTests.swift */,
 				C9F7AAA61B809543002DA7B7 /* UIDatePicker+SignalTests.swift */,
@@ -554,6 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9D988711B7B1F14004559CD /* SpinLock.swift in Sources */,
+				C92322EF1C50DF0B00CA1A2C /* TableViewBindingObserver.swift in Sources */,
 				C92948FC1B7F994D00BCBC7C /* UIControl+Signal.swift in Sources */,
 				C914CEB71C4FB66B005C14BD /* CollectionChangeSet.swift in Sources */,
 				C9F7E8671B80D4DA000D5CC7 /* Keyboard.swift in Sources */,
