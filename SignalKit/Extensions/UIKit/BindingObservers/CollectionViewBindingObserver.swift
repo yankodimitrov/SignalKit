@@ -12,4 +12,20 @@ internal final class CollectionViewBindingObserver {
     
     internal weak var collectionView: UICollectionView?
     internal var observer: Disposable?
+    
+    deinit {
+        
+        dispose()
+    }
+}
+
+// MARK: - Disposable
+
+extension CollectionViewBindingObserver: Disposable {
+    
+    internal func dispose() {
+        
+        observer?.dispose()
+        observer = nil
+    }
 }
