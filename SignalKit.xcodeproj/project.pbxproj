@@ -15,6 +15,8 @@
 		C914CEBB1C4FF0CF005C14BD /* ObservableCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEBA1C4FF0CF005C14BD /* ObservableCollectionType.swift */; };
 		C92322EF1C50DF0B00CA1A2C /* TableViewBindingObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322EE1C50DF0B00CA1A2C /* TableViewBindingObserver.swift */; };
 		C92322F11C50DFF500CA1A2C /* TableViewBindingObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322F01C50DFF500CA1A2C /* TableViewBindingObserverTests.swift */; };
+		C92322F31C50EAA400CA1A2C /* CollectionChangeSetHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322F21C50EAA400CA1A2C /* CollectionChangeSetHandler.swift */; };
+		C92322F51C50EAD300CA1A2C /* CollectionChangeSetHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322F41C50EAD300CA1A2C /* CollectionChangeSetHandlerTests.swift */; };
 		C924E2D91BBD535300400D2D /* MockCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2D81BBD535300400D2D /* MockCollectionView.swift */; };
 		C924E2DF1BBD664900400D2D /* MockTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */; };
 		C924E2E11BBD68A100400D2D /* MockCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */; };
@@ -114,6 +116,8 @@
 		C914CEBA1C4FF0CF005C14BD /* ObservableCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableCollectionType.swift; sourceTree = "<group>"; };
 		C92322EE1C50DF0B00CA1A2C /* TableViewBindingObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBindingObserver.swift; sourceTree = "<group>"; };
 		C92322F01C50DFF500CA1A2C /* TableViewBindingObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBindingObserverTests.swift; sourceTree = "<group>"; };
+		C92322F21C50EAA400CA1A2C /* CollectionChangeSetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeSetHandler.swift; sourceTree = "<group>"; };
+		C92322F41C50EAD300CA1A2C /* CollectionChangeSetHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeSetHandlerTests.swift; sourceTree = "<group>"; };
 		C924E2D81BBD535300400D2D /* MockCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionView.swift; sourceTree = "<group>"; };
 		C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTableViewDataSource.swift; sourceTree = "<group>"; };
 		C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionViewDataSource.swift; sourceTree = "<group>"; };
@@ -321,6 +325,7 @@
 				C98CE79B1B7E2AA70035CF1E /* CompoundObserver.swift */,
 				C9D988701B7B1F14004559CD /* SpinLock.swift */,
 				C9D988A41B7BCA18004559CD /* DisposableBag.swift */,
+				C92322F21C50EAA400CA1A2C /* CollectionChangeSetHandler.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -382,6 +387,7 @@
 				C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */,
 				C98CE79E1B7E2D1B0035CF1E /* CompoundObserverTests.swift */,
 				C95FD51A1BB97A9E001BAF90 /* SpinLockTests.swift */,
+				C92322F41C50EAD300CA1A2C /* CollectionChangeSetHandlerTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -613,6 +619,7 @@
 				C9D9885C1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,
 				C92948F21B7F794000BCBC7C /* NSObject+Signal.swift in Sources */,
 				C9D988A51B7BCA18004559CD /* DisposableBag.swift in Sources */,
+				C92322F31C50EAA400CA1A2C /* CollectionChangeSetHandler.swift in Sources */,
 				C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,6 +641,7 @@
 				C914CEB31C4FB0FE005C14BD /* ListOperationTests.swift in Sources */,
 				C9D988931B7B5C09004559CD /* ControlSignalTests.swift in Sources */,
 				C98FDA021BBC852C004772C6 /* MockTableView.swift in Sources */,
+				C92322F51C50EAD300CA1A2C /* CollectionChangeSetHandlerTests.swift in Sources */,
 				C924E2D91BBD535300400D2D /* MockCollectionView.swift in Sources */,
 				C9D988961B7B5D18004559CD /* MockControl.m in Sources */,
 				C9F7E8581B80B612000D5CC7 /* UITextField+SignalTests.swift in Sources */,
