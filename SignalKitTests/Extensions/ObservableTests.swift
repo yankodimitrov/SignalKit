@@ -67,4 +67,21 @@ class ObservableTests: XCTestCase {
         
         XCTAssertEqual(result, "", "Should remove all observers")
     }
+    
+    func testDispatchOnQueue() {
+        
+        let expectation = expectationWithDescription("Should dispatch on main queue")
+        
+        userName.addObserver { _ in
+            
+            if NSThread.isMainThread() {
+                
+                expectation.fulfill()
+            }
+        }
+        
+        userName.dispatch("John", onQueue: .MainQueue)
+        
+        waitForExpectationsWithTimeout(0.1, handler: nil)
+    }
 }

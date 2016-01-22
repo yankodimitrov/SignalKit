@@ -15,6 +15,7 @@ internal extension NSIndexSet {
         let indexSet = NSMutableIndexSet()
         
         for index in set {
+            
             indexSet.addIndex(index)
         }
         

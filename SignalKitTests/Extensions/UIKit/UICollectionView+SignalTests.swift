@@ -2,8 +2,8 @@
 //  UICollectionView+SignalTests.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 10/1/15.
-//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 1/21/16.
+//  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 //
 
 import XCTest
@@ -11,30 +11,30 @@ import XCTest
 
 class UICollectionView_SignalTests: XCTestCase {
 
-    var list: ObservableArray<Int>!
-    var collectionView: MockCollectionView!
+    var collection: MockObservableCollection!
     var signalsBag: DisposableBag!
-    var dataSource: MockCollectionViewDataSource!
+    var collectionView: MockCollectionView!
     
     override func setUp() {
         super.setUp()
         
-        list = ObservableArray([1, 2, 3])
-        collectionView = MockCollectionView()
+        collection = MockObservableCollection()
         signalsBag = DisposableBag()
-        dataSource = MockCollectionViewDataSource()
+        collectionView = MockCollectionView()
     }
     
     func testBindToTableView() {
         
-        list.observe()
-            .bindTo(collectionView: collectionView, dataSource: dataSource)
-            .addTo(signalsBag)
+        var changeSet = CollectionChangeSet()
         
-        list.append(4)
+        changeSet.insertItemsInRange(0..<2, inSection: 0)
         
-        XCTAssertEqual(collectionView.isInsertItemsCalled, true, "Should bind the changes in observable array to collection view")
-        XCTAssertEqual(collectionView.isReloadDataCalled, true, "Should call the collection view to reload data")
-        XCTAssert(collectionView.dataSource === dataSource, "Should set the collection view data source")
+        collection.observe()
+            .bindTo(collectionView: collectionView)
+            .disposeWith(signalsBag)
+        
+        collection.changeSetSignal.dispatch(changeSet)
+        
+        XCTAssertEqual(collectionView.isInsertItemsCalled, true, "Should bind the collection changes to collection view")
     }
 }

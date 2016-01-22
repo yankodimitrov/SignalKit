@@ -26,7 +26,7 @@ class KeyboardTests: XCTestCase {
         
         Keyboard.observe().willShow
             .next{ _ in called = true }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         center.postNotificationName(UIKeyboardWillShowNotification, object: nil)
         
@@ -39,7 +39,7 @@ class KeyboardTests: XCTestCase {
         
         Keyboard.observe().didShow
             .next { _ in called = true }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         center.postNotificationName(UIKeyboardDidShowNotification, object: nil)
         
@@ -52,7 +52,7 @@ class KeyboardTests: XCTestCase {
         
         Keyboard.observe().willHide
             .next { _ in called = true }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         center.postNotificationName(UIKeyboardWillHideNotification, object: nil)
         
@@ -65,7 +65,7 @@ class KeyboardTests: XCTestCase {
         
         Keyboard.observe().didHide
             .next { _ in called = true }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         center.postNotificationName(UIKeyboardDidHideNotification, object: nil)
         
@@ -78,7 +78,7 @@ class KeyboardTests: XCTestCase {
         
         Keyboard.observe().willChangeFrame
             .next { _ in called = true }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         center.postNotificationName(UIKeyboardWillChangeFrameNotification, object: nil)
         
@@ -91,7 +91,7 @@ class KeyboardTests: XCTestCase {
         
         Keyboard.observe().didChangeFrame
             .next { _ in called = true}
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         center.postNotificationName(UIKeyboardDidChangeFrameNotification, object: nil)
         

@@ -26,7 +26,7 @@ class UIImageView_SignalTests: XCTestCase {
         let image = UIImage()
         let signal = MockSignal<UIImage?>()
         
-        signal.bindTo(imageIn: imageView).addTo(signalsBag)
+        signal.bindTo(imageIn: imageView).disposeWith(signalsBag)
         
         signal.dispatch(image)
         

@@ -2,39 +2,39 @@
 //  UITableView+SignalTests.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 10/1/15.
-//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 1/21/16.
+//  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 //
 
 import XCTest
 @testable import SignalKit
 
 class UITableView_SignalTests: XCTestCase {
-    
-    var list: ObservableArray<Int>!
-    var tableView: MockTableView!
+
+    var collection: MockObservableCollection!
     var signalsBag: DisposableBag!
-    var dataSource: MockTableViewDataSource!
+    var tableView: MockTableView!
     
     override func setUp() {
         super.setUp()
         
-        list = ObservableArray([1, 2, 3])
-        tableView = MockTableView()
+        collection = MockObservableCollection()
         signalsBag = DisposableBag()
-        dataSource = MockTableViewDataSource()
+        tableView = MockTableView()
     }
     
     func testBindToTableView() {
         
-        list.observe()
-            .bindTo(tableView: tableView, dataSource: dataSource)
-            .addTo(signalsBag)
+        var changeSet = CollectionChangeSet()
         
-        list.append(4)
+        changeSet.insertItemsInRange(0..<2, inSection: 0)
         
-        XCTAssertEqual(tableView.isInsertRowsCalled, true, "Should bind the changes in observable array to table view")
-        XCTAssertEqual(tableView.isReloadDataCalled, true, "Should call the table view to reload data")
-        XCTAssert(tableView.dataSource === dataSource, "Should set the table view data source")
+        collection.observe()
+            .bindTo(tableView: tableView)
+            .disposeWith(signalsBag)
+        
+        collection.changeSetSignal.dispatch(changeSet)
+        
+        XCTAssertEqual(tableView.isInsertRowsCalled, true, "Should bind the collection changes to table view")
     }
 }

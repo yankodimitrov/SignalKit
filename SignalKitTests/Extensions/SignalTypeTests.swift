@@ -88,7 +88,7 @@ class SignalTypeTests: XCTestCase {
         
         var result = 0
         
-        signal.next { result = $0 }.addTo(signalsBag)
+        signal.next { result = $0 }.disposeWith(signalsBag)
         
         signal.dispatch(18)
         
@@ -108,7 +108,7 @@ class SignalTypeTests: XCTestCase {
                     expectation.fulfill()
                 }
             }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         signal.dispatch(10)
         
@@ -124,7 +124,7 @@ class SignalTypeTests: XCTestCase {
         signal
             .debounce(0.1)
             .next { result.append($0) }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         signal.dispatch(1)
         signal.dispatch(2)
@@ -150,7 +150,7 @@ class SignalTypeTests: XCTestCase {
         signal
             .delay(0.1)
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         scheduler.delay(0.2) {
             
@@ -174,7 +174,7 @@ class SignalTypeTests: XCTestCase {
         
         signalA.combineLatestWith(signalB)
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         signalA.dispatch(4)
         signalA.dispatch(1)
@@ -194,7 +194,7 @@ class SignalTypeTests: XCTestCase {
         
         combineLatest(signalA, signalB)
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         signalA.dispatch(1)
         signalA.dispatch(2)
@@ -217,7 +217,7 @@ class SignalTypeTests: XCTestCase {
         
         combineLatest(signalA, signalB, signalC)
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         signalA.dispatch(1)
         signalA.dispatch(2)
@@ -242,7 +242,7 @@ class SignalTypeTests: XCTestCase {
         signal
             .all { $0 == true }
             .next { result.append($0) }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         signal.dispatch((false, false))
         signal.dispatch((false, true))
@@ -262,7 +262,7 @@ class SignalTypeTests: XCTestCase {
         signal
             .some { $0 == true }
             .next { result.append($0) }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         signal.dispatch((false, false))
         signal.dispatch((false, true))
@@ -282,7 +282,7 @@ class SignalTypeTests: XCTestCase {
         signal
             .all { $0 == true }
             .next { result.append($0) }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         signal.dispatch((false, false, false))
         signal.dispatch((true, false, false))
@@ -302,7 +302,7 @@ class SignalTypeTests: XCTestCase {
         signal
             .some { $0 == true }
             .next { result.append($0) }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         signal.dispatch((false, false, false))
         signal.dispatch((true, false, false))
@@ -323,7 +323,7 @@ class SignalTypeTests: XCTestCase {
         signal
             .distinct()
             .next { result.append($0) }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         signal.dispatch(2)
         signal.dispatch(2)
@@ -345,7 +345,7 @@ class SignalTypeTests: XCTestCase {
         
         signal
             .bindTo(observable)
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         observable.addObserver {
             result.append($0)

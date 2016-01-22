@@ -28,7 +28,7 @@ class NSObject_SignalTests: XCTestCase {
         person.observe()
             .keyPath("name", value: "")
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         person.name = "John"
         
@@ -42,7 +42,7 @@ class NSObject_SignalTests: XCTestCase {
         person.observe()
             .keyPath("name", value: "Jack")
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         XCTAssertEqual(result, "Jack", "Should send the initial value")
     }

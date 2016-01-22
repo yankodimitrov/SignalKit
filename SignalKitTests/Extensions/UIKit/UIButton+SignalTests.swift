@@ -27,7 +27,7 @@ class UIButton_SignalTests: XCTestCase {
         
         button.observe().tapEvent
             .next { _ in called = true }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         button.sendActionsForControlEvents(.TouchUpInside)
         

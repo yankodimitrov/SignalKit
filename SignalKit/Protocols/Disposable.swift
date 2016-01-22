@@ -19,7 +19,7 @@ public extension Disposable {
         Stores a disposable in a container
     
     */
-    public func addTo(container: DisposableBag) -> Disposable {
+    public func disposeWith(container: DisposableBag) -> Disposable {
         
         return container.addDisposable(self)
     }

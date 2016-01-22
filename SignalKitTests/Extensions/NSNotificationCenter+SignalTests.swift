@@ -28,7 +28,7 @@ class NSNotificationCenter_SignalTests: XCTestCase {
         center.observe()
             .notification(notificationName)
             .next { _ in called = true }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         center.postNotificationName(notificationName, object: nil)
         
@@ -43,7 +43,7 @@ class NSNotificationCenter_SignalTests: XCTestCase {
         center.observe()
             .notification(notificationName, fromObject: person)
             .next { _ in called = true }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         center.postNotificationName(notificationName, object: person)
         

@@ -30,7 +30,7 @@ class UISegmentedControl_SignalTests: XCTestCase {
         
         segmentedControl.observe().selectedIndex
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         segmentedControl.selectedSegmentIndex = 1
         segmentedControl.sendActionsForControlEvents(.ValueChanged)
@@ -46,7 +46,7 @@ class UISegmentedControl_SignalTests: XCTestCase {
         
         segmentedControl.observe().selectedIndex
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         XCTAssertEqual(result, 1, "Should dispatch the current selected index in UISegmentedControl")
     }

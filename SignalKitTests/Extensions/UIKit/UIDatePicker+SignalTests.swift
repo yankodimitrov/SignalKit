@@ -28,7 +28,7 @@ class UIDatePicker_SignalTests: XCTestCase {
         
         picker.observe().date
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         picker.date = newDate
         picker.sendActionsForControlEvents(.ValueChanged)
@@ -45,7 +45,7 @@ class UIDatePicker_SignalTests: XCTestCase {
         
         picker.observe().date
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         XCTAssertEqual(result, newDate, "Should dispatch the current date from UIDatePicker")
     }

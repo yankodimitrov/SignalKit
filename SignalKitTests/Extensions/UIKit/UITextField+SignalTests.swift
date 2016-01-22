@@ -27,7 +27,7 @@ class UITextField_SignalTests: XCTestCase {
         
         textField.observe().text
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         textField.text = "John"
         textField.sendActionsForControlEvents(.EditingChanged)
@@ -43,7 +43,7 @@ class UITextField_SignalTests: XCTestCase {
         
         textField.observe().text
             .next { result = $0 }
-            .addTo(signalsBag)
+            .disposeWith(signalsBag)
         
         XCTAssertEqual(result, "John", "Should dispatch the current text in UITextField")
     }

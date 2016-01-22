@@ -7,44 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C924E2D71BBD521C00400D2D /* UICollectionView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2D61BBD521C00400D2D /* UICollectionView+Signal.swift */; settings = {ASSET_TAGS = (); }; };
-		C924E2D91BBD535300400D2D /* MockCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2D81BBD535300400D2D /* MockCollectionView.swift */; settings = {ASSET_TAGS = (); }; };
-		C924E2DB1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2DA1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C924E2DD1BBD63BE00400D2D /* UITableView+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2DC1BBD63BE00400D2D /* UITableView+SignalTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C924E2DF1BBD664900400D2D /* MockTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
-		C924E2E11BBD68A100400D2D /* MockCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
-		C924E2E31BBD68ED00400D2D /* UICollectionView+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2E21BBD68ED00400D2D /* UICollectionView+SignalTests.swift */; settings = {ASSET_TAGS = (); }; };
+		C914CEAE1C4FAD09005C14BD /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEAD1C4FAD09005C14BD /* SignalEvent.swift */; };
+		C914CEB11C4FAD62005C14BD /* ListOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB01C4FAD62005C14BD /* ListOperation.swift */; };
+		C914CEB31C4FB0FE005C14BD /* ListOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB21C4FB0FE005C14BD /* ListOperationTests.swift */; };
+		C914CEB71C4FB66B005C14BD /* CollectionChangeSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB61C4FB66B005C14BD /* CollectionChangeSet.swift */; };
+		C914CEB91C4FB71E005C14BD /* CollectionChangeSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEB81C4FB71E005C14BD /* CollectionChangeSetTests.swift */; };
+		C914CEBB1C4FF0CF005C14BD /* ObservableCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C914CEBA1C4FF0CF005C14BD /* ObservableCollectionType.swift */; };
+		C91D55491C511098009CB7F5 /* UITableView+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D55481C511098009CB7F5 /* UITableView+SignalTests.swift */; };
+		C91D554B1C51136B009CB7F5 /* CollectionViewBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D554A1C51136B009CB7F5 /* CollectionViewBinding.swift */; };
+		C91D554D1C5113BD009CB7F5 /* CollectionViewBindingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D554C1C5113BD009CB7F5 /* CollectionViewBindingTests.swift */; };
+		C91D554F1C511738009CB7F5 /* UICollectionView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D554E1C511738009CB7F5 /* UICollectionView+Signal.swift */; };
+		C91D55511C5117A5009CB7F5 /* UICollectionView+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D55501C5117A5009CB7F5 /* UICollectionView+SignalTests.swift */; };
+		C91D55531C511A49009CB7F5 /* UIBarItem+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D55521C511A49009CB7F5 /* UIBarItem+Signal.swift */; };
+		C91D55551C511AA0009CB7F5 /* UIBarItem+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D55541C511AA0009CB7F5 /* UIBarItem+SignalTests.swift */; };
+		C91D555B1C514979009CB7F5 /* DisposableActionTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D555A1C514979009CB7F5 /* DisposableActionTarget.swift */; };
+		C91D555D1C514D08009CB7F5 /* DisposableActionTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D555C1C514D08009CB7F5 /* DisposableActionTargetTests.swift */; };
+		C91D555F1C514E7F009CB7F5 /* UIBarButtonItem+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D555E1C514E7F009CB7F5 /* UIBarButtonItem+Signal.swift */; };
+		C91D55611C515141009CB7F5 /* UIBarButtonItem+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91D55601C515141009CB7F5 /* UIBarButtonItem+SignalTests.swift */; };
+		C92322EF1C50DF0B00CA1A2C /* TableViewBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322EE1C50DF0B00CA1A2C /* TableViewBinding.swift */; };
+		C92322F11C50DFF500CA1A2C /* TableViewBindingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322F01C50DFF500CA1A2C /* TableViewBindingTests.swift */; };
+		C92322F31C50EAA400CA1A2C /* CollectionChangeSetHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322F21C50EAA400CA1A2C /* CollectionChangeSetHandler.swift */; };
+		C92322F51C50EAD300CA1A2C /* CollectionChangeSetHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322F41C50EAD300CA1A2C /* CollectionChangeSetHandlerTests.swift */; };
+		C92322F71C50FAC400CA1A2C /* MockObservableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322F61C50FAC400CA1A2C /* MockObservableCollection.swift */; };
+		C92322F91C510D1E00CA1A2C /* UITableView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92322F81C510D1E00CA1A2C /* UITableView+Signal.swift */; };
+		C924E2D91BBD535300400D2D /* MockCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C924E2D81BBD535300400D2D /* MockCollectionView.swift */; };
 		C92948EA1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */; };
-		C92948ED1B7F759200BCBC7C /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948EC1B7F759100BCBC7C /* SignalEvent.swift */; };
 		C92948F21B7F794000BCBC7C /* NSObject+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948F11B7F794000BCBC7C /* NSObject+Signal.swift */; };
 		C92948F51B7F841600BCBC7C /* NSObject+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948F41B7F841600BCBC7C /* NSObject+SignalTests.swift */; };
 		C92948F71B7F8C6100BCBC7C /* NSNotificationCenter+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948F61B7F8C6100BCBC7C /* NSNotificationCenter+Signal.swift */; };
 		C92948FA1B7F8DCE00BCBC7C /* NSNotificationCenter+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948F91B7F8DCE00BCBC7C /* NSNotificationCenter+SignalTests.swift */; };
 		C92948FC1B7F994D00BCBC7C /* UIControl+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948FB1B7F994D00BCBC7C /* UIControl+Signal.swift */; };
 		C92948FF1B7F9A9900BCBC7C /* UIControl+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92948FE1B7F9A9900BCBC7C /* UIControl+SignalTests.swift */; };
-		C95FD51B1BB97A9E001BAF90 /* SpinLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD51A1BB97A9E001BAF90 /* SpinLockTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C95FD51D1BB97D6D001BAF90 /* ObservableArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD51C1BB97D6D001BAF90 /* ObservableArray.swift */; settings = {ASSET_TAGS = (); }; };
-		C95FD51F1BB97D79001BAF90 /* ObservableArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD51E1BB97D79001BAF90 /* ObservableArrayTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C95FD5211BB988B6001BAF90 /* ArrayEventStrategyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD5201BB988B6001BAF90 /* ArrayEventStrategyType.swift */; settings = {ASSET_TAGS = (); }; };
-		C95FD5251BB989FE001BAF90 /* ArraySerialEventStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD5241BB989FE001BAF90 /* ArraySerialEventStrategy.swift */; settings = {ASSET_TAGS = (); }; };
-		C95FD5271BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD5261BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C95FD5291BB98E0C001BAF90 /* ArrayBatchEventStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD5281BB98E0C001BAF90 /* ArrayBatchEventStrategy.swift */; settings = {ASSET_TAGS = (); }; };
-		C95FD52B1BB98E1C001BAF90 /* ArrayBatchEventStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD52A1BB98E1C001BAF90 /* ArrayBatchEventStrategyTests.swift */; settings = {ASSET_TAGS = (); }; };
+		C95FD51B1BB97A9E001BAF90 /* SpinLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C95FD51A1BB97A9E001BAF90 /* SpinLockTests.swift */; };
 		C97D68E31B80E76E00F1676F /* KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D68E21B80E76E00F1676F /* KeyboardTests.swift */; };
 		C97D68E51B80E78400F1676F /* KeyboardStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D68E41B80E78400F1676F /* KeyboardStateTests.swift */; };
 		C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */; };
 		C98CE7971B7CCF350035CF1E /* SignalSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */; };
 		C98CE79C1B7E2AA70035CF1E /* CompoundObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE79B1B7E2AA70035CF1E /* CompoundObserver.swift */; };
 		C98CE79F1B7E2D1B0035CF1E /* CompoundObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98CE79E1B7E2D1B0035CF1E /* CompoundObserverTests.swift */; };
-		C98FD9F01BBC4BFC004772C6 /* ArrayBindingStrategyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9EF1BBC4BFC004772C6 /* ArrayBindingStrategyType.swift */; settings = {ASSET_TAGS = (); }; };
-		C98FD9F41BBC5B4E004772C6 /* NSIndexSet+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9F31BBC5B4E004772C6 /* NSIndexSet+Signal.swift */; settings = {ASSET_TAGS = (); }; };
-		C98FD9F61BBC5B90004772C6 /* NSIndexSet+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9F51BBC5B90004772C6 /* NSIndexSet+SignalTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C98FD9F81BBC5C30004772C6 /* ArrayBindingObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9F71BBC5C30004772C6 /* ArrayBindingObserver.swift */; settings = {ASSET_TAGS = (); }; };
-		C98FD9FA1BBC5C3B004772C6 /* ArrayBindingObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9F91BBC5C3B004772C6 /* ArrayBindingObserverTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C98FD9FC1BBC7ADA004772C6 /* MockBindingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9FB1BBC7ADA004772C6 /* MockBindingStrategy.swift */; settings = {ASSET_TAGS = (); }; };
-		C98FD9FE1BBC800D004772C6 /* UITableView+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9FD1BBC800D004772C6 /* UITableView+Signal.swift */; settings = {ASSET_TAGS = (); }; };
-		C98FDA001BBC8460004772C6 /* TableViewBindingStrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9FF1BBC8460004772C6 /* TableViewBindingStrategyTests.swift */; settings = {ASSET_TAGS = (); }; };
-		C98FDA021BBC852C004772C6 /* MockTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FDA011BBC852C004772C6 /* MockTableView.swift */; settings = {ASSET_TAGS = (); }; };
+		C98FD9F41BBC5B4E004772C6 /* NSIndexSet+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9F31BBC5B4E004772C6 /* NSIndexSet+Signal.swift */; };
+		C98FD9F61BBC5B90004772C6 /* NSIndexSet+SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FD9F51BBC5B90004772C6 /* NSIndexSet+SignalTests.swift */; };
+		C98FDA021BBC852C004772C6 /* MockTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FDA011BBC852C004772C6 /* MockTableView.swift */; };
 		C9D988521B7B1788004559CD /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884C1B7B1788004559CD /* Disposable.swift */; };
 		C9D988541B7B1788004559CD /* LockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884D1B7B1788004559CD /* LockType.swift */; };
 		C9D988561B7B1788004559CD /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D9884E1B7B1788004559CD /* Observable.swift */; };
@@ -116,15 +119,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C924E2D61BBD521C00400D2D /* UICollectionView+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Signal.swift"; sourceTree = "<group>"; };
+		C914CEAD1C4FAD09005C14BD /* SignalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvent.swift; sourceTree = "<group>"; };
+		C914CEB01C4FAD62005C14BD /* ListOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOperation.swift; sourceTree = "<group>"; };
+		C914CEB21C4FB0FE005C14BD /* ListOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOperationTests.swift; sourceTree = "<group>"; };
+		C914CEB61C4FB66B005C14BD /* CollectionChangeSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeSet.swift; sourceTree = "<group>"; };
+		C914CEB81C4FB71E005C14BD /* CollectionChangeSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeSetTests.swift; sourceTree = "<group>"; };
+		C914CEBA1C4FF0CF005C14BD /* ObservableCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableCollectionType.swift; sourceTree = "<group>"; };
+		C91D55481C511098009CB7F5 /* UITableView+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+SignalTests.swift"; sourceTree = "<group>"; };
+		C91D554A1C51136B009CB7F5 /* CollectionViewBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewBinding.swift; sourceTree = "<group>"; };
+		C91D554C1C5113BD009CB7F5 /* CollectionViewBindingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewBindingTests.swift; sourceTree = "<group>"; };
+		C91D554E1C511738009CB7F5 /* UICollectionView+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Signal.swift"; sourceTree = "<group>"; };
+		C91D55501C5117A5009CB7F5 /* UICollectionView+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+SignalTests.swift"; sourceTree = "<group>"; };
+		C91D55521C511A49009CB7F5 /* UIBarItem+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarItem+Signal.swift"; sourceTree = "<group>"; };
+		C91D55541C511AA0009CB7F5 /* UIBarItem+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarItem+SignalTests.swift"; sourceTree = "<group>"; };
+		C91D555A1C514979009CB7F5 /* DisposableActionTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableActionTarget.swift; sourceTree = "<group>"; };
+		C91D555C1C514D08009CB7F5 /* DisposableActionTargetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableActionTargetTests.swift; sourceTree = "<group>"; };
+		C91D555E1C514E7F009CB7F5 /* UIBarButtonItem+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Signal.swift"; sourceTree = "<group>"; };
+		C91D55601C515141009CB7F5 /* UIBarButtonItem+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+SignalTests.swift"; sourceTree = "<group>"; };
+		C92322EE1C50DF0B00CA1A2C /* TableViewBinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBinding.swift; sourceTree = "<group>"; };
+		C92322F01C50DFF500CA1A2C /* TableViewBindingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBindingTests.swift; sourceTree = "<group>"; };
+		C92322F21C50EAA400CA1A2C /* CollectionChangeSetHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeSetHandler.swift; sourceTree = "<group>"; };
+		C92322F41C50EAD300CA1A2C /* CollectionChangeSetHandlerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionChangeSetHandlerTests.swift; sourceTree = "<group>"; };
+		C92322F61C50FAC400CA1A2C /* MockObservableCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockObservableCollection.swift; sourceTree = "<group>"; };
+		C92322F81C510D1E00CA1A2C /* UITableView+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Signal.swift"; sourceTree = "<group>"; };
 		C924E2D81BBD535300400D2D /* MockCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionView.swift; sourceTree = "<group>"; };
-		C924E2DA1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewBindingStrategyTests.swift; sourceTree = "<group>"; };
-		C924E2DC1BBD63BE00400D2D /* UITableView+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+SignalTests.swift"; sourceTree = "<group>"; };
-		C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTableViewDataSource.swift; sourceTree = "<group>"; };
-		C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionViewDataSource.swift; sourceTree = "<group>"; };
-		C924E2E21BBD68ED00400D2D /* UICollectionView+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+SignalTests.swift"; sourceTree = "<group>"; };
 		C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEventType.swift; sourceTree = "<group>"; };
-		C92948EC1B7F759100BCBC7C /* SignalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvent.swift; sourceTree = "<group>"; };
 		C92948F11B7F794000BCBC7C /* NSObject+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Signal.swift"; sourceTree = "<group>"; };
 		C92948F41B7F841600BCBC7C /* NSObject+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+SignalTests.swift"; sourceTree = "<group>"; };
 		C92948F61B7F8C6100BCBC7C /* NSNotificationCenter+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNotificationCenter+Signal.swift"; sourceTree = "<group>"; };
@@ -132,27 +151,14 @@
 		C92948FB1B7F994D00BCBC7C /* UIControl+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+Signal.swift"; sourceTree = "<group>"; };
 		C92948FE1B7F9A9900BCBC7C /* UIControl+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIControl+SignalTests.swift"; sourceTree = "<group>"; };
 		C95FD51A1BB97A9E001BAF90 /* SpinLockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinLockTests.swift; sourceTree = "<group>"; };
-		C95FD51C1BB97D6D001BAF90 /* ObservableArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArray.swift; sourceTree = "<group>"; };
-		C95FD51E1BB97D79001BAF90 /* ObservableArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableArrayTests.swift; sourceTree = "<group>"; };
-		C95FD5201BB988B6001BAF90 /* ArrayEventStrategyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayEventStrategyType.swift; sourceTree = "<group>"; };
-		C95FD5241BB989FE001BAF90 /* ArraySerialEventStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArraySerialEventStrategy.swift; sourceTree = "<group>"; };
-		C95FD5261BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArraySerialEventStrategyTests.swift; sourceTree = "<group>"; };
-		C95FD5281BB98E0C001BAF90 /* ArrayBatchEventStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayBatchEventStrategy.swift; sourceTree = "<group>"; };
-		C95FD52A1BB98E1C001BAF90 /* ArrayBatchEventStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayBatchEventStrategyTests.swift; sourceTree = "<group>"; };
 		C97D68E21B80E76E00F1676F /* KeyboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardTests.swift; sourceTree = "<group>"; };
 		C97D68E41B80E78400F1676F /* KeyboardStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardStateTests.swift; sourceTree = "<group>"; };
 		C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalScheduler.swift; sourceTree = "<group>"; };
 		C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalSchedulerTests.swift; sourceTree = "<group>"; };
 		C98CE79B1B7E2AA70035CF1E /* CompoundObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundObserver.swift; sourceTree = "<group>"; };
 		C98CE79E1B7E2D1B0035CF1E /* CompoundObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompoundObserverTests.swift; sourceTree = "<group>"; };
-		C98FD9EF1BBC4BFC004772C6 /* ArrayBindingStrategyType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayBindingStrategyType.swift; sourceTree = "<group>"; };
 		C98FD9F31BBC5B4E004772C6 /* NSIndexSet+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSIndexSet+Signal.swift"; sourceTree = "<group>"; };
 		C98FD9F51BBC5B90004772C6 /* NSIndexSet+SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSIndexSet+SignalTests.swift"; sourceTree = "<group>"; };
-		C98FD9F71BBC5C30004772C6 /* ArrayBindingObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayBindingObserver.swift; sourceTree = "<group>"; };
-		C98FD9F91BBC5C3B004772C6 /* ArrayBindingObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayBindingObserverTests.swift; sourceTree = "<group>"; };
-		C98FD9FB1BBC7ADA004772C6 /* MockBindingStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockBindingStrategy.swift; sourceTree = "<group>"; };
-		C98FD9FD1BBC800D004772C6 /* UITableView+Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Signal.swift"; sourceTree = "<group>"; };
-		C98FD9FF1BBC8460004772C6 /* TableViewBindingStrategyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBindingStrategyTests.swift; sourceTree = "<group>"; };
 		C98FDA011BBC852C004772C6 /* MockTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTableView.swift; sourceTree = "<group>"; };
 		C9D9884C1B7B1788004559CD /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		C9D9884D1B7B1788004559CD /* LockType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockType.swift; sourceTree = "<group>"; };
@@ -238,13 +244,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C95FD5231BB989DE001BAF90 /* ArrayEventStrategies */ = {
+		C914CEAC1C4FAD09005C14BD /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				C95FD5241BB989FE001BAF90 /* ArraySerialEventStrategy.swift */,
-				C95FD5281BB98E0C001BAF90 /* ArrayBatchEventStrategy.swift */,
+				C914CEAD1C4FAD09005C14BD /* SignalEvent.swift */,
+				C914CEB01C4FAD62005C14BD /* ListOperation.swift */,
+				C914CEB61C4FB66B005C14BD /* CollectionChangeSet.swift */,
 			);
-			path = ArrayEventStrategies;
+			path = Events;
+			sourceTree = "<group>";
+		};
+		C914CEAF1C4FAD11005C14BD /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				C914CEB21C4FB0FE005C14BD /* ListOperationTests.swift */,
+				C914CEB81C4FB71E005C14BD /* CollectionChangeSetTests.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		C92322EC1C50DED100CA1A2C /* BindingObservers */ = {
+			isa = PBXGroup;
+			children = (
+				C92322EE1C50DF0B00CA1A2C /* TableViewBinding.swift */,
+				C91D554A1C51136B009CB7F5 /* CollectionViewBinding.swift */,
+			);
+			path = BindingObservers;
+			sourceTree = "<group>";
+		};
+		C92322ED1C50DEE000CA1A2C /* BindingObservers */ = {
+			isa = PBXGroup;
+			children = (
+				C92322F01C50DFF500CA1A2C /* TableViewBindingTests.swift */,
+				C91D554C1C5113BD009CB7F5 /* CollectionViewBindingTests.swift */,
+			);
+			path = BindingObservers;
 			sourceTree = "<group>";
 		};
 		C9D9882E1B7B0903004559CD /* Extensions */ = {
@@ -261,6 +295,7 @@
 		C9D9882F1B7B0903004559CD /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C92322EC1C50DED100CA1A2C /* BindingObservers */,
 				C9F7E8661B80D4DA000D5CC7 /* Keyboard.swift */,
 				C92948FB1B7F994D00BCBC7C /* UIControl+Signal.swift */,
 				C9F7AA9E1B809088002DA7B7 /* UIButton+Signal.swift */,
@@ -273,8 +308,10 @@
 				C9F7E8591B80B64F000D5CC7 /* UITextField+Signal.swift */,
 				C9F7E85C1B80BD19000D5CC7 /* UITextView+Signal.swift */,
 				C9F7E8611B80CD64000D5CC7 /* UIView+Signal.swift */,
-				C98FD9FD1BBC800D004772C6 /* UITableView+Signal.swift */,
-				C924E2D61BBD521C00400D2D /* UICollectionView+Signal.swift */,
+				C92322F81C510D1E00CA1A2C /* UITableView+Signal.swift */,
+				C91D554E1C511738009CB7F5 /* UICollectionView+Signal.swift */,
+				C91D55521C511A49009CB7F5 /* UIBarItem+Signal.swift */,
+				C91D555E1C514E7F009CB7F5 /* UIBarButtonItem+Signal.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -287,8 +324,6 @@
 				C9D988881B7B55C0004559CD /* KVOSignal.swift */,
 				C9D9888F1B7B5A91004559CD /* ControlSignal.swift */,
 				C9D988971B7B5ECB004559CD /* NotificationSignal.swift */,
-				C95FD51C1BB97D6D001BAF90 /* ObservableArray.swift */,
-				C95FD5231BB989DE001BAF90 /* ArrayEventStrategies */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -302,8 +337,7 @@
 				C92948E91B7F5E7700BCBC7C /* SignalEventType.swift */,
 				C9D9884D1B7B1788004559CD /* LockType.swift */,
 				C9D988511B7B1788004559CD /* TokenGeneratorType.swift */,
-				C95FD5201BB988B6001BAF90 /* ArrayEventStrategyType.swift */,
-				C98FD9EF1BBC4BFC004772C6 /* ArrayBindingStrategyType.swift */,
+				C914CEBA1C4FF0CF005C14BD /* ObservableCollectionType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -313,14 +347,14 @@
 			children = (
 				C9D988631B7B1B2B004559CD /* Bag.swift */,
 				C9D988721B7B2AD7004559CD /* Dispatcher.swift */,
-				C92948EC1B7F759100BCBC7C /* SignalEvent.swift */,
 				C9D9885E1B7B1850004559CD /* IncrementalKeyGenerator.swift */,
 				C9D9886B1B7B1D41004559CD /* DisposableAction.swift */,
 				C98CE7931B7CC5C90035CF1E /* SignalScheduler.swift */,
 				C98CE79B1B7E2AA70035CF1E /* CompoundObserver.swift */,
 				C9D988701B7B1F14004559CD /* SpinLock.swift */,
 				C9D988A41B7BCA18004559CD /* DisposableBag.swift */,
-				C98FD9F71BBC5C30004772C6 /* ArrayBindingObserver.swift */,
+				C92322F21C50EAA400CA1A2C /* CollectionChangeSetHandler.swift */,
+				C91D555A1C514979009CB7F5 /* DisposableActionTarget.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -341,6 +375,7 @@
 		C9D988341B7B0950004559CD /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C92322ED1C50DEE000CA1A2C /* BindingObservers */,
 				C92948FE1B7F9A9900BCBC7C /* UIControl+SignalTests.swift */,
 				C9F7AAA11B8091AC002DA7B7 /* UIButton+SignalTests.swift */,
 				C9F7AAA61B809543002DA7B7 /* UIDatePicker+SignalTests.swift */,
@@ -354,10 +389,10 @@
 				C9F7E8641B80CD74000D5CC7 /* UIView+SignalTests.swift */,
 				C97D68E21B80E76E00F1676F /* KeyboardTests.swift */,
 				C97D68E41B80E78400F1676F /* KeyboardStateTests.swift */,
-				C98FD9FF1BBC8460004772C6 /* TableViewBindingStrategyTests.swift */,
-				C924E2DA1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift */,
-				C924E2DC1BBD63BE00400D2D /* UITableView+SignalTests.swift */,
-				C924E2E21BBD68ED00400D2D /* UICollectionView+SignalTests.swift */,
+				C91D55481C511098009CB7F5 /* UITableView+SignalTests.swift */,
+				C91D55501C5117A5009CB7F5 /* UICollectionView+SignalTests.swift */,
+				C91D55541C511AA0009CB7F5 /* UIBarItem+SignalTests.swift */,
+				C91D55601C515141009CB7F5 /* UIBarButtonItem+SignalTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -370,9 +405,6 @@
 				C9D9888D1B7B587A004559CD /* KVOSignalTests.swift */,
 				C9D988921B7B5C09004559CD /* ControlSignalTests.swift */,
 				C9D9889A1B7B6049004559CD /* NotificationSignalTests.swift */,
-				C95FD51E1BB97D79001BAF90 /* ObservableArrayTests.swift */,
-				C95FD5261BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift */,
-				C95FD52A1BB98E1C001BAF90 /* ArrayBatchEventStrategyTests.swift */,
 			);
 			path = Observables;
 			sourceTree = "<group>";
@@ -388,7 +420,8 @@
 				C98CE7961B7CCF350035CF1E /* SignalSchedulerTests.swift */,
 				C98CE79E1B7E2D1B0035CF1E /* CompoundObserverTests.swift */,
 				C95FD51A1BB97A9E001BAF90 /* SpinLockTests.swift */,
-				C98FD9F91BBC5C3B004772C6 /* ArrayBindingObserverTests.swift */,
+				C92322F41C50EAD300CA1A2C /* CollectionChangeSetHandlerTests.swift */,
+				C91D555C1C514D08009CB7F5 /* DisposableActionTargetTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -404,11 +437,9 @@
 				C9D988A21B7B7D41004559CD /* MockSignal.swift */,
 				C9D988941B7B5C79004559CD /* MockControl.h */,
 				C9D988951B7B5D18004559CD /* MockControl.m */,
-				C98FD9FB1BBC7ADA004772C6 /* MockBindingStrategy.swift */,
 				C98FDA011BBC852C004772C6 /* MockTableView.swift */,
 				C924E2D81BBD535300400D2D /* MockCollectionView.swift */,
-				C924E2DE1BBD664900400D2D /* MockTableViewDataSource.swift */,
-				C924E2E01BBD68A100400D2D /* MockCollectionViewDataSource.swift */,
+				C92322F61C50FAC400CA1A2C /* MockObservableCollection.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -436,6 +467,7 @@
 			children = (
 				C9D988311B7B0903004559CD /* Protocols */,
 				C9D988301B7B0903004559CD /* Observables */,
+				C914CEAC1C4FAD09005C14BD /* Events */,
 				C9D988321B7B0903004559CD /* Utilities */,
 				C9D9882E1B7B0903004559CD /* Extensions */,
 				C9E7F2821B567DF5001AB061 /* Supporting Files */,
@@ -457,6 +489,7 @@
 			children = (
 				C9D988681B7B1C25004559CD /* Fakes */,
 				C9D988351B7B0950004559CD /* Observables */,
+				C914CEAF1C4FAD11005C14BD /* Events */,
 				C9D988361B7B0950004559CD /* Utilities */,
 				C9D988331B7B0950004559CD /* Extensions */,
 				C9E7F28F1B567DF5001AB061 /* Supporting Files */,
@@ -582,37 +615,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9D988711B7B1F14004559CD /* SpinLock.swift in Sources */,
-				C98FD9F01BBC4BFC004772C6 /* ArrayBindingStrategyType.swift in Sources */,
+				C92322EF1C50DF0B00CA1A2C /* TableViewBinding.swift in Sources */,
 				C92948FC1B7F994D00BCBC7C /* UIControl+Signal.swift in Sources */,
+				C914CEB71C4FB66B005C14BD /* CollectionChangeSet.swift in Sources */,
 				C9F7E8671B80D4DA000D5CC7 /* Keyboard.swift in Sources */,
 				C9F7AA9F1B809088002DA7B7 /* UIButton+Signal.swift in Sources */,
+				C91D554B1C51136B009CB7F5 /* CollectionViewBinding.swift in Sources */,
+				C92322F91C510D1E00CA1A2C /* UITableView+Signal.swift in Sources */,
+				C914CEAE1C4FAD09005C14BD /* SignalEvent.swift in Sources */,
 				C9F7E85A1B80B64F000D5CC7 /* UITextField+Signal.swift in Sources */,
 				C9D9887A1B7B3ECF004559CD /* Signal.swift in Sources */,
 				C92948F71B7F8C6100BCBC7C /* NSNotificationCenter+Signal.swift in Sources */,
 				C92948EA1B7F5E7700BCBC7C /* SignalEventType.swift in Sources */,
 				C9F7AAB31B809C64002DA7B7 /* UISegmentedControl+Signal.swift in Sources */,
 				C9D9885A1B7B1788004559CD /* SignalType.swift in Sources */,
-				C98FD9F81BBC5C30004772C6 /* ArrayBindingObserver.swift in Sources */,
-				C92948ED1B7F759200BCBC7C /* SignalEvent.swift in Sources */,
-				C98FD9FE1BBC800D004772C6 /* UITableView+Signal.swift in Sources */,
 				C9D9886C1B7B1D41004559CD /* DisposableAction.swift in Sources */,
 				C9F7AABA1B809F59002DA7B7 /* UISlider+Signal.swift in Sources */,
-				C95FD5251BB989FE001BAF90 /* ArraySerialEventStrategy.swift in Sources */,
+				C914CEBB1C4FF0CF005C14BD /* ObservableCollectionType.swift in Sources */,
 				C9D988731B7B2AD7004559CD /* Dispatcher.swift in Sources */,
 				C98FD9F41BBC5B4E004772C6 /* NSIndexSet+Signal.swift in Sources */,
+				C914CEB11C4FAD62005C14BD /* ListOperation.swift in Sources */,
 				C9D9887F1B7B445F004559CD /* ObservableProperty.swift in Sources */,
 				C9F7AAA41B80943F002DA7B7 /* UIDatePicker+Signal.swift in Sources */,
 				C9D988891B7B55C0004559CD /* KVOSignal.swift in Sources */,
+				C91D55531C511A49009CB7F5 /* UIBarItem+Signal.swift in Sources */,
+				C91D555F1C514E7F009CB7F5 /* UIBarButtonItem+Signal.swift in Sources */,
+				C91D555B1C514979009CB7F5 /* DisposableActionTarget.swift in Sources */,
 				C9D988541B7B1788004559CD /* LockType.swift in Sources */,
-				C95FD51D1BB97D6D001BAF90 /* ObservableArray.swift in Sources */,
 				C9F7AAAE1B809A00002DA7B7 /* UILabel+Signal.swift in Sources */,
 				C9F7E8621B80CD64000D5CC7 /* UIView+Signal.swift in Sources */,
 				C9D988981B7B5ECB004559CD /* NotificationSignal.swift in Sources */,
 				C9F7AAA91B8097DA002DA7B7 /* UIImageView+Signal.swift in Sources */,
 				C9D9885F1B7B1850004559CD /* IncrementalKeyGenerator.swift in Sources */,
 				C9D988561B7B1788004559CD /* Observable.swift in Sources */,
-				C95FD5211BB988B6001BAF90 /* ArrayEventStrategyType.swift in Sources */,
-				C924E2D71BBD521C00400D2D /* UICollectionView+Signal.swift in Sources */,
+				C91D554F1C511738009CB7F5 /* UICollectionView+Signal.swift in Sources */,
 				C9D988521B7B1788004559CD /* Disposable.swift in Sources */,
 				C9F7E85D1B80BD19000D5CC7 /* UITextView+Signal.swift in Sources */,
 				C9D988901B7B5A91004559CD /* ControlSignal.swift in Sources */,
@@ -622,7 +658,7 @@
 				C9D9885C1B7B1788004559CD /* TokenGeneratorType.swift in Sources */,
 				C92948F21B7F794000BCBC7C /* NSObject+Signal.swift in Sources */,
 				C9D988A51B7BCA18004559CD /* DisposableBag.swift in Sources */,
-				C95FD5291BB98E0C001BAF90 /* ArrayBatchEventStrategy.swift in Sources */,
+				C92322F31C50EAA400CA1A2C /* CollectionChangeSetHandler.swift in Sources */,
 				C98CE7941B7CC5C90035CF1E /* SignalScheduler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,32 +668,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9D9888E1B7B587A004559CD /* KVOSignalTests.swift in Sources */,
-				C924E2E11BBD68A100400D2D /* MockCollectionViewDataSource.swift in Sources */,
 				C98FD9F61BBC5B90004772C6 /* NSIndexSet+SignalTests.swift in Sources */,
 				C9D9889B1B7B6049004559CD /* NotificationSignalTests.swift in Sources */,
-				C95FD5271BB98A8A001BAF90 /* ArraySerialEventStrategyTests.swift in Sources */,
 				C9F7AAA71B809543002DA7B7 /* UIDatePicker+SignalTests.swift in Sources */,
-				C924E2DD1BBD63BE00400D2D /* UITableView+SignalTests.swift in Sources */,
 				C9D988761B7B2B20004559CD /* DispatcherTests.swift in Sources */,
-				C924E2DB1BBD543A00400D2D /* CollectionViewBindingStrategyTests.swift in Sources */,
 				C9F7AAB81B809ECF002DA7B7 /* UISlider+SignalTests.swift in Sources */,
 				C9D988781B7B334B004559CD /* MockLock.swift in Sources */,
-				C95FD51F1BB97D79001BAF90 /* ObservableArrayTests.swift in Sources */,
 				C9F7AAAC1B8098A8002DA7B7 /* UIImageView+SignalTests.swift in Sources */,
+				C92322F71C50FAC400CA1A2C /* MockObservableCollection.swift in Sources */,
 				C9D988A31B7B7D41004559CD /* MockSignal.swift in Sources */,
+				C914CEB31C4FB0FE005C14BD /* ListOperationTests.swift in Sources */,
 				C9D988931B7B5C09004559CD /* ControlSignalTests.swift in Sources */,
-				C98FD9FC1BBC7ADA004772C6 /* MockBindingStrategy.swift in Sources */,
 				C98FDA021BBC852C004772C6 /* MockTableView.swift in Sources */,
+				C92322F51C50EAD300CA1A2C /* CollectionChangeSetHandlerTests.swift in Sources */,
 				C924E2D91BBD535300400D2D /* MockCollectionView.swift in Sources */,
 				C9D988961B7B5D18004559CD /* MockControl.m in Sources */,
-				C98FDA001BBC8460004772C6 /* TableViewBindingStrategyTests.swift in Sources */,
 				C9F7E8581B80B612000D5CC7 /* UITextField+SignalTests.swift in Sources */,
 				C95FD51B1BB97A9E001BAF90 /* SpinLockTests.swift in Sources */,
-				C95FD52B1BB98E1C001BAF90 /* ArrayBatchEventStrategyTests.swift in Sources */,
 				C9D9888C1B7B5865004559CD /* Person.swift in Sources */,
 				C92948FF1B7F9A9900BCBC7C /* UIControl+SignalTests.swift in Sources */,
 				C92948F51B7F841600BCBC7C /* NSObject+SignalTests.swift in Sources */,
 				C9D9889D1B7B7982004559CD /* ObservableTests.swift in Sources */,
+				C91D554D1C5113BD009CB7F5 /* CollectionViewBindingTests.swift in Sources */,
 				C9D988671B7B1B74004559CD /* BagTests.swift in Sources */,
 				C9F7AAB61B809C73002DA7B7 /* UISegmentedControl+SignalTests.swift in Sources */,
 				C9D988621B7B1946004559CD /* IncrementalKeyGeneratorTests.swift in Sources */,
@@ -665,23 +697,27 @@
 				C9F7E8651B80CD74000D5CC7 /* UIView+SignalTests.swift in Sources */,
 				C98CE7971B7CCF350035CF1E /* SignalSchedulerTests.swift in Sources */,
 				C9F7AAA21B8091AC002DA7B7 /* UIButton+SignalTests.swift in Sources */,
+				C91D555D1C514D08009CB7F5 /* DisposableActionTargetTests.swift in Sources */,
 				C9D988851B7B4D7F004559CD /* StubObservable.swift in Sources */,
 				C9F7E8601B80C9CF000D5CC7 /* UITextView+SignalTests.swift in Sources */,
 				C9D9887D1B7B4375004559CD /* SignalTests.swift in Sources */,
 				C92948FA1B7F8DCE00BCBC7C /* NSNotificationCenter+SignalTests.swift in Sources */,
-				C98FD9FA1BBC5C3B004772C6 /* ArrayBindingObserverTests.swift in Sources */,
 				C97D68E51B80E78400F1676F /* KeyboardStateTests.swift in Sources */,
 				C97D68E31B80E76E00F1676F /* KeyboardTests.swift in Sources */,
 				C98CE79F1B7E2D1B0035CF1E /* CompoundObserverTests.swift in Sources */,
+				C91D55551C511AA0009CB7F5 /* UIBarItem+SignalTests.swift in Sources */,
 				C9D988871B7B4DC3004559CD /* MockDisposable.swift in Sources */,
-				C924E2DF1BBD664900400D2D /* MockTableViewDataSource.swift in Sources */,
-				C924E2E31BBD68ED00400D2D /* UICollectionView+SignalTests.swift in Sources */,
+				C91D55511C5117A5009CB7F5 /* UICollectionView+SignalTests.swift in Sources */,
+				C92322F11C50DFF500CA1A2C /* TableViewBindingTests.swift in Sources */,
 				C9F7AAB11B809B0C002DA7B7 /* UILabel+SignalTests.swift in Sources */,
+				C91D55491C511098009CB7F5 /* UITableView+SignalTests.swift in Sources */,
 				C9D988821B7B46DE004559CD /* ObservablePropertyTests.swift in Sources */,
 				C9D9886E1B7B1DE8004559CD /* DisposableActionTests.swift in Sources */,
 				C9D9889F1B7B79A2004559CD /* MockObservable.swift in Sources */,
 				C9D988A81B7BCA4C004559CD /* DisposableBagTests.swift in Sources */,
+				C914CEB91C4FB71E005C14BD /* CollectionChangeSetTests.swift in Sources */,
 				C9F7AABD1B80AAE2002DA7B7 /* UISwitch+SignalTests.swift in Sources */,
+				C91D55611C515141009CB7F5 /* UIBarButtonItem+SignalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
