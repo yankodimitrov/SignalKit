@@ -40,7 +40,7 @@ let person = Person(name: "John")
 person.observe()
     .keyPath("name", value: person.name)
     .next { print("Hello \($0)") }
-    .addTo(signalsBag)
+    .disposeWith(disposableBag)
 ```
 
 ### Target Action
