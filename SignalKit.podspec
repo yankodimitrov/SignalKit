@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
 
   s.source       = { :git => "https://github.com/yankodimitrov/SignalKit.git", :tag => "v#{s.version}" }
-  s.source_files  = ["SignalKit", "SignalKit/Observables", "SignalKit/Observables/ArrayEventStrategies", "SignalKit/Protocols", "SignalKit/Utilities", "SignalKit/Extensions", "SignalKit/Extensions/UIKit"]
+  s.source_files  = ["SignalKit", "SignalKit/Observables", "SignalKit/Protocols", "SignalKit/Utilities", "SignalKit/Extensions", "SignalKit/Extensions/UIKit", "SignalKit/Extensions/UIKit/BindingObservers"]
   
   s.requires_arc = true
 
