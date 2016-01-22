@@ -123,6 +123,15 @@ SignalKit comes with the following SignalType operations:
 Currently SignalKit comes with extensions for the the following <code>UIKit</code> components:
 ![SignalKit Primary Protocols](https://raw.githubusercontent.com/yankodimitrov/SignalKit/SignalKit-3.0/Resources/uikit-extensions.png)
 
+### Keyboard
+You can use the <code>Keyboard</code> structure to observe for keyboard events posted by the system. Then you will get back a structure of type <code>KeyboardState</code> which you can query for the keyboard end/start frame and other data that the system sends with the notification:
+
+```swift
+Keyboard.observe().willShow
+    .next { print($0.endFrame) }
+    .disposeWith(disposableBag)
+```
+
 ## Installation
 
 SignalKit requires Swift 2.0 and XCode 7
