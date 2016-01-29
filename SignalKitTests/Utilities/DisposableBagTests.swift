@@ -59,4 +59,16 @@ class DisposableBagTests: XCTestCase {
         
         XCTAssertEqual(disposable.isDisposeCalled, true, "Should remove and dispose all disposables on deinit")
     }
+    
+    func testDispose() {
+        
+        let signalTwo = MockSignal<String>()
+        
+        bag.addDisposable(signal)
+        bag.addDisposable(signalTwo)
+        
+        bag.dispose()
+        
+        XCTAssertEqual(bag.count, 0, "Should remove all signals from the bag")
+    }
 }

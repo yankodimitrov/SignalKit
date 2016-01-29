@@ -47,3 +47,11 @@ extension DisposableBag {
         return bag.count
     }
 }
+
+extension DisposableBag: Disposable {
+    
+    public func dispose() {
+        
+        removeAll()
+    }
+}
