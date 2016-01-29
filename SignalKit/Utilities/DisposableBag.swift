@@ -12,10 +12,6 @@ public final class DisposableBag {
     
     private lazy var bag = Bag<Disposable>()
     
-    internal var count: Int {
-        return bag.count
-    }
-    
     public init() {}
     
     public func addDisposable(disposable: Disposable) -> Disposable {
@@ -28,8 +24,26 @@ public final class DisposableBag {
         }
     }
     
+    deinit {
+        
+        removeAll()
+    }
+    
     public func removeAll() {
         
+        for (_, disposableItem) in bag {
+            
+            disposableItem.dispose()
+        }
+        
         bag.removeItems()
+    }
+}
+
+extension DisposableBag {
+    
+    internal var count: Int {
+        
+        return bag.count
     }
 }
