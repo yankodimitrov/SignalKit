@@ -134,7 +134,7 @@ Keyboard.observe().willShow
 
 ## Installation
 
-SignalKit requires Swift 2.0 and XCode 7
+SignalKit requires Swift 2.0 and Xcode 7
 
 #### Carthage
 Add the following line to your [Cartfile](https://github.com/carthage/carthage)
