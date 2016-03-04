@@ -12,3 +12,13 @@ public protocol SignalType: Observable, Disposable {
     
     var disposableSource: Disposable? {get set}
 }
+
+// MARK: - Disposable
+
+extension SignalType {
+    
+    public func dispose() {
+        
+        disposableSource?.dispose()
+    }
+}
