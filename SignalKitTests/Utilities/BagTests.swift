@@ -77,7 +77,7 @@ class BagTests: XCTestCase {
     func testIterateOverItems() {
         
         var bag = Bag<Int>()
-        var counter = 0
+        var sum = 0
         
         bag.insertItem(1)
         bag.insertItem(2)
@@ -85,9 +85,9 @@ class BagTests: XCTestCase {
         
         for (_, item) in bag {
             
-            counter += item
+            sum += item
         }
         
-        XCTAssertEqual(counter, 6, "Should iterate over the bag items")
+        XCTAssertEqual(sum, 6, "Should iterate over the bag items")
     }
 }
