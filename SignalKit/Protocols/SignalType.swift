@@ -57,3 +57,27 @@ extension SignalType {
         return signal
     }
 }
+
+// MARK: - Filter
+
+extension SignalType {
+    
+    /// Filter the Signal value using a predicate
+    
+    public func filter(predicate: ObservationValue -> Bool) -> Signal<ObservationValue> {
+        
+        let signal = Signal<ObservationValue>()
+        
+        addObserver { [weak signal] in
+            
+            if predicate($0) {
+                
+                signal?.sendNext($0)
+            }
+        }
+        
+        signal.disposableSource = self
+        
+        return signal
+    }
+}

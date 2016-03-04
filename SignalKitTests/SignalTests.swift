@@ -63,14 +63,29 @@ class SignalTests: XCTestCase {
     
     func testMap() {
         
-        let name = Signal<Int>()
+        let year = Signal<Int>()
         var result = ""
-        let expectedResult = "123"
+        let expectedResult = "2016"
         
-        chain = name.map { String($0) }.next { result = $0 }
+        chain = year.map { String($0) }.next { result = $0 }
         
-        name.sendNext(123)
+        year.sendNext(2016)
         
         XCTAssertEqual(result, expectedResult, "Should map the signal value")
+    }
+    
+    func testFilter() {
+        
+        let number = Signal<Int>()
+        var result = 0
+        
+        chain = number.filter { $0 > 5 }.next { result = $0 }
+        
+        number.sendNext(1)
+        number.sendNext(2)
+        number.sendNext(7)
+        number.sendNext(5)
+        
+        XCTAssertEqual(result, 7, "Should filter the signal values")
     }
 }
