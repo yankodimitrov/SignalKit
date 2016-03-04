@@ -23,4 +23,33 @@ class BagTests: XCTestCase {
         XCTAssertEqual(item, 1, "Should contain the inserted item")
         XCTAssertNotEqual(token, "", "Should return a removal token")
     }
+    
+    func testProduceRemovalTokens() {
+        
+        var bag = Bag<Int>()
+        var token = ""
+        let expectedToken = "10"
+        
+        for i in 0..<10 {
+            
+            token = bag.insertItem(i)
+        }
+        
+        XCTAssertEqual(token, expectedToken, "Should produce incremental removal tokens")
+    }
+    
+    func testProduceSequenceOfRemovalTokens() {
+        
+        var bag = Bag<Int>()
+        var token = ""
+        let expectedToken = "\(UInt16.max)123"
+        let elementsCount = Int(UInt16.max) + 123
+        
+        for i in 0..<elementsCount {
+            
+            token = bag.insertItem(i)
+        }
+        
+        XCTAssertEqual(token, expectedToken, "Should produce a sequence of removal tokens")
+    }
 }
