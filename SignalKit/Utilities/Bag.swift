@@ -14,4 +14,17 @@ struct Bag<Item> {
     
     internal private(set) var items = [RemovalToken: Item]()
     
+    mutating func insertItem(item: Item) -> RemovalToken {
+        
+        let removalToken = nextRemovalToken()
+        
+        items[removalToken] = item
+        
+        return removalToken
+    }
+    
+    private func nextRemovalToken() -> RemovalToken {
+        
+        return "0"
+    }
 }
