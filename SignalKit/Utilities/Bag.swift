@@ -13,7 +13,7 @@ typealias RemovalToken = String
 struct Bag<Item> {
     
     internal private(set) var items = [RemovalToken: Item]()
-    private var tokenCounter: UInt16 = 0
+    private var tokenCounter: UInt8 = 0
     private var tokenPrefix = ""
     
     mutating func insertItem(item: Item) -> RemovalToken {
@@ -25,9 +25,14 @@ struct Bag<Item> {
         return removalToken
     }
     
+    mutating func removeItemWithToken(token: RemovalToken) {
+        
+        items.removeValueForKey(token)
+    }
+    
     private mutating func nextRemovalToken() -> RemovalToken {
         
-        if tokenCounter >= UInt16.max {
+        if tokenCounter >= UInt8.max {
             
             tokenPrefix += String(tokenCounter)
             tokenCounter = 0
