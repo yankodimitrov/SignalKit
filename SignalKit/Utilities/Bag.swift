@@ -30,7 +30,7 @@ struct Bag<Item> {
         items.removeValueForKey(token)
     }
     
-    mutating func removeAllItems() {
+    mutating func removeAll() {
         
         items.removeAll(keepCapacity: false)
     }
