@@ -36,3 +36,24 @@ extension SignalType {
         return self
     }
 }
+
+// MARK: - Map
+
+extension SignalType {
+    
+    /// Transform a Signal of type ObservationValue to a Signal of type U
+    
+    public func map<U>(transform: ObservationValue -> U) -> Signal<U> {
+        
+        let signal = Signal<U>()
+        
+        addObserver { [weak signal] in
+            
+            signal?.sendNext(transform($0))
+        }
+        
+        signal.disposableSource = self
+        
+        return signal
+    }
+}

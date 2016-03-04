@@ -11,6 +11,8 @@ import XCTest
 
 class SignalTests: XCTestCase {
     
+    var chain: Disposable?
+    
     func testAddObserver() {
         
         let name = Signal<String>()
@@ -57,5 +59,18 @@ class SignalTests: XCTestCase {
         name.sendNext(expectedResult)
         
         XCTAssertEqual(result, expectedResult, "Should add a new observer to a Signal")
+    }
+    
+    func testMap() {
+        
+        let name = Signal<Int>()
+        var result = ""
+        let expectedResult = "123"
+        
+        chain = name.map { String($0) }.next { result = $0 }
+        
+        name.sendNext(123)
+        
+        XCTAssertEqual(result, expectedResult, "Should map the signal value")
     }
 }
