@@ -46,4 +46,16 @@ class SignalTests: XCTestCase {
         
         XCTAssertEqual(result, expectedResult, "Should send the next value to observers")
     }
+    
+    func testNext() {
+        
+        let name = Signal<String>()
+        var result = ""
+        let expectedResult = "John"
+        
+        name.next { result = $0 }
+        name.sendNext(expectedResult)
+        
+        XCTAssertEqual(result, expectedResult, "Should add a new observer to a Signal")
+    }
 }

@@ -22,3 +22,17 @@ extension SignalType {
         disposableSource?.dispose()
     }
 }
+
+// MARK: - Next
+
+extension SignalType {
+    
+    /// Adds a new observer to a Signal
+    
+    public func next(observer: ObservationValue -> Void) -> Self {
+        
+        addObserver(observer)
+        
+        return self
+    }
+}
