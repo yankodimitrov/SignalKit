@@ -49,3 +49,11 @@ struct Bag<Item> {
         return tokenPrefix + String(tokenCounter)
     }
 }
+
+extension Bag: SequenceType {
+    
+    func generate() -> DictionaryGenerator<RemovalToken, Item> {
+        
+        return items.generate()
+    }
+}

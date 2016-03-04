@@ -73,4 +73,21 @@ class BagTests: XCTestCase {
         
         XCTAssertEqual(bag.items.isEmpty, true, "Should remove all items")
     }
+    
+    func testIterateOverItems() {
+        
+        var bag = Bag<Int>()
+        var counter = 0
+        
+        bag.insertItem(1)
+        bag.insertItem(2)
+        bag.insertItem(3)
+        
+        for (_, item) in bag {
+            
+            counter += item
+        }
+        
+        XCTAssertEqual(counter, 6, "Should iterate over the bag items")
+    }
 }
