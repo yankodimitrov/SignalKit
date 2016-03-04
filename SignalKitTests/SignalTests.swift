@@ -88,4 +88,19 @@ class SignalTests: XCTestCase {
         
         XCTAssertEqual(result, 7, "Should filter the signal values")
     }
+    
+    func testSkip() {
+        
+        let number = Signal<Int>()
+        var result = 0
+        
+        chain = number.skip(2).next { result = $0 }
+        
+        number.sendNext(1)
+        number.sendNext(2)
+        number.sendNext(3)
+        number.sendNext(4)
+        
+        XCTAssertEqual(result, 4, "Should skip a number of sent values")
+    }
 }

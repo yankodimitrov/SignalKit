@@ -81,3 +81,26 @@ extension SignalType {
         return signal
     }
 }
+
+// MARK: - Skip
+
+extension SignalType {
+    
+    /// Skip a number of sent values
+    
+    public func skip(var count: Int) -> Signal<ObservationValue> {
+        
+        let signal = Signal<ObservationValue>()
+        
+        addObserver { [weak signal] in
+        
+            guard count <= 0 else { count -= 1; return }
+            
+            signal?.sendNext($0)
+        }
+        
+        signal.disposableSource = self
+        
+        return signal
+    }
+}
