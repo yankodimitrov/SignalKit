@@ -104,3 +104,28 @@ extension SignalType {
         return signal
     }
 }
+
+// MARK: - ObserveOn
+
+extension SignalType {
+    
+    /// Observe the Signal on a given queue
+    
+    public func observeOn(queue: SchedulerQueue) -> Signal<ObservationValue> {
+        
+        let signal = Signal<ObservationValue>()
+        let scheduler = Scheduler(queue: queue)
+        
+        addObserver { [weak signal] value in
+            
+            scheduler.async {
+                
+                signal?.sendNext(value)
+            }
+        }
+        
+        signal.disposableSource = self
+        
+        return signal
+    }
+}
