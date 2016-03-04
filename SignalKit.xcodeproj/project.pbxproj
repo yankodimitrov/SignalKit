@@ -16,6 +16,8 @@
 		C99326F01C8A2CCD00C03404 /* DisposableActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326EF1C8A2CCD00C03404 /* DisposableActionTests.swift */; };
 		C99326F41C8A304800C03404 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326F31C8A304800C03404 /* Signal.swift */; };
 		C99326F61C8A36E000C03404 /* SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326F51C8A36E000C03404 /* SignalTests.swift */; };
+		C99326F81C8A436E00C03404 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326F71C8A436E00C03404 /* Scheduler.swift */; };
+		C99326FA1C8A446B00C03404 /* SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326F91C8A446B00C03404 /* SchedulerTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -40,6 +42,8 @@
 		C99326EF1C8A2CCD00C03404 /* DisposableActionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableActionTests.swift; sourceTree = "<group>"; };
 		C99326F31C8A304800C03404 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
 		C99326F51C8A36E000C03404 /* SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalTests.swift; sourceTree = "<group>"; };
+		C99326F71C8A436E00C03404 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		C99326F91C8A446B00C03404 /* SchedulerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulerTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 			children = (
 				C99326E71C8A1F9F00C03404 /* Bag.swift */,
 				C99326ED1C8A2C4900C03404 /* DisposableAction.swift */,
+				C99326F71C8A436E00C03404 /* Scheduler.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 			children = (
 				C99326E91C8A21B900C03404 /* BagTests.swift */,
 				C99326EF1C8A2CCD00C03404 /* DisposableActionTests.swift */,
+				C99326F91C8A446B00C03404 /* SchedulerTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C99326E41C8A1B7C00C03404 /* Observable.swift in Sources */,
+				C99326F81C8A436E00C03404 /* Scheduler.swift in Sources */,
 				C99326F41C8A304800C03404 /* Signal.swift in Sources */,
 				C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */,
 				C99326E81C8A1F9F00C03404 /* Bag.swift in Sources */,
@@ -298,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C99326EA1C8A21B900C03404 /* BagTests.swift in Sources */,
+				C99326FA1C8A446B00C03404 /* SchedulerTests.swift in Sources */,
 				C99326F01C8A2CCD00C03404 /* DisposableActionTests.swift in Sources */,
 				C99326F61C8A36E000C03404 /* SignalTests.swift in Sources */,
 			);

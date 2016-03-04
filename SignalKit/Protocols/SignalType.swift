@@ -27,7 +27,7 @@ extension SignalType {
 
 extension SignalType {
     
-    /// Adds a new observer to a Signal
+    /// Add a new observer to a Signal
     
     public func next(observer: ObservationValue -> Void) -> Self {
         
