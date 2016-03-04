@@ -14,6 +14,8 @@
 		C99326EA1C8A21B900C03404 /* BagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E91C8A21B900C03404 /* BagTests.swift */; };
 		C99326EE1C8A2C4900C03404 /* DisposableAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326ED1C8A2C4900C03404 /* DisposableAction.swift */; };
 		C99326F01C8A2CCD00C03404 /* DisposableActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326EF1C8A2CCD00C03404 /* DisposableActionTests.swift */; };
+		C99326F41C8A304800C03404 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326F31C8A304800C03404 /* Signal.swift */; };
+		C99326F61C8A36E000C03404 /* SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326F51C8A36E000C03404 /* SignalTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -36,6 +38,8 @@
 		C99326E91C8A21B900C03404 /* BagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagTests.swift; sourceTree = "<group>"; };
 		C99326ED1C8A2C4900C03404 /* DisposableAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableAction.swift; sourceTree = "<group>"; };
 		C99326EF1C8A2CCD00C03404 /* DisposableActionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableActionTests.swift; sourceTree = "<group>"; };
+		C99326F31C8A304800C03404 /* Signal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signal.swift; sourceTree = "<group>"; };
+		C99326F51C8A36E000C03404 /* SignalTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				C9D988321B7B0903004559CD /* Utilities */,
 				C9D9882E1B7B0903004559CD /* Extensions */,
 				C9E7F2821B567DF5001AB061 /* Supporting Files */,
+				C99326F31C8A304800C03404 /* Signal.swift */,
 			);
 			path = SignalKit;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				C9D988361B7B0950004559CD /* Utilities */,
 				C9D988331B7B0950004559CD /* Extensions */,
 				C9E7F28F1B567DF5001AB061 /* Supporting Files */,
+				C99326F51C8A36E000C03404 /* SignalTests.swift */,
 			);
 			path = SignalKitTests;
 			sourceTree = "<group>";
@@ -279,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C99326E41C8A1B7C00C03404 /* Observable.swift in Sources */,
+				C99326F41C8A304800C03404 /* Signal.swift in Sources */,
 				C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */,
 				C99326E81C8A1F9F00C03404 /* Bag.swift in Sources */,
 				C99326E61C8A1ED500C03404 /* SignalType.swift in Sources */,
@@ -292,6 +299,7 @@
 			files = (
 				C99326EA1C8A21B900C03404 /* BagTests.swift in Sources */,
 				C99326F01C8A2CCD00C03404 /* DisposableActionTests.swift in Sources */,
+				C99326F61C8A36E000C03404 /* SignalTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
