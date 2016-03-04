@@ -61,4 +61,16 @@ class BagTests: XCTestCase {
         
         XCTAssertEqual(bag.items.isEmpty, true, "Should remove an item with given removal token")
     }
+    
+    func testRemoveAllItems() {
+        
+        var bag = Bag<Int>()
+        
+        bag.insertItem(1)
+        bag.insertItem(2)
+        
+        bag.removeAllItems()
+        
+        XCTAssertEqual(bag.items.isEmpty, true, "Should remove all items")
+    }
 }

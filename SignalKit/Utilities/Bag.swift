@@ -30,6 +30,11 @@ struct Bag<Item> {
         items.removeValueForKey(token)
     }
     
+    mutating func removeAllItems() {
+        
+        items.removeAll(keepCapacity: false)
+    }
+    
     private mutating func nextRemovalToken() -> RemovalToken {
         
         if tokenCounter >= UInt8.max {
