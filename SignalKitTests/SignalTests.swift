@@ -107,7 +107,7 @@ class SignalTests: XCTestCase {
     
     func testObserveOnQueue() {
         
-        let expectation = expectationWithDescription("Should deliver on the main queue")
+        let expectation = expectationWithDescription("Should deliver the value on the main queue")
         let signal = Signal<Int>()
         let scheduler = Scheduler(queue: .BackgroundQueue)
         
@@ -122,6 +122,28 @@ class SignalTests: XCTestCase {
         scheduler.async {
             
             signal.sendNext(111)
+        }
+        
+        waitForExpectationsWithTimeout(0.1, handler: nil)
+    }
+    
+    func testSendNextOnQueue() {
+        
+        let expectation = expectationWithDescription("Should send next value on a given queue")
+        let signal = Signal<Int>()
+        let scheduler = Scheduler(queue: .BackgroundQueue)
+        
+        chain = signal.next { _ in
+            
+            if NSThread.isMainThread() {
+                
+                expectation.fulfill()
+            }
+        }
+        
+        scheduler.async {
+            
+            signal.sendNext(1, onQueue: .MainQueue)
         }
         
         waitForExpectationsWithTimeout(0.1, handler: nil)
