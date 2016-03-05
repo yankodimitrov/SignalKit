@@ -32,4 +32,20 @@ class DisposableBagTests: XCTestCase {
         
         XCTAssertEqual(bag.disposables.items.isEmpty, true, "Should remove the item")
     }
+    
+    func testDispose() {
+        
+        let bag = DisposableBag()
+        let itemA = MockDisposable()
+        let itemB = MockDisposable()
+        
+        bag.insertItem(itemA)
+        bag.insertItem(itemB)
+        
+        bag.dispose()
+        
+        XCTAssertEqual(itemA.isDisposeCalled, true, "Should dispose item A")
+        XCTAssertEqual(itemB.isDisposeCalled, true, "Should dispose item B")
+        XCTAssertEqual(bag.disposables.items.isEmpty, true, "Should remove all items")
+    }
 }

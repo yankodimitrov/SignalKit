@@ -13,6 +13,11 @@ public final class DisposableBag {
     internal private(set) var disposables = Bag<Disposable>()
     
     public init() {}
+    
+    deinit {
+        
+        dispose()
+    }
 }
 
 extension DisposableBag {
@@ -25,5 +30,20 @@ extension DisposableBag {
             
             self?.disposables.removeItemWithToken(token)
         }
+    }
+}
+
+// MARK: - Disposable
+
+extension DisposableBag: Disposable {
+    
+    public func dispose() {
+        
+        for (_, item) in disposables {
+            
+            item.dispose()
+        }
+        
+        disposables.removeAll()
     }
 }
