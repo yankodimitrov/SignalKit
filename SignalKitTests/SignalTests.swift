@@ -244,4 +244,20 @@ class SignalTests: XCTestCase {
         XCTAssertEqual(result.0, 4, "Should contain the latest value of signal A")
         XCTAssertEqual(result.1, "bar", "Should contain the latest value of signal B")
     }
+    
+    func testAllMatchPredicate() {
+        
+        let signal = Signal<(Bool, Bool)>()
+        var result = [Bool]()
+        let expectedResult = [false, false, false, true]
+        
+        chain = signal.allMatch { $0 == true }.next { result.append($0) }
+        
+        signal.sendNext((false, false))
+        signal.sendNext((false, true))
+        signal.sendNext((true, false))
+        signal.sendNext((true, true))
+        
+        XCTAssertEqual(result, expectedResult, "Should match all values to a predicate")
+    }
 }

@@ -258,3 +258,15 @@ extension SignalType {
         return compoundSignal
     }
 }
+
+// MARK: - AllMatch
+
+extension SignalType where ObservationValue == (Bool, Bool) {
+    
+    /// Send true if all values in a signal of type (Bool, Bool) are matching the predicate function
+    
+    public func allMatch(predicate: Bool -> Bool) -> Signal<Bool> {
+        
+        return map { predicate($0.0) && predicate($0.1) }
+    }
+}
