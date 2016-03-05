@@ -259,25 +259,25 @@ extension SignalType {
     }
 }
 
-// MARK: - AllMatch
+// MARK: - AllEqual
 
 extension SignalType where ObservationValue == (Bool, Bool) {
     
     /// Send true if all values in a signal of type (Bool, Bool) are matching the predicate function
     
-    public func allMatch(predicate: Bool -> Bool) -> Signal<Bool> {
+    public func allEqual(predicate: Bool -> Bool) -> Signal<Bool> {
         
         return map { predicate($0.0) && predicate($0.1) }
     }
 }
 
-// MARK: - SomeMatch
+// MARK: - SomeEqual
 
 extension SignalType where ObservationValue == (Bool, Bool) {
     
     /// Send true if at least one value in a signal of type (Bool, Bool) matches the predicate function
     
-    public func someMatch(predicate: Bool -> Bool) -> Signal<Bool> {
+    public func someEqual(predicate: Bool -> Bool) -> Signal<Bool> {
         
         return map { predicate($0.0) || predicate($0.1) }
     }
