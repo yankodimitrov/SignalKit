@@ -282,3 +282,15 @@ extension SignalType where ObservationValue == (Bool, Bool) {
         return map { predicate($0.0) || predicate($0.1) }
     }
 }
+
+// MARK: - DisposeWith
+
+extension SignalType {
+    
+    /// Store a chain of signal operations in a DisposableBag and dispose the chain with the bag
+    
+    public func disposeWith(bag: DisposableBag) -> Disposable {
+        
+        return bag.insertItem(self)
+    }
+}

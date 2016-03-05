@@ -276,4 +276,18 @@ class SignalTests: XCTestCase {
         
         XCTAssertEqual(result, expectedResult, "Should send true if some of the values match the predicate")
     }
+    
+    func testDisposeWith() {
+        
+        let bag = DisposableBag()
+        let signal = Signal<Int>()
+        var result = 0
+        
+        signal.next { result = $0 }.disposeWith(bag)
+        
+        signal.sendNext(1)
+        
+        XCTAssertEqual(result, 1, "Should store the chain of operations")
+        XCTAssertEqual(bag.disposables.items.count, 1, "Should contain one item")
+    }
 }
