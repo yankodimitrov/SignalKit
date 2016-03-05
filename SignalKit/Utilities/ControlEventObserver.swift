@@ -36,6 +36,11 @@ final class ControlEventObserver: NSObject {
         
         eventCallback?(control)
     }
+    
+    deinit {
+        
+        dispose()
+    }
 }
 
 // MARK: - Disposable

@@ -26,6 +26,8 @@
 		C99327061C8AEF0400C03404 /* ControlEventObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327051C8AEF0400C03404 /* ControlEventObserver.swift */; };
 		C99327081C8AF0E500C03404 /* ControlEventObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327071C8AF0E500C03404 /* ControlEventObserverTests.swift */; };
 		C993270D1C8AF5F200C03404 /* MockControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993270C1C8AF5F200C03404 /* MockControl.swift */; };
+		C993270F1C8B08CD00C03404 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993270E1C8B08CD00C03404 /* NotificationObserver.swift */; };
+		C99327111C8B0AC300C03404 /* NotificationObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327101C8B0AC300C03404 /* NotificationObserverTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -60,6 +62,8 @@
 		C99327051C8AEF0400C03404 /* ControlEventObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlEventObserver.swift; sourceTree = "<group>"; };
 		C99327071C8AF0E500C03404 /* ControlEventObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlEventObserverTests.swift; sourceTree = "<group>"; };
 		C993270C1C8AF5F200C03404 /* MockControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockControl.swift; sourceTree = "<group>"; };
+		C993270E1C8B08CD00C03404 /* NotificationObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationObserver.swift; sourceTree = "<group>"; };
+		C99327101C8B0AC300C03404 /* NotificationObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationObserverTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				C99326F71C8A436E00C03404 /* Scheduler.swift */,
 				C99326FB1C8AE0E200C03404 /* DisposableBag.swift */,
 				C99327051C8AEF0400C03404 /* ControlEventObserver.swift */,
+				C993270E1C8B08CD00C03404 /* NotificationObserver.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				C99326F91C8A446B00C03404 /* SchedulerTests.swift */,
 				C99326FD1C8AE1D900C03404 /* DisposableBagTests.swift */,
 				C99327071C8AF0E500C03404 /* ControlEventObserverTests.swift */,
+				C99327101C8B0AC300C03404 /* NotificationObserverTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -324,6 +330,7 @@
 				C99326E61C8A1ED500C03404 /* SignalType.swift in Sources */,
 				C99326FC1C8AE0E200C03404 /* DisposableBag.swift in Sources */,
 				C99326EE1C8A2C4900C03404 /* DisposableAction.swift in Sources */,
+				C993270F1C8B08CD00C03404 /* NotificationObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +340,7 @@
 			files = (
 				C99327081C8AF0E500C03404 /* ControlEventObserverTests.swift in Sources */,
 				C99326EA1C8A21B900C03404 /* BagTests.swift in Sources */,
+				C99327111C8B0AC300C03404 /* NotificationObserverTests.swift in Sources */,
 				C99327041C8AE96400C03404 /* SignalValueTests.swift in Sources */,
 				C99326FE1C8AE1D900C03404 /* DisposableBagTests.swift in Sources */,
 				C99326FA1C8A446B00C03404 /* SchedulerTests.swift in Sources */,
