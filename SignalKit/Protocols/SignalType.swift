@@ -180,3 +180,20 @@ extension SignalType {
     }
 }
 
+// MARK: - BindTo
+
+extension SignalType {
+    
+    /// Bind the value to a signal of the same type
+    
+    public func bindTo<T: SignalType where T.ObservationValue == ObservationValue>(signal: T) -> Self {
+        
+        addObserver { [weak signal] in
+        
+            signal?.sendNext($0)
+        }
+        
+        return self
+    }
+}
+

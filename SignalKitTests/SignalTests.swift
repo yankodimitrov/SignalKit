@@ -194,4 +194,19 @@ class SignalTests: XCTestCase {
         
         waitForExpectationsWithTimeout(0.2, handler: nil)
     }
+    
+    func testBindTo() {
+        
+        let signalA = Signal<Int>()
+        let signalB = Signal<Int>()
+        var result = 0
+        
+        chain = signalA.bindTo(signalB)
+        
+        signalB.addObserver { result = $0 }
+        
+        signalA.sendNext(3)
+        
+        XCTAssertEqual(result, 3, "Should bind a signal to a signal of the same type")
+    }
 }
