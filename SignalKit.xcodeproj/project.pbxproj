@@ -34,6 +34,7 @@
 		C993271B1C8B1E0E00C03404 /* ActionTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271A1C8B1E0E00C03404 /* ActionTarget.swift */; };
 		C993271D1C8B1EF400C03404 /* ActionTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271C1C8B1EF400C03404 /* ActionTargetTests.swift */; };
 		C993271F1C8B209700C03404 /* SignalEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271E1C8B209700C03404 /* SignalEventType.swift */; };
+		C99327211C8B212500C03404 /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327201C8B212500C03404 /* SignalEvent.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +77,7 @@
 		C993271A1C8B1E0E00C03404 /* ActionTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTarget.swift; sourceTree = "<group>"; };
 		C993271C1C8B1EF400C03404 /* ActionTargetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTargetTests.swift; sourceTree = "<group>"; };
 		C993271E1C8B209700C03404 /* SignalEventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEventType.swift; sourceTree = "<group>"; };
+		C99327201C8B212500C03404 /* SignalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvent.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				C9E7F2821B567DF5001AB061 /* Supporting Files */,
 				C99326F31C8A304800C03404 /* Signal.swift */,
 				C99327011C8AE72F00C03404 /* SignalValue.swift */,
+				C99327201C8B212500C03404 /* SignalEvent.swift */,
 			);
 			path = SignalKit;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				C99327131C8B0C9100C03404 /* KeyPathObserver.swift in Sources */,
 				C99326F41C8A304800C03404 /* Signal.swift in Sources */,
 				C993271F1C8B209700C03404 /* SignalEventType.swift in Sources */,
+				C99327211C8B212500C03404 /* SignalEvent.swift in Sources */,
 				C99327021C8AE72F00C03404 /* SignalValue.swift in Sources */,
 				C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */,
 				C99326E81C8A1F9F00C03404 /* Bag.swift in Sources */,
