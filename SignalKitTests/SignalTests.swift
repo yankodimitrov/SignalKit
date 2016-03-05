@@ -226,4 +226,22 @@ class SignalTests: XCTestCase {
         
         XCTAssertEqual(result, expectedResult, "Should send only distinct values")
     }
+    
+    func testCombineLatestWith() {
+        
+        let signalA = Signal<Int>()
+        let signalB = Signal<String>()
+        var result = (0, "")
+        
+        chain = signalA.combineLatestWith(signalB).next { result = $0 }
+        
+        signalA.sendNext(1)
+        signalA.sendNext(11)
+        signalB.sendNext("foo")
+        signalA.sendNext(4)
+        signalB.sendNext("bar")
+        
+        XCTAssertEqual(result.0, 4, "Should contain the latest value of signal A")
+        XCTAssertEqual(result.1, "bar", "Should contain the latest value of signal B")
+    }
 }

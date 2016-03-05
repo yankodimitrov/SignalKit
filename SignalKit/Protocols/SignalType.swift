@@ -222,3 +222,39 @@ extension SignalType where ObservationValue: Equatable {
         return signal
     }
 }
+
+// MARK: - CombineLatestWith
+
+extension SignalType {
+    
+    /// Combine the latest values of two signals to a signal of type (A, B)
+    
+    public func combineLatestWith<T: SignalType>(signal: T) -> Signal<(ObservationValue, T.ObservationValue)> {
+        
+        let compoundSignal = Signal<(ObservationValue, T.ObservationValue)>()
+        var lastValueA: ObservationValue?
+        var lastValueB: T.ObservationValue?
+        
+        addObserver { [weak compoundSignal] in
+            
+            lastValueA = $0
+            
+            guard let lastValueB = lastValueB else { return }
+            
+            compoundSignal?.sendNext(($0, lastValueB))
+        }
+        
+        signal.addObserver { [weak compoundSignal] in
+        
+            lastValueB = $0
+            
+            guard let lastValueA = lastValueA else { return }
+            
+            compoundSignal?.sendNext((lastValueA, $0))
+        }
+        
+        compoundSignal.disposableSource = self
+        
+        return compoundSignal
+    }
+}
