@@ -258,6 +258,22 @@ class SignalTests: XCTestCase {
         signal.sendNext((true, false))
         signal.sendNext((true, true))
         
-        XCTAssertEqual(result, expectedResult, "Should match all values to a predicate")
+        XCTAssertEqual(result, expectedResult, "Should send true if all values are matching the predicate")
+    }
+    
+    func testSomeMatchPredicate() {
+        
+        let signal = Signal<(Bool, Bool)>()
+        var result = [Bool]()
+        let expectedResult = [false, true, true, true]
+        
+        chain = signal.someMatch { $0 == true }.next { result.append($0) }
+        
+        signal.sendNext((false, false))
+        signal.sendNext((false, true))
+        signal.sendNext((true, false))
+        signal.sendNext((true, true))
+        
+        XCTAssertEqual(result, expectedResult, "Should send true if some of the values match the predicate")
     }
 }

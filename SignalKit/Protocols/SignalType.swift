@@ -270,3 +270,15 @@ extension SignalType where ObservationValue == (Bool, Bool) {
         return map { predicate($0.0) && predicate($0.1) }
     }
 }
+
+// MARK: - SomeMatch
+
+extension SignalType where ObservationValue == (Bool, Bool) {
+    
+    /// Send true if at least one value in a signal of type (Bool, Bool) matches the predicate function
+    
+    public func someMatch(predicate: Bool -> Bool) -> Signal<Bool> {
+        
+        return map { predicate($0.0) || predicate($0.1) }
+    }
+}
