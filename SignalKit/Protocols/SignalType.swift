@@ -197,3 +197,28 @@ extension SignalType {
     }
 }
 
+// MARK: - Distinct
+
+extension SignalType where ObservationValue: Equatable {
+    
+    /// Send the value only if not equal to the previous one
+    
+    public func distinct() -> Signal<ObservationValue> {
+        
+        let signal = Signal<ObservationValue>()
+        var lastValue: ObservationValue?
+        
+        addObserver { [weak signal] value in
+            
+            if value != lastValue {
+                
+                lastValue = value
+                signal?.sendNext(value)
+            }
+        }
+        
+        signal.disposableSource = self
+        
+        return signal
+    }
+}

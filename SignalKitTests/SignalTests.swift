@@ -209,4 +209,21 @@ class SignalTests: XCTestCase {
         
         XCTAssertEqual(result, 3, "Should bind a signal to a signal of the same type")
     }
+    
+    func testDistinct() {
+        
+        let signal = Signal<Int>()
+        var result = [Int]()
+        let expectedResult = [2, 33, 2]
+        
+        chain = signal.distinct().next { result.append($0) }
+        
+        signal.sendNext(2)
+        signal.sendNext(2)
+        signal.sendNext(2)
+        signal.sendNext(33)
+        signal.sendNext(2)
+        
+        XCTAssertEqual(result, expectedResult, "Should send only distinct values")
+    }
 }
