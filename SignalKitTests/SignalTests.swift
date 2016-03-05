@@ -172,4 +172,26 @@ class SignalTests: XCTestCase {
         
         waitForExpectationsWithTimeout(0.1, handler: nil)
     }
+    
+    func testDelay() {
+        
+        let expectation = expectationWithDescription("Should delay the sent values")
+        let scheduler = Scheduler(queue: .MainQueue)
+        let signal = Signal<Int>()
+        var result = 0
+        
+        chain = signal.delay(0.1).next { result = $0 }
+        
+        scheduler.delay(0.2) {
+            
+            if result == 11 {
+                
+                expectation.fulfill()
+            }
+        }
+        
+        signal.sendNext(11)
+        
+        waitForExpectationsWithTimeout(0.2, handler: nil)
+    }
 }

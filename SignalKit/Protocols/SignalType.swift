@@ -154,3 +154,29 @@ extension SignalType {
         return signal
     }
 }
+
+// MARK: - Delay
+
+extension SignalType {
+    
+    /// Delay the sent value
+    
+    public func delay(seconds: Double, queue: SchedulerQueue = .MainQueue) -> Signal<ObservationValue> {
+        
+        let signal = Signal<ObservationValue>()
+        let scheduler = Scheduler(queue: queue)
+        
+        addObserver { [weak signal] value in
+        
+            scheduler.delay(seconds) {
+                
+                signal?.sendNext(value)
+            }
+        }
+        
+        signal.disposableSource = self
+        
+        return signal
+    }
+}
+
