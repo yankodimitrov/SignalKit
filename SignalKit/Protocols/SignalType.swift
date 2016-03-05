@@ -129,3 +129,28 @@ extension SignalType {
         return signal
     }
 }
+
+// MARK: - Debounce
+
+extension SignalType {
+    
+    /// Sends only the latest values that are not followed by another value in a given timeframe
+    
+    public func debounce(seconds: Double, queue: SchedulerQueue = .MainQueue) -> Signal<ObservationValue> {
+        
+        let signal = Signal<ObservationValue>()
+        var scheduler = Scheduler(queue: queue)
+        
+        addObserver { [weak signal] value in
+            
+            scheduler.debounce(seconds) {
+                
+                signal?.sendNext(value)
+            }
+        }
+        
+        signal.disposableSource = self
+        
+        return signal
+    }
+}

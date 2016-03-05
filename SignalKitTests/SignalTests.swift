@@ -148,4 +148,28 @@ class SignalTests: XCTestCase {
         
         waitForExpectationsWithTimeout(0.1, handler: nil)
     }
+    
+    func testDebounce() {
+        
+        let expectation = expectationWithDescription("Should debounce the sent values")
+        let scheduler = Scheduler(queue: .MainQueue)
+        let signal = Signal<Int>()
+        var result = [Int]()
+        
+        chain = signal.debounce(0.1).next { result.append($0) }
+        
+        signal.sendNext(1)
+        signal.sendNext(2)
+        signal.sendNext(3)
+        
+        scheduler.delay(0.1) {
+            
+            if result == [3] {
+                
+                expectation.fulfill()
+            }
+        }
+        
+        waitForExpectationsWithTimeout(0.1, handler: nil)
+    }
 }
