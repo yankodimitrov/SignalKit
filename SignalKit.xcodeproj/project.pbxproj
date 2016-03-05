@@ -31,6 +31,8 @@
 		C99327131C8B0C9100C03404 /* KeyPathObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327121C8B0C9100C03404 /* KeyPathObserver.swift */; };
 		C99327151C8B0CAE00C03404 /* KeyPathObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327141C8B0CAE00C03404 /* KeyPathObserverTests.swift */; };
 		C99327171C8B0FD700C03404 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327161C8B0FD700C03404 /* Person.swift */; };
+		C993271B1C8B1E0E00C03404 /* ActionTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271A1C8B1E0E00C03404 /* ActionTarget.swift */; };
+		C993271D1C8B1EF400C03404 /* ActionTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271C1C8B1EF400C03404 /* ActionTargetTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,8 @@
 		C99327121C8B0C9100C03404 /* KeyPathObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPathObserver.swift; sourceTree = "<group>"; };
 		C99327141C8B0CAE00C03404 /* KeyPathObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPathObserverTests.swift; sourceTree = "<group>"; };
 		C99327161C8B0FD700C03404 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		C993271A1C8B1E0E00C03404 /* ActionTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTarget.swift; sourceTree = "<group>"; };
+		C993271C1C8B1EF400C03404 /* ActionTargetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTargetTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 				C99327051C8AEF0400C03404 /* ControlEventObserver.swift */,
 				C993270E1C8B08CD00C03404 /* NotificationObserver.swift */,
 				C99327121C8B0C9100C03404 /* KeyPathObserver.swift */,
+				C993271A1C8B1E0E00C03404 /* ActionTarget.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 				C99327071C8AF0E500C03404 /* ControlEventObserverTests.swift */,
 				C99327101C8B0AC300C03404 /* NotificationObserverTests.swift */,
 				C99327141C8B0CAE00C03404 /* KeyPathObserverTests.swift */,
+				C993271C1C8B1EF400C03404 /* ActionTargetTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C993271B1C8B1E0E00C03404 /* ActionTarget.swift in Sources */,
 				C99327061C8AEF0400C03404 /* ControlEventObserver.swift in Sources */,
 				C99326E41C8A1B7C00C03404 /* Observable.swift in Sources */,
 				C99326F81C8A436E00C03404 /* Scheduler.swift in Sources */,
@@ -353,6 +360,7 @@
 				C99327111C8B0AC300C03404 /* NotificationObserverTests.swift in Sources */,
 				C99327041C8AE96400C03404 /* SignalValueTests.swift in Sources */,
 				C99326FE1C8AE1D900C03404 /* DisposableBagTests.swift in Sources */,
+				C993271D1C8B1EF400C03404 /* ActionTargetTests.swift in Sources */,
 				C99326FA1C8A446B00C03404 /* SchedulerTests.swift in Sources */,
 				C99327171C8B0FD700C03404 /* Person.swift in Sources */,
 				C993270D1C8AF5F200C03404 /* MockControl.swift in Sources */,
