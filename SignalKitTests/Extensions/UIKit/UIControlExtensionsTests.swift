@@ -52,7 +52,7 @@ class UIControlExtensionsTests: XCTestCase {
         var called = false
         
         control.observe().events(.ValueChanged)
-            .next {_ in called = true }
+            .next { _ in called = true }
             .disposeWith(bag)
         
         control.sendActionsForControlEvents(.TouchUpInside)

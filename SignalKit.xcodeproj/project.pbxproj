@@ -41,6 +41,8 @@
 		C993272B1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993272A1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift */; };
 		C993272D1C8C3BEB00C03404 /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993272C1C8C3BEB00C03404 /* UIControlExtensions.swift */; };
 		C993272F1C8C3DB100C03404 /* UIControlExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993272E1C8C3DB100C03404 /* UIControlExtensionsTests.swift */; };
+		C99327331C8C70C700C03404 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327321C8C70C700C03404 /* UILabelExtensions.swift */; };
+		C99327351C8C70D900C03404 /* UILabelExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327341C8C70D900C03404 /* UILabelExtensionsTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +92,8 @@
 		C993272A1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterExtensionsTests.swift; sourceTree = "<group>"; };
 		C993272C1C8C3BEB00C03404 /* UIControlExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtensions.swift; sourceTree = "<group>"; };
 		C993272E1C8C3DB100C03404 /* UIControlExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtensionsTests.swift; sourceTree = "<group>"; };
+		C99327321C8C70C700C03404 /* UILabelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
+		C99327341C8C70D900C03404 /* UILabelExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensionsTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				C993272C1C8C3BEB00C03404 /* UIControlExtensions.swift */,
+				C99327321C8C70C700C03404 /* UILabelExtensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				C993272E1C8C3DB100C03404 /* UIControlExtensionsTests.swift */,
+				C99327341C8C70D900C03404 /* UILabelExtensionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -388,6 +394,7 @@
 				C99327021C8AE72F00C03404 /* SignalValue.swift in Sources */,
 				C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */,
 				C99326E81C8A1F9F00C03404 /* Bag.swift in Sources */,
+				C99327331C8C70C700C03404 /* UILabelExtensions.swift in Sources */,
 				C99327251C8B221300C03404 /* NSObjectExtensions.swift in Sources */,
 				C99326E61C8A1ED500C03404 /* SignalType.swift in Sources */,
 				C99326FC1C8AE0E200C03404 /* DisposableBag.swift in Sources */,
@@ -406,6 +413,7 @@
 				C99327111C8B0AC300C03404 /* NotificationObserverTests.swift in Sources */,
 				C99327041C8AE96400C03404 /* SignalValueTests.swift in Sources */,
 				C99326FE1C8AE1D900C03404 /* DisposableBagTests.swift in Sources */,
+				C99327351C8C70D900C03404 /* UILabelExtensionsTests.swift in Sources */,
 				C993271D1C8B1EF400C03404 /* ActionTargetTests.swift in Sources */,
 				C99326FA1C8A446B00C03404 /* SchedulerTests.swift in Sources */,
 				C99327171C8B0FD700C03404 /* Person.swift in Sources */,
