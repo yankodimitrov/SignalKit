@@ -35,6 +35,8 @@
 		C993271D1C8B1EF400C03404 /* ActionTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271C1C8B1EF400C03404 /* ActionTargetTests.swift */; };
 		C993271F1C8B209700C03404 /* SignalEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271E1C8B209700C03404 /* SignalEventType.swift */; };
 		C99327211C8B212500C03404 /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327201C8B212500C03404 /* SignalEvent.swift */; };
+		C99327251C8B221300C03404 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327241C8B221300C03404 /* NSObjectExtensions.swift */; };
+		C99327271C8C34DE00C03404 /* NSObjectExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327261C8C34DE00C03404 /* NSObjectExtensionsTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +80,8 @@
 		C993271C1C8B1EF400C03404 /* ActionTargetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTargetTests.swift; sourceTree = "<group>"; };
 		C993271E1C8B209700C03404 /* SignalEventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEventType.swift; sourceTree = "<group>"; };
 		C99327201C8B212500C03404 /* SignalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvent.swift; sourceTree = "<group>"; };
+		C99327241C8B221300C03404 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
+		C99327261C8C34DE00C03404 /* NSObjectExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionsTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -105,9 +109,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C99327221C8B21BC00C03404 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		C99327231C8B21D700C03404 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		C9D9882E1B7B0903004559CD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C99327221C8B21BC00C03404 /* UIKit */,
+				C99327241C8B221300C03404 /* NSObjectExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -141,6 +161,8 @@
 		C9D988331B7B0950004559CD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C99327231C8B21D700C03404 /* UIKit */,
+				C99327261C8C34DE00C03404 /* NSObjectExtensionsTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -352,6 +374,7 @@
 				C99327021C8AE72F00C03404 /* SignalValue.swift in Sources */,
 				C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */,
 				C99326E81C8A1F9F00C03404 /* Bag.swift in Sources */,
+				C99327251C8B221300C03404 /* NSObjectExtensions.swift in Sources */,
 				C99326E61C8A1ED500C03404 /* SignalType.swift in Sources */,
 				C99326FC1C8AE0E200C03404 /* DisposableBag.swift in Sources */,
 				C99326EE1C8A2C4900C03404 /* DisposableAction.swift in Sources */,
@@ -364,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C99327081C8AF0E500C03404 /* ControlEventObserverTests.swift in Sources */,
+				C99327271C8C34DE00C03404 /* NSObjectExtensionsTests.swift in Sources */,
 				C99326EA1C8A21B900C03404 /* BagTests.swift in Sources */,
 				C99327111C8B0AC300C03404 /* NotificationObserverTests.swift in Sources */,
 				C99327041C8AE96400C03404 /* SignalValueTests.swift in Sources */,
