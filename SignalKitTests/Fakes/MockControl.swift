@@ -18,3 +18,14 @@ class MockControl: UIControl {
         }
     }
 }
+
+class MockDatePicker: UIDatePicker {
+    
+    override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+        
+        if let target = target as? NSObject {
+            
+            target.performSelector(action, withObject: nil)
+        }
+    }
+}

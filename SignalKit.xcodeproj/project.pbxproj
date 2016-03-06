@@ -49,6 +49,8 @@
 		C993273D1C8C748900C03404 /* UIBarItemExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993273C1C8C748800C03404 /* UIBarItemExtensionsTests.swift */; };
 		C993273F1C8C76AE00C03404 /* UIBarButtonItemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993273E1C8C76AE00C03404 /* UIBarButtonItemExtensions.swift */; };
 		C99327411C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327401C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift */; };
+		C99327431C8C78FD00C03404 /* UIDatePickerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327421C8C78FD00C03404 /* UIDatePickerExtensions.swift */; };
+		C99327451C8C790B00C03404 /* UIDatePickerExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327441C8C790B00C03404 /* UIDatePickerExtensionsTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -106,6 +108,8 @@
 		C993273C1C8C748800C03404 /* UIBarItemExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarItemExtensionsTests.swift; sourceTree = "<group>"; };
 		C993273E1C8C76AE00C03404 /* UIBarButtonItemExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtensions.swift; sourceTree = "<group>"; };
 		C99327401C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtensionsTests.swift; sourceTree = "<group>"; };
+		C99327421C8C78FD00C03404 /* UIDatePickerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePickerExtensions.swift; sourceTree = "<group>"; };
+		C99327441C8C790B00C03404 /* UIDatePickerExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePickerExtensionsTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 				C99327361C8C72A800C03404 /* UIImageViewExtensions.swift */,
 				C993273A1C8C747C00C03404 /* UIBarItemExtensions.swift */,
 				C993273E1C8C76AE00C03404 /* UIBarButtonItemExtensions.swift */,
+				C99327421C8C78FD00C03404 /* UIDatePickerExtensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -153,6 +158,7 @@
 				C99327381C8C731F00C03404 /* UIImageViewExtensionsTests.swift */,
 				C993273C1C8C748800C03404 /* UIBarItemExtensionsTests.swift */,
 				C99327401C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift */,
+				C99327441C8C790B00C03404 /* UIDatePickerExtensionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 				C99327021C8AE72F00C03404 /* SignalValue.swift in Sources */,
 				C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */,
 				C99326E81C8A1F9F00C03404 /* Bag.swift in Sources */,
+				C99327431C8C78FD00C03404 /* UIDatePickerExtensions.swift in Sources */,
 				C99327331C8C70C700C03404 /* UILabelExtensions.swift in Sources */,
 				C99327251C8B221300C03404 /* NSObjectExtensions.swift in Sources */,
 				C99326E61C8A1ED500C03404 /* SignalType.swift in Sources */,
@@ -445,6 +452,7 @@
 				C993273D1C8C748900C03404 /* UIBarItemExtensionsTests.swift in Sources */,
 				C993272F1C8C3DB100C03404 /* UIControlExtensionsTests.swift in Sources */,
 				C993272B1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift in Sources */,
+				C99327451C8C790B00C03404 /* UIDatePickerExtensionsTests.swift in Sources */,
 				C99326F61C8A36E000C03404 /* SignalTests.swift in Sources */,
 				C99327151C8B0CAE00C03404 /* KeyPathObserverTests.swift in Sources */,
 				C99327001C8AE25300C03404 /* MockDisposable.swift in Sources */,
