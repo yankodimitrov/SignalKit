@@ -43,6 +43,8 @@
 		C993272F1C8C3DB100C03404 /* UIControlExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993272E1C8C3DB100C03404 /* UIControlExtensionsTests.swift */; };
 		C99327331C8C70C700C03404 /* UILabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327321C8C70C700C03404 /* UILabelExtensions.swift */; };
 		C99327351C8C70D900C03404 /* UILabelExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327341C8C70D900C03404 /* UILabelExtensionsTests.swift */; };
+		C99327371C8C72A800C03404 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327361C8C72A800C03404 /* UIImageViewExtensions.swift */; };
+		C99327391C8C731F00C03404 /* UIImageViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327381C8C731F00C03404 /* UIImageViewExtensionsTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -94,6 +96,8 @@
 		C993272E1C8C3DB100C03404 /* UIControlExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtensionsTests.swift; sourceTree = "<group>"; };
 		C99327321C8C70C700C03404 /* UILabelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensions.swift; sourceTree = "<group>"; };
 		C99327341C8C70D900C03404 /* UILabelExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtensionsTests.swift; sourceTree = "<group>"; };
+		C99327361C8C72A800C03404 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		C99327381C8C731F00C03404 /* UIImageViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensionsTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			children = (
 				C993272C1C8C3BEB00C03404 /* UIControlExtensions.swift */,
 				C99327321C8C70C700C03404 /* UILabelExtensions.swift */,
+				C99327361C8C72A800C03404 /* UIImageViewExtensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -135,6 +140,7 @@
 			children = (
 				C993272E1C8C3DB100C03404 /* UIControlExtensionsTests.swift */,
 				C99327341C8C70D900C03404 /* UILabelExtensionsTests.swift */,
+				C99327381C8C731F00C03404 /* UIImageViewExtensionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				C99326E61C8A1ED500C03404 /* SignalType.swift in Sources */,
 				C99326FC1C8AE0E200C03404 /* DisposableBag.swift in Sources */,
 				C99326EE1C8A2C4900C03404 /* DisposableAction.swift in Sources */,
+				C99327371C8C72A800C03404 /* UIImageViewExtensions.swift in Sources */,
 				C993270F1C8B08CD00C03404 /* NotificationObserver.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +416,7 @@
 			files = (
 				C99327081C8AF0E500C03404 /* ControlEventObserverTests.swift in Sources */,
 				C99327271C8C34DE00C03404 /* NSObjectExtensionsTests.swift in Sources */,
+				C99327391C8C731F00C03404 /* UIImageViewExtensionsTests.swift in Sources */,
 				C99326EA1C8A21B900C03404 /* BagTests.swift in Sources */,
 				C99327111C8B0AC300C03404 /* NotificationObserverTests.swift in Sources */,
 				C99327041C8AE96400C03404 /* SignalValueTests.swift in Sources */,
