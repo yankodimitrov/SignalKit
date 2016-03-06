@@ -29,6 +29,13 @@ public extension SignalEventType where Sender: UIControl {
         
         return signal
     }
+    
+    /// Observe the confrol for TouchUpInside events
+    
+    public var tapEvent: Signal<Sender> {
+        
+        return events(.TouchUpInside)
+    }
 }
 
 public extension SignalType where ObservationValue == Bool {

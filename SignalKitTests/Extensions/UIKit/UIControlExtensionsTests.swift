@@ -72,4 +72,17 @@ class UIControlExtensionsTests: XCTestCase {
         
         XCTAssertEqual(control.enabled, false, "Should bind a signal of boolean to the enabled property of UIControl")
     }
+    
+    func testObserveForTapEvent() {
+        
+        var called = false
+        
+        control.observe().tapEvent
+            .next { _ in called = true }
+            .disposeWith(bag)
+        
+        control.sendActionsForControlEvents(.TouchUpInside)
+        
+        XCTAssertEqual(called, true, "Should observe the control for TouchUpInside events")
+    }
 }
