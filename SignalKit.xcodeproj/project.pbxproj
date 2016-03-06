@@ -47,6 +47,8 @@
 		C99327391C8C731F00C03404 /* UIImageViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327381C8C731F00C03404 /* UIImageViewExtensionsTests.swift */; };
 		C993273B1C8C747C00C03404 /* UIBarItemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993273A1C8C747C00C03404 /* UIBarItemExtensions.swift */; };
 		C993273D1C8C748900C03404 /* UIBarItemExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993273C1C8C748800C03404 /* UIBarItemExtensionsTests.swift */; };
+		C993273F1C8C76AE00C03404 /* UIBarButtonItemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993273E1C8C76AE00C03404 /* UIBarButtonItemExtensions.swift */; };
+		C99327411C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327401C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +104,8 @@
 		C99327381C8C731F00C03404 /* UIImageViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensionsTests.swift; sourceTree = "<group>"; };
 		C993273A1C8C747C00C03404 /* UIBarItemExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarItemExtensions.swift; sourceTree = "<group>"; };
 		C993273C1C8C748800C03404 /* UIBarItemExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarItemExtensionsTests.swift; sourceTree = "<group>"; };
+		C993273E1C8C76AE00C03404 /* UIBarButtonItemExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtensions.swift; sourceTree = "<group>"; };
+		C99327401C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtensionsTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -136,6 +140,7 @@
 				C99327321C8C70C700C03404 /* UILabelExtensions.swift */,
 				C99327361C8C72A800C03404 /* UIImageViewExtensions.swift */,
 				C993273A1C8C747C00C03404 /* UIBarItemExtensions.swift */,
+				C993273E1C8C76AE00C03404 /* UIBarButtonItemExtensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 				C99327341C8C70D900C03404 /* UILabelExtensionsTests.swift */,
 				C99327381C8C731F00C03404 /* UIImageViewExtensionsTests.swift */,
 				C993273C1C8C748800C03404 /* UIBarItemExtensionsTests.swift */,
+				C99327401C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				C99327251C8B221300C03404 /* NSObjectExtensions.swift in Sources */,
 				C99326E61C8A1ED500C03404 /* SignalType.swift in Sources */,
 				C99326FC1C8AE0E200C03404 /* DisposableBag.swift in Sources */,
+				C993273F1C8C76AE00C03404 /* UIBarButtonItemExtensions.swift in Sources */,
 				C99326EE1C8A2C4900C03404 /* DisposableAction.swift in Sources */,
 				C99327371C8C72A800C03404 /* UIImageViewExtensions.swift in Sources */,
 				C993270F1C8B08CD00C03404 /* NotificationObserver.swift in Sources */,
@@ -433,6 +440,7 @@
 				C99326FA1C8A446B00C03404 /* SchedulerTests.swift in Sources */,
 				C99327171C8B0FD700C03404 /* Person.swift in Sources */,
 				C993270D1C8AF5F200C03404 /* MockControl.swift in Sources */,
+				C99327411C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift in Sources */,
 				C99326F01C8A2CCD00C03404 /* DisposableActionTests.swift in Sources */,
 				C993273D1C8C748900C03404 /* UIBarItemExtensionsTests.swift in Sources */,
 				C993272F1C8C3DB100C03404 /* UIControlExtensionsTests.swift in Sources */,
