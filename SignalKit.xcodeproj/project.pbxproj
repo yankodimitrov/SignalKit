@@ -61,6 +61,8 @@
 		C99327551C8C84DD00C03404 /* UITextFieldExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327541C8C84DD00C03404 /* UITextFieldExtensionsTests.swift */; };
 		C99327571C8C866B00C03404 /* UITextViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327561C8C866B00C03404 /* UITextViewExtensions.swift */; };
 		C99327591C8C867800C03404 /* UITextViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327581C8C867800C03404 /* UITextViewExtensionsTests.swift */; };
+		C993275B1C8C88B600C03404 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993275A1C8C88B600C03404 /* UIViewExtensions.swift */; };
+		C993275D1C8C88C500C03404 /* UIViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993275C1C8C88C500C03404 /* UIViewExtensionsTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -130,6 +132,8 @@
 		C99327541C8C84DD00C03404 /* UITextFieldExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensionsTests.swift; sourceTree = "<group>"; };
 		C99327561C8C866B00C03404 /* UITextViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewExtensions.swift; sourceTree = "<group>"; };
 		C99327581C8C867800C03404 /* UITextViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewExtensionsTests.swift; sourceTree = "<group>"; };
+		C993275A1C8C88B600C03404 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		C993275C1C8C88C500C03404 /* UIViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionsTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 				C993274E1C8C834600C03404 /* UISwitchExtensions.swift */,
 				C99327521C8C84CE00C03404 /* UITextFieldExtensions.swift */,
 				C99327561C8C866B00C03404 /* UITextViewExtensions.swift */,
+				C993275A1C8C88B600C03404 /* UIViewExtensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				C99327501C8C835200C03404 /* UISwitchExtensionsTests.swift */,
 				C99327541C8C84DD00C03404 /* UITextFieldExtensionsTests.swift */,
 				C99327581C8C867800C03404 /* UITextViewExtensionsTests.swift */,
+				C993275C1C8C88C500C03404 /* UIViewExtensionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 				C99327331C8C70C700C03404 /* UILabelExtensions.swift in Sources */,
 				C99327251C8B221300C03404 /* NSObjectExtensions.swift in Sources */,
 				C99326E61C8A1ED500C03404 /* SignalType.swift in Sources */,
+				C993275B1C8C88B600C03404 /* UIViewExtensions.swift in Sources */,
 				C99326FC1C8AE0E200C03404 /* DisposableBag.swift in Sources */,
 				C993273F1C8C76AE00C03404 /* UIBarButtonItemExtensions.swift in Sources */,
 				C99326EE1C8A2C4900C03404 /* DisposableAction.swift in Sources */,
@@ -490,6 +497,7 @@
 				C993273D1C8C748900C03404 /* UIBarItemExtensionsTests.swift in Sources */,
 				C993272F1C8C3DB100C03404 /* UIControlExtensionsTests.swift in Sources */,
 				C993272B1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift in Sources */,
+				C993275D1C8C88C500C03404 /* UIViewExtensionsTests.swift in Sources */,
 				C99327511C8C835200C03404 /* UISwitchExtensionsTests.swift in Sources */,
 				C99327591C8C867800C03404 /* UITextViewExtensionsTests.swift in Sources */,
 				C99327451C8C790B00C03404 /* UIDatePickerExtensionsTests.swift in Sources */,
