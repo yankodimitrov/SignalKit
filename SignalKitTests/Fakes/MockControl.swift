@@ -38,3 +38,13 @@ class MockSegmentedControl: UISegmentedControl {
         control.sendAction(action, to: target, forEvent: event)
     }
 }
+
+class MockSlider: UISlider {
+    
+    override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+        
+        let control = MockControl()
+        
+        control.sendAction(action, to: target, forEvent: event)
+    }
+}
