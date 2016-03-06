@@ -48,3 +48,13 @@ class MockSlider: UISlider {
         control.sendAction(action, to: target, forEvent: event)
     }
 }
+
+class MockSwitch: UISwitch {
+    
+    override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+        
+        let control = MockControl()
+        
+        control.sendAction(action, to: target, forEvent: event)
+    }
+}
