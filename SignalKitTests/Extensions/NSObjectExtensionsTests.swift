@@ -24,13 +24,26 @@ class NSObjectExtensionsTests: XCTestCase {
         let person = Person(name: "")
         var result = ""
         
-        person.observe()
-            .keyPath("name", value: person.name)
+        person.observe().keyPath("name", value: person.name)
             .next { result = $0 }
             .disposeWith(bag)
         
         person.name = "John"
         
         XCTAssertEqual(result, "John", "Should observe the key path for new values")
+    }
+    
+    func testObserveOnlyTheSpecifiedKeyPath() {
+        
+        let person = Person(name: "")
+        var result = ""
+        
+        person.observe().keyPath("name", value: person.name)
+            .next { result = $0 }
+            .disposeWith(bag)
+        
+        person.address = "London"
+        
+        XCTAssertEqual(result, "", "Should observe only the specified key path")
     }
 }

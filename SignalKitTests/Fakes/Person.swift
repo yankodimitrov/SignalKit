@@ -11,6 +11,7 @@ import Foundation
 final class Person: NSObject {
     
     dynamic var name: String
+    dynamic var address = ""
     
     init(name: String) {
         
