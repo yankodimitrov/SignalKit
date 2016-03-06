@@ -48,4 +48,17 @@ class NSNotificationCenterExtensionsTests: XCTestCase {
         
         XCTAssertEqual(called, true, "Should observe for notification posted on the notification center from a certain object")
     }
+    
+    func testObserveOnlyTheSpecifiedNotificationName() {
+        
+        var called = false
+        
+        center.observe().notification(notificationName)
+            .next { _ in called = true }
+            .disposeWith(bag)
+        
+        center.postNotificationName("other.notification", object: nil)
+        
+        XCTAssertEqual(called, false, "Should observe only for the specified notification")
+    }
 }
