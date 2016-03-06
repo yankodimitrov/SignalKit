@@ -58,3 +58,13 @@ class MockSwitch: UISwitch {
         control.sendAction(action, to: target, forEvent: event)
     }
 }
+
+class MockTextField: UITextField {
+    
+    override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+        
+        let control = MockControl()
+        
+        control.sendAction(action, to: target, forEvent: event)
+    }
+}
