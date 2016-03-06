@@ -51,6 +51,8 @@
 		C99327411C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327401C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift */; };
 		C99327431C8C78FD00C03404 /* UIDatePickerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327421C8C78FD00C03404 /* UIDatePickerExtensions.swift */; };
 		C99327451C8C790B00C03404 /* UIDatePickerExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327441C8C790B00C03404 /* UIDatePickerExtensionsTests.swift */; };
+		C99327471C8C7C6100C03404 /* UISegmentedControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327461C8C7C6100C03404 /* UISegmentedControlExtensions.swift */; };
+		C99327491C8C7C7200C03404 /* UISegmentedControlExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327481C8C7C7200C03404 /* UISegmentedControlExtensionsTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -110,6 +112,8 @@
 		C99327401C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemExtensionsTests.swift; sourceTree = "<group>"; };
 		C99327421C8C78FD00C03404 /* UIDatePickerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePickerExtensions.swift; sourceTree = "<group>"; };
 		C99327441C8C790B00C03404 /* UIDatePickerExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDatePickerExtensionsTests.swift; sourceTree = "<group>"; };
+		C99327461C8C7C6100C03404 /* UISegmentedControlExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControlExtensions.swift; sourceTree = "<group>"; };
+		C99327481C8C7C7200C03404 /* UISegmentedControlExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedControlExtensionsTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				C993273A1C8C747C00C03404 /* UIBarItemExtensions.swift */,
 				C993273E1C8C76AE00C03404 /* UIBarButtonItemExtensions.swift */,
 				C99327421C8C78FD00C03404 /* UIDatePickerExtensions.swift */,
+				C99327461C8C7C6100C03404 /* UISegmentedControlExtensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				C993273C1C8C748800C03404 /* UIBarItemExtensionsTests.swift */,
 				C99327401C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift */,
 				C99327441C8C790B00C03404 /* UIDatePickerExtensionsTests.swift */,
+				C99327481C8C7C7200C03404 /* UISegmentedControlExtensionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 				C993273B1C8C747C00C03404 /* UIBarItemExtensions.swift in Sources */,
 				C993272D1C8C3BEB00C03404 /* UIControlExtensions.swift in Sources */,
 				C99327131C8B0C9100C03404 /* KeyPathObserver.swift in Sources */,
+				C99327471C8C7C6100C03404 /* UISegmentedControlExtensions.swift in Sources */,
 				C99326F41C8A304800C03404 /* Signal.swift in Sources */,
 				C993271F1C8B209700C03404 /* SignalEventType.swift in Sources */,
 				C99327211C8B212500C03404 /* SignalEvent.swift in Sources */,
@@ -443,6 +450,7 @@
 				C99327041C8AE96400C03404 /* SignalValueTests.swift in Sources */,
 				C99326FE1C8AE1D900C03404 /* DisposableBagTests.swift in Sources */,
 				C99327351C8C70D900C03404 /* UILabelExtensionsTests.swift in Sources */,
+				C99327491C8C7C7200C03404 /* UISegmentedControlExtensionsTests.swift in Sources */,
 				C993271D1C8B1EF400C03404 /* ActionTargetTests.swift in Sources */,
 				C99326FA1C8A446B00C03404 /* SchedulerTests.swift in Sources */,
 				C99327171C8B0FD700C03404 /* Person.swift in Sources */,

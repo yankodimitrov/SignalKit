@@ -23,9 +23,18 @@ class MockDatePicker: UIDatePicker {
     
     override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
         
-        if let target = target as? NSObject {
-            
-            target.performSelector(action, withObject: nil)
-        }
+        let control = MockControl()
+        
+        control.sendAction(action, to: target, forEvent: event)
+    }
+}
+
+class MockSegmentedControl: UISegmentedControl {
+    
+    override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+        
+        let control = MockControl()
+        
+        control.sendAction(action, to: target, forEvent: event)
     }
 }
