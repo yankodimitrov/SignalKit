@@ -39,6 +39,8 @@
 		C99327271C8C34DE00C03404 /* NSObjectExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327261C8C34DE00C03404 /* NSObjectExtensionsTests.swift */; };
 		C99327291C8C38B000C03404 /* NSNotificationCenterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327281C8C38B000C03404 /* NSNotificationCenterExtensions.swift */; };
 		C993272B1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993272A1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift */; };
+		C993272D1C8C3BEB00C03404 /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993272C1C8C3BEB00C03404 /* UIControlExtensions.swift */; };
+		C993272F1C8C3DB100C03404 /* UIControlExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993272E1C8C3DB100C03404 /* UIControlExtensionsTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +88,8 @@
 		C99327261C8C34DE00C03404 /* NSObjectExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionsTests.swift; sourceTree = "<group>"; };
 		C99327281C8C38B000C03404 /* NSNotificationCenterExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterExtensions.swift; sourceTree = "<group>"; };
 		C993272A1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterExtensionsTests.swift; sourceTree = "<group>"; };
+		C993272C1C8C3BEB00C03404 /* UIControlExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtensions.swift; sourceTree = "<group>"; };
+		C993272E1C8C3DB100C03404 /* UIControlExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtensionsTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 		C99327221C8B21BC00C03404 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C993272C1C8C3BEB00C03404 /* UIControlExtensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 		C99327231C8B21D700C03404 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C993272E1C8C3DB100C03404 /* UIControlExtensionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -374,6 +380,7 @@
 				C99327061C8AEF0400C03404 /* ControlEventObserver.swift in Sources */,
 				C99326E41C8A1B7C00C03404 /* Observable.swift in Sources */,
 				C99326F81C8A436E00C03404 /* Scheduler.swift in Sources */,
+				C993272D1C8C3BEB00C03404 /* UIControlExtensions.swift in Sources */,
 				C99327131C8B0C9100C03404 /* KeyPathObserver.swift in Sources */,
 				C99326F41C8A304800C03404 /* Signal.swift in Sources */,
 				C993271F1C8B209700C03404 /* SignalEventType.swift in Sources */,
@@ -404,6 +411,7 @@
 				C99327171C8B0FD700C03404 /* Person.swift in Sources */,
 				C993270D1C8AF5F200C03404 /* MockControl.swift in Sources */,
 				C99326F01C8A2CCD00C03404 /* DisposableActionTests.swift in Sources */,
+				C993272F1C8C3DB100C03404 /* UIControlExtensionsTests.swift in Sources */,
 				C993272B1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift in Sources */,
 				C99326F61C8A36E000C03404 /* SignalTests.swift in Sources */,
 				C99327151C8B0CAE00C03404 /* KeyPathObserverTests.swift in Sources */,
