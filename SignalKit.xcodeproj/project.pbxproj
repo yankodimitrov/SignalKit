@@ -66,6 +66,8 @@
 		C993275F1C8C8BF300C03404 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993275E1C8C8BF300C03404 /* Keyboard.swift */; };
 		C99327611C8C8D0600C03404 /* KeyboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327601C8C8D0600C03404 /* KeyboardTests.swift */; };
 		C99327631C8C8D5900C03404 /* KeyboardStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327621C8C8D5900C03404 /* KeyboardStateTests.swift */; };
+		C99327651C8CC46B00C03404 /* CollectionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327641C8CC46B00C03404 /* CollectionEvent.swift */; };
+		C99327671C8D95BB00C03404 /* CollectionEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327661C8D95BB00C03404 /* CollectionEventTests.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -140,6 +142,8 @@
 		C993275E1C8C8BF300C03404 /* Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		C99327601C8C8D0600C03404 /* KeyboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardTests.swift; sourceTree = "<group>"; };
 		C99327621C8C8D5900C03404 /* KeyboardStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardStateTests.swift; sourceTree = "<group>"; };
+		C99327641C8CC46B00C03404 /* CollectionEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionEvent.swift; sourceTree = "<group>"; };
+		C99327661C8D95BB00C03404 /* CollectionEventTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionEventTests.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -240,6 +244,7 @@
 				C993270E1C8B08CD00C03404 /* NotificationObserver.swift */,
 				C99327121C8B0C9100C03404 /* KeyPathObserver.swift */,
 				C993271A1C8B1E0E00C03404 /* ActionTarget.swift */,
+				C99327641C8CC46B00C03404 /* CollectionEvent.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				C99327101C8B0AC300C03404 /* NotificationObserverTests.swift */,
 				C99327141C8B0CAE00C03404 /* KeyPathObserverTests.swift */,
 				C993271C1C8B1EF400C03404 /* ActionTargetTests.swift */,
+				C99327661C8D95BB00C03404 /* CollectionEventTests.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -454,6 +460,7 @@
 				C99327291C8C38B000C03404 /* NSNotificationCenterExtensions.swift in Sources */,
 				C99327061C8AEF0400C03404 /* ControlEventObserver.swift in Sources */,
 				C99327531C8C84CE00C03404 /* UITextFieldExtensions.swift in Sources */,
+				C99327651C8CC46B00C03404 /* CollectionEvent.swift in Sources */,
 				C99326E41C8A1B7C00C03404 /* Observable.swift in Sources */,
 				C99326F81C8A436E00C03404 /* Scheduler.swift in Sources */,
 				C993273B1C8C747C00C03404 /* UIBarItemExtensions.swift in Sources */,
@@ -497,6 +504,7 @@
 				C99326FE1C8AE1D900C03404 /* DisposableBagTests.swift in Sources */,
 				C99327551C8C84DD00C03404 /* UITextFieldExtensionsTests.swift in Sources */,
 				C99327351C8C70D900C03404 /* UILabelExtensionsTests.swift in Sources */,
+				C99327671C8D95BB00C03404 /* CollectionEventTests.swift in Sources */,
 				C99327611C8C8D0600C03404 /* KeyboardTests.swift in Sources */,
 				C99327491C8C7C7200C03404 /* UISegmentedControlExtensionsTests.swift in Sources */,
 				C993271D1C8B1EF400C03404 /* ActionTargetTests.swift in Sources */,

@@ -41,7 +41,6 @@ struct Bag<Item> {
             
             tokenPrefix += String(tokenCounter)
             tokenCounter = 0
-        
         }
         
         tokenCounter += 1
