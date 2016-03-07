@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.homepage     = "https://github.com/yankodimitrov/SignalKit"
   s.license      = { :type => "MIT", :file => "LICENSE.txt" }
-  s.author       = { "Yanko Dimitrov" }
+  s.author       = { "Yanko Dimitrov" => "https://twitter.com/_yankodimitrov" }
   s.social_media_url   = "https://twitter.com/_yankodimitrov"
 
   s.platform     = :ios, "8.0"
