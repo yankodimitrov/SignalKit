@@ -88,36 +88,6 @@ extension CollectionEvent {
     }
 }
 
-extension CollectionEvent.Element {
-    
-    var isSection: Bool {
-        
-        guard case .Section = self else { return false }
-        
-        return true
-    }
-}
-
-extension CollectionEvent.Operation {
-    
-    var isSectionOperation: Bool {
-        
-        switch self {
-        case .Reset:
-            return false
-            
-        case let .Insert(element):
-            return element.isSection
-            
-        case let .Remove(element):
-            return element.isSection
-            
-        case let .Update(element):
-            return element.isSection
-        }
-    }
-}
-
 // MARK: - Element Equatable
 
 extension CollectionEvent.Element: Equatable {}
