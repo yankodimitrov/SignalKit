@@ -52,6 +52,7 @@ extension NotificationObserver: Disposable {
     
     func dispose() {
         
+        notificationCallback = nil
         disposeAction?.dispose()
         disposeAction = nil
     }

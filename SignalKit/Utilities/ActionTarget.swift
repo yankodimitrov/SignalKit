@@ -31,6 +31,7 @@ extension ActionTarget: Disposable {
     
     func dispose() {
         
+        actionCallback = nil
         disposeAction?.dispose()
         disposeAction = nil
     }

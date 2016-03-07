@@ -30,7 +30,7 @@ class KeyboardTests: XCTestCase {
         
         center.postNotificationName(UIKeyboardWillShowNotification, object: nil)
         
-        XCTAssertEqual(called, true, "Should observe for keyboard will show notification")
+        XCTAssertTrue(called, "Should observe for keyboard will show notification")
     }
     
     func testObserveDidShow() {
@@ -43,7 +43,7 @@ class KeyboardTests: XCTestCase {
         
         center.postNotificationName(UIKeyboardDidShowNotification, object: nil)
         
-        XCTAssertEqual(called, true, "Should observe for keyboard did show notification")
+        XCTAssertTrue(called, "Should observe for keyboard did show notification")
     }
     
     func testObserveWillHide() {
@@ -56,7 +56,7 @@ class KeyboardTests: XCTestCase {
         
         center.postNotificationName(UIKeyboardWillHideNotification, object: nil)
         
-        XCTAssertEqual(called, true, "Should observe for keyboard will hide notification")
+        XCTAssertTrue(called, "Should observe for keyboard will hide notification")
     }
     
     func testObserveDidHide() {
@@ -69,7 +69,7 @@ class KeyboardTests: XCTestCase {
         
         center.postNotificationName(UIKeyboardDidHideNotification, object: nil)
         
-        XCTAssertEqual(called, true, "Should observe for keyboard did hide notification")
+        XCTAssertTrue(called, "Should observe for keyboard did hide notification")
     }
     
     func testObserveWillChangeFrame() {
@@ -82,7 +82,7 @@ class KeyboardTests: XCTestCase {
         
         center.postNotificationName(UIKeyboardWillChangeFrameNotification, object: nil)
         
-        XCTAssertEqual(called, true, "Should observe fok keyboard will change frame notificaiton")
+        XCTAssertTrue(called, "Should observe fok keyboard will change frame notificaiton")
     }
     
     func testObserveDidChangeFrame() {
@@ -95,6 +95,6 @@ class KeyboardTests: XCTestCase {
         
         center.postNotificationName(UIKeyboardDidChangeFrameNotification, object: nil)
         
-        XCTAssertEqual(called, true, "Should observe for keyboard did change frame notification")
+        XCTAssertTrue(called, "Should observe for keyboard did change frame notification")
     }
 }

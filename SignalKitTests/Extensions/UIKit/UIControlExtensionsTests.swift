@@ -31,7 +31,7 @@ class UIControlExtensionsTests: XCTestCase {
         
         control.sendActionsForControlEvents(.ValueChanged)
         
-        XCTAssertEqual(called, true, "Should observe the control for control events")
+        XCTAssertTrue(called, "Should observe the control for control events")
     }
     
     func testObserveForMultipleEvents() {
@@ -44,7 +44,7 @@ class UIControlExtensionsTests: XCTestCase {
         
         control.sendActionsForControlEvents(.TouchUpInside)
         
-        XCTAssertEqual(called, true, "Should observe the control for multiple control events")
+        XCTAssertTrue(called, "Should observe the control for multiple control events")
     }
     
     func testObserveOnlyTheSpecifiedEvents() {
@@ -57,7 +57,7 @@ class UIControlExtensionsTests: XCTestCase {
         
         control.sendActionsForControlEvents(.TouchUpInside)
         
-        XCTAssertEqual(called, false, "Should observe only for the specified events")
+        XCTAssertFalse(called, "Should observe only for the specified events")
     }
     
     func testBindToEnabled() {
@@ -70,7 +70,7 @@ class UIControlExtensionsTests: XCTestCase {
             
         signal.sendNext(false)
         
-        XCTAssertEqual(control.enabled, false, "Should bind a signal of boolean to the enabled property of UIControl")
+        XCTAssertFalse(control.enabled, "Should bind a signal of boolean to the enabled property of UIControl")
     }
     
     func testObserveForTapEvent() {
@@ -83,6 +83,6 @@ class UIControlExtensionsTests: XCTestCase {
         
         control.sendActionsForControlEvents(.TouchUpInside)
         
-        XCTAssertEqual(called, true, "Should observe the control for TouchUpInside events")
+        XCTAssertTrue(called, "Should observe the control for TouchUpInside events")
     }
 }

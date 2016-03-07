@@ -29,6 +29,6 @@ class UIBarItemExtensionsTests: XCTestCase {
         
         signal.sendNext(false)
         
-        XCTAssertEqual(barItem.enabled, false, "Should bind a signal of boolean to the enabled property of UIBarItem")
+        XCTAssertFalse(barItem.enabled, "Should bind a signal of boolean to the enabled property of UIBarItem")
     }
 }

@@ -19,7 +19,7 @@ class DisposableActionTests: XCTestCase {
         
         action.dispose()
         
-        XCTAssertEqual(called, true, "Should call the disposable action on dispose")
+        XCTAssertTrue(called, "Should call the disposable action on dispose")
     }
     
     func testCallDisposeActionOnce() {

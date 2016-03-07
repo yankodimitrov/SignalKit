@@ -59,7 +59,7 @@ class BagTests: XCTestCase {
         
         bag.removeItemWithToken(token)
         
-        XCTAssertEqual(bag.items.isEmpty, true, "Should remove an item with given removal token")
+        XCTAssertTrue(bag.items.isEmpty, "Should remove an item with given removal token")
     }
     
     func testRemoveAll() {
@@ -71,7 +71,7 @@ class BagTests: XCTestCase {
         
         bag.removeAll()
         
-        XCTAssertEqual(bag.items.isEmpty, true, "Should remove all items")
+        XCTAssertTrue(bag.items.isEmpty, "Should remove all items")
     }
     
     func testIterateOverItems() {

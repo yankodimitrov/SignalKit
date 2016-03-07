@@ -12,11 +12,17 @@ import XCTest
 class NotificationObserverTests: XCTestCase {
 
     let notificationName = "signalkit.notification"
+    let center = NSNotificationCenter.defaultCenter()
+    var observer: NotificationObserver!
+    
+    override func setUp() {
+        super.setUp()
+        
+        observer = NotificationObserver(center: center, name: notificationName)
+    }
     
     func testObserveForNotification() {
         
-        let center = NSNotificationCenter.defaultCenter()
-        let observer = NotificationObserver(center: center, name: notificationName)
         var called = false
         
         observer.notificationCallback = { _ in
@@ -26,13 +32,11 @@ class NotificationObserverTests: XCTestCase {
         
         center.postNotificationName(notificationName, object: nil)
         
-        XCTAssertEqual(called, true, "Should observe for notification")
+        XCTAssertTrue(called, "Should observe for notification")
     }
     
     func testDispose() {
         
-        let center = NSNotificationCenter.defaultCenter()
-        let observer = NotificationObserver(center: center, name: notificationName)
         var called = false
         
         observer.notificationCallback = { _ in
@@ -44,6 +48,23 @@ class NotificationObserverTests: XCTestCase {
         
         center.postNotificationName(notificationName, object: nil)
         
-        XCTAssertEqual(called, false, "Should dispose the observation")
+        XCTAssertFalse(called, "Should dispose the observation")
+    }
+    
+    func testDisposeOnDeinit() {
+        
+        var observer: NotificationObserver? = NotificationObserver(center: center, name: notificationName)
+        var called = false
+        
+        observer!.notificationCallback = { _ in
+            
+            called = true
+        }
+        
+        observer = nil
+        
+        center.postNotificationName(notificationName, object: nil)
+        
+        XCTAssertFalse(called, "Should dispose on deinit")
     }
 }

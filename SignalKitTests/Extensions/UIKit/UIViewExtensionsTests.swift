@@ -44,6 +44,6 @@ class UIViewExtensionsTests: XCTestCase {
         
         signal.sendNext(true)
         
-        XCTAssertEqual(view.hidden, true, "Should bind boolean value to the hidden property of UIView")
+        XCTAssertTrue(view.hidden, "Should bind boolean value to the hidden property of UIView")
     }
 }

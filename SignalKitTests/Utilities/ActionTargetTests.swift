@@ -23,7 +23,7 @@ class ActionTargetTests: XCTestCase {
         
         actionTarget.handleAction(NSObject())
         
-        XCTAssertEqual(called, true, "Should call the action callback")
+        XCTAssertTrue(called, "Should call the action callback")
     }
     
     func testDispose() {
@@ -37,6 +37,20 @@ class ActionTargetTests: XCTestCase {
         
         actionTarget.dispose()
         
-        XCTAssertEqual(called, true, "Should call the dispose action")
+        XCTAssertTrue(called, "Should call the dispose action")
+    }
+    
+    func testDisposeOnDeinit() {
+        
+        var actionTarget: ActionTarget? = ActionTarget()
+        var called = false
+        
+        actionTarget?.disposeAction = DisposableAction {
+            called = true
+        }
+        
+        actionTarget = nil
+        
+        XCTAssertTrue(called, "Should dispose on deinit")
     }
 }

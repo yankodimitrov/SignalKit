@@ -30,6 +30,6 @@ class UIBarButtonItemExtensionsTests: XCTestCase {
         
         item.target?.performSelector(item.action, withObject: item)
         
-        XCTAssertEqual(called, true, "Should observe the tap action in UIBarButtonItem")
+        XCTAssertTrue(called, "Should observe the tap action in UIBarButtonItem")
     }
 }

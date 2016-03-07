@@ -14,7 +14,7 @@ final class KeyPathObserver: NSObject {
     
     private weak var subject: NSObject?
     private let keyPath: String
-    private var disposeAction: Disposable?
+    private var isDisposed = false
     
     var keyPathCallback: (AnyObject -> Void)?
     
@@ -25,14 +25,8 @@ final class KeyPathObserver: NSObject {
         
         super.init()
         
-        subject.addObserver(self, forKeyPath: keyPath, options: .New, context: &KeyPathObserverContext)
         
-        disposeAction = DisposableAction { [weak self] in
-            
-            guard let theSelf = self else { return }
-            
-            subject.removeObserver(theSelf, forKeyPath: keyPath)
-        }
+        subject.addObserver(self, forKeyPath: keyPath, options: .New, context: &KeyPathObserverContext)
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String: AnyObject]?, context: UnsafeMutablePointer<Void>) {
@@ -58,7 +52,10 @@ extension KeyPathObserver: Disposable {
     
     func dispose() {
         
-        disposeAction?.dispose()
-        disposeAction = nil
+        guard !isDisposed else { return }
+        
+        keyPathCallback = nil
+        subject?.removeObserver(self, forKeyPath: keyPath, context: &KeyPathObserverContext)
+        isDisposed = true
     }
 }

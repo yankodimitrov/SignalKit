@@ -30,7 +30,7 @@ class DisposableBagTests: XCTestCase {
         
         disposableAction.dispose()
         
-        XCTAssertEqual(bag.disposables.items.isEmpty, true, "Should remove the item")
+        XCTAssertTrue(bag.disposables.items.isEmpty, "Should remove the item")
     }
     
     func testDispose() {
@@ -44,8 +44,8 @@ class DisposableBagTests: XCTestCase {
         
         bag.dispose()
         
-        XCTAssertEqual(itemA.isDisposeCalled, true, "Should dispose item A")
-        XCTAssertEqual(itemB.isDisposeCalled, true, "Should dispose item B")
-        XCTAssertEqual(bag.disposables.items.isEmpty, true, "Should remove all items")
+        XCTAssertTrue(itemA.isDisposeCalled, "Should dispose item A")
+        XCTAssertTrue(itemB.isDisposeCalled, "Should dispose item B")
+        XCTAssertTrue(bag.disposables.items.isEmpty, "Should remove all items")
     }
 }

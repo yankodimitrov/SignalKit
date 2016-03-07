@@ -33,6 +33,6 @@ class UISwitchExtensionsTests: XCTestCase {
         switchControl.on = true
         switchControl.sendActionsForControlEvents(.ValueChanged)
         
-        XCTAssertEqual(result, true, "Should observe the UISwitch for state changes")
+        XCTAssertTrue(result, "Should observe the UISwitch for state changes")
     }
 }

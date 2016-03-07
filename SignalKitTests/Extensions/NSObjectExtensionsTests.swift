@@ -30,6 +30,8 @@ class NSObjectExtensionsTests: XCTestCase {
         
         person.name = "John"
         
+        bag.dispose()
+        
         XCTAssertEqual(result, "John", "Should observe the key path for new values")
     }
     
@@ -43,6 +45,8 @@ class NSObjectExtensionsTests: XCTestCase {
             .disposeWith(bag)
         
         person.address = "London"
+        
+        bag.dispose()
         
         XCTAssertEqual(result, "", "Should observe only the specified key path")
     }

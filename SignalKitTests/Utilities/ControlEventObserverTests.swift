@@ -11,9 +11,16 @@ import XCTest
 
 class ControlEventObserverTests: XCTestCase {
     
+    var control: MockControl!
+    
+    override func setUp() {
+        super.setUp()
+        
+        control = MockControl()
+    }
+    
     func testObserveControlEvents() {
         
-        let control = MockControl()
         let observer = ControlEventObserver(control: control, events: .ValueChanged)
         var called = false
         
@@ -21,12 +28,11 @@ class ControlEventObserverTests: XCTestCase {
         
         control.sendActionsForControlEvents(.ValueChanged)
         
-        XCTAssertEqual(called, true, "Should observe the UIControl for UIControl events")
+        XCTAssertTrue(called, "Should observe the UIControl for UIControl events")
     }
     
     func testDispose() {
         
-        let control = MockControl()
         let observer = ControlEventObserver(control: control, events: .ValueChanged)
         var called = false
         
@@ -35,6 +41,20 @@ class ControlEventObserverTests: XCTestCase {
         
         control.sendActionsForControlEvents(.ValueChanged)
         
-        XCTAssertEqual(called, false, "Should dispose the observation")
+        XCTAssertFalse(called, "Should dispose the observation")
+    }
+    
+    func testDisposeOnDeinit() {
+        
+        var observer: ControlEventObserver? = ControlEventObserver(control: control, events: .ValueChanged)
+        var called = false
+        
+        observer!.eventCallback = { _ in called = true }
+        observer = nil
+        
+        control.sendActionsForControlEvents(.ValueChanged)
+        
+        XCTAssertFalse(called, "Should dispose on deinit")
+        
     }
 }

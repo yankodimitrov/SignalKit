@@ -49,6 +49,7 @@ extension ControlEventObserver: Disposable {
     
     func dispose() {
         
+        eventCallback = nil
         disposeAction?.dispose()
         disposeAction = nil
     }
