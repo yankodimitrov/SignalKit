@@ -12,3 +12,15 @@ public protocol Disposable {
     
     func dispose()
 }
+
+// MARK: - DisposeWith
+
+extension Disposable {
+    
+    /// Store a chain of signal operations in a DisposableBag and dispose the chain with the bag
+    
+    public func disposeWith(bag: DisposableBag) -> Disposable {
+        
+        return bag.insertItem(self)
+    }
+}
