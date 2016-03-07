@@ -1,10 +1,10 @@
-<img src="https://raw.githubusercontent.com/yankodimitrov/SignalKit/SignalKit-3.0/Resources/logo.png" width="280" alt="SignalKit">
+<img src="https://raw.githubusercontent.com/yankodimitrov/SignalKit/SignalKit-4.0/Resources/logo.png" width="280" alt="SignalKit">
 
 ---
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ## Abstract
-SignalKit is a lightweight event and binding framework. The core of SignalKit is the Observable protocol. Each implementation of the Observable protocol defines the type of the observation thus an Observable can dispatch only one type of event. For example an Observable of type String can only dispatch String values.
+SignalKit is a lightweight event and binding framework. The core of SignalKit is the Observable protocol. Each implementation of the Observable protocol defines the type of the observation thus an Observable can sendNext only one type of event. For example an Observable of type String can only sendNext String values.
 
 Another key protocol is SignalType which implements Observable and Disposable. Each SignalType implementation has a property <code>disposableSource: Disposable?</code> which points to a Disposable that comes before the current signal.
 
@@ -19,16 +19,16 @@ let userName = Signal<String>()
 userName.next { print("name: \($0)") }
 	.disposeWith(disposableBag)
 
-userName.dispatch("John") // prints "name: John"
+userName.sendNext("John") // prints "name: John"
 ```
 
-![SignalKit Primary Protocols](https://raw.githubusercontent.com/yankodimitrov/SignalKit/SignalKit-3.0/Resources/primary-protocols.png)
+![SignalKit Primary Protocols](https://raw.githubusercontent.com/yankodimitrov/SignalKit/SignalKit-4.0/Resources/primary-protocols.png)
 
 ## Events And Bindings
 
 SignalKit comes with an elegant way to observe for different event sources like **KVO**, **Target Action** and **NSNotificationCenter** via an unified API by simply calling <code>observe()</code> method. The observe method is a protocol extension on the <code>NSObjectProtocol</code> which returns a SignalEvent with sender Self. Then we use Protocol Oriented Programming to add extensions to a SignalEventType protocol where Sender is from a given type.
 
-![SignalKit Primary Protocols](https://raw.githubusercontent.com/yankodimitrov/SignalKit/SignalKit-3.0/Resources/event-model.png)
+![SignalKit Primary Protocols](https://raw.githubusercontent.com/yankodimitrov/SignalKit/SignalKit-4.0/Resources/event-model.png)
 
 ### Key Value Observing
 
@@ -85,43 +85,52 @@ userName.bindTo(textIn: nameLabel)
     .disposeWith(disposableBag)
 ```
 
-## Observables
+## Signals
 
 #### Signal
-<code>Signal</code> is the simplest Observable which you can use to dispatch events.
+<code>Signal</code> is the primary object which you can use to send events and it is thread safe.
 
-#### ObservableProperty
-<code>ObservableProperty</code> is an Observable which has a notion of a current value. If you change the value it will be dispatched to the observers.
-
-#### ObservableCollectionType
-<code>ObservableCollectionType</code> is a protocol that defines a property of type: <code>var changeSetSignal: Signal&lt;CollectionChangeSet&gt; { get }</code>.
-
-You can implement the protocol in your data source or other object that you use to return sections and items data to your collection/table view data source.
-
-When you make changes to your collection of section and items you can create a new <code>CollectionChangeSet</code> and use it to track the changes. Then you call the <code>changeSetSignal</code> to dispatch the changes:
+#### SignalValue
+<code>SignalValue</code> is a signal that stores its last sent/current value. If we add a new observer to it it will send immediately its value to the newly added observer. If we change the value of the signal it will notify its observers for the change. <code>SignalValue</code> is also thread safe.
 
 ```swift
-var items = ["a", "b", "c"]
-var changeSet = CollectionChangeSet()
+let name = SignalValue(value: "John")
 
-items.insert("x", atIndex: 0)
-items.insert("y", atIndex: 0)
+name.next { print($0) }.disposeWith(bag) // prints "John"
 
-changeSet.insertItemsInRange(0..<2, inSection: 0)
-changeSetSignal.dispatch(changeSet, onQueue: .MainQueue)
+name.value = "Jonathan" // prints "Jonathan"
 ```
 
-<code>ObservableCollectionType</code> has extensions which let you observe it and bind it to a <code>UITableView</code> or <code>UICollectionView</code>.
+#### CollectionEvent
+We can use a signal of type <code>Signal&lt;CollectionEvent&gt;</code> to send the changes that occur in our data source. Then we can bind the signal to <code>UITableView</code> or <code>UICollectionView</code> and the changes that we send will be reflected in the table/collection view:
+
+```swift
+// UsersListViewController
+...
+viewModel.usersChangeSignal.bindTo(tableView, rowAnimation: .Fade).disposeWith(bag)
+
+// UsersListViewModel
+let usersChangeSignal = Signal<CollectionEvent>()
+var users = [User]()
+...
+
+var event = CollectionEvent()
+
+users.insert(User(name: "John"), atIndex: 0)
+event.itemInsertedAt(0, inSection: 0)
+
+usersChangeSignal.sendNext(event)
+```
 
 ## Operations
 
 SignalKit comes with the following SignalType operations:
-![SignalKit Primary Protocols](https://raw.githubusercontent.com/yankodimitrov/SignalKit/SignalKit-3.0/Resources/signal-operations.png)
+![SignalKit Primary Protocols](https://raw.githubusercontent.com/yankodimitrov/SignalKit/SignalKit-4.0/Resources/signal-operations.png)
 
 ## Extensions
 
 Currently SignalKit comes with extensions for the the following <code>UIKit</code> components:
-![SignalKit Primary Protocols](https://raw.githubusercontent.com/yankodimitrov/SignalKit/SignalKit-3.0/Resources/uikit-extensions.png)
+![SignalKit Primary Protocols](https://raw.githubusercontent.com/yankodimitrov/SignalKit/SignalKit-4.0/Resources/uikit-extensions.png)
 
 ### Keyboard
 You can use the <code>Keyboard</code> structure to observe for keyboard events posted by the system. Then you will get back a structure of type <code>KeyboardState</code> which you can query for the keyboard end/start frame and other data that the system sends with the notification:
@@ -134,7 +143,7 @@ Keyboard.observe().willShow
 
 ## Installation
 
-SignalKit requires Swift 2.0 and XCode 7
+SignalKit requires Swift 2.0 and Xcode 7
 
 #### Carthage
 Add the following line to your [Cartfile](https://github.com/carthage/carthage)
