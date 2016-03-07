@@ -2,8 +2,8 @@
 //  DisposableBagTests.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 8/12/15.
-//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 3/5/16.
+//  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 //
 
 import XCTest
@@ -11,64 +11,41 @@ import XCTest
 
 class DisposableBagTests: XCTestCase {
     
-    var bag: DisposableBag!
-    var signal: MockSignal<Int>!
-    
-    override func setUp() {
-        super.setUp()
+    func testInsertItem() {
         
-        bag = DisposableBag()
-        signal = MockSignal<Int>()
-    }
-    
-    func testAddDisposable() {
+        let bag = DisposableBag()
+        let item = MockDisposable()
         
-        bag.addDisposable(signal)
+        bag.insertItem(item)
         
-        XCTAssertEqual(bag.count, 1, "Should add the signal to the bag")
+        XCTAssertEqual(bag.disposables.items.count, 1, "Should insert a disposable item")
     }
     
     func testDisposeItem() {
         
-        let disposable = bag.addDisposable(signal)
+        let bag = DisposableBag()
+        let item = MockDisposable()
         
-        disposable.dispose()
+        let disposableAction = bag.insertItem(item)
         
-        XCTAssertEqual(bag.count, 0, "Should remove the signal from the bag upon disposal")
-    }
-    
-    func testRemoveAll() {
+        disposableAction.dispose()
         
-        let signalTwo = MockSignal<String>()
-        
-        bag.addDisposable(signal)
-        bag.addDisposable(signalTwo)
-        
-        bag.removeAll()
-        
-        XCTAssertEqual(bag.count, 0, "Should remove all signals from the bag")
-    }
-    
-    func testRemoveAllOnDeinit() {
-        
-        let disposable = MockDisposable()
-        var disposableBag: DisposableBag? = DisposableBag()
-        
-        disposableBag?.addDisposable(disposable)
-        disposableBag = nil
-        
-        XCTAssertEqual(disposable.isDisposeCalled, true, "Should remove and dispose all disposables on deinit")
+        XCTAssertTrue(bag.disposables.items.isEmpty, "Should remove the item")
     }
     
     func testDispose() {
         
-        let signalTwo = MockSignal<String>()
+        let bag = DisposableBag()
+        let itemA = MockDisposable()
+        let itemB = MockDisposable()
         
-        bag.addDisposable(signal)
-        bag.addDisposable(signalTwo)
+        bag.insertItem(itemA)
+        bag.insertItem(itemB)
         
         bag.dispose()
         
-        XCTAssertEqual(bag.count, 0, "Should remove all signals from the bag")
+        XCTAssertTrue(itemA.isDisposeCalled, "Should dispose item A")
+        XCTAssertTrue(itemB.isDisposeCalled, "Should dispose item B")
+        XCTAssertTrue(bag.disposables.items.isEmpty, "Should remove all items")
     }
 }

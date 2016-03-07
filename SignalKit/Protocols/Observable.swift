@@ -2,49 +2,30 @@
 //  Observable.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 8/12/15.
-//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 3/4/16.
+//  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 //
 
 import Foundation
 
 public protocol Observable: class {
-    typealias ObservationType
+    typealias ObservationValue
     
-    var dispatcher: Dispatcher<ObservationType> {get}
-    
-    func addObserver(observer: ObservationType -> Void) -> Disposable
-    func dispatch(item: ObservationType)
-    func removeObservers()
+    func addObserver(observer: ObservationValue -> Void) -> Disposable
+    func sendNext(value: ObservationValue)
 }
 
-public extension Observable {
-    
-    public func addObserver(observer: ObservationType -> Void) -> Disposable {
-        
-        return dispatcher.addObserver(observer)
-    }
-    
-    public func dispatch(item: ObservationType) {
-        
-        dispatcher.dispatch(item)
-    }
-    
-    public func removeObservers() {
-        
-        dispatcher.removeObservers()
-    }
-}
+// MARK: - SendNext on a given queue
 
-public extension Observable {
+extension Observable {
     
-    public func dispatch(item: ObservationType, onQueue: SignalScheduler.Queue) {
+    public func sendNext(value: ObservationValue, onQueue: SchedulerQueue) {
         
-        let scheduler = SignalScheduler(queue: onQueue)
+        let scheduler = Scheduler(queue: onQueue)
         
-        scheduler.dispatchAsync({ [weak self] in
+        scheduler.async { [weak self] in
             
-            self?.dispatcher.dispatch(item)
-        })
+            self?.sendNext(value)
+        }
     }
 }

@@ -2,8 +2,8 @@
 //  MockCollectionView.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 10/1/15.
-//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 3/7/16.
+//  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 //
 
 import UIKit
@@ -37,7 +37,7 @@ class MockCollectionView: UICollectionView {
     }
     
     override func reloadSections(sections: NSIndexSet) {
-     
+        
         isReloadSectionsCalled = true
     }
     

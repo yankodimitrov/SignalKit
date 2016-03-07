@@ -2,8 +2,8 @@
 //  KeyboardStateTests.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 8/16/15.
-//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 3/6/16.
+//  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 //
 
 import XCTest

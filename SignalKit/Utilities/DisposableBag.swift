@@ -2,56 +2,48 @@
 //  DisposableBag.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 8/12/15.
-//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 3/5/16.
+//  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 //
 
 import Foundation
 
 public final class DisposableBag {
     
-    private lazy var bag = Bag<Disposable>()
+    internal private(set) var disposables = Bag<Disposable>()
     
     public init() {}
     
-    public func addDisposable(disposable: Disposable) -> Disposable {
-        
-        let token = self.bag.insert(disposable)
-        
-        return DisposableAction { [weak self] in
-            
-            self?.bag.removeItemWithToken(token)
-        }
-    }
-    
     deinit {
         
-        removeAll()
-    }
-    
-    public func removeAll() {
-        
-        for (_, disposableItem) in bag {
-            
-            disposableItem.dispose()
-        }
-        
-        bag.removeItems()
+        dispose()
     }
 }
 
 extension DisposableBag {
     
-    internal var count: Int {
+    public func insertItem(item: Disposable) -> Disposable {
         
-        return bag.count
+        let token = disposables.insertItem(item)
+        
+        return DisposableAction { [weak self] in
+            
+            self?.disposables.removeItemWithToken(token)
+        }
     }
 }
+
+// MARK: - Disposable
 
 extension DisposableBag: Disposable {
     
     public func dispose() {
         
-        removeAll()
+        for (_, item) in disposables {
+            
+            item.dispose()
+        }
+        
+        disposables.removeAll()
     }
 }

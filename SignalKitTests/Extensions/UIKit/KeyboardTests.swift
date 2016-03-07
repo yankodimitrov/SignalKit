@@ -2,22 +2,22 @@
 //  KeyboardTests.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 8/16/15.
-//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 3/6/16.
+//  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 //
 
 import XCTest
 @testable import SignalKit
 
 class KeyboardTests: XCTestCase {
-
+    
     let center = NSNotificationCenter.defaultCenter()
-    var signalsBag: DisposableBag!
+    var bag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
-        signalsBag = DisposableBag()
+        bag = DisposableBag()
     }
     
     func testObserveWillShow() {
@@ -26,11 +26,11 @@ class KeyboardTests: XCTestCase {
         
         Keyboard.observe().willShow
             .next{ _ in called = true }
-            .disposeWith(signalsBag)
+            .disposeWith(bag)
         
         center.postNotificationName(UIKeyboardWillShowNotification, object: nil)
         
-        XCTAssertEqual(called, true, "Should observe for keyboard will show notification")
+        XCTAssertTrue(called, "Should observe for keyboard will show notification")
     }
     
     func testObserveDidShow() {
@@ -39,11 +39,11 @@ class KeyboardTests: XCTestCase {
         
         Keyboard.observe().didShow
             .next { _ in called = true }
-            .disposeWith(signalsBag)
+            .disposeWith(bag)
         
         center.postNotificationName(UIKeyboardDidShowNotification, object: nil)
         
-        XCTAssertEqual(called, true, "Should observe for keyboard did show notification")
+        XCTAssertTrue(called, "Should observe for keyboard did show notification")
     }
     
     func testObserveWillHide() {
@@ -52,11 +52,11 @@ class KeyboardTests: XCTestCase {
         
         Keyboard.observe().willHide
             .next { _ in called = true }
-            .disposeWith(signalsBag)
+            .disposeWith(bag)
         
         center.postNotificationName(UIKeyboardWillHideNotification, object: nil)
         
-        XCTAssertEqual(called, true, "Should observe for keyboard will hide notification")
+        XCTAssertTrue(called, "Should observe for keyboard will hide notification")
     }
     
     func testObserveDidHide() {
@@ -65,11 +65,11 @@ class KeyboardTests: XCTestCase {
         
         Keyboard.observe().didHide
             .next { _ in called = true }
-            .disposeWith(signalsBag)
+            .disposeWith(bag)
         
         center.postNotificationName(UIKeyboardDidHideNotification, object: nil)
         
-        XCTAssertEqual(called, true, "Should observe for keyboard did hide notification")
+        XCTAssertTrue(called, "Should observe for keyboard did hide notification")
     }
     
     func testObserveWillChangeFrame() {
@@ -78,11 +78,11 @@ class KeyboardTests: XCTestCase {
         
         Keyboard.observe().willChangeFrame
             .next { _ in called = true }
-            .disposeWith(signalsBag)
+            .disposeWith(bag)
         
         center.postNotificationName(UIKeyboardWillChangeFrameNotification, object: nil)
         
-        XCTAssertEqual(called, true, "Should observe fok keyboard will change frame notificaiton")
+        XCTAssertTrue(called, "Should observe fok keyboard will change frame notificaiton")
     }
     
     func testObserveDidChangeFrame() {
@@ -91,10 +91,10 @@ class KeyboardTests: XCTestCase {
         
         Keyboard.observe().didChangeFrame
             .next { _ in called = true}
-            .disposeWith(signalsBag)
+            .disposeWith(bag)
         
         center.postNotificationName(UIKeyboardDidChangeFrameNotification, object: nil)
         
-        XCTAssertEqual(called, true, "Should observe for keyboard did change frame notification")
+        XCTAssertTrue(called, "Should observe for keyboard did change frame notification")
     }
 }

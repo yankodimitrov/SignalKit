@@ -2,54 +2,56 @@
 //  Bag.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 8/12/15.
-//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 3/4/16.
+//  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 //
 
 import Foundation
 
-internal struct Bag<Item> {
+typealias RemovalToken = String
+
+struct Bag<Item> {
     
-    private var items = [Token: Item]()
-    private var generator: TokenGeneratorType
+    internal private(set) var items = [RemovalToken: Item]()
+    private var tokenCounter: UInt8 = 0
+    private var tokenPrefix = ""
     
-    var count: Int {
-        return items.count
+    mutating func insertItem(item: Item) -> RemovalToken {
+        
+        let removalToken = nextRemovalToken()
+        
+        items[removalToken] = item
+        
+        return removalToken
     }
     
-    init(keyGenerator: TokenGeneratorType) {
-        
-        generator = keyGenerator
-    }
-    
-    init() {
-        
-        self.init(keyGenerator: IncrementalKeyGenerator())
-    }
-    
-    mutating func insert(item: Item) -> Token {
-        
-        let token = generator.nextToken()
-        
-        items[token] = item
-        
-        return token
-    }
-    
-    mutating func removeItemWithToken(token: Token) {
+    mutating func removeItemWithToken(token: RemovalToken) {
         
         items.removeValueForKey(token)
     }
     
-    mutating func removeItems() {
+    mutating func removeAll() {
         
         items.removeAll(keepCapacity: false)
+    }
+    
+    private mutating func nextRemovalToken() -> RemovalToken {
+        
+        if tokenCounter >= UInt8.max {
+            
+            tokenPrefix += String(tokenCounter)
+            tokenCounter = 0
+        }
+        
+        tokenCounter += 1
+        
+        return tokenPrefix + String(tokenCounter)
     }
 }
 
 extension Bag: SequenceType {
     
-    func generate() -> DictionaryGenerator<Token, Item> {
+    func generate() -> DictionaryGenerator<RemovalToken, Item> {
         
         return items.generate()
     }

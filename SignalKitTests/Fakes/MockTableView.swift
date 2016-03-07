@@ -2,8 +2,8 @@
 //  MockTableView.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 10/1/15.
-//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 3/7/16.
+//  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 //
 
 import UIKit
@@ -21,6 +21,7 @@ class MockTableView: UITableView {
     
     var isBeginUpdatesCalled = false
     var isEndUpdatesCalled = false
+    var animation = UITableViewRowAnimation.Automatic
     
     var isBeginEndUpdatesCalled: Bool {
         
@@ -35,16 +36,19 @@ class MockTableView: UITableView {
     override func insertSections(sections: NSIndexSet, withRowAnimation animation: UITableViewRowAnimation) {
         
         isInsertSectionsCalled = true
+        self.animation = animation
     }
     
     override func reloadSections(sections: NSIndexSet, withRowAnimation animation: UITableViewRowAnimation) {
         
         isReloadSectionsCalled = true
+        self.animation = animation
     }
     
     override func deleteSections(sections: NSIndexSet, withRowAnimation animation: UITableViewRowAnimation) {
         
         isDeleteSectionsCalled = true
+        self.animation = animation
     }
     
     override func beginUpdates() {
@@ -60,15 +64,18 @@ class MockTableView: UITableView {
     override func insertRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation animation: UITableViewRowAnimation) {
         
         isInsertRowsCalled = true
+        self.animation = animation
     }
     
     override func reloadRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation animation: UITableViewRowAnimation) {
         
         isReloadRowsCalled = true
+        self.animation = animation
     }
     
     override func deleteRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation animation: UITableViewRowAnimation) {
         
         isDeleteRowsCalled = true
+        self.animation = animation
     }
 }

@@ -2,8 +2,8 @@
 //  DisposableActionTests.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 8/12/15.
-//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 3/4/16.
+//  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 //
 
 import XCTest
@@ -11,31 +11,27 @@ import XCTest
 
 class DisposableActionTests: XCTestCase {
     
-    func testCallDisposeActionUponDisposal() {
+    func testDisposeAction() {
         
         var called = false
         
-        let item = DisposableAction {
-            called = true
-        }
+        let action = DisposableAction { called = true }
         
-        item.dispose()
+        action.dispose()
         
-        XCTAssertEqual(called, true, "Should call the dispose action upon disposal")
+        XCTAssertTrue(called, "Should call the disposable action on dispose")
     }
     
-    func testCallDisposeActionOnlyOnce() {
+    func testCallDisposeActionOnce() {
         
         var counter = 0
         
-        let item = DisposableAction {
-            counter += 1
-        }
+        let action = DisposableAction { counter += 1 }
         
-        item.dispose()
-        item.dispose()
-        item.dispose()
+        action.dispose()
+        action.dispose()
+        action.dispose()
         
-        XCTAssertEqual(counter, 1, "Should call the dispose action only once upon disposal")
+        XCTAssertEqual(counter, 1, "Should dispose the action only once")
     }
 }

@@ -2,20 +2,18 @@
 //  Keyboard.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 8/16/15.
-//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 3/6/16.
+//  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public struct Keyboard {
     
     public struct Event {}
     
-    /**
-        Returns the available Keyboard events
+    /// Returns the available Keyboard events
     
-    */
     public static func observe() -> SignalEvent<Keyboard.Event> {
         
         return SignalEvent(sender: Keyboard.Event())
@@ -28,7 +26,7 @@ public struct KeyboardState {
     
     public var beginFrame: CGRect {
         
-        guard let frame = keyboardInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue else {
+        guard let frame = info[UIKeyboardFrameBeginUserInfoKey] as? NSValue else {
             return CGRectZero
         }
         
@@ -37,7 +35,7 @@ public struct KeyboardState {
     
     public var endFrame: CGRect {
         
-        guard let frame = keyboardInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
+        guard let frame = info[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
             return CGRectZero
         }
         
@@ -46,7 +44,7 @@ public struct KeyboardState {
     
     public var animationCurve: UIViewAnimationCurve? {
         
-        guard let curve = keyboardInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber else {
+        guard let curve = info[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber else {
             return nil
         }
         
@@ -55,18 +53,18 @@ public struct KeyboardState {
     
     public var animationDuration: Double {
         
-        guard let duration = keyboardInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber else {
+        guard let duration = info[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber else {
             return 0
         }
         
         return duration.doubleValue
     }
     
-    private let keyboardInfo: [NSObject: AnyObject]
+    private let info: [NSObject: AnyObject]
     
     public init(notification: NSNotification) {
         
-        keyboardInfo = notification.userInfo ?? [NSObject: AnyObject]()
+        info = notification.userInfo ?? [NSObject: AnyObject]()
     }
 }
 
@@ -76,58 +74,57 @@ public extension SignalEventType where Sender == Keyboard.Event {
     
     private func keyboardSignalFor(notificationName: String) -> Signal<KeyboardState> {
         
-        return NotificationSignal(name: notificationName).map{ KeyboardState(notification: $0) }
+        let signal = Signal<KeyboardState>()
+        let center = NSNotificationCenter.defaultCenter()
+        let observer = NotificationObserver(center: center, name: notificationName)
+        
+        observer.notificationCallback = { [weak signal] in
+            
+            signal?.sendNext(KeyboardState(notification: $0))
+        }
+        
+        signal.disposableSource = observer
+        
+        return signal
     }
     
-    /**
-        Observe for keyboard will show event
+    /// Observe for keyboard will show event
     
-    */
     var willShow: Signal<KeyboardState> {
         
         return keyboardSignalFor(UIKeyboardWillShowNotification)
     }
     
-    /**
-        Observe for keyboard did show event
+    /// Observe for keyboard did show event
     
-    */
     var didShow: Signal<KeyboardState> {
         
         return keyboardSignalFor(UIKeyboardDidShowNotification)
     }
     
-    /**
-        Observe for keyboard will hide event
+    /// Observe for keyboard will hide event
     
-    */
     var willHide: Signal<KeyboardState> {
         
         return keyboardSignalFor(UIKeyboardWillHideNotification)
     }
     
-    /**
-        Observe for keyboard did hide event
+    /// Observe for keyboard did hide event
     
-    */
     var didHide: Signal<KeyboardState> {
         
         return keyboardSignalFor(UIKeyboardDidHideNotification)
     }
     
-    /**
-        Observe for keyboard will change frame event
+    /// Observe for keyboard will change frame event
     
-    */
     var willChangeFrame: Signal<KeyboardState> {
         
         return keyboardSignalFor(UIKeyboardWillChangeFrameNotification)
     }
     
-    /**
-        Observe for keyboard did change frame event
+    /// Observe for keyboard did change frame event
     
-    */
     var didChangeFrame: Signal<KeyboardState> {
         
         return keyboardSignalFor(UIKeyboardDidChangeFrameNotification)

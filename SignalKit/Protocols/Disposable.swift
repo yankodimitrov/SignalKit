@@ -2,8 +2,8 @@
 //  Disposable.swift
 //  SignalKit
 //
-//  Created by Yanko Dimitrov on 8/12/15.
-//  Copyright © 2015 Yanko Dimitrov. All rights reserved.
+//  Created by Yanko Dimitrov on 3/4/16.
+//  Copyright © 2016 Yanko Dimitrov. All rights reserved.
 //
 
 import Foundation
@@ -13,14 +13,14 @@ public protocol Disposable {
     func dispose()
 }
 
-public extension Disposable {
+// MARK: - DisposeWith
+
+extension Disposable {
     
-    /**
-        Stores a disposable in a container
+    /// Store a chain of signal operations in a DisposableBag and dispose the chain with the bag
     
-    */
-    public func disposeWith(container: DisposableBag) -> Disposable {
+    public func disposeWith(bag: DisposableBag) -> Disposable {
         
-        return container.addDisposable(self)
+        return bag.insertItem(self)
     }
 }
