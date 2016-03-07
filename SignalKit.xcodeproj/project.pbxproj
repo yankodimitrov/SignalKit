@@ -71,6 +71,9 @@
 		C99327691C8DA3F200C03404 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327681C8DA3F200C03404 /* UITableViewExtensions.swift */; };
 		C993276B1C8DA40200C03404 /* UITableViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993276A1C8DA40200C03404 /* UITableViewExtensionsTests.swift */; };
 		C993276D1C8DBCEE00C03404 /* MockTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993276C1C8DBCEE00C03404 /* MockTableView.swift */; };
+		C993276F1C8DCD8300C03404 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993276E1C8DCD8300C03404 /* UICollectionViewExtensions.swift */; };
+		C99327711C8DCD9F00C03404 /* UICollectionViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327701C8DCD9F00C03404 /* UICollectionViewExtensionsTests.swift */; };
+		C99327731C8DCEE500C03404 /* MockCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327721C8DCEE500C03404 /* MockCollectionView.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -150,6 +153,9 @@
 		C99327681C8DA3F200C03404 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		C993276A1C8DA40200C03404 /* UITableViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensionsTests.swift; sourceTree = "<group>"; };
 		C993276C1C8DBCEE00C03404 /* MockTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTableView.swift; sourceTree = "<group>"; };
+		C993276E1C8DCD8300C03404 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
+		C99327701C8DCD9F00C03404 /* UICollectionViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensionsTests.swift; sourceTree = "<group>"; };
+		C99327721C8DCEE500C03404 /* MockCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockCollectionView.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -194,6 +200,7 @@
 				C993275A1C8C88B600C03404 /* UIViewExtensions.swift */,
 				C993275E1C8C8BF300C03404 /* Keyboard.swift */,
 				C99327681C8DA3F200C03404 /* UITableViewExtensions.swift */,
+				C993276E1C8DCD8300C03404 /* UICollectionViewExtensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -216,6 +223,7 @@
 				C99327601C8C8D0600C03404 /* KeyboardTests.swift */,
 				C99327621C8C8D5900C03404 /* KeyboardStateTests.swift */,
 				C993276A1C8DA40200C03404 /* UITableViewExtensionsTests.swift */,
+				C99327701C8DCD9F00C03404 /* UICollectionViewExtensionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -290,6 +298,7 @@
 				C993270C1C8AF5F200C03404 /* MockControl.swift */,
 				C99327161C8B0FD700C03404 /* Person.swift */,
 				C993276C1C8DBCEE00C03404 /* MockTableView.swift */,
+				C99327721C8DCEE500C03404 /* MockCollectionView.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -466,6 +475,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C993271B1C8B1E0E00C03404 /* ActionTarget.swift in Sources */,
+				C993276F1C8DCD8300C03404 /* UICollectionViewExtensions.swift in Sources */,
 				C99327291C8C38B000C03404 /* NSNotificationCenterExtensions.swift in Sources */,
 				C99327061C8AEF0400C03404 /* ControlEventObserver.swift in Sources */,
 				C99327531C8C84CE00C03404 /* UITextFieldExtensions.swift in Sources */,
@@ -522,6 +532,7 @@
 				C99327171C8B0FD700C03404 /* Person.swift in Sources */,
 				C993270D1C8AF5F200C03404 /* MockControl.swift in Sources */,
 				C99327411C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift in Sources */,
+				C99327711C8DCD9F00C03404 /* UICollectionViewExtensionsTests.swift in Sources */,
 				C99326F01C8A2CCD00C03404 /* DisposableActionTests.swift in Sources */,
 				C993273D1C8C748900C03404 /* UIBarItemExtensionsTests.swift in Sources */,
 				C993272F1C8C3DB100C03404 /* UIControlExtensionsTests.swift in Sources */,
@@ -535,6 +546,7 @@
 				C99327451C8C790B00C03404 /* UIDatePickerExtensionsTests.swift in Sources */,
 				C99326F61C8A36E000C03404 /* SignalTests.swift in Sources */,
 				C99327151C8B0CAE00C03404 /* KeyPathObserverTests.swift in Sources */,
+				C99327731C8DCEE500C03404 /* MockCollectionView.swift in Sources */,
 				C99327001C8AE25300C03404 /* MockDisposable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
