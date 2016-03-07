@@ -68,6 +68,9 @@
 		C99327631C8C8D5900C03404 /* KeyboardStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327621C8C8D5900C03404 /* KeyboardStateTests.swift */; };
 		C99327651C8CC46B00C03404 /* CollectionEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327641C8CC46B00C03404 /* CollectionEvent.swift */; };
 		C99327671C8D95BB00C03404 /* CollectionEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327661C8D95BB00C03404 /* CollectionEventTests.swift */; };
+		C99327691C8DA3F200C03404 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327681C8DA3F200C03404 /* UITableViewExtensions.swift */; };
+		C993276B1C8DA40200C03404 /* UITableViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993276A1C8DA40200C03404 /* UITableViewExtensionsTests.swift */; };
+		C993276D1C8DBCEE00C03404 /* MockTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993276C1C8DBCEE00C03404 /* MockTableView.swift */; };
 		C9E7F2851B567DF5001AB061 /* SignalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9E7F2841B567DF5001AB061 /* SignalKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9E7F28B1B567DF5001AB061 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9E7F27F1B567DF5001AB061 /* SignalKit.framework */; };
 /* End PBXBuildFile section */
@@ -144,6 +147,9 @@
 		C99327621C8C8D5900C03404 /* KeyboardStateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardStateTests.swift; sourceTree = "<group>"; };
 		C99327641C8CC46B00C03404 /* CollectionEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionEvent.swift; sourceTree = "<group>"; };
 		C99327661C8D95BB00C03404 /* CollectionEventTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionEventTests.swift; sourceTree = "<group>"; };
+		C99327681C8DA3F200C03404 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		C993276A1C8DA40200C03404 /* UITableViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtensionsTests.swift; sourceTree = "<group>"; };
+		C993276C1C8DBCEE00C03404 /* MockTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTableView.swift; sourceTree = "<group>"; };
 		C9E7F27F1B567DF5001AB061 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9E7F2831B567DF5001AB061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9E7F2841B567DF5001AB061 /* SignalKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignalKit.h; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 				C99327561C8C866B00C03404 /* UITextViewExtensions.swift */,
 				C993275A1C8C88B600C03404 /* UIViewExtensions.swift */,
 				C993275E1C8C8BF300C03404 /* Keyboard.swift */,
+				C99327681C8DA3F200C03404 /* UITableViewExtensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -208,6 +215,7 @@
 				C993275C1C8C88C500C03404 /* UIViewExtensionsTests.swift */,
 				C99327601C8C8D0600C03404 /* KeyboardTests.swift */,
 				C99327621C8C8D5900C03404 /* KeyboardStateTests.swift */,
+				C993276A1C8DA40200C03404 /* UITableViewExtensionsTests.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -281,6 +289,7 @@
 				C99326FF1C8AE25300C03404 /* MockDisposable.swift */,
 				C993270C1C8AF5F200C03404 /* MockControl.swift */,
 				C99327161C8B0FD700C03404 /* Person.swift */,
+				C993276C1C8DBCEE00C03404 /* MockTableView.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -463,6 +472,7 @@
 				C99327651C8CC46B00C03404 /* CollectionEvent.swift in Sources */,
 				C99326E41C8A1B7C00C03404 /* Observable.swift in Sources */,
 				C99326F81C8A436E00C03404 /* Scheduler.swift in Sources */,
+				C99327691C8DA3F200C03404 /* UITableViewExtensions.swift in Sources */,
 				C993273B1C8C747C00C03404 /* UIBarItemExtensions.swift in Sources */,
 				C99327571C8C866B00C03404 /* UITextViewExtensions.swift in Sources */,
 				C993272D1C8C3BEB00C03404 /* UIControlExtensions.swift in Sources */,
@@ -516,10 +526,12 @@
 				C993273D1C8C748900C03404 /* UIBarItemExtensionsTests.swift in Sources */,
 				C993272F1C8C3DB100C03404 /* UIControlExtensionsTests.swift in Sources */,
 				C993272B1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift in Sources */,
+				C993276B1C8DA40200C03404 /* UITableViewExtensionsTests.swift in Sources */,
 				C993275D1C8C88C500C03404 /* UIViewExtensionsTests.swift in Sources */,
 				C99327511C8C835200C03404 /* UISwitchExtensionsTests.swift in Sources */,
 				C99327631C8C8D5900C03404 /* KeyboardStateTests.swift in Sources */,
 				C99327591C8C867800C03404 /* UITextViewExtensionsTests.swift in Sources */,
+				C993276D1C8DBCEE00C03404 /* MockTableView.swift in Sources */,
 				C99327451C8C790B00C03404 /* UIDatePickerExtensionsTests.swift in Sources */,
 				C99326F61C8A36E000C03404 /* SignalTests.swift in Sources */,
 				C99327151C8B0CAE00C03404 /* KeyPathObserverTests.swift in Sources */,

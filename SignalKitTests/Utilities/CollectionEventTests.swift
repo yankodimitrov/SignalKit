@@ -77,20 +77,6 @@ class CollectionEventTests: XCTestCase {
         XCTAssertEqual(elementA.hashValue, elementB.hashValue, "Should be equal")
     }
     
-    func testIsSection() {
-        
-        let element = CollectionEvent.Element.Section(10)
-        
-        XCTAssertTrue(element.isSection, "Should return true")
-    }
-    
-    func testIsNotASection() {
-        
-        let element = CollectionEvent.Element.Item(index: 0, section: 10)
-        
-        XCTAssertFalse(element.isSection, "Should return false")
-    }
-    
     // MARK: - Operation
     
     func testResetOperationEquality() {
@@ -163,55 +149,6 @@ class CollectionEventTests: XCTestCase {
         let operationB = CollectionEvent.Operation.Update(.Section(0))
         
         XCTAssertEqual(operationA.hashValue, operationB.hashValue, "Should be equal")
-    }
-    
-    func testResetIsNotSectionOperation() {
-        
-        let operation = CollectionEvent.Operation.Reset
-        
-        XCTAssertFalse(operation.isSectionOperation, "Should return false")
-    }
-    
-    func testInsertIsNotSectionOperation() {
-        
-        let operation = CollectionEvent.Operation.Insert(.Item(index: 0, section: 0))
-        
-        XCTAssertFalse(operation.isSectionOperation, "Should return false")
-    }
-    
-    func testRemoveIsNotSectionOperation() {
-        
-        let operation = CollectionEvent.Operation.Remove(.Item(index: 0, section: 0))
-        
-        XCTAssertFalse(operation.isSectionOperation, "Should return false")
-    }
-    
-    func testUpdateIsNotSectionOperation() {
-        
-        let operation = CollectionEvent.Operation.Update(.Item(index: 0, section: 0))
-        
-        XCTAssertFalse(operation.isSectionOperation, "Should return false")
-    }
-    
-    func testInsertIsSectionOperation() {
-        
-        let operation = CollectionEvent.Operation.Insert(.Section(0))
-        
-        XCTAssertTrue(operation.isSectionOperation, "Should return true")
-    }
-    
-    func testRemoveIsSectionOperation() {
-        
-        let operation = CollectionEvent.Operation.Remove(.Section(1))
-        
-        XCTAssertTrue(operation.isSectionOperation, "Should return true")
-    }
-    
-    func testUpdateIsSectionOperation() {
-        
-        let operation = CollectionEvent.Operation.Update(.Section(2))
-        
-        XCTAssertTrue(operation.isSectionOperation, "Should return true")
     }
     
     // MARK: - CollectionEvent
