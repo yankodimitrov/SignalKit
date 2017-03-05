@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C92932ED1E6CA357006D8937 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92932EC1E6CA357006D8937 /* Lock.swift */; };
+		C92932EF1E6CA39C006D8937 /* MutexLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92932EE1E6CA39C006D8937 /* MutexLock.swift */; };
 		C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E11C8A1ACE00C03404 /* Disposable.swift */; };
 		C99326E41C8A1B7C00C03404 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E31C8A1B7C00C03404 /* Observable.swift */; };
 		C99326E61C8A1ED500C03404 /* SignalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E51C8A1ED500C03404 /* SignalProtocol.swift */; };
@@ -85,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		C92932EC1E6CA357006D8937 /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
+		C92932EE1E6CA39C006D8937 /* MutexLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutexLock.swift; sourceTree = "<group>"; };
 		C99326E11C8A1ACE00C03404 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		C99326E31C8A1B7C00C03404 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		C99326E51C8A1ED500C03404 /* SignalProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProtocol.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				C993270E1C8B08CD00C03404 /* NotificationObserver.swift */,
 				C99327121C8B0C9100C03404 /* KeyPathObserver.swift */,
 				C993271A1C8B1E0E00C03404 /* ActionTarget.swift */,
+				C92932EE1E6CA39C006D8937 /* MutexLock.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				C99327531C8C84CE00C03404 /* UITextFieldExtensions.swift in Sources */,
 				C99326E41C8A1B7C00C03404 /* Observable.swift in Sources */,
 				C99326F81C8A436E00C03404 /* Scheduler.swift in Sources */,
+				C92932EF1E6CA39C006D8937 /* MutexLock.swift in Sources */,
 				C993273B1C8C747C00C03404 /* UIBarItemExtensions.swift in Sources */,
 				C99327571C8C866B00C03404 /* UITextViewExtensions.swift in Sources */,
 				C993272D1C8C3BEB00C03404 /* UIControlExtensions.swift in Sources */,
