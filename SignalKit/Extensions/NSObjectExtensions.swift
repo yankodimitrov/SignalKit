@@ -36,7 +36,7 @@ public extension SignalEventType where Sender: NSObject {
             
             if let value = value as? T {
                 
-                signal?.sendNext(value)
+                signal?.send(value)
             }
         }
         

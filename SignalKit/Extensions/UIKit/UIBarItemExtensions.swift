@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalType where ObservationValue == Bool {
+public extension SignalType where Value == Bool {
     
     /// Bind the boolean value of the signal to the enabled property of UIBarItem
     

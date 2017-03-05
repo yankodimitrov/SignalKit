@@ -31,20 +31,20 @@ class SignalTests: XCTestCase {
         
         observer.dispose()
         
-        name.sendNext("John")
+        name.send("John")
         
         XCTAssertEqual(name.observers.items.isEmpty, true, "Should remove the observer")
         XCTAssertEqual(result, "", "Should contain an empty string")
     }
     
-    func testSendNextValueToObserver() {
+    func testsendValueToObserver() {
         
         let name = Signal<String>()
         var result = ""
         let expectedResult = "John"
 
         name.addObserver { result = $0 }
-        name.sendNext(expectedResult)
+        name.send(expectedResult)
         
         XCTAssertEqual(result, expectedResult, "Should send the next value to observers")
     }
@@ -56,7 +56,7 @@ class SignalTests: XCTestCase {
         let expectedResult = "John"
         
         name.next { result = $0 }
-        name.sendNext(expectedResult)
+        name.send(expectedResult)
         
         XCTAssertEqual(result, expectedResult, "Should add a new observer to a Signal")
     }
@@ -69,7 +69,7 @@ class SignalTests: XCTestCase {
         
         chain = year.map { String($0) }.next { result = $0 }
         
-        year.sendNext(2016)
+        year.send(2016)
         
         XCTAssertEqual(result, expectedResult, "Should map the signal value")
     }
@@ -81,10 +81,10 @@ class SignalTests: XCTestCase {
         
         chain = number.filter { $0 > 5 }.next { result = $0 }
         
-        number.sendNext(1)
-        number.sendNext(2)
-        number.sendNext(7)
-        number.sendNext(5)
+        number.send(1)
+        number.send(2)
+        number.send(7)
+        number.send(5)
         
         XCTAssertEqual(result, 7, "Should filter the signal values")
     }
@@ -96,10 +96,10 @@ class SignalTests: XCTestCase {
         
         chain = number.skip(2).next { result = $0 }
         
-        number.sendNext(1)
-        number.sendNext(2)
-        number.sendNext(3)
-        number.sendNext(4)
+        number.send(1)
+        number.send(2)
+        number.send(3)
+        number.send(4)
         
         XCTAssertEqual(result, 4, "Should skip a number of sent values")
     }
@@ -121,13 +121,13 @@ class SignalTests: XCTestCase {
         
         scheduler.async {
             
-            signal.sendNext(111)
+            signal.send(111)
         }
         
         waitForExpectations(timeout: 0.1, handler: nil)
     }
     
-    func testSendNextOnQueue() {
+    func testsendOnQueue() {
         
         let expectation = self.expectation(description: "Should send next value on a given queue")
         let signal = Signal<Int>()
@@ -143,7 +143,7 @@ class SignalTests: XCTestCase {
         
         scheduler.async {
             
-            signal.sendNext(1, onQueue: .mainQueue)
+            signal.send(1, onQueue: .mainQueue)
         }
         
         waitForExpectations(timeout: 0.1, handler: nil)
@@ -158,9 +158,9 @@ class SignalTests: XCTestCase {
         
         chain = signal.debounce(0.1).next { result.append($0) }
         
-        signal.sendNext(1)
-        signal.sendNext(2)
-        signal.sendNext(3)
+        signal.send(1)
+        signal.send(2)
+        signal.send(3)
         
         scheduler.delay(0.1) {
             
@@ -190,7 +190,7 @@ class SignalTests: XCTestCase {
             }
         }
         
-        signal.sendNext(11)
+        signal.send(11)
         
         waitForExpectations(timeout: 0.2, handler: nil)
     }
@@ -205,7 +205,7 @@ class SignalTests: XCTestCase {
         
         signalB.addObserver { result = $0 }
         
-        signalA.sendNext(3)
+        signalA.send(3)
         
         XCTAssertEqual(result, 3, "Should bind a signal to a signal of the same type")
     }
@@ -218,11 +218,11 @@ class SignalTests: XCTestCase {
         
         chain = signal.distinct().next { result.append($0) }
         
-        signal.sendNext(2)
-        signal.sendNext(2)
-        signal.sendNext(2)
-        signal.sendNext(33)
-        signal.sendNext(2)
+        signal.send(2)
+        signal.send(2)
+        signal.send(2)
+        signal.send(33)
+        signal.send(2)
         
         XCTAssertEqual(result, expectedResult, "Should send only distinct values")
     }
@@ -235,11 +235,11 @@ class SignalTests: XCTestCase {
         
         chain = signalA.combineLatestWith(signalB).next { result = $0 }
         
-        signalA.sendNext(1)
-        signalA.sendNext(11)
-        signalB.sendNext("foo")
-        signalA.sendNext(4)
-        signalB.sendNext("bar")
+        signalA.send(1)
+        signalA.send(11)
+        signalB.send("foo")
+        signalA.send(4)
+        signalB.send("bar")
         
         XCTAssertEqual(result.0, 4, "Should contain the latest value of signal A")
         XCTAssertEqual(result.1, "bar", "Should contain the latest value of signal B")
@@ -253,10 +253,10 @@ class SignalTests: XCTestCase {
         
         chain = signal.allEqual { $0 == true }.next { result.append($0) }
         
-        signal.sendNext((false, false))
-        signal.sendNext((false, true))
-        signal.sendNext((true, false))
-        signal.sendNext((true, true))
+        signal.send((false, false))
+        signal.send((false, true))
+        signal.send((true, false))
+        signal.send((true, true))
         
         XCTAssertEqual(result, expectedResult, "Should send true if all values are matching the predicate")
     }
@@ -269,10 +269,10 @@ class SignalTests: XCTestCase {
         
         chain = signal.someEqual { $0 == true }.next { result.append($0) }
         
-        signal.sendNext((false, false))
-        signal.sendNext((false, true))
-        signal.sendNext((true, false))
-        signal.sendNext((true, true))
+        signal.send((false, false))
+        signal.send((false, true))
+        signal.send((true, false))
+        signal.send((true, true))
         
         XCTAssertEqual(result, expectedResult, "Should send true if some of the values match the predicate")
     }
@@ -285,7 +285,7 @@ class SignalTests: XCTestCase {
         
         signal.next { result = $0 }.disposeWith(bag)
         
-        signal.sendNext(1)
+        signal.send(1)
         
         XCTAssertEqual(result, 1, "Should store the chain of operations")
         XCTAssertEqual(bag.disposables.items.count, 1, "Should contain one item")

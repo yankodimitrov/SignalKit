@@ -29,7 +29,7 @@ extension SignalType {
     
     /// Add a new observer to a Signal
     
-    public func next(_ observer: @escaping (ObservationValue) -> Void) -> Self {
+    public func next(_ observer: @escaping (Value) -> Void) -> Self {
         
         addObserver(observer)
         
@@ -43,13 +43,13 @@ extension SignalType {
     
     /// Transform a Signal of type ObservationValue to a Signal of type U
     
-    public func map<U>(_ transform: @escaping (ObservationValue) -> U) -> Signal<U> {
+    public func map<U>(_ transform: @escaping (Value) -> U) -> Signal<U> {
         
         let signal = Signal<U>()
         
         addObserver { [weak signal] in
             
-            signal?.sendNext(transform($0))
+            signal?.send(transform($0))
         }
         
         signal.disposableSource = self
@@ -64,15 +64,15 @@ extension SignalType {
     
     /// Filter the Signal value using a predicate
     
-    public func filter(_ predicate: @escaping (ObservationValue) -> Bool) -> Signal<ObservationValue> {
+    public func filter(_ predicate: @escaping (Value) -> Bool) -> Signal<Value> {
         
-        let signal = Signal<ObservationValue>()
+        let signal = Signal<Value>()
         
         addObserver { [weak signal] in
             
             if predicate($0) {
                 
-                signal?.sendNext($0)
+                signal?.send($0)
             }
         }
         
@@ -88,16 +88,16 @@ extension SignalType {
     
     /// Skip a number of sent values
     
-    public func skip(_ count: Int) -> Signal<ObservationValue> {
+    public func skip(_ count: Int) -> Signal<Value> {
         var count = count
         
-        let signal = Signal<ObservationValue>()
+        let signal = Signal<Value>()
         
         addObserver { [weak signal] in
         
             guard count <= 0 else { count -= 1; return }
             
-            signal?.sendNext($0)
+            signal?.send($0)
         }
         
         signal.disposableSource = self
@@ -112,16 +112,16 @@ extension SignalType {
     
     /// Observe the Signal on a given queue
     
-    public func observeOn(_ queue: SchedulerQueue) -> Signal<ObservationValue> {
+    public func observeOn(_ queue: SchedulerQueue) -> Signal<Value> {
         
-        let signal = Signal<ObservationValue>()
+        let signal = Signal<Value>()
         let scheduler = Scheduler(queue: queue)
         
         addObserver { [weak signal] value in
             
             scheduler.async {
                 
-                signal?.sendNext(value)
+                signal?.send(value)
             }
         }
         
@@ -137,16 +137,16 @@ extension SignalType {
     
     /// Sends only the latest values that are not followed by another value in a given timeframe
     
-    public func debounce(_ seconds: Double, queue: SchedulerQueue = .mainQueue) -> Signal<ObservationValue> {
+    public func debounce(_ seconds: Double, queue: SchedulerQueue = .mainQueue) -> Signal<Value> {
         
-        let signal = Signal<ObservationValue>()
+        let signal = Signal<Value>()
         var scheduler = Scheduler(queue: queue)
         
         addObserver { [weak signal] value in
             
             scheduler.debounce(seconds) {
                 
-                signal?.sendNext(value)
+                signal?.send(value)
             }
         }
         
@@ -162,16 +162,16 @@ extension SignalType {
     
     /// Delay the sent value
     
-    public func delay(_ seconds: Double, queue: SchedulerQueue = .mainQueue) -> Signal<ObservationValue> {
+    public func delay(_ seconds: Double, queue: SchedulerQueue = .mainQueue) -> Signal<Value> {
         
-        let signal = Signal<ObservationValue>()
+        let signal = Signal<Value>()
         let scheduler = Scheduler(queue: queue)
         
         addObserver { [weak signal] value in
         
             scheduler.delay(seconds) {
                 
-                signal?.sendNext(value)
+                signal?.send(value)
             }
         }
         
@@ -187,11 +187,11 @@ extension SignalType {
     
     /// Bind the value to a signal of the same type
     
-    public func bindTo<T: SignalType>(_ signal: T) -> Self where T.ObservationValue == ObservationValue {
+    public func bindTo<T: SignalType>(_ signal: T) -> Self where T.Value == Value {
         
         addObserver { [weak signal] in
         
-            signal?.sendNext($0)
+            signal?.send($0)
         }
         
         return self
@@ -200,21 +200,21 @@ extension SignalType {
 
 // MARK: - Distinct
 
-extension SignalType where ObservationValue: Equatable {
+extension SignalType where Value: Equatable {
     
     /// Send the value only if not equal to the previous one
     
-    public func distinct() -> Signal<ObservationValue> {
+    public func distinct() -> Signal<Value> {
         
-        let signal = Signal<ObservationValue>()
-        var lastValue: ObservationValue?
+        let signal = Signal<Value>()
+        var lastValue: Value?
         
         addObserver { [weak signal] value in
             
             if value != lastValue {
                 
                 lastValue = value
-                signal?.sendNext(value)
+                signal?.send(value)
             }
         }
         
@@ -230,11 +230,11 @@ extension SignalType {
     
     /// Combine the latest values of two signals to a signal of type (A, B)
     
-    public func combineLatestWith<T: SignalType>(_ signal: T) -> Signal<(ObservationValue, T.ObservationValue)> {
+    public func combineLatestWith<T: SignalType>(_ signal: T) -> Signal<(Value, T.Value)> {
         
-        let compoundSignal = Signal<(ObservationValue, T.ObservationValue)>()
-        var lastValueA: ObservationValue?
-        var lastValueB: T.ObservationValue?
+        let compoundSignal = Signal<(Value, T.Value)>()
+        var lastValueA: Value?
+        var lastValueB: T.Value?
         
         addObserver { [weak compoundSignal] in
             
@@ -242,7 +242,7 @@ extension SignalType {
             
             guard let lastValueB = lastValueB else { return }
             
-            compoundSignal?.sendNext(($0, lastValueB))
+            compoundSignal?.send(($0, lastValueB))
         }
         
         signal.addObserver { [weak compoundSignal] in
@@ -251,7 +251,7 @@ extension SignalType {
             
             guard let lastValueA = lastValueA else { return }
             
-            compoundSignal?.sendNext((lastValueA, $0))
+            compoundSignal?.send((lastValueA, $0))
         }
         
         compoundSignal.disposableSource = self
@@ -262,7 +262,7 @@ extension SignalType {
 
 // MARK: - AllEqual
 
-extension SignalType where ObservationValue == (Bool, Bool) {
+extension SignalType where Value == (Bool, Bool) {
     
     /// Send true if all values in a signal of type (Bool, Bool) are matching the predicate function
     
@@ -274,7 +274,7 @@ extension SignalType where ObservationValue == (Bool, Bool) {
 
 // MARK: - SomeEqual
 
-extension SignalType where ObservationValue == (Bool, Bool) {
+extension SignalType where Value == (Bool, Bool) {
     
     /// Send true if at least one value in a signal of type (Bool, Bool) matches the predicate function
     

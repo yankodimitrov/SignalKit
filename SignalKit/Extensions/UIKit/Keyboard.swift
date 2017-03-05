@@ -80,7 +80,7 @@ public extension SignalEventType where Sender == Keyboard.Event {
         
         observer.notificationCallback = { [weak signal] in
             
-            signal?.sendNext(KeyboardState(notification: $0))
+            signal?.send(KeyboardState(notification: $0))
         }
         
         signal.disposableSource = observer

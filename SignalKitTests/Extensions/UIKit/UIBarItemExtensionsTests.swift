@@ -27,7 +27,7 @@ class UIBarItemExtensionsTests: XCTestCase {
         
         signal.bindTo(enabledStateIn: barItem).disposeWith(bag)
         
-        signal.sendNext(false)
+        signal.send(false)
         
         XCTAssertFalse(barItem.isEnabled, "Should bind a signal of boolean to the enabled property of UIBarItem")
     }

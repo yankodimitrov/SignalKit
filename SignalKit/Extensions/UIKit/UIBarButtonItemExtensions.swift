@@ -19,7 +19,7 @@ public extension SignalEventType where Sender: UIBarButtonItem {
         
         target.actionCallback = { [weak signal] sender in
             
-            signal?.sendNext(sender)
+            signal?.send(sender)
         }
         
         sender.target = target

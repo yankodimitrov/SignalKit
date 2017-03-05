@@ -28,7 +28,7 @@ class UIViewExtensionsTests: XCTestCase {
         
         signal.bindTo(alphaIn: view).disposeWith(bag)
         
-        signal.sendNext(0.5)
+        signal.send(0.5)
         
         XCTAssertEqual(view.alpha, 0.5, "Should bind the CGFloat value to the alpha property of UIView")
     }
@@ -42,7 +42,7 @@ class UIViewExtensionsTests: XCTestCase {
         
         signal.bindTo(hiddenStateIn: view).disposeWith(bag)
         
-        signal.sendNext(true)
+        signal.send(true)
         
         XCTAssertTrue(view.isHidden, "Should bind boolean value to the hidden property of UIView")
     }

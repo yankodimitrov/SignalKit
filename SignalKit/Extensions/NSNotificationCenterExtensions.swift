@@ -19,7 +19,7 @@ public extension SignalEventType where Sender: NotificationCenter {
         
         observer.notificationCallback = { [weak signal] in
             
-            signal?.sendNext($0)
+            signal?.send($0)
         }
         
         signal.disposableSource = observer

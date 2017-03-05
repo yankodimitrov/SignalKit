@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalType where ObservationValue == CollectionEvent {
+public extension SignalType where Value == CollectionEvent {
     
     /// Bind the collection change events to a collection view
     

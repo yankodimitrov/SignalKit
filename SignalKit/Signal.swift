@@ -9,7 +9,7 @@
 import Foundation
 
 public final class Signal<T>: SignalType {
-    public typealias ObservationValue = T
+    public typealias Value = T
     
     public var disposableSource: Disposable?
     internal fileprivate(set) var observers = Bag<(T) -> Void>()
@@ -27,7 +27,7 @@ public final class Signal<T>: SignalType {
 
 extension Signal {
     
-    public func addObserver(_ observer: @escaping (ObservationValue) -> Void) -> Disposable {
+    public func addObserver(_ observer: @escaping (Value) -> Void) -> Disposable {
         
         pthread_mutex_lock(&mutex)
         
@@ -41,7 +41,7 @@ extension Signal {
         }
     }
     
-    public func sendNext(_ value: ObservationValue) {
+    public func send(_ value: Value) {
         
         pthread_mutex_lock(&mutex)
         

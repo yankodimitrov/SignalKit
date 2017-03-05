@@ -31,7 +31,7 @@ class UITableViewExtensionsTests: XCTestCase {
         
         event.sectionInsertedAt(0)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssert(tableView.animation == .fade, "Should set the row animaton")
         XCTAssertTrue(tableView.isInsertSectionsCalled, "Should bind the collection change event to table view")
@@ -43,7 +43,7 @@ class UITableViewExtensionsTests: XCTestCase {
         
         event.sectionsReset()
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(tableView.isReloadDataCalled, "Should call the table view to reload the data")
     }
@@ -52,7 +52,7 @@ class UITableViewExtensionsTests: XCTestCase {
         
         event.sectionInsertedAt(1)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(tableView.isInsertSectionsCalled, "Should call the table view to insert section")
     }
@@ -61,7 +61,7 @@ class UITableViewExtensionsTests: XCTestCase {
         
         event.sectionRemovedAt(0)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(tableView.isDeleteSectionsCalled, "Should call the table view to delete section")
     }
@@ -70,7 +70,7 @@ class UITableViewExtensionsTests: XCTestCase {
         
         event.sectionUpdatedAt(2)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(tableView.isReloadSectionsCalled, "Should call the table view to reload section")
     }
@@ -79,7 +79,7 @@ class UITableViewExtensionsTests: XCTestCase {
         
         event.itemInsertedAt(0, inSection: 1)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(tableView.isInsertRowsCalled, "Should call the table view to insert row")
     }
@@ -88,7 +88,7 @@ class UITableViewExtensionsTests: XCTestCase {
         
         event.itemRemovedAt(1, inSection: 2)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(tableView.isDeleteRowsCalled, "Should call the table view to delete row")
     }
@@ -97,7 +97,7 @@ class UITableViewExtensionsTests: XCTestCase {
         
         event.itemUpdatedAt(0, inSection: 1)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(tableView.isReloadRowsCalled, "Should call the table view to reload row")
     }
@@ -121,7 +121,7 @@ class UITableViewExtensionsTests: XCTestCase {
         event.sectionRemovedAt(0)
         event.sectionsReset()
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(tableView.isReloadDataCalled, "Should reload the table view")
         XCTAssertFalse(tableView.isInsertRowsCalled)

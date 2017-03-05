@@ -45,7 +45,7 @@ class SignalValueTests: XCTestCase {
         var result = 0
         
         signal.next { result = $0 }
-        signal.sendNext(3)
+        signal.send(3)
         
         XCTAssertEqual(result, 3, "Should send the new value")
         XCTAssertEqual(signal.value, 3, "Should change the current value")

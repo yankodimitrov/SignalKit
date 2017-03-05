@@ -31,7 +31,7 @@ class UICollectionViewExtensionsTests: XCTestCase {
         
         event.sectionInsertedAt(0)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(collectionView.isInsertSectionsCalled, "Should bind the collection change event to collection view")
     }
@@ -40,7 +40,7 @@ class UICollectionViewExtensionsTests: XCTestCase {
         
         event.sectionsReset()
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(collectionView.isReloadDataCalled, "Should call the collection view to reload the data")
     }
@@ -49,7 +49,7 @@ class UICollectionViewExtensionsTests: XCTestCase {
         
         event.sectionInsertedAt(1)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(collectionView.isInsertSectionsCalled, "Should call the collection view to insert section")
     }
@@ -58,7 +58,7 @@ class UICollectionViewExtensionsTests: XCTestCase {
         
         event.sectionRemovedAt(0)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(collectionView.isDeleteSectionsCalled, "Should call the collection view to delete section")
     }
@@ -67,7 +67,7 @@ class UICollectionViewExtensionsTests: XCTestCase {
         
         event.sectionUpdatedAt(2)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(collectionView.isReloadSectionsCalled, "Should call the collection view to reload section")
     }
@@ -76,7 +76,7 @@ class UICollectionViewExtensionsTests: XCTestCase {
         
         event.itemInsertedAt(0, inSection: 1)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(collectionView.isInsertItemsCalled, "Should call the collection view to insert item")
     }
@@ -85,7 +85,7 @@ class UICollectionViewExtensionsTests: XCTestCase {
         
         event.itemRemovedAt(1, inSection: 2)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(collectionView.isDeleteItemsCalled, "Should call the collection view to delete item")
     }
@@ -94,7 +94,7 @@ class UICollectionViewExtensionsTests: XCTestCase {
         
         event.itemUpdatedAt(0, inSection: 1)
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(collectionView.isReloadItemsCalled, "Should call the collection view to reload item")
     }
@@ -118,7 +118,7 @@ class UICollectionViewExtensionsTests: XCTestCase {
         event.sectionRemovedAt(0)
         event.sectionsReset()
         
-        signal.sendNext(event)
+        signal.send(event)
         
         XCTAssertTrue(collectionView.isReloadDataCalled, "Should reload the collection view")
         XCTAssertFalse(collectionView.isInsertItemsCalled)

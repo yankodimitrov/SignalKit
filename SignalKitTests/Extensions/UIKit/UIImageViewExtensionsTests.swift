@@ -29,7 +29,7 @@ class UIImageViewExtensionsTests: XCTestCase {
         
         signal.bindTo(imageIn: imageView).disposeWith(bag)
         
-        signal.sendNext(image)
+        signal.send(image)
         
         XCTAssert(imageView.image === image, "Should bind the UIImage to the image property of UIImageView")
     }

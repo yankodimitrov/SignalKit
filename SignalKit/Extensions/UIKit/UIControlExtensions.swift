@@ -21,7 +21,7 @@ public extension SignalEventType where Sender: UIControl {
             
             if let control = control as? Sender {
                 
-                signal?.sendNext(control)
+                signal?.send(control)
             }
         }
         
@@ -38,7 +38,7 @@ public extension SignalEventType where Sender: UIControl {
     }
 }
 
-public extension SignalType where ObservationValue == Bool {
+public extension SignalType where Value == Bool {
     
     /// Bind the boolean value of the signal to the enabled property of UIControl
     

@@ -9,23 +9,23 @@
 import Foundation
 
 public protocol Observable: class {
-    associatedtype ObservationValue
+    associatedtype Value
     
-    func addObserver(_ observer: @escaping (ObservationValue) -> Void) -> Disposable
-    func sendNext(_ value: ObservationValue)
+    func addObserver(_ observer: @escaping (Value) -> Void) -> Disposable
+    func send(_ value: Value)
 }
 
 // MARK: - SendNext on a given queue
 
 extension Observable {
     
-    public func sendNext(_ value: ObservationValue, onQueue: SchedulerQueue) {
+    public func send(_ value: Value, onQueue: SchedulerQueue) {
         
         let scheduler = Scheduler(queue: onQueue)
         
         scheduler.async { [weak self] in
             
-            self?.sendNext(value)
+            self?.send(value)
         }
     }
 }

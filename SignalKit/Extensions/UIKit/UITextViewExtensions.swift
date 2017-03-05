@@ -20,7 +20,7 @@ public extension SignalEventType where Sender: UITextView {
         
         observer.notificationCallback = { [weak sender, weak signal] _ in
         
-            signal?.sendNext(sender?.text ?? "")
+            signal?.send(sender?.text ?? "")
         }
         
         signal.disposableSource = observer

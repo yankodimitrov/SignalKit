@@ -28,7 +28,7 @@ class UILabelExtensionsTests: XCTestCase {
         
         signal.bindTo(textIn: label).disposeWith(bag)
         
-        signal.sendNext("John")
+        signal.send("John")
         
         XCTAssertEqual(label.text, "John", "Should bind the string value to the text property of UILabel")
     }
