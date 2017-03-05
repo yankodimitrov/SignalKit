@@ -12,7 +12,7 @@ public extension SignalType where ObservationValue == CollectionEvent {
     
     /// Bind the collection change events to a collection view
     
-    public func bindTo(collectionVIew: UICollectionView) -> Disposable {
+    public func bindTo(_ collectionVIew: UICollectionView) -> Disposable {
         
         let binding = CollectionViewBinding()
         
@@ -42,7 +42,7 @@ final class CollectionViewBinding: Disposable {
         disposableSource?.dispose()
     }
     
-    func handleCollectionEvent(event: CollectionEvent) {
+    func handleCollectionEvent(_ event: CollectionEvent) {
         
         guard !event.containsResetOperation else {
             
@@ -58,7 +58,7 @@ final class CollectionViewBinding: Disposable {
         }, completion: nil)
     }
     
-    func handleOperations(operations: Set<CollectionEvent.Operation>) {
+    func handleOperations(_ operations: Set<CollectionEvent.Operation>) {
         
         for operation in operations {
             
@@ -66,19 +66,19 @@ final class CollectionViewBinding: Disposable {
         }
     }
     
-    func handleOperation(operation: CollectionEvent.Operation) {
+    func handleOperation(_ operation: CollectionEvent.Operation) {
         
         switch operation {
             
-        case let .Insert(element):
+        case let .insert(element):
             
             handleInsertOperationForElement(element)
             
-        case let .Remove(element):
+        case let .remove(element):
             
             handleRemoveOperationForElement(element)
             
-        case let .Update(element):
+        case let .update(element):
             
             handleUpdateOperationForElement(element)
             
@@ -87,48 +87,48 @@ final class CollectionViewBinding: Disposable {
         }
     }
     
-    func handleInsertOperationForElement(element: CollectionEvent.Element) {
+    func handleInsertOperationForElement(_ element: CollectionEvent.Element) {
         
-        if case .Section(let index) = element {
+        if case .section(let index) = element {
             
-            collectionView?.insertSections(NSIndexSet(index: index))
+            collectionView?.insertSections(IndexSet(integer: index))
         }
         
-        if case .Item(let section, let row) = element {
+        if case .item(let section, let row) = element {
             
-            let path = NSIndexPath(forRow: row, inSection: section)
+            let path = IndexPath(row: row, section: section)
             
-            collectionView?.insertItemsAtIndexPaths([path])
-        }
-    }
-    
-    func handleRemoveOperationForElement(element: CollectionEvent.Element) {
-        
-        if case .Section(let index) = element {
-            
-            collectionView?.deleteSections(NSIndexSet(index: index))
-        }
-        
-        if case .Item(let section, let row) = element {
-            
-            let path = NSIndexPath(forRow: row, inSection: section)
-            
-            collectionView?.deleteItemsAtIndexPaths([path])
+            collectionView?.insertItems(at: [path])
         }
     }
     
-    func handleUpdateOperationForElement(element: CollectionEvent.Element) {
+    func handleRemoveOperationForElement(_ element: CollectionEvent.Element) {
         
-        if case .Section(let index) = element {
+        if case .section(let index) = element {
             
-            collectionView?.reloadSections(NSIndexSet(index: index))
+            collectionView?.deleteSections(IndexSet(integer: index))
         }
         
-        if case .Item(let section, let row) = element {
+        if case .item(let section, let row) = element {
             
-            let path = NSIndexPath(forRow: row, inSection: section)
+            let path = IndexPath(row: row, section: section)
             
-            collectionView?.reloadItemsAtIndexPaths([path])
+            collectionView?.deleteItems(at: [path])
+        }
+    }
+    
+    func handleUpdateOperationForElement(_ element: CollectionEvent.Element) {
+        
+        if case .section(let index) = element {
+            
+            collectionView?.reloadSections(IndexSet(integer: index))
+        }
+        
+        if case .item(let section, let row) = element {
+            
+            let path = IndexPath(row: row, section: section)
+            
+            collectionView?.reloadItems(at: [path])
         }
     }
 }

@@ -14,6 +14,6 @@ public extension SignalEventType where Sender: UISwitch {
     
     public var onState: Signal<Bool> {
         
-        return events(.ValueChanged).map { $0.on }
+        return events(.valueChanged).map { $0.isOn }
     }
 }

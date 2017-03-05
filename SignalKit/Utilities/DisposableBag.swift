@@ -10,7 +10,7 @@ import Foundation
 
 public final class DisposableBag {
     
-    internal private(set) var disposables = Bag<Disposable>()
+    internal fileprivate(set) var disposables = Bag<Disposable>()
     
     public init() {}
     
@@ -22,7 +22,7 @@ public final class DisposableBag {
 
 extension DisposableBag {
     
-    public func insertItem(item: Disposable) -> Disposable {
+    public func insertItem(_ item: Disposable) -> Disposable {
         
         let token = disposables.insertItem(item)
         

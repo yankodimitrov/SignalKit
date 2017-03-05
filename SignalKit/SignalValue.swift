@@ -12,9 +12,9 @@ public final class SignalValue<T>: SignalType {
     public typealias ObservationValue = T
     
     public var disposableSource: Disposable?
-    private let signal = Signal<T>()
-    private var mutex = pthread_mutex_t()
-    private var internalValue: T
+    fileprivate let signal = Signal<T>()
+    fileprivate var mutex = pthread_mutex_t()
+    fileprivate var internalValue: T
     
     public var value: T {
         get {
@@ -48,7 +48,7 @@ public final class SignalValue<T>: SignalType {
 
 extension SignalValue {
     
-    public func addObserver(observer: ObservationValue -> Void) -> Disposable {
+    public func addObserver(_ observer: @escaping (ObservationValue) -> Void) -> Disposable {
         
         let disposable = signal.addObserver(observer)
         
@@ -57,7 +57,7 @@ extension SignalValue {
         return disposable
     }
     
-    public func sendNext(value: ObservationValue) {
+    public func sendNext(_ value: ObservationValue) {
         
         self.value = value
     }

@@ -38,12 +38,12 @@ class UIViewExtensionsTests: XCTestCase {
         let signal = Signal<Bool>()
         let view = UIView()
         
-        view.hidden = false
+        view.isHidden = false
         
         signal.bindTo(hiddenStateIn: view).disposeWith(bag)
         
         signal.sendNext(true)
         
-        XCTAssertTrue(view.hidden, "Should bind boolean value to the hidden property of UIView")
+        XCTAssertTrue(view.isHidden, "Should bind boolean value to the hidden property of UIView")
     }
 }

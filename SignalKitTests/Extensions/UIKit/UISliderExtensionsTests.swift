@@ -30,7 +30,7 @@ class UISliderExtensionsTests: XCTestCase {
             .disposeWith(bag)
         
         slider.value = 10
-        slider.sendActionsForControlEvents(.ValueChanged)
+        slider.sendActions(for: .valueChanged)
         
         XCTAssertEqual(result, 10, "Should observe the UISlider for value changes")
     }

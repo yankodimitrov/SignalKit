@@ -9,17 +9,17 @@
 import Foundation
 
 public protocol Observable: class {
-    typealias ObservationValue
+    associatedtype ObservationValue
     
-    func addObserver(observer: ObservationValue -> Void) -> Disposable
-    func sendNext(value: ObservationValue)
+    func addObserver(_ observer: @escaping (ObservationValue) -> Void) -> Disposable
+    func sendNext(_ value: ObservationValue)
 }
 
 // MARK: - SendNext on a given queue
 
 extension Observable {
     
-    public func sendNext(value: ObservationValue, onQueue: SchedulerQueue) {
+    public func sendNext(_ value: ObservationValue, onQueue: SchedulerQueue) {
         
         let scheduler = Scheduler(queue: onQueue)
         

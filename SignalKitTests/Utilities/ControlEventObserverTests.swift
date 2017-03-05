@@ -21,38 +21,38 @@ class ControlEventObserverTests: XCTestCase {
     
     func testObserveControlEvents() {
         
-        let observer = ControlEventObserver(control: control, events: .ValueChanged)
+        let observer = ControlEventObserver(control: control, events: .valueChanged)
         var called = false
         
         observer.eventCallback = { _ in called = true }
         
-        control.sendActionsForControlEvents(.ValueChanged)
+        control.sendActions(for: .valueChanged)
         
         XCTAssertTrue(called, "Should observe the UIControl for UIControl events")
     }
     
     func testDispose() {
         
-        let observer = ControlEventObserver(control: control, events: .ValueChanged)
+        let observer = ControlEventObserver(control: control, events: .valueChanged)
         var called = false
         
         observer.eventCallback = { _ in called = true }
         observer.dispose()
         
-        control.sendActionsForControlEvents(.ValueChanged)
+        control.sendActions(for: .valueChanged)
         
         XCTAssertFalse(called, "Should dispose the observation")
     }
     
     func testDisposeOnDeinit() {
         
-        var observer: ControlEventObserver? = ControlEventObserver(control: control, events: .ValueChanged)
+        var observer: ControlEventObserver? = ControlEventObserver(control: control, events: .valueChanged)
         var called = false
         
         observer!.eventCallback = { _ in called = true }
         observer = nil
         
-        control.sendActionsForControlEvents(.ValueChanged)
+        control.sendActions(for: .valueChanged)
         
         XCTAssertFalse(called, "Should dispose on deinit")
         

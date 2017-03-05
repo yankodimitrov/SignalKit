@@ -16,7 +16,7 @@ public extension SignalType where ObservationValue == Bool {
         
         addObserver { [weak barItem] in
             
-            barItem?.enabled = $0
+            barItem?.isEnabled = $0
         }
         
         return self

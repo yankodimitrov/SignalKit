@@ -14,6 +14,6 @@ public extension SignalEventType where Sender: UITextField {
     
     public var text: Signal<String> {
         
-        return events(.EditingChanged).map { $0.text ?? "" }
+        return events(.editingChanged).map { $0.text ?? "" }
     }
 }

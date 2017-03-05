@@ -11,25 +11,25 @@ import XCTest
 
 class KeyboardStateTests: XCTestCase {
 
-    let beginFrame = CGRectMake(0, 0, 100, 200)
-    let endFrame = CGRectMake(0, 200, 100, 200)
-    let animationCurve = UIViewAnimationCurve.EaseInOut
+    let beginFrame = CGRect(x: 0, y: 0, width: 100, height: 200)
+    let endFrame = CGRect(x: 0, y: 200, width: 100, height: 200)
+    let animationCurve = UIViewAnimationCurve.easeInOut
     let animationDuration: Double = 0.5
     
-    var keyboardInfo: [NSObject: AnyObject]!
-    var notification: NSNotification!
+    var keyboardInfo: [AnyHashable: Any]!
+    var notification: Notification!
     
     override func setUp() {
         super.setUp()
         
-        keyboardInfo = [NSObject: AnyObject]()
+        keyboardInfo = [AnyHashable: Any]()
         
-        keyboardInfo[UIKeyboardFrameBeginUserInfoKey] = NSValue(CGRect: beginFrame)
-        keyboardInfo[UIKeyboardFrameEndUserInfoKey] =  NSValue(CGRect: endFrame)
-        keyboardInfo[UIKeyboardAnimationCurveUserInfoKey] = NSNumber(integer: animationCurve.rawValue)
-        keyboardInfo[UIKeyboardAnimationDurationUserInfoKey] = NSNumber(double: animationDuration)
+        keyboardInfo[UIKeyboardFrameBeginUserInfoKey] = NSValue(cgRect: beginFrame)
+        keyboardInfo[UIKeyboardFrameEndUserInfoKey] =  NSValue(cgRect: endFrame)
+        keyboardInfo[UIKeyboardAnimationCurveUserInfoKey] = NSNumber(value: animationCurve.rawValue as Int)
+        keyboardInfo[UIKeyboardAnimationDurationUserInfoKey] = NSNumber(value: animationDuration as Double)
         
-        notification = NSNotification(name: "test", object: nil, userInfo: keyboardInfo)
+        notification = Notification(name: Notification.Name(rawValue: "test"), object: nil, userInfo: keyboardInfo)
     }
     
     func testBeginFrame() {
@@ -43,10 +43,10 @@ class KeyboardStateTests: XCTestCase {
         
         keyboardInfo[UIKeyboardFrameBeginUserInfoKey] = nil
         
-        let notification = NSNotification(name: "test", object: nil, userInfo: keyboardInfo)
+        let notification = Notification(name: Notification.Name(rawValue: "test"), object: nil, userInfo: keyboardInfo)
         let keyboardState = KeyboardState(notification: notification)
         
-        XCTAssertEqual(keyboardState.beginFrame, CGRectZero, "When begin frame key is missing should return CGRectZero")
+        XCTAssertEqual(keyboardState.beginFrame, CGRect.zero, "When begin frame key is missing should return CGRectZero")
     }
     
     func testEndFrame() {
@@ -60,10 +60,10 @@ class KeyboardStateTests: XCTestCase {
         
         keyboardInfo[UIKeyboardFrameEndUserInfoKey] = nil
         
-        let notification = NSNotification(name: "test", object: nil, userInfo: keyboardInfo)
+        let notification = Notification(name: Notification.Name(rawValue: "test"), object: nil, userInfo: keyboardInfo)
         let keyboardState = KeyboardState(notification: notification)
         
-        XCTAssertEqual(keyboardState.endFrame, CGRectZero, "When end frame key is missing should return CGRectZero")
+        XCTAssertEqual(keyboardState.endFrame, CGRect.zero, "When end frame key is missing should return CGRectZero")
     }
     
     func testAnimationCurve() {
@@ -77,7 +77,7 @@ class KeyboardStateTests: XCTestCase {
         
         keyboardInfo[UIKeyboardAnimationCurveUserInfoKey] = nil
         
-        let notification = NSNotification(name: "test", object: nil, userInfo: keyboardInfo)
+        let notification = Notification(name: Notification.Name(rawValue: "test"), object: nil, userInfo: keyboardInfo)
         let keyboardState = KeyboardState(notification: notification)
         
         XCTAssertEqual(keyboardState.animationCurve, nil, "When animation curve key is missing should return nil")
@@ -94,7 +94,7 @@ class KeyboardStateTests: XCTestCase {
         
         keyboardInfo[UIKeyboardAnimationDurationUserInfoKey] = nil
         
-        let notification = NSNotification(name: "test", object: nil, userInfo: keyboardInfo)
+        let notification = Notification(name: Notification.Name(rawValue: "test"), object: nil, userInfo: keyboardInfo)
         let keyboardState = KeyboardState(notification: notification)
         
         XCTAssertEqual(keyboardState.animationDuration, 0, "When animation duration key is missing should return 0")

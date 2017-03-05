@@ -8,13 +8,13 @@
 
 import Foundation
 
-public extension SignalEventType where Sender: NSNotificationCenter {
+public extension SignalEventType where Sender: NotificationCenter {
     
     /// Observe the notification center for a given notification
     
-    public func notification(name: String, fromObject: AnyObject? = nil) -> Signal<NSNotification> {
+    public func notification(_ name: String, fromObject: AnyObject? = nil) -> Signal<Notification> {
         
-        let signal = Signal<NSNotification>()
+        let signal = Signal<Notification>()
         let observer = NotificationObserver(center: sender, name: name, object: fromObject)
         
         observer.notificationCallback = { [weak signal] in

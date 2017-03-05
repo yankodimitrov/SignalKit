@@ -29,7 +29,7 @@ class UITextFieldExtensionsTests: XCTestCase {
             .disposeWith(bag)
         
         field.text = "John"
-        field.sendActionsForControlEvents(.EditingChanged)
+        field.sendActions(for: .editingChanged)
         
         XCTAssertEqual(result, "John", "Should observe the text changes in UITextField")
     }

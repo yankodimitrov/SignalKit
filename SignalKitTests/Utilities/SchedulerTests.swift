@@ -13,122 +13,122 @@ class SchedulerTests: XCTestCase {
     
     func testDispatchOnMainQueue() {
         
-        let expectation = expectationWithDescription("Should dispatch on main queue")
-        let scheduler = Scheduler(queue: .MainQueue)
+        let expectation = self.expectation(description: "Should dispatch on main queue")
+        let scheduler = Scheduler(queue: .mainQueue)
         
         scheduler.async {
             
-            if NSThread.isMainThread() {
+            if Thread.isMainThread {
                 
                 expectation.fulfill()
             }
         }
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     func testDispatchOnUserInteractiveQueue() {
         
-        let interactiveQueue = dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)
-        let expectation = expectationWithDescription("Should dispatch on user interactive queue")
-        let scheduler = Scheduler(queue: .UserInteractiveQueue)
+        let interactiveQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive)
+        let expectation = self.expectation(description: "Should dispatch on user interactive queue")
+        let scheduler = Scheduler(queue: .userInteractiveQueue)
         
         scheduler.async {
             
-            if !NSThread.isMainThread() && interactiveQueue === scheduler.queue {
+            if !Thread.isMainThread && interactiveQueue === scheduler.queue {
                 
                 expectation.fulfill()
             }
         }
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     func testDispatchOnUserInitiatedQueue() {
         
-        let initiatedQueue = dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)
-        let expectation = expectationWithDescription("Should dispatch on user initiated queue")
-        let scheduler = Scheduler(queue: .UserInitiatedQueue)
+        let initiatedQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)
+        let expectation = self.expectation(description: "Should dispatch on user initiated queue")
+        let scheduler = Scheduler(queue: .userInitiatedQueue)
         
         scheduler.async {
             
-            if !NSThread.isMainThread() && initiatedQueue === scheduler.queue {
+            if !Thread.isMainThread && initiatedQueue === scheduler.queue {
                 
                 expectation.fulfill()
             }
         }
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     func testDispatchOnUtilityQueue() {
         
-        let utilityQueue = dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)
-        let expectation = expectationWithDescription("Should dispatch on utility queue")
-        let scheduler = Scheduler(queue: .UtilityQueue)
+        let utilityQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.utility)
+        let expectation = self.expectation(description: "Should dispatch on utility queue")
+        let scheduler = Scheduler(queue: .utilityQueue)
         
         scheduler.async {
             
-            if !NSThread.isMainThread() && utilityQueue === scheduler.queue {
+            if !Thread.isMainThread && utilityQueue === scheduler.queue {
                 
                 expectation.fulfill()
             }
         }
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     func testDispatchOnBackgroundQueue() {
         
-        let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
-        let expectation = expectationWithDescription("Should dispatch on background queue")
-        let scheduler = Scheduler(queue: .BackgroundQueue)
+        let backgroundQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
+        let expectation = self.expectation(description: "Should dispatch on background queue")
+        let scheduler = Scheduler(queue: .backgroundQueue)
         
         scheduler.async {
             
-            if !NSThread.isMainThread() && backgroundQueue === scheduler.queue {
+            if !Thread.isMainThread && backgroundQueue === scheduler.queue {
                 
                 expectation.fulfill()
             }
         }
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     func testDispatchOnCustomQueue() {
         
-        let customQueue = dispatch_queue_create("signal.kit.tests.queue", DISPATCH_QUEUE_CONCURRENT)
-        let expectation = expectationWithDescription("Should dispatch on custom queue")
-        let scheduler = Scheduler(queue: .CustomQueue(customQueue))
+        let customQueue = DispatchQueue(label: "signal.kit.tests.queue", attributes: DispatchQueue.Attributes.concurrent)
+        let expectation = self.expectation(description: "Should dispatch on custom queue")
+        let scheduler = Scheduler(queue: .customQueue(customQueue))
         
         scheduler.async {
             
-            if !NSThread.isMainThread() && customQueue === scheduler.queue {
+            if !Thread.isMainThread && customQueue === scheduler.queue {
                 
                 expectation.fulfill()
             }
         }
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     func testDelay() {
         
-        let expectation = expectationWithDescription("Should dispatch an action with delay")
-        let scheduler = Scheduler(queue: .MainQueue)
+        let expectation = self.expectation(description: "Should dispatch an action with delay")
+        let scheduler = Scheduler(queue: .mainQueue)
         
         scheduler.delay(0.1) {
             
             expectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     func testDebounce() {
         
-        let expectation = expectationWithDescription("Should debounce the execution of an action")
-        var scheduler = Scheduler(queue: .MainQueue)
+        let expectation = self.expectation(description: "Should debounce the execution of an action")
+        var scheduler = Scheduler(queue: .mainQueue)
         var result = [Int]()
         
         scheduler.debounce(0.1) { result.append(1) }
@@ -143,6 +143,6 @@ class SchedulerTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
 }

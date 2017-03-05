@@ -10,33 +10,33 @@ import Foundation
 
 public enum SchedulerQueue {
     
-    case MainQueue
-    case UserInteractiveQueue
-    case UserInitiatedQueue
-    case UtilityQueue
-    case BackgroundQueue
-    case CustomQueue(dispatch_queue_t)
+    case mainQueue
+    case userInteractiveQueue
+    case userInitiatedQueue
+    case utilityQueue
+    case backgroundQueue
+    case customQueue(DispatchQueue)
     
-    var dispatchQueue: dispatch_queue_t {
+    var dispatchQueue: DispatchQueue {
         
         switch self {
             
-        case .MainQueue:
-            return dispatch_get_main_queue()
+        case .mainQueue:
+            return DispatchQueue.main
             
-        case .UserInteractiveQueue:
-            return dispatch_get_global_queue(QOS_CLASS_USER_INTERACTIVE, 0)
+        case .userInteractiveQueue:
+            return DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive)
             
-        case .UserInitiatedQueue:
-            return dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)
+        case .userInitiatedQueue:
+            return DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)
             
-        case .UtilityQueue:
-            return dispatch_get_global_queue(QOS_CLASS_UTILITY, 0)
+        case .utilityQueue:
+            return DispatchQueue.global(qos: DispatchQoS.QoSClass.utility)
             
-        case .BackgroundQueue:
-            return dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+        case .backgroundQueue:
+            return DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
             
-        case .CustomQueue(let customQueue):
+        case .customQueue(let customQueue):
             return customQueue
         }
     }
@@ -44,27 +44,27 @@ public enum SchedulerQueue {
 
 public struct Scheduler {
     
-    private var debounceAction: (() -> Void)? = nil
-    internal let queue: dispatch_queue_t
+    fileprivate var debounceAction: (() -> Void)? = nil
+    internal let queue: DispatchQueue
     
     public init(queue: SchedulerQueue) {
         
         self.queue = queue.dispatchQueue
     }
     
-    public func async(block: dispatch_block_t) {
+    public func async(_ block: @escaping ()->()) {
         
-        dispatch_async(queue, block)
+        queue.async(execute: block)
     }
     
-    public func delay(seconds: Double, block: dispatch_block_t) {
+    public func delay(_ seconds: Double, block: @escaping ()->()) {
         
-        let when = dispatch_time(DISPATCH_TIME_NOW, Int64(seconds * Double(NSEC_PER_SEC)))
+        let when = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
         
-        dispatch_after(when, queue, block)
+        queue.asyncAfter(deadline: when, execute: block)
     }
     
-    public mutating func debounce(seconds: Double, block: dispatch_block_t) {
+    public mutating func debounce(_ seconds: Double, block: @escaping ()->()) {
         
         debounceAction?()
         

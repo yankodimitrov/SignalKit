@@ -65,7 +65,7 @@ class KeyPathObserverTests: XCTestCase {
         
         observer.keyPathCallback = { _ in isCalled = true }
         
-        observer.observeValueForKeyPath("name", ofObject: person, change: [NSKeyValueChangeNewKey: "Jane"], context: &otherContext)
+        observer.observeValue(forKeyPath: "name", of: person, change: [NSKeyValueChangeKey.newKey: "Jane"], context: &otherContext)
         
         XCTAssertFalse(isCalled, "Should call the callback only when the event is from the same context")
     }

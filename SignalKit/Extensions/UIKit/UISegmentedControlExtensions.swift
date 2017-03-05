@@ -14,6 +14,6 @@ public extension SignalEventType where Sender: UISegmentedControl {
     
     public var selectedIndex: Signal<Int> {
         
-        return events(.ValueChanged).map { $0.selectedSegmentIndex }
+        return events(.valueChanged).map { $0.selectedSegmentIndex }
     }
 }

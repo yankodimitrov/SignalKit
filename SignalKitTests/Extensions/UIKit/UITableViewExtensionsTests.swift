@@ -24,7 +24,7 @@ class UITableViewExtensionsTests: XCTestCase {
         event = CollectionEvent()
         signal = Signal<CollectionEvent>()
         
-        signal.bindTo(tableView, rowAnimation: .Fade).disposeWith(bag)
+        signal.bindTo(tableView, rowAnimation: .fade).disposeWith(bag)
     }
     
     func testBindToTableView() {
@@ -33,7 +33,7 @@ class UITableViewExtensionsTests: XCTestCase {
         
         signal.sendNext(event)
         
-        XCTAssert(tableView.animation == .Fade, "Should set the row animaton")
+        XCTAssert(tableView.animation == .fade, "Should set the row animaton")
         XCTAssertTrue(tableView.isInsertSectionsCalled, "Should bind the collection change event to table view")
         XCTAssertTrue(tableView.isBeginUpdatesCalled, "Should call table view to begin updates")
         XCTAssertTrue(tableView.isEndUpdatesCalled, "Should call the table view to end updates")

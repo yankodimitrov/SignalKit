@@ -12,8 +12,8 @@ public final class Signal<T>: SignalType {
     public typealias ObservationValue = T
     
     public var disposableSource: Disposable?
-    internal private(set) var observers = Bag<T -> Void>()
-    private var mutex = pthread_mutex_t()
+    internal fileprivate(set) var observers = Bag<(T) -> Void>()
+    fileprivate var mutex = pthread_mutex_t()
     
     public init() {}
     
@@ -27,7 +27,7 @@ public final class Signal<T>: SignalType {
 
 extension Signal {
     
-    public func addObserver(observer: ObservationValue -> Void) -> Disposable {
+    public func addObserver(_ observer: @escaping (ObservationValue) -> Void) -> Disposable {
         
         pthread_mutex_lock(&mutex)
         
@@ -41,7 +41,7 @@ extension Signal {
         }
     }
     
-    public func sendNext(value: ObservationValue) {
+    public func sendNext(_ value: ObservationValue) {
         
         pthread_mutex_lock(&mutex)
         
@@ -53,7 +53,7 @@ extension Signal {
         pthread_mutex_unlock(&mutex)
     }
     
-    internal func removeItemWithToken(token: RemovalToken) {
+    internal func removeItemWithToken(_ token: RemovalToken) {
         
         pthread_mutex_lock(&mutex)
         

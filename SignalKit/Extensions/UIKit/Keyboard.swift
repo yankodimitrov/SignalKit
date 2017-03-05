@@ -27,19 +27,19 @@ public struct KeyboardState {
     public var beginFrame: CGRect {
         
         guard let frame = info[UIKeyboardFrameBeginUserInfoKey] as? NSValue else {
-            return CGRectZero
+            return CGRect.zero
         }
         
-        return frame.CGRectValue()
+        return frame.cgRectValue
     }
     
     public var endFrame: CGRect {
         
         guard let frame = info[UIKeyboardFrameEndUserInfoKey] as? NSValue else {
-            return CGRectZero
+            return CGRect.zero
         }
         
-        return frame.CGRectValue()
+        return frame.cgRectValue
     }
     
     public var animationCurve: UIViewAnimationCurve? {
@@ -48,7 +48,7 @@ public struct KeyboardState {
             return nil
         }
         
-        return UIViewAnimationCurve(rawValue: curve.integerValue)
+        return UIViewAnimationCurve(rawValue: curve.intValue)
     }
     
     public var animationDuration: Double {
@@ -60,11 +60,11 @@ public struct KeyboardState {
         return duration.doubleValue
     }
     
-    private let info: [NSObject: AnyObject]
+    fileprivate let info: [AnyHashable: Any]
     
-    public init(notification: NSNotification) {
+    public init(notification: Notification) {
         
-        info = notification.userInfo ?? [NSObject: AnyObject]()
+        info = notification.userInfo ?? [AnyHashable: Any]()
     }
 }
 
@@ -72,10 +72,10 @@ public struct KeyboardState {
 
 public extension SignalEventType where Sender == Keyboard.Event {
     
-    private func keyboardSignalFor(notificationName: String) -> Signal<KeyboardState> {
+    fileprivate func keyboardSignalFor(_ notificationName: String) -> Signal<KeyboardState> {
         
         let signal = Signal<KeyboardState>()
-        let center = NSNotificationCenter.defaultCenter()
+        let center = NotificationCenter.default
         let observer = NotificationObserver(center: center, name: notificationName)
         
         observer.notificationCallback = { [weak signal] in
@@ -92,41 +92,41 @@ public extension SignalEventType where Sender == Keyboard.Event {
     
     var willShow: Signal<KeyboardState> {
         
-        return keyboardSignalFor(UIKeyboardWillShowNotification)
+        return keyboardSignalFor(NSNotification.Name.UIKeyboardWillShow.rawValue)
     }
     
     /// Observe for keyboard did show event
     
     var didShow: Signal<KeyboardState> {
         
-        return keyboardSignalFor(UIKeyboardDidShowNotification)
+        return keyboardSignalFor(NSNotification.Name.UIKeyboardDidShow.rawValue)
     }
     
     /// Observe for keyboard will hide event
     
     var willHide: Signal<KeyboardState> {
         
-        return keyboardSignalFor(UIKeyboardWillHideNotification)
+        return keyboardSignalFor(NSNotification.Name.UIKeyboardWillHide.rawValue)
     }
     
     /// Observe for keyboard did hide event
     
     var didHide: Signal<KeyboardState> {
         
-        return keyboardSignalFor(UIKeyboardDidHideNotification)
+        return keyboardSignalFor(NSNotification.Name.UIKeyboardDidHide.rawValue)
     }
     
     /// Observe for keyboard will change frame event
     
     var willChangeFrame: Signal<KeyboardState> {
         
-        return keyboardSignalFor(UIKeyboardWillChangeFrameNotification)
+        return keyboardSignalFor(NSNotification.Name.UIKeyboardWillChangeFrame.rawValue)
     }
     
     /// Observe for keyboard did change frame event
     
     var didChangeFrame: Signal<KeyboardState> {
         
-        return keyboardSignalFor(UIKeyboardDidChangeFrameNotification)
+        return keyboardSignalFor(NSNotification.Name.UIKeyboardDidChangeFrame.rawValue)
     }
 }

@@ -31,7 +31,7 @@ public extension SignalType where ObservationValue == Bool {
         
         addObserver { [weak view] in
             
-            view?.hidden = $0
+            view?.isHidden = $0
         }
         
         return self

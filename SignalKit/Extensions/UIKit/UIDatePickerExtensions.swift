@@ -12,8 +12,8 @@ public extension SignalEventType where Sender: UIDatePicker {
     
     /// Observe date changes in UIDatePicker
     
-    public var date: Signal<NSDate> {
+    public var date: Signal<Date> {
         
-        return events(.ValueChanged).map { $0.date }
+        return events(.valueChanged).map { $0.date }
     }
 }

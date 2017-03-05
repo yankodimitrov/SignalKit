@@ -11,15 +11,15 @@ import Foundation
 public struct CollectionEvent {
     
     public enum Element {
-        case Section(Int)
-        case Item(index: Int, section: Int)
+        case section(Int)
+        case item(index: Int, section: Int)
     }
     
     public enum Operation {
-        case Reset
-        case Insert(Element)
-        case Remove(Element)
-        case Update(Element)
+        case reset
+        case insert(Element)
+        case remove(Element)
+        case update(Element)
     }
     
     public var operations = Set<Operation>()
@@ -34,49 +34,49 @@ extension CollectionEvent {
     
     public mutating func sectionsReset() {
         
-        operations.insert(.Reset)
+        operations.insert(.reset)
     }
     
     /// Register that a new section has been inserted
     
-    public mutating func sectionInsertedAt(index: Int) {
+    public mutating func sectionInsertedAt(_ index: Int) {
         
-        operations.insert(.Insert(.Section(index)))
+        operations.insert(.insert(.section(index)))
     }
     
     /// Register that a section has been removed
     
-    public mutating func sectionRemovedAt(index: Int) {
+    public mutating func sectionRemovedAt(_ index: Int) {
         
-        operations.insert(.Remove(.Section(index)))
+        operations.insert(.remove(.section(index)))
     }
     
     /// Register that a section has been updated with new items
     
-    public mutating func sectionUpdatedAt(index: Int) {
+    public mutating func sectionUpdatedAt(_ index: Int) {
         
-        operations.insert(.Update(.Section(index)))
+        operations.insert(.update(.section(index)))
     }
     
     /// Register that a new item has been inserted in the given section
     
-    public mutating func itemInsertedAt(index: Int, inSection: Int) {
+    public mutating func itemInsertedAt(_ index: Int, inSection: Int) {
         
-        operations.insert(.Insert(.Item(index: index, section: inSection)))
+        operations.insert(.insert(.item(index: index, section: inSection)))
     }
     
     /// Register that an item has been removed from the given section
     
-    public mutating func itemRemovedAt(index: Int, inSection: Int) {
+    public mutating func itemRemovedAt(_ index: Int, inSection: Int) {
         
-        operations.insert(.Remove(.Item(index: index, section: inSection)))
+        operations.insert(.remove(.item(index: index, section: inSection)))
     }
     
     /// Register that an item has been updated in the given section
     
-    public mutating func itemUpdatedAt(index: Int, inSection: Int) {
+    public mutating func itemUpdatedAt(_ index: Int, inSection: Int) {
         
-        operations.insert(.Update(.Item(index: index, section: inSection)))
+        operations.insert(.update(.item(index: index, section: inSection)))
     }
 }
 
@@ -84,7 +84,7 @@ extension CollectionEvent {
     
     public var containsResetOperation: Bool {
         
-        return operations.contains(.Reset)
+        return operations.contains(.reset)
     }
 }
 
@@ -96,10 +96,10 @@ public func ==(lhs: CollectionEvent.Element, rhs: CollectionEvent.Element) -> Bo
     
     switch (lhs, rhs) {
         
-    case (let .Section(a), let .Section(b)):
+    case (let .section(a), let .section(b)):
         return a == b
     
-    case (let .Item(indexA, sectionA), let .Item(indexB, sectionB)):
+    case (let .item(indexA, sectionA), let .item(indexB, sectionB)):
         return sectionA == sectionB && indexA == indexB
     
     default:
@@ -115,16 +115,16 @@ public func ==(lhs: CollectionEvent.Operation, rhs: CollectionEvent.Operation) -
     
     switch (lhs, rhs) {
         
-    case (.Reset, .Reset):
+    case (.reset, .reset):
         return true
         
-    case (let .Insert(a), let .Insert(b)):
+    case (let .insert(a), let .insert(b)):
         return a == b
         
-    case (let .Remove(a), let .Remove(b)):
+    case (let .remove(a), let .remove(b)):
         return a == b
         
-    case (let .Update(a), let .Update(b)):
+    case (let .update(a), let .update(b)):
         return a == b
         
     default:
@@ -139,10 +139,10 @@ extension CollectionEvent.Element: Hashable {
     public var hashValue: Int {
         
         switch self {
-        case let .Section(index):
+        case let .section(index):
             return 0.hashValue ^ index.hashValue
             
-        case let .Item(index, section):
+        case let .item(index, section):
             return 1.hashValue ^ section.hashValue ^ index.hashValue
         }
     }
@@ -155,16 +155,16 @@ extension CollectionEvent.Operation: Hashable {
     public var hashValue: Int {
         
         switch self {
-        case .Reset:
+        case .reset:
             return 0.hashValue
             
-        case let .Insert(element):
+        case let .insert(element):
             return 1.hashValue ^ element.hashValue
             
-        case let .Remove(element):
+        case let .remove(element):
             return 2.hashValue ^ element.hashValue
             
-        case let .Update(element):
+        case let .update(element):
             return 3.hashValue ^ element.hashValue
         }
     }

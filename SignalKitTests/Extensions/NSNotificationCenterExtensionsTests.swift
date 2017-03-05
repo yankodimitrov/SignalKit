@@ -12,13 +12,13 @@ import XCTest
 class NSNotificationCenterExtensionsTests: XCTestCase {
     
     let notificationName = "signalkit.notification"
-    var center: NSNotificationCenter!
+    var center: NotificationCenter!
     var bag: DisposableBag!
     
     override func setUp() {
         super.setUp()
         
-        center = NSNotificationCenter.defaultCenter()
+        center = NotificationCenter.default
         bag = DisposableBag()
     }
     
@@ -30,7 +30,7 @@ class NSNotificationCenterExtensionsTests: XCTestCase {
             .next { _ in called = true }
             .disposeWith(bag)
         
-        center.postNotificationName(notificationName, object: nil)
+        center.post(name: Notification.Name(rawValue: notificationName), object: nil)
         
         XCTAssertEqual(called, true, "Should observe for notification posted on the notification center")
     }
@@ -44,7 +44,7 @@ class NSNotificationCenterExtensionsTests: XCTestCase {
             .next { _ in called = true }
             .disposeWith(bag)
         
-        center.postNotificationName(notificationName, object: person)
+        center.post(name: Notification.Name(rawValue: notificationName), object: person)
         
         XCTAssertEqual(called, true, "Should observe for notification posted on the notification center from a certain object")
     }
@@ -57,7 +57,7 @@ class NSNotificationCenterExtensionsTests: XCTestCase {
             .next { _ in called = true }
             .disposeWith(bag)
         
-        center.postNotificationName("other.notification", object: nil)
+        center.post(name: Notification.Name(rawValue: "other.notification"), object: nil)
         
         XCTAssertEqual(called, false, "Should observe only for the specified notification")
     }

@@ -12,7 +12,7 @@ public extension SignalEventType where Sender: UIControl {
     
     /// Observe for control events
     
-    public func events(events: UIControlEvents) -> Signal<Sender> {
+    public func events(_ events: UIControlEvents) -> Signal<Sender> {
         
         let signal = Signal<Sender>()
         let observer = ControlEventObserver(control: sender, events: events)
@@ -34,7 +34,7 @@ public extension SignalEventType where Sender: UIControl {
     
     public var tapEvent: Signal<Sender> {
         
-        return events(.TouchUpInside)
+        return events(.touchUpInside)
     }
 }
 
@@ -46,7 +46,7 @@ public extension SignalType where ObservationValue == Bool {
         
         addObserver { [weak control] in
             
-            control?.enabled = $0
+            control?.isEnabled = $0
         }
         
         return self

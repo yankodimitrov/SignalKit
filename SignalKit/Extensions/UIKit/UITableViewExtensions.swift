@@ -12,7 +12,7 @@ public extension SignalType where ObservationValue == CollectionEvent {
     
     /// Bind the collection change events to a table view
     
-    public func bindTo(tableView: UITableView, rowAnimation: UITableViewRowAnimation = .Automatic) -> Disposable {
+    public func bindTo(_ tableView: UITableView, rowAnimation: UITableViewRowAnimation = .automatic) -> Disposable {
         
         let binding = TableViewBinding()
         
@@ -34,7 +34,7 @@ public extension SignalType where ObservationValue == CollectionEvent {
 final class TableViewBinding: Disposable {
     
     weak var tableView: UITableView?
-    var rowAnimation = UITableViewRowAnimation.Automatic
+    var rowAnimation = UITableViewRowAnimation.automatic
     var disposableSource: Disposable?
     
     init() {}
@@ -44,7 +44,7 @@ final class TableViewBinding: Disposable {
         disposableSource?.dispose()
     }
     
-    func handleCollectionEvent(event: CollectionEvent) {
+    func handleCollectionEvent(_ event: CollectionEvent) {
         
         guard !event.containsResetOperation else {
             
@@ -60,7 +60,7 @@ final class TableViewBinding: Disposable {
         tableView?.endUpdates()
     }
     
-    func handleOperations(operations: Set<CollectionEvent.Operation>) {
+    func handleOperations(_ operations: Set<CollectionEvent.Operation>) {
         
         for operation in operations {
         
@@ -68,19 +68,19 @@ final class TableViewBinding: Disposable {
         }
     }
     
-    func handleOperation(operation: CollectionEvent.Operation) {
+    func handleOperation(_ operation: CollectionEvent.Operation) {
         
         switch operation {
             
-        case let .Insert(element):
+        case let .insert(element):
             
             handleInsertOperationForElement(element)
             
-        case let .Remove(element):
+        case let .remove(element):
             
             handleRemoveOperationForElement(element)
             
-        case let .Update(element):
+        case let .update(element):
             
             handleUpdateOperationForElement(element)
             
@@ -89,48 +89,48 @@ final class TableViewBinding: Disposable {
         }
     }
     
-    func handleInsertOperationForElement(element: CollectionEvent.Element) {
+    func handleInsertOperationForElement(_ element: CollectionEvent.Element) {
         
-        if case .Section(let index) = element {
+        if case .section(let index) = element {
             
-            tableView?.insertSections(NSIndexSet(index: index), withRowAnimation: rowAnimation)
+            tableView?.insertSections(IndexSet(integer: index), with: rowAnimation)
         }
         
-        if case .Item(let section, let row) = element {
+        if case .item(let section, let row) = element {
             
-            let path = NSIndexPath(forRow: row, inSection: section)
+            let path = IndexPath(row: row, section: section)
             
-            tableView?.insertRowsAtIndexPaths([path], withRowAnimation: rowAnimation)
-        }
-    }
-    
-    func handleRemoveOperationForElement(element: CollectionEvent.Element) {
-        
-        if case .Section(let index) = element {
-            
-            tableView?.deleteSections(NSIndexSet(index: index), withRowAnimation: rowAnimation)
-        }
-        
-        if case .Item(let section, let row) = element {
-            
-            let path = NSIndexPath(forRow: row, inSection: section)
-            
-            tableView?.deleteRowsAtIndexPaths([path], withRowAnimation: rowAnimation)
+            tableView?.insertRows(at: [path], with: rowAnimation)
         }
     }
     
-    func handleUpdateOperationForElement(element: CollectionEvent.Element) {
+    func handleRemoveOperationForElement(_ element: CollectionEvent.Element) {
         
-        if case .Section(let index) = element {
+        if case .section(let index) = element {
             
-            tableView?.reloadSections(NSIndexSet(index: index), withRowAnimation: rowAnimation)
+            tableView?.deleteSections(IndexSet(integer: index), with: rowAnimation)
         }
         
-        if case .Item(let section, let row) = element {
+        if case .item(let section, let row) = element {
             
-            let path = NSIndexPath(forRow: row, inSection: section)
+            let path = IndexPath(row: row, section: section)
             
-            tableView?.reloadRowsAtIndexPaths([path], withRowAnimation: rowAnimation)
+            tableView?.deleteRows(at: [path], with: rowAnimation)
+        }
+    }
+    
+    func handleUpdateOperationForElement(_ element: CollectionEvent.Element) {
+        
+        if case .section(let index) = element {
+            
+            tableView?.reloadSections(IndexSet(integer: index), with: rowAnimation)
+        }
+        
+        if case .item(let section, let row) = element {
+            
+            let path = IndexPath(row: row, section: section)
+            
+            tableView?.reloadRows(at: [path], with: rowAnimation)
         }
     }
 }

@@ -14,6 +14,6 @@ public extension SignalEventType where Sender: UISlider {
     
     public var valueChanges: Signal<Float> {
         
-        return events(.ValueChanged).map { $0.value }
+        return events(.valueChanged).map { $0.value }
     }
 }

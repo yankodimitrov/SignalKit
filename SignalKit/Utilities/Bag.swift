@@ -12,11 +12,11 @@ typealias RemovalToken = String
 
 struct Bag<Item> {
     
-    internal private(set) var items = [RemovalToken: Item]()
-    private var tokenCounter: UInt8 = 0
-    private var tokenPrefix = ""
+    internal fileprivate(set) var items = [RemovalToken: Item]()
+    fileprivate var tokenCounter: UInt8 = 0
+    fileprivate var tokenPrefix = ""
     
-    mutating func insertItem(item: Item) -> RemovalToken {
+    mutating func insertItem(_ item: Item) -> RemovalToken {
         
         let removalToken = nextRemovalToken()
         
@@ -25,17 +25,17 @@ struct Bag<Item> {
         return removalToken
     }
     
-    mutating func removeItemWithToken(token: RemovalToken) {
+    mutating func removeItemWithToken(_ token: RemovalToken) {
         
-        items.removeValueForKey(token)
+        items.removeValue(forKey: token)
     }
     
     mutating func removeAll() {
         
-        items.removeAll(keepCapacity: false)
+        items.removeAll(keepingCapacity: false)
     }
     
-    private mutating func nextRemovalToken() -> RemovalToken {
+    fileprivate mutating func nextRemovalToken() -> RemovalToken {
         
         if tokenCounter >= UInt8.max {
             
@@ -49,10 +49,12 @@ struct Bag<Item> {
     }
 }
 
-extension Bag: SequenceType {
+extension Bag: Sequence {
     
-    func generate() -> DictionaryGenerator<RemovalToken, Item> {
+    typealias Iterator = DictionaryIterator<RemovalToken, Item>
+    
+    func makeIterator() -> DictionaryIterator<RemovalToken, Item> {
         
-        return items.generate()
+        return items.makeIterator()
     }
 }

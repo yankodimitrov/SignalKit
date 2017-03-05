@@ -11,7 +11,7 @@ import XCTest
 
 class KeyboardTests: XCTestCase {
     
-    let center = NSNotificationCenter.defaultCenter()
+    let center = NotificationCenter.default
     var bag: DisposableBag!
     
     override func setUp() {
@@ -28,7 +28,7 @@ class KeyboardTests: XCTestCase {
             .next{ _ in called = true }
             .disposeWith(bag)
         
-        center.postNotificationName(UIKeyboardWillShowNotification, object: nil)
+        center.post(name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
         XCTAssertTrue(called, "Should observe for keyboard will show notification")
     }
@@ -41,7 +41,7 @@ class KeyboardTests: XCTestCase {
             .next { _ in called = true }
             .disposeWith(bag)
         
-        center.postNotificationName(UIKeyboardDidShowNotification, object: nil)
+        center.post(name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         
         XCTAssertTrue(called, "Should observe for keyboard did show notification")
     }
@@ -54,7 +54,7 @@ class KeyboardTests: XCTestCase {
             .next { _ in called = true }
             .disposeWith(bag)
         
-        center.postNotificationName(UIKeyboardWillHideNotification, object: nil)
+        center.post(name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         XCTAssertTrue(called, "Should observe for keyboard will hide notification")
     }
@@ -67,7 +67,7 @@ class KeyboardTests: XCTestCase {
             .next { _ in called = true }
             .disposeWith(bag)
         
-        center.postNotificationName(UIKeyboardDidHideNotification, object: nil)
+        center.post(name: NSNotification.Name.UIKeyboardDidHide, object: nil)
         
         XCTAssertTrue(called, "Should observe for keyboard did hide notification")
     }
@@ -80,7 +80,7 @@ class KeyboardTests: XCTestCase {
             .next { _ in called = true }
             .disposeWith(bag)
         
-        center.postNotificationName(UIKeyboardWillChangeFrameNotification, object: nil)
+        center.post(name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
         
         XCTAssertTrue(called, "Should observe fok keyboard will change frame notificaiton")
     }
@@ -93,7 +93,7 @@ class KeyboardTests: XCTestCase {
             .next { _ in called = true}
             .disposeWith(bag)
         
-        center.postNotificationName(UIKeyboardDidChangeFrameNotification, object: nil)
+        center.post(name: NSNotification.Name.UIKeyboardDidChangeFrame, object: nil)
         
         XCTAssertTrue(called, "Should observe for keyboard did change frame notification")
     }

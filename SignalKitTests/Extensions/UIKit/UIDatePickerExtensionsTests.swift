@@ -22,15 +22,15 @@ class UIDatePickerExtensionsTests: XCTestCase {
     func testObserveDateChanges() {
         
         let picker = MockDatePicker()
-        var result = NSDate()
-        let newDate = NSDate(timeIntervalSince1970: 0)
+        var result = Date()
+        let newDate = Date(timeIntervalSince1970: 0)
         
         picker.observe().date
             .next { result = $0 }
             .disposeWith(bag)
         
         picker.date = newDate
-        picker.sendActionsForControlEvents(.ValueChanged)
+        picker.sendActions(for: .valueChanged)
         
         XCTAssertEqual(result, newDate, "Should observe the value changes in UIDatePicker")
     }

@@ -10,61 +10,61 @@ import UIKit
 
 class MockControl: UIControl {
     
-    override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+    override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
         
         if let target = target as? NSObject {
             
-            target.performSelector(action, withObject: nil)
+            target.perform(action, with: nil)
         }
     }
 }
 
 class MockDatePicker: UIDatePicker {
     
-    override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+    override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
         
         let control = MockControl()
         
-        control.sendAction(action, to: target, forEvent: event)
+        control.sendAction(action, to: target, for: event)
     }
 }
 
 class MockSegmentedControl: UISegmentedControl {
     
-    override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+    override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
         
         let control = MockControl()
         
-        control.sendAction(action, to: target, forEvent: event)
+        control.sendAction(action, to: target, for: event)
     }
 }
 
 class MockSlider: UISlider {
     
-    override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+    override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
         
         let control = MockControl()
         
-        control.sendAction(action, to: target, forEvent: event)
+        control.sendAction(action, to: target, for: event)
     }
 }
 
 class MockSwitch: UISwitch {
     
-    override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+    override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
         
         let control = MockControl()
         
-        control.sendAction(action, to: target, forEvent: event)
+        control.sendAction(action, to: target, for: event)
     }
 }
 
 class MockTextField: UITextField {
     
-    override func sendAction(action: Selector, to target: AnyObject?, forEvent event: UIEvent?) {
+    override func sendAction(_ action: Selector, to target: Any?, for event: UIEvent?) {
         
         let control = MockControl()
         
-        control.sendAction(action, to: target, forEvent: event)
+        control.sendAction(action, to: target, for: event)
     }
 }

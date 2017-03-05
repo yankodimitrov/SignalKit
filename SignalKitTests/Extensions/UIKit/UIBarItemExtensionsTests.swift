@@ -17,7 +17,7 @@ class UIBarItemExtensionsTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        barItem = UIBarButtonItem(barButtonSystemItem: .Add, target: nil, action: "")
+        barItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: "")
         bag = DisposableBag()
     }
     
@@ -29,6 +29,6 @@ class UIBarItemExtensionsTests: XCTestCase {
         
         signal.sendNext(false)
         
-        XCTAssertFalse(barItem.enabled, "Should bind a signal of boolean to the enabled property of UIBarItem")
+        XCTAssertFalse(barItem.isEnabled, "Should bind a signal of boolean to the enabled property of UIBarItem")
     }
 }

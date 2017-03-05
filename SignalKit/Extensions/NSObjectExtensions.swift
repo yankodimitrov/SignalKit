@@ -27,7 +27,7 @@ public extension SignalEventType where Sender: NSObject {
         - Parameter value: The value at the key path
     */
     
-    public func keyPath<T>(path: String, value: T) -> Signal<T> {
+    public func keyPath<T>(_ path: String, value: T) -> Signal<T> {
         
         let signal = Signal<T>()
         let observer = KeyPathObserver(subject: sender, keyPath: path)

@@ -11,10 +11,10 @@ import Foundation
 final class ActionTarget: NSObject {
     
     var disposeAction: Disposable?
-    var actionCallback: (AnyObject -> Void)?
+    var actionCallback: ((AnyObject) -> Void)?
     let actionSelector = Selector("handleAction:")
     
-    func handleAction(sender: AnyObject) {
+    func handleAction(_ sender: AnyObject) {
         
         actionCallback?(sender)
     }

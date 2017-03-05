@@ -12,11 +12,11 @@ private var KeyPathObserverContext = 0
 
 final class KeyPathObserver: NSObject {
     
-    private weak var subject: NSObject?
-    private let keyPath: String
-    private var isDisposed = false
+    fileprivate weak var subject: NSObject?
+    fileprivate let keyPath: String
+    fileprivate var isDisposed = false
     
-    var keyPathCallback: (AnyObject -> Void)?
+    var keyPathCallback: ((AnyObject) -> Void)?
     
     init(subject: NSObject, keyPath: String) {
         
@@ -26,13 +26,13 @@ final class KeyPathObserver: NSObject {
         super.init()
         
         
-        subject.addObserver(self, forKeyPath: keyPath, options: .New, context: &KeyPathObserverContext)
+        subject.addObserver(self, forKeyPath: keyPath, options: .new, context: &KeyPathObserverContext)
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String: AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         
         guard context == &KeyPathObserverContext,
-              let value: AnyObject = change?[NSKeyValueChangeNewKey] else {
+              let value: AnyObject = change?[NSKeyValueChangeKey.newKey] as AnyObject? else {
             
             return
         }

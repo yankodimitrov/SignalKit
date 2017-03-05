@@ -107,13 +107,13 @@ class SignalTests: XCTestCase {
     
     func testObserveOnQueue() {
         
-        let expectation = expectationWithDescription("Should deliver the value on the main queue")
+        let expectation = self.expectation(description: "Should deliver the value on the main queue")
         let signal = Signal<Int>()
-        let scheduler = Scheduler(queue: .BackgroundQueue)
+        let scheduler = Scheduler(queue: .backgroundQueue)
         
-        chain = signal.observeOn(.MainQueue).next { _ in
+        chain = signal.observeOn(.mainQueue).next { _ in
             
-            if NSThread.isMainThread() {
+            if Thread.isMainThread {
                 
                 expectation.fulfill()
             }
@@ -124,18 +124,18 @@ class SignalTests: XCTestCase {
             signal.sendNext(111)
         }
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     func testSendNextOnQueue() {
         
-        let expectation = expectationWithDescription("Should send next value on a given queue")
+        let expectation = self.expectation(description: "Should send next value on a given queue")
         let signal = Signal<Int>()
-        let scheduler = Scheduler(queue: .BackgroundQueue)
+        let scheduler = Scheduler(queue: .backgroundQueue)
         
         chain = signal.next { _ in
             
-            if NSThread.isMainThread() {
+            if Thread.isMainThread {
                 
                 expectation.fulfill()
             }
@@ -143,16 +143,16 @@ class SignalTests: XCTestCase {
         
         scheduler.async {
             
-            signal.sendNext(1, onQueue: .MainQueue)
+            signal.sendNext(1, onQueue: .mainQueue)
         }
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     func testDebounce() {
         
-        let expectation = expectationWithDescription("Should debounce the sent values")
-        let scheduler = Scheduler(queue: .MainQueue)
+        let expectation = self.expectation(description: "Should debounce the sent values")
+        let scheduler = Scheduler(queue: .mainQueue)
         let signal = Signal<Int>()
         var result = [Int]()
         
@@ -170,13 +170,13 @@ class SignalTests: XCTestCase {
             }
         }
         
-        waitForExpectationsWithTimeout(0.1, handler: nil)
+        waitForExpectations(timeout: 0.1, handler: nil)
     }
     
     func testDelay() {
         
-        let expectation = expectationWithDescription("Should delay the sent values")
-        let scheduler = Scheduler(queue: .MainQueue)
+        let expectation = self.expectation(description: "Should delay the sent values")
+        let scheduler = Scheduler(queue: .mainQueue)
         let signal = Signal<Int>()
         var result = 0
         
@@ -192,7 +192,7 @@ class SignalTests: XCTestCase {
         
         signal.sendNext(11)
         
-        waitForExpectationsWithTimeout(0.2, handler: nil)
+        waitForExpectations(timeout: 0.2, handler: nil)
     }
     
     func testBindTo() {

@@ -21,7 +21,7 @@ class MockTableView: UITableView {
     
     var isBeginUpdatesCalled = false
     var isEndUpdatesCalled = false
-    var animation = UITableViewRowAnimation.Automatic
+    var animation = UITableViewRowAnimation.automatic
     
     var isBeginEndUpdatesCalled: Bool {
         
@@ -33,19 +33,19 @@ class MockTableView: UITableView {
         isReloadDataCalled = true
     }
     
-    override func insertSections(sections: NSIndexSet, withRowAnimation animation: UITableViewRowAnimation) {
+    override func insertSections(_ sections: IndexSet, with animation: UITableViewRowAnimation) {
         
         isInsertSectionsCalled = true
         self.animation = animation
     }
     
-    override func reloadSections(sections: NSIndexSet, withRowAnimation animation: UITableViewRowAnimation) {
+    override func reloadSections(_ sections: IndexSet, with animation: UITableViewRowAnimation) {
         
         isReloadSectionsCalled = true
         self.animation = animation
     }
     
-    override func deleteSections(sections: NSIndexSet, withRowAnimation animation: UITableViewRowAnimation) {
+    override func deleteSections(_ sections: IndexSet, with animation: UITableViewRowAnimation) {
         
         isDeleteSectionsCalled = true
         self.animation = animation
@@ -61,19 +61,19 @@ class MockTableView: UITableView {
         isEndUpdatesCalled = true
     }
     
-    override func insertRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation animation: UITableViewRowAnimation) {
+    override func insertRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation) {
         
         isInsertRowsCalled = true
         self.animation = animation
     }
     
-    override func reloadRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation animation: UITableViewRowAnimation) {
+    override func reloadRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation) {
         
         isReloadRowsCalled = true
         self.animation = animation
     }
     
-    override func deleteRowsAtIndexPaths(indexPaths: [NSIndexPath], withRowAnimation animation: UITableViewRowAnimation) {
+    override func deleteRows(at indexPaths: [IndexPath], with animation: UITableViewRowAnimation) {
         
         isDeleteRowsCalled = true
         self.animation = animation

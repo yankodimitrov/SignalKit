@@ -23,14 +23,14 @@ class UITextViewExtensionsTests: XCTestCase {
         
         var result = ""
         let textView = UITextView()
-        let center = NSNotificationCenter.defaultCenter()
+        let center = NotificationCenter.default
         
         textView.observe().text
             .next { result = $0 }
             .disposeWith(bag)
         
         textView.text = "John"
-        center.postNotificationName(UITextViewTextDidChangeNotification, object: textView)
+        center.post(name: NSNotification.Name.UITextViewTextDidChange, object: textView)
         
         XCTAssertEqual(result, "John", "Should observe the text changes in UITextView")
     }

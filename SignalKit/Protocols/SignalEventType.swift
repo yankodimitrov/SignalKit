@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol SignalEventType {
-    typealias Sender
+    associatedtype Sender
     
     var sender: Sender {get}
 }

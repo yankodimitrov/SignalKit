@@ -19,8 +19,8 @@ class UISegmentedControlExtensionsTests: XCTestCase {
         
         bag = DisposableBag()
         segmentedControl = MockSegmentedControl()
-        segmentedControl.insertSegmentWithTitle("", atIndex: 0, animated: false)
-        segmentedControl.insertSegmentWithTitle("", atIndex: 1, animated: false)
+        segmentedControl.insertSegment(withTitle: "", at: 0, animated: false)
+        segmentedControl.insertSegment(withTitle: "", at: 1, animated: false)
     }
     
     func testObserveSelectedIndex() {
@@ -32,7 +32,7 @@ class UISegmentedControlExtensionsTests: XCTestCase {
             .disposeWith(bag)
         
         segmentedControl.selectedSegmentIndex = 1
-        segmentedControl.sendActionsForControlEvents(.ValueChanged)
+        segmentedControl.sendActions(for: .valueChanged)
         
         XCTAssertEqual(result, 1, "Should observe the selected index changes in UISegmentedControl")
     }

@@ -10,10 +10,10 @@ import UIKit
 
 final class ControlEventObserver: NSObject {
     
-    private weak var control: UIControl?
-    private let events: UIControlEvents
-    private var disposeAction: Disposable?
-    var eventCallback: (UIControl -> Void)?
+    fileprivate weak var control: UIControl?
+    fileprivate let events: UIControlEvents
+    fileprivate var disposeAction: Disposable?
+    var eventCallback: ((UIControl) -> Void)?
     
     init(control: UIControl, events: UIControlEvents) {
         
@@ -22,11 +22,11 @@ final class ControlEventObserver: NSObject {
         
         super.init()
         
-        control.addTarget(self, action: "handleEvent", forControlEvents: events)
+        control.addTarget(self, action: #selector(ControlEventObserver.handleEvent), for: events)
         
         disposeAction = DisposableAction { [weak self] in
             
-            self?.control?.removeTarget(self, action: "handleEvent", forControlEvents: events)
+            self?.control?.removeTarget(self, action: #selector(ControlEventObserver.handleEvent), for: events)
         }
     }
     

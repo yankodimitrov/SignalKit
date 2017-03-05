@@ -23,7 +23,7 @@ class MockCollectionView: UICollectionView {
         
         let layout = UICollectionViewFlowLayout()
         
-        self.init(frame: CGRectZero, collectionViewLayout: layout)
+        self.init(frame: CGRect.zero, collectionViewLayout: layout)
     }
     
     override func reloadData() {
@@ -31,37 +31,37 @@ class MockCollectionView: UICollectionView {
         isReloadDataCalled = true
     }
     
-    override func insertSections(sections: NSIndexSet) {
+    override func insertSections(_ sections: IndexSet) {
         
         isInsertSectionsCalled = true
     }
     
-    override func reloadSections(sections: NSIndexSet) {
+    override func reloadSections(_ sections: IndexSet) {
         
         isReloadSectionsCalled = true
     }
     
-    override func deleteSections(sections: NSIndexSet) {
+    override func deleteSections(_ sections: IndexSet) {
         
         isDeleteSectionsCalled = true
     }
     
-    override func insertItemsAtIndexPaths(indexPaths: [NSIndexPath]) {
+    override func insertItems(at indexPaths: [IndexPath]) {
         
         isInsertItemsCalled = true
     }
     
-    override func reloadItemsAtIndexPaths(indexPaths: [NSIndexPath]) {
+    override func reloadItems(at indexPaths: [IndexPath]) {
         
         isReloadItemsCalled = true
     }
     
-    override func deleteItemsAtIndexPaths(indexPaths: [NSIndexPath]) {
+    override func deleteItems(at indexPaths: [IndexPath]) {
         
         isDeleteItemsCalled = true
     }
     
-    override func performBatchUpdates(updates: (() -> Void)?, completion: ((Bool) -> Void)?) {
+    override func performBatchUpdates(_ updates: (() -> Void)?, completion: ((Bool) -> Void)?) {
         
         updates?()
         isPerformBarchUpdatesCalled = true

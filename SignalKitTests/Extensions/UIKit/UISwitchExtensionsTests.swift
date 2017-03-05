@@ -24,14 +24,14 @@ class UISwitchExtensionsTests: XCTestCase {
         var result = false
         let switchControl = MockSwitch()
         
-        switchControl.on = false
+        switchControl.isOn = false
         
         switchControl.observe().onState
             .next { result = $0 }
             .disposeWith(bag)
         
-        switchControl.on = true
-        switchControl.sendActionsForControlEvents(.ValueChanged)
+        switchControl.isOn = true
+        switchControl.sendActions(for: .valueChanged)
         
         XCTAssertTrue(result, "Should observe the UISwitch for state changes")
     }

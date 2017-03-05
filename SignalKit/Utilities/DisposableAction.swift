@@ -10,9 +10,9 @@ import Foundation
 
 public final class DisposableAction: Disposable {
     
-    private var action: (() -> Void)?
+    fileprivate var action: (() -> Void)?
     
-    public init(action: () -> Void) {
+    public init(action: @escaping () -> Void) {
         
         self.action = action
     }
