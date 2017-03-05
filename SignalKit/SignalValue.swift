@@ -9,38 +9,62 @@
 import Foundation
 
 public final class SignalValue<T>: SignalProtocol {
+    
     public typealias Value = T
     
     public var disposableSource: Disposable?
-    fileprivate let signal = Signal<T>()
-    fileprivate var mutex = pthread_mutex_t()
+    internal let signal: Signal<T>
     fileprivate var internalValue: T
     
     public var value: T {
         get {
-            pthread_mutex_lock(&mutex)
+            
+            signal.lock?.lock()
             let theValue = internalValue
-            pthread_mutex_unlock(&mutex)
+            signal.lock?.unlock()
             
             return theValue
         }
         set {
-            pthread_mutex_lock(&mutex)
+            
+            signal.lock?.lock()
             internalValue = newValue
-            pthread_mutex_unlock(&mutex)
+            signal.lock?.unlock()
             
             signal.send(newValue)
         }
     }
     
-    public init(value: T) {
+    /// Initialize with initial value and optional Lock.
+    /// The initial/current value will be sent to any new observer.
+    ///
+    /// - Parameters:
+    ///   - value: the initial value.
+    ///   - lock: Lock protocol implementaion or nil.
+    public init(value: T, lock: Lock? = nil) {
         
         internalValue = value
+        signal = Signal<T>(lock: lock)
     }
     
     deinit {
         
         dispose()
+    }
+}
+
+// MARK: - Atomic signal
+
+extension SignalValue {
+    
+    
+    /// Create a thread safe SignalValue.
+    ///
+    /// - Parameter value: the initial value.
+    /// - Returns: a thread safe SignalValue<T> with MutexLock.
+    public class func atomic(value: T) -> SignalValue<T> {
+        
+        return SignalValue<T>(value: value, lock: MutexLock())
     }
 }
 

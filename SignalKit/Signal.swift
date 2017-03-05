@@ -9,6 +9,7 @@
 import Foundation
 
 public final class Signal<T>: SignalProtocol {
+    
     public typealias Value = T
     
     public var disposableSource: Disposable?
@@ -35,10 +36,9 @@ public final class Signal<T>: SignalProtocol {
 extension Signal {
     
     
-    /// Create a thread safe Signal
+    /// Create a thread safe Signal.
     ///
-    /// - Parameter ofType: the type of the Signal to return
-    /// - Returns: a thread safe Signal<T> with MutexLock
+    /// - Returns: a thread safe Signal<T> with MutexLock.
     public class func atomic() -> Signal<T> {
         
         return Signal<T>(lock: MutexLock())

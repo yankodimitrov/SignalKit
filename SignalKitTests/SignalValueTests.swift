@@ -11,6 +11,70 @@ import XCTest
 
 class SignalValueTests: XCTestCase {
     
+    func testCreateAtomicSignalValue() {
+        
+        let name = SignalValue<String>.atomic(value: "Atomic")
+        
+        XCTAssertTrue(name.signal.lock is MutexLock)
+    }
+    
+    func testLockValueSetter() {
+        
+        let lock = MockLock()
+        let name = SignalValue<String>(value: "Atomic", lock: lock)
+        
+        name.value = "John"
+        
+        XCTAssertTrue(lock.lockCalled)
+        XCTAssertTrue(lock.unlockCalled)
+    }
+    
+    func testLockValueGetter() {
+        
+        let lock = MockLock()
+        let name = SignalValue<String>(value: "Atomic", lock: lock)
+        
+        _ = name.value
+        
+        XCTAssertTrue(lock.lockCalled)
+        XCTAssertTrue(lock.unlockCalled)
+    }
+    
+    func testLockAddObserver() {
+        
+        let lock = MockLock()
+        let name = SignalValue<String>(value: "Atomic", lock: lock)
+        
+        _ = name.addObserver { _ in }
+        
+        XCTAssertTrue(lock.lockCalled)
+        XCTAssertTrue(lock.unlockCalled)
+    }
+    
+    func testLockSendValue() {
+        
+        let lock = MockLock()
+        let name = SignalValue<String>(value: "Atomic", lock: lock)
+        
+        name.send("Atomic")
+        
+        XCTAssertTrue(lock.lockCalled)
+        XCTAssertTrue(lock.unlockCalled)
+    }
+    
+    func testLockRemoveObserverWithToken() {
+        
+        let lock = MockLock()
+        let name = SignalValue<String>(value: "Atomic", lock: lock)
+        
+        let observer = name.addObserver { _ in }
+        
+        observer.dispose()
+        
+        XCTAssertTrue(lock.lockCalled)
+        XCTAssertTrue(lock.unlockCalled)
+    }
+    
     func testInitWithValue() {
         
         let signal = SignalValue(value: "John")
