@@ -12,7 +12,6 @@ final class ActionTarget: NSObject {
     
     var disposeAction: Disposable?
     var actionCallback: ((AnyObject) -> Void)?
-    let actionSelector = Selector("handleAction:")
     
     func handleAction(_ sender: AnyObject) {
         

@@ -17,7 +17,7 @@ class UIBarItemExtensionsTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        barItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: "")
+        barItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
         bag = DisposableBag()
     }
     

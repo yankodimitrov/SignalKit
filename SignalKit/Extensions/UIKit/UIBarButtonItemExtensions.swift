@@ -23,7 +23,7 @@ public extension SignalEventType where Sender: UIBarButtonItem {
         }
         
         sender.target = target
-        sender.action = target.actionSelector
+        sender.action = #selector(target.handleAction)
         
         signal.disposableSource = target
         
