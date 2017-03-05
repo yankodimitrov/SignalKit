@@ -12,14 +12,36 @@ public final class Signal<T>: SignalProtocol {
     public typealias Value = T
     
     public var disposableSource: Disposable?
-    internal fileprivate(set) var observers = Bag<(T) -> Void>()
-    fileprivate var mutex = pthread_mutex_t()
+    internal fileprivate(set) var observers = Bag<(Value) -> Void>()
+    internal fileprivate(set) var lock: Lock?
     
-    public init() {}
+    
+    /// Initialize Signal with optional Lock.
+    ///
+    /// - Parameter lock: Lock protocol implementation or nil.
+    public init(lock: Lock? = nil) {
+        
+        self.lock = lock
+    }
     
     deinit {
         
         dispose()
+    }
+}
+
+// MARK: - Atomic signal
+
+extension Signal {
+    
+    
+    /// Create a thread safe Signal
+    ///
+    /// - Parameter ofType: the type of the Signal to return
+    /// - Returns: a thread safe Signal<T> with MutexLock
+    public class func atomic() -> Signal<T> {
+        
+        return Signal<T>(lock: MutexLock())
     }
 }
 
@@ -29,36 +51,36 @@ extension Signal {
     
     @discardableResult public func addObserver(_ observer: @escaping (Value) -> Void) -> Disposable {
         
-        pthread_mutex_lock(&mutex)
+        lock?.lock()
         
         let token = observers.insert(observer)
         
-        pthread_mutex_unlock(&mutex)
+        lock?.unlock()
         
         return DisposableAction { [weak self] in
             
-            self?.removeItemWithToken(token)
+            self?.removeObserver(with: token)
         }
     }
     
     public func send(_ value: Value) {
         
-        pthread_mutex_lock(&mutex)
+        lock?.lock()
         
         for (_, observer) in observers {
             
             observer(value)
         }
         
-        pthread_mutex_unlock(&mutex)
+        lock?.unlock()
     }
     
-    internal func removeItemWithToken(_ token: RemovalToken) {
+    internal func removeObserver(with token: RemovalToken) {
         
-        pthread_mutex_lock(&mutex)
+        lock?.lock()
         
         observers.remove(with: token)
         
-        pthread_mutex_unlock(&mutex)
+        lock?.unlock()
     }
 }

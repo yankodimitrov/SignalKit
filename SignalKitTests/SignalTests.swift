@@ -13,6 +13,48 @@ class SignalTests: XCTestCase {
     
     var chain: Disposable?
     
+    func testCreateAtomicSignal() {
+        
+        let name = Signal<String>.atomic()
+        
+        XCTAssertTrue(name.lock is MutexLock)
+    }
+    
+    func testLockAddObserver() {
+        
+        let lock = MockLock()
+        let name = Signal<String>(lock: lock)
+        
+        _ = name.addObserver { _ in }
+        
+        XCTAssertTrue(lock.lockCalled)
+        XCTAssertTrue(lock.unlockCalled)
+    }
+    
+    func testLockSendValue() {
+        
+        let lock = MockLock()
+        let name = Signal<String>(lock: lock)
+        
+        name.send("Atomic")
+        
+        XCTAssertTrue(lock.lockCalled)
+        XCTAssertTrue(lock.unlockCalled)
+    }
+    
+    func testLockRemoveObserverWithToken() {
+        
+        let lock = MockLock()
+        let name = Signal<String>(lock: lock)
+        
+        let observer = name.addObserver { _ in }
+        
+        observer.dispose()
+        
+        XCTAssertTrue(lock.lockCalled)
+        XCTAssertTrue(lock.unlockCalled)
+    }
+    
     func testAddObserver() {
         
         let name = Signal<String>()

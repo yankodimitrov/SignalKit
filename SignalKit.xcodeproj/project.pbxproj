@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C92932ED1E6CA357006D8937 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92932EC1E6CA357006D8937 /* Lock.swift */; };
 		C92932EF1E6CA39C006D8937 /* MutexLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92932EE1E6CA39C006D8937 /* MutexLock.swift */; };
+		C92932F11E6CAB87006D8937 /* MockLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92932F01E6CAB87006D8937 /* MockLock.swift */; };
 		C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E11C8A1ACE00C03404 /* Disposable.swift */; };
 		C99326E41C8A1B7C00C03404 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E31C8A1B7C00C03404 /* Observable.swift */; };
 		C99326E61C8A1ED500C03404 /* SignalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E51C8A1ED500C03404 /* SignalProtocol.swift */; };
@@ -85,6 +86,7 @@
 /* Begin PBXFileReference section */
 		C92932EC1E6CA357006D8937 /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		C92932EE1E6CA39C006D8937 /* MutexLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutexLock.swift; sourceTree = "<group>"; };
+		C92932F01E6CAB87006D8937 /* MockLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLock.swift; sourceTree = "<group>"; };
 		C99326E11C8A1ACE00C03404 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		C99326E31C8A1B7C00C03404 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		C99326E51C8A1ED500C03404 /* SignalProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProtocol.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				C99326FF1C8AE25300C03404 /* MockDisposable.swift */,
 				C993270C1C8AF5F200C03404 /* MockControl.swift */,
 				C99327161C8B0FD700C03404 /* Person.swift */,
+				C92932F01E6CAB87006D8937 /* MockLock.swift */,
 			);
 			path = Fakes;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				C993270D1C8AF5F200C03404 /* MockControl.swift in Sources */,
 				C99327411C8C76BA00C03404 /* UIBarButtonItemExtensionsTests.swift in Sources */,
 				C99326F01C8A2CCD00C03404 /* DisposableActionTests.swift in Sources */,
+				C92932F11E6CAB87006D8937 /* MockLock.swift in Sources */,
 				C993273D1C8C748900C03404 /* UIBarItemExtensionsTests.swift in Sources */,
 				C993272F1C8C3DB100C03404 /* UIControlExtensionsTests.swift in Sources */,
 				C993272B1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift in Sources */,
