@@ -22,7 +22,7 @@ public final class DisposableBag {
 
 extension DisposableBag {
     
-    public func insertItem(_ item: Disposable) -> Disposable {
+    @discardableResult public func insert(_ item: Disposable) -> Disposable {
         
         let token = disposables.insert(item)
         

@@ -21,6 +21,6 @@ extension Disposable {
     
     @discardableResult public func disposeWith(_ bag: DisposableBag) -> Disposable {
         
-        return bag.insertItem(self)
+        return bag.insert(self)
     }
 }

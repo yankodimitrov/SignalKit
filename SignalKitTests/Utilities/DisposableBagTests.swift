@@ -16,7 +16,7 @@ class DisposableBagTests: XCTestCase {
         let bag = DisposableBag()
         let item = MockDisposable()
         
-        bag.insertItem(item)
+        bag.insert(item)
         
         XCTAssertEqual(bag.disposables.items.count, 1, "Should insert a disposable item")
     }
@@ -26,7 +26,7 @@ class DisposableBagTests: XCTestCase {
         let bag = DisposableBag()
         let item = MockDisposable()
         
-        let disposableAction = bag.insertItem(item)
+        let disposableAction = bag.insert(item)
         
         disposableAction.dispose()
         
@@ -39,8 +39,8 @@ class DisposableBagTests: XCTestCase {
         let itemA = MockDisposable()
         let itemB = MockDisposable()
         
-        bag.insertItem(itemA)
-        bag.insertItem(itemB)
+        bag.insert(itemA)
+        bag.insert(itemB)
         
         bag.dispose()
         
