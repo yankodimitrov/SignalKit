@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalEventType where Sender: UISwitch {
+public extension Event where Sender: UISwitch {
     
     /// Observe UISwitch state changes
     

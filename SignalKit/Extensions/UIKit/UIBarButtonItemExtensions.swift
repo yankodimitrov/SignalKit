@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalEventType where Sender: UIBarButtonItem {
+public extension Event where Sender: UIBarButtonItem {
     
     /// Observe the tap action in UIBarButtonItem
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension SignalEventType where Sender: NotificationCenter {
+public extension Event where Sender: NotificationCenter {
     
     /// Observe the notification center for a given notification
     

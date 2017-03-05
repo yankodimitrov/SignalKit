@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalEventType where Sender: UIDatePicker {
+public extension Event where Sender: UIDatePicker {
     
     /// Observe date changes in UIDatePicker
     

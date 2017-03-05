@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalEventType where Sender: UITextView {
+public extension Event where Sender: UITextView {
     
     /// Observe text changes in UITextView
     

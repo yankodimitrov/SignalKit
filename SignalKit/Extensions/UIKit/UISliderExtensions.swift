@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalEventType where Sender: UISlider {
+public extension Event where Sender: UISlider {
     
     /// Observe value changes in UISlider
     

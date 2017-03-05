@@ -10,13 +10,13 @@ import UIKit
 
 public struct Keyboard {
     
-    public struct Event {}
+    public struct EventSender {}
     
     /// Returns the available Keyboard events
     
-    public static func observe() -> SignalEvent<Keyboard.Event> {
+    public static func observe() -> SignalEvent<Keyboard.EventSender> {
         
-        return SignalEvent(sender: Keyboard.Event())
+        return SignalEvent(sender: Keyboard.EventSender())
     }
 }
 
@@ -70,7 +70,7 @@ public struct KeyboardState {
 
 // MARK: - Keyboard Events
 
-public extension SignalEventType where Sender == Keyboard.Event {
+public extension Event where Sender == Keyboard.EventSender {
     
     fileprivate func keyboardSignalFor(_ notificationName: String) -> Signal<KeyboardState> {
         

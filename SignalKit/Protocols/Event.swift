@@ -1,5 +1,5 @@
 //
-//  SignalEventType.swift
+//  Event.swift
 //  SignalKit
 //
 //  Created by Yanko Dimitrov on 3/5/16.
@@ -8,7 +8,8 @@
 
 import Foundation
 
-public protocol SignalEventType {
+public protocol Event {
+    
     associatedtype Sender
     
     var sender: Sender {get}

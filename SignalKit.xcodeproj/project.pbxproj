@@ -33,7 +33,7 @@
 		C99327171C8B0FD700C03404 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327161C8B0FD700C03404 /* Person.swift */; };
 		C993271B1C8B1E0E00C03404 /* ActionTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271A1C8B1E0E00C03404 /* ActionTarget.swift */; };
 		C993271D1C8B1EF400C03404 /* ActionTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271C1C8B1EF400C03404 /* ActionTargetTests.swift */; };
-		C993271F1C8B209700C03404 /* SignalEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271E1C8B209700C03404 /* SignalEventType.swift */; };
+		C993271F1C8B209700C03404 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271E1C8B209700C03404 /* Event.swift */; };
 		C99327211C8B212500C03404 /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327201C8B212500C03404 /* SignalEvent.swift */; };
 		C99327251C8B221300C03404 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327241C8B221300C03404 /* NSObjectExtensions.swift */; };
 		C99327271C8C34DE00C03404 /* NSObjectExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327261C8C34DE00C03404 /* NSObjectExtensionsTests.swift */; };
@@ -109,7 +109,7 @@
 		C99327161C8B0FD700C03404 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		C993271A1C8B1E0E00C03404 /* ActionTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTarget.swift; sourceTree = "<group>"; };
 		C993271C1C8B1EF400C03404 /* ActionTargetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionTargetTests.swift; sourceTree = "<group>"; };
-		C993271E1C8B209700C03404 /* SignalEventType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEventType.swift; sourceTree = "<group>"; };
+		C993271E1C8B209700C03404 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		C99327201C8B212500C03404 /* SignalEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalEvent.swift; sourceTree = "<group>"; };
 		C99327241C8B221300C03404 /* NSObjectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensions.swift; sourceTree = "<group>"; };
 		C99327261C8C34DE00C03404 /* NSObjectExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionsTests.swift; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 				C99326E11C8A1ACE00C03404 /* Disposable.swift */,
 				C99326E31C8A1B7C00C03404 /* Observable.swift */,
 				C99326E51C8A1ED500C03404 /* SignalProtocol.swift */,
-				C993271E1C8B209700C03404 /* SignalEventType.swift */,
+				C993271E1C8B209700C03404 /* Event.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -471,7 +471,7 @@
 				C99327131C8B0C9100C03404 /* KeyPathObserver.swift in Sources */,
 				C99327471C8C7C6100C03404 /* UISegmentedControlExtensions.swift in Sources */,
 				C99326F41C8A304800C03404 /* Signal.swift in Sources */,
-				C993271F1C8B209700C03404 /* SignalEventType.swift in Sources */,
+				C993271F1C8B209700C03404 /* Event.swift in Sources */,
 				C99327211C8B212500C03404 /* SignalEvent.swift in Sources */,
 				C99327021C8AE72F00C03404 /* SignalValue.swift in Sources */,
 				C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */,

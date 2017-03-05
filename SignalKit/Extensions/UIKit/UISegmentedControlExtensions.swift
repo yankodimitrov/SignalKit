@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalEventType where Sender: UISegmentedControl {
+public extension Event where Sender: UISegmentedControl {
     
     /// Observe selected index in UISegmentedControl
     

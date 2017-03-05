@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalEventType where Sender: UIControl {
+public extension Event where Sender: UIControl {
     
     /// Observe for control events
     

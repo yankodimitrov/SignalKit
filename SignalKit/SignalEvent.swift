@@ -8,7 +8,8 @@
 
 import Foundation
 
-public struct SignalEvent<T>: SignalEventType {
+public struct SignalEvent<T>: Event {
+    
     public typealias Sender = T
     
     public let sender: T

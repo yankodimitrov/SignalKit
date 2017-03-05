@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalEventType where Sender: UITextField {
+public extension Event where Sender: UITextField {
     
     /// Observe the text changes in UITextField
     

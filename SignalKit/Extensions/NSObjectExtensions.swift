@@ -18,7 +18,7 @@ public extension NSObjectProtocol {
     }
 }
 
-public extension SignalEventType where Sender: NSObject {
+public extension Event where Sender: NSObject {
     
     /**
         Observe the key path for new values

@@ -9,6 +9,7 @@
 import Foundation
 
 public protocol Observable: class {
+    
     associatedtype Value
     
     @discardableResult func addObserver(_ observer: @escaping (Value) -> Void) -> Disposable
