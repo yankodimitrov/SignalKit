@@ -28,7 +28,7 @@ class UIBarButtonItemExtensionsTests: XCTestCase {
             .next { _ in called = true }
             .disposeWith(bag)
         
-        item.target?.perform(item.action, with: item)
+        _ = item.target?.perform(item.action, with: item)
         
         XCTAssertTrue(called, "Should observe the tap action in UIBarButtonItem")
     }

@@ -55,7 +55,7 @@ class SignalTests: XCTestCase {
         var result = ""
         let expectedResult = "John"
         
-        name.next { result = $0 }
+        _ = name.next { result = $0 }
         name.send(expectedResult)
         
         XCTAssertEqual(result, expectedResult, "Should add a new observer to a Signal")

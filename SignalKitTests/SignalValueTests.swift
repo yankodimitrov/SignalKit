@@ -34,7 +34,7 @@ class SignalValueTests: XCTestCase {
         let signal = SignalValue(value: "John")
         var result = ""
         
-        signal.next { result = $0 }
+        _ = signal.next { result = $0 }
         
         XCTAssertEqual(result, "John", "Should send the current value to new observers")
     }
@@ -44,8 +44,8 @@ class SignalValueTests: XCTestCase {
         let signal = SignalValue(value: 2)
         var result = 0
         
-        signal.next { result = $0 }
-        signal.send(3)
+        _ = signal.next { result = $0 }
+        _ = signal.send(3)
         
         XCTAssertEqual(result, 3, "Should send the new value")
         XCTAssertEqual(signal.value, 3, "Should change the current value")
