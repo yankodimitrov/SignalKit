@@ -27,7 +27,7 @@ public final class Signal<T>: SignalType {
 
 extension Signal {
     
-    public func addObserver(_ observer: @escaping (Value) -> Void) -> Disposable {
+    @discardableResult public func addObserver(_ observer: @escaping (Value) -> Void) -> Disposable {
         
         pthread_mutex_lock(&mutex)
         

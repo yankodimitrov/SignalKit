@@ -48,7 +48,7 @@ public final class SignalValue<T>: SignalType {
 
 extension SignalValue {
     
-    public func addObserver(_ observer: @escaping (Value) -> Void) -> Disposable {
+    @discardableResult public func addObserver(_ observer: @escaping (Value) -> Void) -> Disposable {
         
         let disposable = signal.addObserver(observer)
         

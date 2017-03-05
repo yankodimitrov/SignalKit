@@ -19,7 +19,7 @@ extension Disposable {
     
     /// Store a chain of signal operations in a DisposableBag and dispose the chain with the bag
     
-    public func disposeWith(_ bag: DisposableBag) -> Disposable {
+    @discardableResult public func disposeWith(_ bag: DisposableBag) -> Disposable {
         
         return bag.insertItem(self)
     }

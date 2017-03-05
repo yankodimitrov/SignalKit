@@ -11,7 +11,7 @@ import Foundation
 public protocol Observable: class {
     associatedtype Value
     
-    func addObserver(_ observer: @escaping (Value) -> Void) -> Disposable
+    @discardableResult func addObserver(_ observer: @escaping (Value) -> Void) -> Disposable
     func send(_ value: Value)
 }
 
