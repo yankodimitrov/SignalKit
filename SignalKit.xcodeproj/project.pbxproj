@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C92932ED1E6CA357006D8937 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92932EC1E6CA357006D8937 /* Lock.swift */; };
 		C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E11C8A1ACE00C03404 /* Disposable.swift */; };
 		C99326E41C8A1B7C00C03404 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E31C8A1B7C00C03404 /* Observable.swift */; };
 		C99326E61C8A1ED500C03404 /* SignalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E51C8A1ED500C03404 /* SignalProtocol.swift */; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C92932EC1E6CA357006D8937 /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		C99326E11C8A1ACE00C03404 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		C99326E31C8A1B7C00C03404 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		C99326E51C8A1ED500C03404 /* SignalProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProtocol.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				C99326E31C8A1B7C00C03404 /* Observable.swift */,
 				C99326E51C8A1ED500C03404 /* SignalProtocol.swift */,
 				C993271E1C8B209700C03404 /* Event.swift */,
+				C92932EC1E6CA357006D8937 /* Lock.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				C993274B1C8C81E200C03404 /* UISliderExtensions.swift in Sources */,
 				C99327371C8C72A800C03404 /* UIImageViewExtensions.swift in Sources */,
 				C993270F1C8B08CD00C03404 /* NotificationObserver.swift in Sources */,
+				C92932ED1E6CA357006D8937 /* Lock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
