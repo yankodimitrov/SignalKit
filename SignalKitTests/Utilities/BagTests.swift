@@ -15,7 +15,7 @@ class BagTests: XCTestCase {
         
         var bag = Bag<Int>()
         
-        let token = bag.insertItem(1)
+        let token = bag.insert(1)
         let item = bag.items[token]
         
         XCTAssertEqual(bag.items.count, 1, "Should insert an item")
@@ -31,7 +31,7 @@ class BagTests: XCTestCase {
         
         for i in 0..<10 {
             
-            token = bag.insertItem(i)
+            token = bag.insert(i)
         }
         
         XCTAssertEqual(token, expectedToken, "Should produce incremental removal tokens")
@@ -46,7 +46,7 @@ class BagTests: XCTestCase {
         
         for i in 0..<elementsCount {
             
-            token = bag.insertItem(i)
+            token = bag.insert(i)
         }
         
         XCTAssertEqual(token, expectedToken, "Should produce a sequence of removal tokens")
@@ -55,9 +55,9 @@ class BagTests: XCTestCase {
     func testRemoveItemWithToken() {
         
         var bag = Bag<Int>()
-        let token = bag.insertItem(123)
+        let token = bag.insert(123)
         
-        bag.removeItemWithToken(token)
+        bag.remove(with: token)
         
         XCTAssertTrue(bag.items.isEmpty, "Should remove an item with given removal token")
     }
@@ -66,8 +66,8 @@ class BagTests: XCTestCase {
         
         var bag = Bag<Int>()
         
-        bag.insertItem(1)
-        bag.insertItem(2)
+        bag.insert(1)
+        bag.insert(2)
         
         bag.removeAll()
         
@@ -79,9 +79,9 @@ class BagTests: XCTestCase {
         var bag = Bag<Int>()
         var sum = 0
         
-        bag.insertItem(1)
-        bag.insertItem(2)
-        bag.insertItem(3)
+        bag.insert(1)
+        bag.insert(2)
+        bag.insert(3)
         
         for (_, item) in bag {
             

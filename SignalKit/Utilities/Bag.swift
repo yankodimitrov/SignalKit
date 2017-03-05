@@ -16,16 +16,16 @@ struct Bag<Item> {
     fileprivate var tokenCounter: UInt8 = 0
     fileprivate var tokenPrefix = ""
     
-    mutating func insertItem(_ item: Item) -> RemovalToken {
+    @discardableResult mutating func insert(_ item: Item) -> RemovalToken {
         
-        let removalToken = nextRemovalToken()
+        let token = nextToken()
         
-        items[removalToken] = item
+        items[token] = item
         
-        return removalToken
+        return token
     }
     
-    mutating func removeItemWithToken(_ token: RemovalToken) {
+    mutating func remove(with token: RemovalToken) {
         
         items.removeValue(forKey: token)
     }
@@ -35,7 +35,7 @@ struct Bag<Item> {
         items.removeAll(keepingCapacity: false)
     }
     
-    fileprivate mutating func nextRemovalToken() -> RemovalToken {
+    fileprivate mutating func nextToken() -> RemovalToken {
         
         if tokenCounter >= UInt8.max {
             

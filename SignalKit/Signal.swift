@@ -31,7 +31,7 @@ extension Signal {
         
         pthread_mutex_lock(&mutex)
         
-        let token = observers.insertItem(observer)
+        let token = observers.insert(observer)
         
         pthread_mutex_unlock(&mutex)
         
@@ -57,7 +57,7 @@ extension Signal {
         
         pthread_mutex_lock(&mutex)
         
-        observers.removeItemWithToken(token)
+        observers.remove(with: token)
         
         pthread_mutex_unlock(&mutex)
     }

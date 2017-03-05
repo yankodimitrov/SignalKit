@@ -24,11 +24,11 @@ extension DisposableBag {
     
     public func insertItem(_ item: Disposable) -> Disposable {
         
-        let token = disposables.insertItem(item)
+        let token = disposables.insert(item)
         
         return DisposableAction { [weak self] in
             
-            self?.disposables.removeItemWithToken(token)
+            self?.disposables.remove(with: token)
         }
     }
 }
