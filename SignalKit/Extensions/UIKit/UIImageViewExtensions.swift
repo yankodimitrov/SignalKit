@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalType where Value == UIImage? {
+public extension SignalProtocol where Value == UIImage? {
     
     /// Bind the a UIImage to the image property of UIImageView
     

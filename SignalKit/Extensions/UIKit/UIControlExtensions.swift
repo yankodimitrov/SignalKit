@@ -38,7 +38,7 @@ public extension SignalEventType where Sender: UIControl {
     }
 }
 
-public extension SignalType where Value == Bool {
+public extension SignalProtocol where Value == Bool {
     
     /// Bind the boolean value of the signal to the enabled property of UIControl
     

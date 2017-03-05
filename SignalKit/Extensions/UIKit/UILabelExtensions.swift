@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalType where Value == String {
+public extension SignalProtocol where Value == String {
     
     /// Bind a string value to the text property of UILabel
     

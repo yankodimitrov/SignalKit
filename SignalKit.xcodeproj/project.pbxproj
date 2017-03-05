@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E11C8A1ACE00C03404 /* Disposable.swift */; };
 		C99326E41C8A1B7C00C03404 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E31C8A1B7C00C03404 /* Observable.swift */; };
-		C99326E61C8A1ED500C03404 /* SignalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E51C8A1ED500C03404 /* SignalType.swift */; };
+		C99326E61C8A1ED500C03404 /* SignalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E51C8A1ED500C03404 /* SignalProtocol.swift */; };
 		C99326E81C8A1F9F00C03404 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E71C8A1F9F00C03404 /* Bag.swift */; };
 		C99326EA1C8A21B900C03404 /* BagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E91C8A21B900C03404 /* BagTests.swift */; };
 		C99326EE1C8A2C4900C03404 /* DisposableAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326ED1C8A2C4900C03404 /* DisposableAction.swift */; };
@@ -85,7 +85,7 @@
 /* Begin PBXFileReference section */
 		C99326E11C8A1ACE00C03404 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		C99326E31C8A1B7C00C03404 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		C99326E51C8A1ED500C03404 /* SignalType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalType.swift; sourceTree = "<group>"; };
+		C99326E51C8A1ED500C03404 /* SignalProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProtocol.swift; sourceTree = "<group>"; };
 		C99326E71C8A1F9F00C03404 /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		C99326E91C8A21B900C03404 /* BagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagTests.swift; sourceTree = "<group>"; };
 		C99326ED1C8A2C4900C03404 /* DisposableAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableAction.swift; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 			children = (
 				C99326E11C8A1ACE00C03404 /* Disposable.swift */,
 				C99326E31C8A1B7C00C03404 /* Observable.swift */,
-				C99326E51C8A1ED500C03404 /* SignalType.swift */,
+				C99326E51C8A1ED500C03404 /* SignalProtocol.swift */,
 				C993271E1C8B209700C03404 /* SignalEventType.swift */,
 			);
 			path = Protocols;
@@ -479,7 +479,7 @@
 				C99327431C8C78FD00C03404 /* UIDatePickerExtensions.swift in Sources */,
 				C99327331C8C70C700C03404 /* UILabelExtensions.swift in Sources */,
 				C99327251C8B221300C03404 /* NSObjectExtensions.swift in Sources */,
-				C99326E61C8A1ED500C03404 /* SignalType.swift in Sources */,
+				C99326E61C8A1ED500C03404 /* SignalProtocol.swift in Sources */,
 				C993275F1C8C8BF300C03404 /* Keyboard.swift in Sources */,
 				C993275B1C8C88B600C03404 /* UIViewExtensions.swift in Sources */,
 				C99326FC1C8AE0E200C03404 /* DisposableBag.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension SignalType where Value == CGFloat {
+public extension SignalProtocol where Value == CGFloat {
     
     /// Bind a CGFloat value to the alpha property of UIView
     
@@ -23,7 +23,7 @@ public extension SignalType where Value == CGFloat {
     }
 }
 
-public extension SignalType where Value == Bool {
+public extension SignalProtocol where Value == Bool {
     
     /// Bind a boolean value to the hidden property of UIView
     

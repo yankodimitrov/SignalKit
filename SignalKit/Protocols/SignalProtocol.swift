@@ -1,5 +1,5 @@
 //
-//  SignalType.swift
+//  SignalProtocol.swift
 //  SignalKit
 //
 //  Created by Yanko Dimitrov on 3/4/16.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-public protocol SignalType: Observable, Disposable {
+public protocol SignalProtocol: Observable, Disposable {
     
     var disposableSource: Disposable? {get set}
 }
 
 // MARK: - Disposable
 
-extension SignalType {
+extension SignalProtocol {
     
     public func dispose() {
         
@@ -25,7 +25,7 @@ extension SignalType {
 
 // MARK: - Next
 
-extension SignalType {
+extension SignalProtocol {
     
     /// Add a new observer to a Signal
     
@@ -39,7 +39,7 @@ extension SignalType {
 
 // MARK: - Map
 
-extension SignalType {
+extension SignalProtocol {
     
     /// Transform a Signal of type ObservationValue to a Signal of type U
     
@@ -60,7 +60,7 @@ extension SignalType {
 
 // MARK: - Filter
 
-extension SignalType {
+extension SignalProtocol {
     
     /// Filter the Signal value using a predicate
     
@@ -84,7 +84,7 @@ extension SignalType {
 
 // MARK: - Skip
 
-extension SignalType {
+extension SignalProtocol {
     
     /// Skip a number of sent values
     
@@ -108,7 +108,7 @@ extension SignalType {
 
 // MARK: - ObserveOn
 
-extension SignalType {
+extension SignalProtocol {
     
     /// Observe the Signal on a given queue
     
@@ -133,7 +133,7 @@ extension SignalType {
 
 // MARK: - Debounce
 
-extension SignalType {
+extension SignalProtocol {
     
     /// Sends only the latest values that are not followed by another value in a given timeframe
     
@@ -158,7 +158,7 @@ extension SignalType {
 
 // MARK: - Delay
 
-extension SignalType {
+extension SignalProtocol {
     
     /// Delay the sent value
     
@@ -183,11 +183,11 @@ extension SignalType {
 
 // MARK: - BindTo
 
-extension SignalType {
+extension SignalProtocol {
     
     /// Bind the value to a signal of the same type
     
-    public func bindTo<T: SignalType>(_ signal: T) -> Self where T.Value == Value {
+    public func bindTo<T: SignalProtocol>(_ signal: T) -> Self where T.Value == Value {
         
         addObserver { [weak signal] in
         
@@ -200,7 +200,7 @@ extension SignalType {
 
 // MARK: - Distinct
 
-extension SignalType where Value: Equatable {
+extension SignalProtocol where Value: Equatable {
     
     /// Send the value only if not equal to the previous one
     
@@ -226,11 +226,11 @@ extension SignalType where Value: Equatable {
 
 // MARK: - CombineLatestWith
 
-extension SignalType {
+extension SignalProtocol {
     
     /// Combine the latest values of two signals to a signal of type (A, B)
     
-    public func combineLatestWith<T: SignalType>(_ signal: T) -> Signal<(Value, T.Value)> {
+    public func combineLatestWith<T: SignalProtocol>(_ signal: T) -> Signal<(Value, T.Value)> {
         
         let compoundSignal = Signal<(Value, T.Value)>()
         var lastValueA: Value?
@@ -262,7 +262,7 @@ extension SignalType {
 
 // MARK: - AllEqual
 
-extension SignalType where Value == (Bool, Bool) {
+extension SignalProtocol where Value == (Bool, Bool) {
     
     /// Send true if all values in a signal of type (Bool, Bool) are matching the predicate function
     
@@ -274,7 +274,7 @@ extension SignalType where Value == (Bool, Bool) {
 
 // MARK: - SomeEqual
 
-extension SignalType where Value == (Bool, Bool) {
+extension SignalProtocol where Value == (Bool, Bool) {
     
     /// Send true if at least one value in a signal of type (Bool, Bool) matches the predicate function
     

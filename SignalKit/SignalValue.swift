@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class SignalValue<T>: SignalType {
+public final class SignalValue<T>: SignalProtocol {
     public typealias Value = T
     
     public var disposableSource: Disposable?
