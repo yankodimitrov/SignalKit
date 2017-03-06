@@ -17,11 +17,13 @@ public protocol Disposable {
 
 extension Disposable {
     
-    /// Store a chain of Signal operations in a DisposableBag.
-    /// The chain will be released when the bag disposes.
+    /// Store a Disposable item in a bag.
+    /// When the bag is disposed it will dispose all items that are stored inside.
     ///
-    /// - Parameter bag: The DisposableBag in which to store the chain of Signal operations.
-    /// - Returns: Disposable which can be used to remove the chain from the bag.
+    /// Usually used to store a chain of Signal operations in a DisposableBag.
+    ///
+    /// - Parameter bag: The DisposableBag to store the item in.
+    /// - Returns: Disposable item which can be used to remove the item from the bag.
     @discardableResult public func disposeWith(_ bag: DisposableBag) -> Disposable {
         
         return bag.insert(self)
