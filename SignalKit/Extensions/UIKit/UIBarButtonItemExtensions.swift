@@ -11,12 +11,14 @@ import UIKit
 public extension Event where Sender: UIBarButtonItem {
     
     /// Observe for tap events in UIBarButtonItem.
-    public var tapEvent: Signal<AnyObject> {
+    public var tapEvent: Signal<Sender> {
         
-        let signal = Signal<AnyObject>()
+        let signal = Signal<Sender>()
         let target = ActionTarget()
         
         target.actionCallback = { [weak signal] sender in
+            
+            guard let sender = sender as? Sender else { return }
             
             signal?.send(sender)
         }
