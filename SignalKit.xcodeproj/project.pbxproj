@@ -10,6 +10,39 @@
 		C92932ED1E6CA357006D8937 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92932EC1E6CA357006D8937 /* Lock.swift */; };
 		C92932EF1E6CA39C006D8937 /* MutexLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92932EE1E6CA39C006D8937 /* MutexLock.swift */; };
 		C92932F11E6CAB87006D8937 /* MockLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92932F01E6CAB87006D8937 /* MockLock.swift */; };
+		C92933001E6D7D9C006D8937 /* SignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92932F71E6D7D9B006D8937 /* SignalKit.framework */; };
+		C929330E1E6D7E38006D8937 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E11C8A1ACE00C03404 /* Disposable.swift */; };
+		C929330F1E6D7E42006D8937 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E31C8A1B7C00C03404 /* Observable.swift */; };
+		C92933101E6D7E44006D8937 /* SignalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E51C8A1ED500C03404 /* SignalProtocol.swift */; };
+		C92933111E6D7E4C006D8937 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271E1C8B209700C03404 /* Event.swift */; };
+		C92933121E6D7E4E006D8937 /* Lock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92932EC1E6CA357006D8937 /* Lock.swift */; };
+		C92933131E6D7E53006D8937 /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E71C8A1F9F00C03404 /* Bag.swift */; };
+		C92933141E6D7E57006D8937 /* DisposableAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326ED1C8A2C4900C03404 /* DisposableAction.swift */; };
+		C92933151E6D7E59006D8937 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326F71C8A436E00C03404 /* Scheduler.swift */; };
+		C92933161E6D7E5C006D8937 /* DisposableBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326FB1C8AE0E200C03404 /* DisposableBag.swift */; };
+		C92933181E6D7E75006D8937 /* NotificationObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993270E1C8B08CD00C03404 /* NotificationObserver.swift */; };
+		C92933191E6D7E79006D8937 /* KeyPathObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327121C8B0C9100C03404 /* KeyPathObserver.swift */; };
+		C929331A1E6D7E81006D8937 /* ActionTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271A1C8B1E0E00C03404 /* ActionTarget.swift */; };
+		C929331B1E6D7E85006D8937 /* MutexLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92932EE1E6CA39C006D8937 /* MutexLock.swift */; };
+		C929331C1E6D7E9B006D8937 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327241C8B221300C03404 /* NSObjectExtensions.swift */; };
+		C929331D1E6D7EA1006D8937 /* NSNotificationCenterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327281C8C38B000C03404 /* NSNotificationCenterExtensions.swift */; };
+		C929331E1E6D7EA7006D8937 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326F31C8A304800C03404 /* Signal.swift */; };
+		C929331F1E6D7EAB006D8937 /* SignalValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327011C8AE72F00C03404 /* SignalValue.swift */; };
+		C92933201E6D7EAE006D8937 /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327201C8B212500C03404 /* SignalEvent.swift */; };
+		C92933211E6D7FCF006D8937 /* SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326F51C8A36E000C03404 /* SignalTests.swift */; };
+		C92933221E6D7FD2006D8937 /* SignalValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327031C8AE96400C03404 /* SignalValueTests.swift */; };
+		C92933231E6D7FD6006D8937 /* MockDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326FF1C8AE25300C03404 /* MockDisposable.swift */; };
+		C92933241E6D7FDA006D8937 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327161C8B0FD700C03404 /* Person.swift */; };
+		C92933251E6D7FDE006D8937 /* MockLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92932F01E6CAB87006D8937 /* MockLock.swift */; };
+		C92933261E6D7FEA006D8937 /* BagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E91C8A21B900C03404 /* BagTests.swift */; };
+		C92933271E6D7FEC006D8937 /* DisposableActionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326EF1C8A2CCD00C03404 /* DisposableActionTests.swift */; };
+		C92933281E6D7FEE006D8937 /* SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326F91C8A446B00C03404 /* SchedulerTests.swift */; };
+		C92933291E6D7FF1006D8937 /* DisposableBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326FD1C8AE1D900C03404 /* DisposableBagTests.swift */; };
+		C929332A1E6D7FF9006D8937 /* NotificationObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327101C8B0AC300C03404 /* NotificationObserverTests.swift */; };
+		C929332B1E6D7FFB006D8937 /* KeyPathObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327141C8B0CAE00C03404 /* KeyPathObserverTests.swift */; };
+		C929332C1E6D7FFE006D8937 /* ActionTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271C1C8B1EF400C03404 /* ActionTargetTests.swift */; };
+		C929332D1E6D8003006D8937 /* NSObjectExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327261C8C34DE00C03404 /* NSObjectExtensionsTests.swift */; };
+		C929332E1E6D8005006D8937 /* NSNotificationCenterExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993272A1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift */; };
 		C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E11C8A1ACE00C03404 /* Disposable.swift */; };
 		C99326E41C8A1B7C00C03404 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E31C8A1B7C00C03404 /* Observable.swift */; };
 		C99326E61C8A1ED500C03404 /* SignalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E51C8A1ED500C03404 /* SignalProtocol.swift */; };
@@ -74,6 +107,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C92933011E6D7D9C006D8937 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9E7F2761B567DF5001AB061 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C92932F61E6D7D9B006D8937;
+			remoteInfo = "SignalKit-macOS";
+		};
 		C9E7F28C1B567DF5001AB061 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9E7F2761B567DF5001AB061 /* Project object */;
@@ -87,6 +127,8 @@
 		C92932EC1E6CA357006D8937 /* Lock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lock.swift; sourceTree = "<group>"; };
 		C92932EE1E6CA39C006D8937 /* MutexLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutexLock.swift; sourceTree = "<group>"; };
 		C92932F01E6CAB87006D8937 /* MockLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLock.swift; sourceTree = "<group>"; };
+		C92932F71E6D7D9B006D8937 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C92932FF1E6D7D9C006D8937 /* SignalKit macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SignalKit macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C99326E11C8A1ACE00C03404 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		C99326E31C8A1B7C00C03404 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		C99326E51C8A1ED500C03404 /* SignalProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProtocol.swift; sourceTree = "<group>"; };
@@ -155,6 +197,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C92932F31E6D7D9B006D8937 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C92932FC1E6D7D9C006D8937 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C92933001E6D7D9C006D8937 /* SignalKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9E7F27B1B567DF5001AB061 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,6 +359,8 @@
 			children = (
 				C9E7F27F1B567DF5001AB061 /* SignalKit.framework */,
 				C9E7F28A1B567DF5001AB061 /* SignalKitTests.xctest */,
+				C92932F71E6D7D9B006D8937 /* SignalKit.framework */,
+				C92932FF1E6D7D9C006D8937 /* SignalKit macOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -354,6 +413,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		C92932F41E6D7D9B006D8937 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9E7F27C1B567DF5001AB061 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -365,6 +431,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		C92932F61E6D7D9B006D8937 /* SignalKit macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C92933081E6D7D9C006D8937 /* Build configuration list for PBXNativeTarget "SignalKit macOS" */;
+			buildPhases = (
+				C92932F21E6D7D9B006D8937 /* Sources */,
+				C92932F31E6D7D9B006D8937 /* Frameworks */,
+				C92932F41E6D7D9B006D8937 /* Headers */,
+				C92932F51E6D7D9B006D8937 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SignalKit macOS";
+			productName = "SignalKit-macOS";
+			productReference = C92932F71E6D7D9B006D8937 /* SignalKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C92932FE1E6D7D9C006D8937 /* SignalKit macOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C929330B1E6D7D9C006D8937 /* Build configuration list for PBXNativeTarget "SignalKit macOSTests" */;
+			buildPhases = (
+				C92932FB1E6D7D9C006D8937 /* Sources */,
+				C92932FC1E6D7D9C006D8937 /* Frameworks */,
+				C92932FD1E6D7D9C006D8937 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C92933021E6D7D9C006D8937 /* PBXTargetDependency */,
+			);
+			name = "SignalKit macOSTests";
+			productName = "SignalKit-macOSTests";
+			productReference = C92932FF1E6D7D9C006D8937 /* SignalKit macOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C9E7F27E1B567DF5001AB061 /* SignalKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9E7F2951B567DF5001AB061 /* Build configuration list for PBXNativeTarget "SignalKit" */;
@@ -407,10 +509,20 @@
 		C9E7F2761B567DF5001AB061 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Yanko Dimitrov";
 				TargetAttributes = {
+					C92932F61E6D7D9B006D8937 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = BLBG8Y52YR;
+						ProvisioningStyle = Automatic;
+					};
+					C92932FE1E6D7D9C006D8937 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = BLBG8Y52YR;
+						ProvisioningStyle = Automatic;
+					};
 					C9E7F27E1B567DF5001AB061 = {
 						CreatedOnToolsVersion = 6.4;
 						LastSwiftMigration = 0820;
@@ -435,11 +547,27 @@
 			targets = (
 				C9E7F27E1B567DF5001AB061 /* SignalKit */,
 				C9E7F2891B567DF5001AB061 /* SignalKitTests */,
+				C92932F61E6D7D9B006D8937 /* SignalKit macOS */,
+				C92932FE1E6D7D9C006D8937 /* SignalKit macOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C92932F51E6D7D9B006D8937 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C92932FD1E6D7D9C006D8937 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9E7F27D1B567DF5001AB061 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -457,6 +585,52 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C92932F21E6D7D9B006D8937 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C92933111E6D7E4C006D8937 /* Event.swift in Sources */,
+				C92933151E6D7E59006D8937 /* Scheduler.swift in Sources */,
+				C92933191E6D7E79006D8937 /* KeyPathObserver.swift in Sources */,
+				C92933121E6D7E4E006D8937 /* Lock.swift in Sources */,
+				C92933201E6D7EAE006D8937 /* SignalEvent.swift in Sources */,
+				C929331F1E6D7EAB006D8937 /* SignalValue.swift in Sources */,
+				C929331B1E6D7E85006D8937 /* MutexLock.swift in Sources */,
+				C929331E1E6D7EA7006D8937 /* Signal.swift in Sources */,
+				C929330F1E6D7E42006D8937 /* Observable.swift in Sources */,
+				C92933181E6D7E75006D8937 /* NotificationObserver.swift in Sources */,
+				C929331D1E6D7EA1006D8937 /* NSNotificationCenterExtensions.swift in Sources */,
+				C929331A1E6D7E81006D8937 /* ActionTarget.swift in Sources */,
+				C92933101E6D7E44006D8937 /* SignalProtocol.swift in Sources */,
+				C92933131E6D7E53006D8937 /* Bag.swift in Sources */,
+				C92933141E6D7E57006D8937 /* DisposableAction.swift in Sources */,
+				C929331C1E6D7E9B006D8937 /* NSObjectExtensions.swift in Sources */,
+				C92933161E6D7E5C006D8937 /* DisposableBag.swift in Sources */,
+				C929330E1E6D7E38006D8937 /* Disposable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C92932FB1E6D7D9C006D8937 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C929332E1E6D8005006D8937 /* NSNotificationCenterExtensionsTests.swift in Sources */,
+				C929332D1E6D8003006D8937 /* NSObjectExtensionsTests.swift in Sources */,
+				C92933261E6D7FEA006D8937 /* BagTests.swift in Sources */,
+				C92933281E6D7FEE006D8937 /* SchedulerTests.swift in Sources */,
+				C929332A1E6D7FF9006D8937 /* NotificationObserverTests.swift in Sources */,
+				C92933211E6D7FCF006D8937 /* SignalTests.swift in Sources */,
+				C92933221E6D7FD2006D8937 /* SignalValueTests.swift in Sources */,
+				C92933271E6D7FEC006D8937 /* DisposableActionTests.swift in Sources */,
+				C92933241E6D7FDA006D8937 /* Person.swift in Sources */,
+				C92933291E6D7FF1006D8937 /* DisposableBagTests.swift in Sources */,
+				C92933251E6D7FDE006D8937 /* MockLock.swift in Sources */,
+				C92933231E6D7FD6006D8937 /* MockDisposable.swift in Sources */,
+				C929332C1E6D7FFE006D8937 /* ActionTargetTests.swift in Sources */,
+				C929332B1E6D7FFB006D8937 /* KeyPathObserverTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9E7F27A1B567DF5001AB061 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -536,6 +710,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C92933021E6D7D9C006D8937 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C92932F61E6D7D9B006D8937 /* SignalKit macOS */;
+			targetProxy = C92933011E6D7D9C006D8937 /* PBXContainerItemProxy */;
+		};
 		C9E7F28D1B567DF5001AB061 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9E7F27E1B567DF5001AB061 /* SignalKit */;
@@ -544,6 +723,98 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		C92933091E6D7D9C006D8937 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BLBG8Y52YR;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SignalKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yankodimitrov.SignalKit-macOS";
+				PRODUCT_NAME = SignalKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C929330A1E6D7D9C006D8937 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = BLBG8Y52YR;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = SignalKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yankodimitrov.SignalKit-macOS";
+				PRODUCT_NAME = SignalKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		C929330C1E6D7D9C006D8937 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = BLBG8Y52YR;
+				INFOPLIST_FILE = SignalKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yankodimitrov.SignalKit-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		C929330D1E6D7D9C006D8937 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = BLBG8Y52YR;
+				INFOPLIST_FILE = SignalKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yankodimitrov.SignalKit-macOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		C9E7F2931B567DF5001AB061 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -716,6 +987,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C92933081E6D7D9C006D8937 /* Build configuration list for PBXNativeTarget "SignalKit macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C92933091E6D7D9C006D8937 /* Debug */,
+				C929330A1E6D7D9C006D8937 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C929330B1E6D7D9C006D8937 /* Build configuration list for PBXNativeTarget "SignalKit macOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C929330C1E6D7D9C006D8937 /* Debug */,
+				C929330D1E6D7D9C006D8937 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		C9E7F2791B567DF5001AB061 /* Build configuration list for PBXProject "SignalKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
