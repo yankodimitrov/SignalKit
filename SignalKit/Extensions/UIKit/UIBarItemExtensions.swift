@@ -10,8 +10,10 @@ import UIKit
 
 public extension SignalProtocol where Value == Bool {
     
-    /// Bind the boolean value of the signal to the enabled property of UIBarItem
-    
+    /// Bind the Bool value of the Signal to the isEnabled property of UIBarItem
+    ///
+    /// - Parameter barItem: The UIBarItem to update.
+    /// - Returns: Signal of the same type.
     public func bindTo(enabledStateIn barItem: UIBarItem) -> Self {
         
         addObserver { [weak barItem] in

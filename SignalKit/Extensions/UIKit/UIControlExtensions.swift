@@ -10,8 +10,10 @@ import UIKit
 
 public extension Event where Sender: UIControl {
     
-    /// Observe for control events
-    
+    /// Observe for UIControl events.
+    ///
+    /// - Parameter events: UIControlEvents to observe for.
+    /// - Returns: Signal with the type of the UIControl.
     public func events(_ events: UIControlEvents) -> Signal<Sender> {
         
         let signal = Signal<Sender>()
@@ -30,8 +32,7 @@ public extension Event where Sender: UIControl {
         return signal
     }
     
-    /// Observe the confrol for TouchUpInside events
-    
+    /// Observe the confrol for TouchUpInside events.
     public var tapEvent: Signal<Sender> {
         
         return events(.touchUpInside)
@@ -40,8 +41,10 @@ public extension Event where Sender: UIControl {
 
 public extension SignalProtocol where Value == Bool {
     
-    /// Bind the boolean value of the signal to the enabled property of UIControl
-    
+    /// Bind the Bool value of the Signal to the isEnabled property of UIControl.
+    ///
+    /// - Parameter control: The UIControl to update.
+    /// - Returns: Signal of the same type.
     public func bindTo(enabledStateIn control: UIControl) -> Self {
         
         addObserver { [weak control] in

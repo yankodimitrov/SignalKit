@@ -67,7 +67,7 @@ class UIControlExtensionsTests: XCTestCase {
         control.isEnabled = true
         
         signal.bindTo(enabledStateIn: control).disposeWith(bag)
-            
+        
         signal.send(false)
         
         XCTAssertFalse(control.isEnabled, "Should bind a signal of boolean to the enabled property of UIControl")

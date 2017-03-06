@@ -10,13 +10,11 @@ import UIKit
 
 public extension Event where Sender: UITextView {
     
-    /// Observe text changes in UITextView
-    
+    /// Observe for text changes in UITextView.
     var text: Signal<String> {
         
         let signal = Signal<String>()
-        let center = NotificationCenter.default
-        let observer = NotificationObserver(center: center, name: .UITextViewTextDidChange, object: sender)
+        let observer = NotificationObserver(center: .default, name: .UITextViewTextDidChange, object: sender)
         
         observer.notificationCallback = { [weak sender, weak signal] _ in
         

@@ -275,7 +275,7 @@ class SignalTests: XCTestCase {
         let signalB = Signal<String>()
         var result = (0, "")
         
-        chain = signalA.combineLatestWith(signalB).next { result = $0 }
+        chain = signalA.combineLatest(with: signalB).next { result = $0 }
         
         signalA.send(1)
         signalA.send(11)

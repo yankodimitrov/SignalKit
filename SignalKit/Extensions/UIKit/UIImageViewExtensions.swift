@@ -10,8 +10,10 @@ import UIKit
 
 public extension SignalProtocol where Value == UIImage? {
     
-    /// Bind the a UIImage to the image property of UIImageView
-    
+    /// Bind the UIImage value of the Signal to the image property of UIImageView.
+    ///
+    /// - Parameter imageView: The UIImageView to update.
+    /// - Returns: Signal of the same type.
     public func bindTo(imageIn imageView: UIImageView) -> Self {
         
         addObserver { [weak imageView] in

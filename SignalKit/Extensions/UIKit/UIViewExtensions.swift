@@ -10,8 +10,10 @@ import UIKit
 
 public extension SignalProtocol where Value == CGFloat {
     
-    /// Bind a CGFloat value to the alpha property of UIView
-    
+    /// Bind the CGFloat value of the Signal to the alpha property of UIView.
+    ///
+    /// - Parameter view: The UIView to update.
+    /// - Returns: Signal of the same type.
     public func bindTo(alphaIn view: UIView) -> Self {
         
         addObserver { [weak view] in
@@ -25,8 +27,10 @@ public extension SignalProtocol where Value == CGFloat {
 
 public extension SignalProtocol where Value == Bool {
     
-    /// Bind a boolean value to the hidden property of UIView
-    
+    /// Bind the Bool value of the Signal to the isHidden property of UIView.
+    ///
+    /// - Parameter view: The UIView to update.
+    /// - Returns: Signal of the same type.
     public func bindTo(hiddenStateIn view: UIView) -> Self {
         
         addObserver { [weak view] in

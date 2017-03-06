@@ -17,6 +17,8 @@ public protocol SignalProtocol: Observable, Disposable {
 
 extension SignalProtocol {
     
+    /// Dispose the whole chain of Signals.
+    
     public func dispose() {
         
         disposableSource?.dispose()
@@ -28,7 +30,9 @@ extension SignalProtocol {
 extension SignalProtocol {
     
     /// Add a new observer to a Signal
-    
+    ///
+    /// - Parameter observer: Observer callback for new values.
+    /// - Returns: Signal of the same type.
     public func next(_ observer: @escaping (Value) -> Void) -> Self {
         
         addObserver(observer)
@@ -41,8 +45,10 @@ extension SignalProtocol {
 
 extension SignalProtocol {
     
-    /// Transform a Signal of type ObservationValue to a Signal of type U
-    
+    /// Transform the Signal to a Signal with different type.
+    ///
+    /// - Parameter transform: Function that accepts the new value and transforms it to a new type.
+    /// - Returns: Signal with the type of the transform function result.
     public func map<U>(_ transform: @escaping (Value) -> U) -> Signal<U> {
         
         let signal = Signal<U>()
@@ -62,8 +68,10 @@ extension SignalProtocol {
 
 extension SignalProtocol {
     
-    /// Filter the Signal value using a predicate
-    
+    /// Filter the Signal value with a predicate.
+    ///
+    /// - Parameter predicate: Function that returns true if the new value matches a certain condition.
+    /// - Returns: Signal of the same type.
     public func filter(_ predicate: @escaping (Value) -> Bool) -> Signal<Value> {
         
         let signal = Signal<Value>()
@@ -86,8 +94,11 @@ extension SignalProtocol {
 
 extension SignalProtocol {
     
-    /// Skip a number of sent values
-    
+    /// Skip a number of sent values.
+    /// Note: It skips only the first N number of sent values.
+    ///
+    /// - Parameter count: The number of sent values to skip.
+    /// - Returns: Signal of the same type.
     public func skip(_ count: Int) -> Signal<Value> {
         var count = count
         
@@ -110,8 +121,10 @@ extension SignalProtocol {
 
 extension SignalProtocol {
     
-    /// Observe the Signal on a given DispatchQueue
-    
+    /// Observe the Signal on a given DispatchQueue.
+    ///
+    /// - Parameter queue: The DispatchQueue on which to receive next values.
+    /// - Returns: Signal of the same type.
     public func observe(on queue: DispatchQueue) -> Signal<Value> {
         
         let signal = Signal<Value>()
@@ -134,8 +147,12 @@ extension SignalProtocol {
 
 extension SignalProtocol {
     
-    /// Sends only the latest values that are not followed by another value in a given timeframe
-    
+    /// Sends only the latest value that is not followed by value in a given timeframe.
+    ///
+    /// - Parameters:
+    ///   - seconds: The timeframe in which to wait for new values before we send the most recent one.
+    ///   - queue: The DispatchQueue on which to receive the value. Defaults to main.
+    /// - Returns: Signal of the same type.
     public func debounce(_ seconds: Double, on queue: DispatchQueue = .main) -> Signal<Value> {
         
         let signal = Signal<Value>()
@@ -159,8 +176,12 @@ extension SignalProtocol {
 
 extension SignalProtocol {
     
-    /// Delay the sent value
-    
+    /// Delay the send value.
+    ///
+    /// - Parameters:
+    ///   - seconds: The delay time.
+    ///   - queue: The DispatchQueue on which to reveive the value. Defaults to main.
+    /// - Returns: Signal of the same type.
     public func delay(_ seconds: Double, on queue: DispatchQueue = .main) -> Signal<Value> {
         
         let signal = Signal<Value>()
@@ -184,8 +205,10 @@ extension SignalProtocol {
 
 extension SignalProtocol {
     
-    /// Bind the value to a signal of the same type
-    
+    /// Bind the value to a Signal of the same type.
+    ///
+    /// - Parameter signal: The Signal to which to send new values.
+    /// - Returns: Signal of the same type.
     public func bindTo<T: SignalProtocol>(_ signal: T) -> Self where T.Value == Value {
         
         addObserver { [weak signal] in
@@ -201,8 +224,9 @@ extension SignalProtocol {
 
 extension SignalProtocol where Value: Equatable {
     
-    /// Send the value only if not equal to the previous one
-    
+    /// Sends the value only if its not equal to the previous one.
+    ///
+    /// - Returns: Signal of the same type.
     public func distinct() -> Signal<Value> {
         
         let signal = Signal<Value>()
@@ -227,9 +251,11 @@ extension SignalProtocol where Value: Equatable {
 
 extension SignalProtocol {
     
-    /// Combine the latest values of two signals to a signal of type (A, B)
-    
-    public func combineLatestWith<T: SignalProtocol>(_ signal: T) -> Signal<(Value, T.Value)> {
+    /// Combine the latest values of two signals to a Signal of type (A, B).
+    ///
+    /// - Parameter signal: The Signal to combine with.
+    /// - Returns: Signal of the type Signal<(A, B)>.
+    public func combineLatest<T: SignalProtocol>(with signal: T) -> Signal<(Value, T.Value)> {
         
         let compoundSignal = Signal<(Value, T.Value)>()
         var lastValueA: Value?
@@ -263,8 +289,10 @@ extension SignalProtocol {
 
 extension SignalProtocol where Value == (Bool, Bool) {
     
-    /// Send true if all values in a signal of type (Bool, Bool) are matching the predicate function
-    
+    /// Sends true if all values in a Signal of type (Bool, Bool) are matching the predicate.
+    ///
+    /// - Parameter predicate: The predicate function.
+    /// - Returns: Signal of type Bool
     public func allEqual(_ predicate: @escaping (Bool) -> Bool) -> Signal<Bool> {
         
         return map { predicate($0.0) && predicate($0.1) }
@@ -275,8 +303,10 @@ extension SignalProtocol where Value == (Bool, Bool) {
 
 extension SignalProtocol where Value == (Bool, Bool) {
     
-    /// Send true if at least one value in a signal of type (Bool, Bool) matches the predicate function
-    
+    /// Sends true if at least one value in a Signal of type (Bool, Bool) is matching the predicate.
+    ///
+    /// - Parameter predicate: The predicate function.
+    /// - Returns: Signal of type Bool
     public func someEqual(_ predicate: @escaping (Bool) -> Bool) -> Signal<Bool> {
         
         return map { predicate($0.0) || predicate($0.1) }

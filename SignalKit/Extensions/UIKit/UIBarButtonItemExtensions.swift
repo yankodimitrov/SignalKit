@@ -10,8 +10,7 @@ import UIKit
 
 public extension Event where Sender: UIBarButtonItem {
     
-    /// Observe the tap action in UIBarButtonItem
-    
+    /// Observe for tap events in UIBarButtonItem.
     public var tapEvent: Signal<AnyObject> {
         
         let signal = Signal<AnyObject>()

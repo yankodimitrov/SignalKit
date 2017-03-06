@@ -16,6 +16,8 @@ public final class SignalValue<T>: SignalProtocol {
     internal let signal: Signal<T>
     fileprivate var internalValue: T
     
+    
+    /// Updating the value will send the new value to the all observers of the Signal.
     public var value: T {
         get {
             

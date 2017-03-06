@@ -10,8 +10,7 @@ import UIKit
 
 public extension Event where Sender: UISegmentedControl {
     
-    /// Observe selected index in UISegmentedControl
-    
+    /// Observe the selected index changes in UISegmentedControl.
     public var selectedIndex: Signal<Int> {
         
         return events(.valueChanged).map { $0.selectedSegmentIndex }

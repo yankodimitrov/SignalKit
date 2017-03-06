@@ -10,8 +10,12 @@ import Foundation
 
 public extension Event where Sender: NotificationCenter {
     
-    /// Observe the notification center for a given notification
-    
+    /// Observe for a given notification.
+    ///
+    /// - Parameters:
+    ///   - name: The name of the notification.
+    ///   - fromObject: The sender of the notification
+    /// - Returns: Signal<Notification>
     public func notification(_ name: Notification.Name, fromObject: AnyObject? = nil) -> Signal<Notification> {
         
         let signal = Signal<Notification>()

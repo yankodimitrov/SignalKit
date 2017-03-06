@@ -10,8 +10,10 @@ import UIKit
 
 public extension SignalProtocol where Value == String {
     
-    /// Bind a string value to the text property of UILabel
-    
+    /// Bind the String value of the Signal to the text property of UILabel.
+    ///
+    /// - Parameter label: the UILabel to update.
+    /// - Returns: Signal of the same type.
     public func bindTo(textIn label: UILabel) -> Self {
         
         addObserver { [weak label] in

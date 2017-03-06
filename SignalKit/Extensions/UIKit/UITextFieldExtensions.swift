@@ -10,8 +10,7 @@ import UIKit
 
 public extension Event where Sender: UITextField {
     
-    /// Observe the text changes in UITextField
-    
+    /// Observe for text changes in UITextField.
     public var text: Signal<String> {
         
         return events(.editingChanged).map { $0.text ?? "" }

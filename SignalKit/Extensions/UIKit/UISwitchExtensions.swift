@@ -10,8 +10,7 @@ import UIKit
 
 public extension Event where Sender: UISwitch {
     
-    /// Observe UISwitch state changes
-    
+    /// Observe for UISwitch state changes.
     public var onState: Signal<Bool> {
         
         return events(.valueChanged).map { $0.isOn }

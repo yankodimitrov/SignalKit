@@ -10,8 +10,7 @@ import UIKit
 
 public extension Event where Sender: UIDatePicker {
     
-    /// Observe date changes in UIDatePicker
-    
+    /// Observe for date changes in UIDatePicker.
     public var date: Signal<Date> {
         
         return events(.valueChanged).map { $0.date }

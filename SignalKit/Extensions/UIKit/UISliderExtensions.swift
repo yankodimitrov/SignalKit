@@ -10,8 +10,7 @@ import UIKit
 
 public extension Event where Sender: UISlider {
     
-    /// Observe value changes in UISlider
-    
+    /// Observe for value changes in UISlider.
     public var valueChanges: Signal<Float> {
         
         return events(.valueChanged).map { $0.value }

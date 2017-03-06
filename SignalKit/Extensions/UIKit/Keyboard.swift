@@ -75,7 +75,7 @@ public extension Event where Sender == Keyboard.EventSender {
     fileprivate func keyboardSignalFor(_ name: Notification.Name) -> Signal<KeyboardState> {
         
         let signal = Signal<KeyboardState>()
-        let observer = NotificationObserver(center: NotificationCenter.default, name: name)
+        let observer = NotificationObserver(center: .default, name: name)
         
         observer.notificationCallback = { [weak signal] in
             
@@ -87,43 +87,37 @@ public extension Event where Sender == Keyboard.EventSender {
         return signal
     }
     
-    /// Observe for keyboard will show event
-    
+    /// Observe for keyboard will show event.
     var willShow: Signal<KeyboardState> {
         
         return keyboardSignalFor(.UIKeyboardWillShow)
     }
     
-    /// Observe for keyboard did show event
-    
+    /// Observe for keyboard did show event.
     var didShow: Signal<KeyboardState> {
         
         return keyboardSignalFor(.UIKeyboardDidShow)
     }
     
-    /// Observe for keyboard will hide event
-    
+    /// Observe for keyboard will hide event.
     var willHide: Signal<KeyboardState> {
         
         return keyboardSignalFor(.UIKeyboardWillHide)
     }
     
-    /// Observe for keyboard did hide event
-    
+    /// Observe for keyboard did hide event.
     var didHide: Signal<KeyboardState> {
         
         return keyboardSignalFor(.UIKeyboardDidHide)
     }
     
-    /// Observe for keyboard will change frame event
-    
+    /// Observe for keyboard will change frame event.
     var willChangeFrame: Signal<KeyboardState> {
         
         return keyboardSignalFor(.UIKeyboardWillChangeFrame)
     }
     
-    /// Observe for keyboard did change frame event
-    
+    /// Observe for keyboard did change frame event.
     var didChangeFrame: Signal<KeyboardState> {
         
         return keyboardSignalFor(.UIKeyboardDidChangeFrame)
