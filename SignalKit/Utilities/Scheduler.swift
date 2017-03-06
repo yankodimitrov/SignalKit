@@ -23,14 +23,14 @@ public struct Scheduler {
         queue.async(execute: block)
     }
     
-    public func delay(_ seconds: Double, block: @escaping ()->()) {
+    public func delay(_ seconds: Double, block: @escaping () -> Void) {
         
-        let when = DispatchTime.now() + Double(Int64(seconds * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        let when = DispatchTime.now() + .milliseconds(Int(seconds * 1000))
         
         queue.asyncAfter(deadline: when, execute: block)
     }
     
-    public mutating func debounce(_ seconds: Double, block: @escaping ()->()) {
+    public mutating func debounce(_ seconds: Double, block: @escaping () -> Void) {
         
         debounceAction?()
         
