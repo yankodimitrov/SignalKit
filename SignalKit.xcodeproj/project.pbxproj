@@ -43,6 +43,8 @@
 		C929332C1E6D7FFE006D8937 /* ActionTargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993271C1C8B1EF400C03404 /* ActionTargetTests.swift */; };
 		C929332D1E6D8003006D8937 /* NSObjectExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327261C8C34DE00C03404 /* NSObjectExtensionsTests.swift */; };
 		C929332E1E6D8005006D8937 /* NSNotificationCenterExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993272A1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift */; };
+		C92933341E6D83F9006D8937 /* NSControlExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92933331E6D83F9006D8937 /* NSControlExtensionsTests.swift */; };
+		C929335E1E6D97D4006D8937 /* NSControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92933311E6D83A4006D8937 /* NSControlExtensions.swift */; };
 		C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E11C8A1ACE00C03404 /* Disposable.swift */; };
 		C99326E41C8A1B7C00C03404 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E31C8A1B7C00C03404 /* Observable.swift */; };
 		C99326E61C8A1ED500C03404 /* SignalProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326E51C8A1ED500C03404 /* SignalProtocol.swift */; };
@@ -129,6 +131,8 @@
 		C92932F01E6CAB87006D8937 /* MockLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLock.swift; sourceTree = "<group>"; };
 		C92932F71E6D7D9B006D8937 /* SignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92932FF1E6D7D9C006D8937 /* SignalKit macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SignalKit macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C92933311E6D83A4006D8937 /* NSControlExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSControlExtensions.swift; sourceTree = "<group>"; };
+		C92933331E6D83F9006D8937 /* NSControlExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSControlExtensionsTests.swift; sourceTree = "<group>"; };
 		C99326E11C8A1ACE00C03404 /* Disposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disposable.swift; sourceTree = "<group>"; };
 		C99326E31C8A1B7C00C03404 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		C99326E51C8A1ED500C03404 /* SignalProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProtocol.swift; sourceTree = "<group>"; };
@@ -230,6 +234,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C929332F1E6D835F006D8937 /* AppKit */ = {
+			isa = PBXGroup;
+			children = (
+				C92933311E6D83A4006D8937 /* NSControlExtensions.swift */,
+			);
+			path = AppKit;
+			sourceTree = "<group>";
+		};
+		C92933301E6D837A006D8937 /* AppKit */ = {
+			isa = PBXGroup;
+			children = (
+				C92933331E6D83F9006D8937 /* NSControlExtensionsTests.swift */,
+			);
+			path = AppKit;
+			sourceTree = "<group>";
+		};
 		C99327221C8B21BC00C03404 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +294,7 @@
 		C9D9882E1B7B0903004559CD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C929332F1E6D835F006D8937 /* AppKit */,
 				C99327221C8B21BC00C03404 /* UIKit */,
 				C99327241C8B221300C03404 /* NSObjectExtensions.swift */,
 				C99327281C8C38B000C03404 /* NSNotificationCenterExtensions.swift */,
@@ -312,6 +333,7 @@
 		C9D988331B7B0950004559CD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C92933301E6D837A006D8937 /* AppKit */,
 				C99327231C8B21D700C03404 /* UIKit */,
 				C99327261C8C34DE00C03404 /* NSObjectExtensionsTests.swift */,
 				C993272A1C8C398700C03404 /* NSNotificationCenterExtensionsTests.swift */,
@@ -599,6 +621,7 @@
 				C929331E1E6D7EA7006D8937 /* Signal.swift in Sources */,
 				C929330F1E6D7E42006D8937 /* Observable.swift in Sources */,
 				C92933181E6D7E75006D8937 /* NotificationObserver.swift in Sources */,
+				C929335E1E6D97D4006D8937 /* NSControlExtensions.swift in Sources */,
 				C929331D1E6D7EA1006D8937 /* NSNotificationCenterExtensions.swift in Sources */,
 				C929331A1E6D7E81006D8937 /* ActionTarget.swift in Sources */,
 				C92933101E6D7E44006D8937 /* SignalProtocol.swift in Sources */,
@@ -618,6 +641,7 @@
 				C929332D1E6D8003006D8937 /* NSObjectExtensionsTests.swift in Sources */,
 				C92933261E6D7FEA006D8937 /* BagTests.swift in Sources */,
 				C92933281E6D7FEE006D8937 /* SchedulerTests.swift in Sources */,
+				C92933341E6D83F9006D8937 /* NSControlExtensionsTests.swift in Sources */,
 				C929332A1E6D7FF9006D8937 /* NotificationObserverTests.swift in Sources */,
 				C92933211E6D7FCF006D8937 /* SignalTests.swift in Sources */,
 				C92933221E6D7FD2006D8937 /* SignalValueTests.swift in Sources */,
