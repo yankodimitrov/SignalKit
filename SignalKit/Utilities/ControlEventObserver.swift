@@ -22,11 +22,11 @@ final class ControlEventObserver: NSObject {
         
         super.init()
         
-        control.addTarget(self, action: #selector(ControlEventObserver.handleEvent), for: events)
+        control.addTarget(self, action: #selector(handleEvent), for: events)
         
         disposeAction = DisposableAction { [weak self] in
             
-            self?.control?.removeTarget(self, action: #selector(ControlEventObserver.handleEvent), for: events)
+            self?.control?.removeTarget(self, action: #selector(self?.handleEvent), for: events)
         }
     }
     
