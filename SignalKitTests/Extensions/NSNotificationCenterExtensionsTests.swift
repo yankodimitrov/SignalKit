@@ -11,7 +11,7 @@ import XCTest
 
 class NSNotificationCenterExtensionsTests: XCTestCase {
     
-    let notificationName = "signalkit.notification"
+    let notificationName = Notification.Name.init("signalkit.notification")
     var center: NotificationCenter!
     var bag: DisposableBag!
     
@@ -30,7 +30,7 @@ class NSNotificationCenterExtensionsTests: XCTestCase {
             .next { _ in called = true }
             .disposeWith(bag)
         
-        center.post(name: Notification.Name(rawValue: notificationName), object: nil)
+        center.post(name: notificationName, object: nil)
         
         XCTAssertEqual(called, true, "Should observe for notification posted on the notification center")
     }
@@ -44,7 +44,7 @@ class NSNotificationCenterExtensionsTests: XCTestCase {
             .next { _ in called = true }
             .disposeWith(bag)
         
-        center.post(name: Notification.Name(rawValue: notificationName), object: person)
+        center.post(name: notificationName, object: person)
         
         XCTAssertEqual(called, true, "Should observe for notification posted on the notification center from a certain object")
     }

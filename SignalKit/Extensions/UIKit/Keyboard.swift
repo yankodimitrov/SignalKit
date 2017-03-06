@@ -72,11 +72,10 @@ public struct KeyboardState {
 
 public extension Event where Sender == Keyboard.EventSender {
     
-    fileprivate func keyboardSignalFor(_ notificationName: String) -> Signal<KeyboardState> {
+    fileprivate func keyboardSignalFor(_ name: Notification.Name) -> Signal<KeyboardState> {
         
         let signal = Signal<KeyboardState>()
-        let center = NotificationCenter.default
-        let observer = NotificationObserver(center: center, name: notificationName)
+        let observer = NotificationObserver(center: NotificationCenter.default, name: name)
         
         observer.notificationCallback = { [weak signal] in
             
@@ -92,41 +91,41 @@ public extension Event where Sender == Keyboard.EventSender {
     
     var willShow: Signal<KeyboardState> {
         
-        return keyboardSignalFor(NSNotification.Name.UIKeyboardWillShow.rawValue)
+        return keyboardSignalFor(.UIKeyboardWillShow)
     }
     
     /// Observe for keyboard did show event
     
     var didShow: Signal<KeyboardState> {
         
-        return keyboardSignalFor(NSNotification.Name.UIKeyboardDidShow.rawValue)
+        return keyboardSignalFor(.UIKeyboardDidShow)
     }
     
     /// Observe for keyboard will hide event
     
     var willHide: Signal<KeyboardState> {
         
-        return keyboardSignalFor(NSNotification.Name.UIKeyboardWillHide.rawValue)
+        return keyboardSignalFor(.UIKeyboardWillHide)
     }
     
     /// Observe for keyboard did hide event
     
     var didHide: Signal<KeyboardState> {
         
-        return keyboardSignalFor(NSNotification.Name.UIKeyboardDidHide.rawValue)
+        return keyboardSignalFor(.UIKeyboardDidHide)
     }
     
     /// Observe for keyboard will change frame event
     
     var willChangeFrame: Signal<KeyboardState> {
         
-        return keyboardSignalFor(NSNotification.Name.UIKeyboardWillChangeFrame.rawValue)
+        return keyboardSignalFor(.UIKeyboardWillChangeFrame)
     }
     
     /// Observe for keyboard did change frame event
     
     var didChangeFrame: Signal<KeyboardState> {
         
-        return keyboardSignalFor(NSNotification.Name.UIKeyboardDidChangeFrame.rawValue)
+        return keyboardSignalFor(.UIKeyboardDidChangeFrame)
     }
 }

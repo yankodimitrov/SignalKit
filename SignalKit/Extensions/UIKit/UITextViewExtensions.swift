@@ -16,7 +16,7 @@ public extension Event where Sender: UITextView {
         
         let signal = Signal<String>()
         let center = NotificationCenter.default
-        let observer = NotificationObserver(center: center, name: NSNotification.Name.UITextViewTextDidChange.rawValue, object: sender)
+        let observer = NotificationObserver(center: center, name: .UITextViewTextDidChange, object: sender)
         
         observer.notificationCallback = { [weak sender, weak signal] _ in
         

@@ -11,13 +11,13 @@ import Foundation
 final class NotificationObserver: NSObject {
     
     fileprivate let center: NotificationCenter
-    fileprivate let name: String
+    fileprivate let name: Notification.Name
     fileprivate weak var object: AnyObject?
     fileprivate var disposeAction: Disposable?
     
     var notificationCallback: ((Notification) -> Void)?
     
-    init(center: NotificationCenter, name: String, object: AnyObject? = nil) {
+    init(center: NotificationCenter, name: Notification.Name, object: AnyObject? = nil) {
         
         self.center = center
         self.name = name
@@ -25,13 +25,13 @@ final class NotificationObserver: NSObject {
         
         super.init()
         
-        center.addObserver(self, selector: #selector(NotificationObserver.handleNotification(_:)), name: NSNotification.Name(rawValue: name), object: object)
+        center.addObserver(self, selector: #selector(handleNotification), name: name, object: object)
         
         disposeAction = DisposableAction { [weak self, weak object] in
             
-            guard let theSelf = self else { return }
+            guard let observer = self else { return }
             
-            center.removeObserver(theSelf, name: NSNotification.Name(rawValue: name), object: object)
+            center.removeObserver(observer, name: name, object: object)
         }
     }
     

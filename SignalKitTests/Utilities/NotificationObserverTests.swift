@@ -11,7 +11,7 @@ import XCTest
 
 class NotificationObserverTests: XCTestCase {
 
-    let notificationName = "signalkit.notification"
+    let notificationName = Notification.Name.init("signalkit.notification")
     let center = NotificationCenter.default
     var observer: NotificationObserver!
     
@@ -30,7 +30,7 @@ class NotificationObserverTests: XCTestCase {
             called = true
         }
         
-        center.post(name: Notification.Name(rawValue: notificationName), object: nil)
+        center.post(name: notificationName, object: nil)
         
         XCTAssertTrue(called, "Should observe for notification")
     }
@@ -46,7 +46,7 @@ class NotificationObserverTests: XCTestCase {
         
         observer.dispose()
         
-        center.post(name: Notification.Name(rawValue: notificationName), object: nil)
+        center.post(name: notificationName, object: nil)
         
         XCTAssertFalse(called, "Should dispose the observation")
     }
@@ -63,7 +63,7 @@ class NotificationObserverTests: XCTestCase {
         
         observer = nil
         
-        center.post(name: Notification.Name(rawValue: notificationName), object: nil)
+        center.post(name: notificationName, object: nil)
         
         XCTAssertFalse(called, "Should dispose on deinit")
     }

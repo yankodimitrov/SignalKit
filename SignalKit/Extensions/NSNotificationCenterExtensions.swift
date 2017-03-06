@@ -12,7 +12,7 @@ public extension Event where Sender: NotificationCenter {
     
     /// Observe the notification center for a given notification
     
-    public func notification(_ name: String, fromObject: AnyObject? = nil) -> Signal<Notification> {
+    public func notification(_ name: Notification.Name, fromObject: AnyObject? = nil) -> Signal<Notification> {
         
         let signal = Signal<Notification>()
         let observer = NotificationObserver(center: sender, name: name, object: fromObject)
