@@ -8,48 +8,14 @@
 
 import Foundation
 
-public enum SchedulerQueue {
-    
-    case mainQueue
-    case userInteractiveQueue
-    case userInitiatedQueue
-    case utilityQueue
-    case backgroundQueue
-    case customQueue(DispatchQueue)
-    
-    var dispatchQueue: DispatchQueue {
-        
-        switch self {
-            
-        case .mainQueue:
-            return DispatchQueue.main
-            
-        case .userInteractiveQueue:
-            return DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive)
-            
-        case .userInitiatedQueue:
-            return DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)
-            
-        case .utilityQueue:
-            return DispatchQueue.global(qos: DispatchQoS.QoSClass.utility)
-            
-        case .backgroundQueue:
-            return DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
-            
-        case .customQueue(let customQueue):
-            return customQueue
-        }
-    }
-}
-
 public struct Scheduler {
     
     fileprivate var debounceAction: (() -> Void)? = nil
     internal let queue: DispatchQueue
     
-    public init(queue: SchedulerQueue) {
+    public init(queue: DispatchQueue) {
         
-        self.queue = queue.dispatchQueue
+        self.queue = queue
     }
     
     public func async(_ block: @escaping ()->()) {

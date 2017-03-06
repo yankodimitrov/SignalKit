@@ -110,16 +110,15 @@ extension SignalProtocol {
 
 extension SignalProtocol {
     
-    /// Observe the Signal on a given queue
+    /// Observe the Signal on a given DispatchQueue
     
-    public func observeOn(_ queue: SchedulerQueue) -> Signal<Value> {
+    public func observe(on queue: DispatchQueue) -> Signal<Value> {
         
         let signal = Signal<Value>()
-        let scheduler = Scheduler(queue: queue)
         
         addObserver { [weak signal] value in
             
-            scheduler.async {
+            queue.async {
                 
                 signal?.send(value)
             }
@@ -137,7 +136,7 @@ extension SignalProtocol {
     
     /// Sends only the latest values that are not followed by another value in a given timeframe
     
-    public func debounce(_ seconds: Double, queue: SchedulerQueue = .mainQueue) -> Signal<Value> {
+    public func debounce(_ seconds: Double, on queue: DispatchQueue = .main) -> Signal<Value> {
         
         let signal = Signal<Value>()
         var scheduler = Scheduler(queue: queue)
@@ -162,7 +161,7 @@ extension SignalProtocol {
     
     /// Delay the sent value
     
-    public func delay(_ seconds: Double, queue: SchedulerQueue = .mainQueue) -> Signal<Value> {
+    public func delay(_ seconds: Double, on queue: DispatchQueue = .main) -> Signal<Value> {
         
         let signal = Signal<Value>()
         let scheduler = Scheduler(queue: queue)

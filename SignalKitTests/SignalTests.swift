@@ -151,9 +151,9 @@ class SignalTests: XCTestCase {
         
         let expectation = self.expectation(description: "Should deliver the value on the main queue")
         let signal = Signal<Int>()
-        let scheduler = Scheduler(queue: .backgroundQueue)
+        let scheduler = Scheduler(queue: .global(qos: .background))
         
-        chain = signal.observeOn(.mainQueue).next { _ in
+        chain = signal.observe(on: .main).next { _ in
             
             if Thread.isMainThread {
                 
@@ -173,7 +173,7 @@ class SignalTests: XCTestCase {
         
         let expectation = self.expectation(description: "Should send next value on a given queue")
         let signal = Signal<Int>()
-        let scheduler = Scheduler(queue: .backgroundQueue)
+        let scheduler = Scheduler(queue: .global(qos: .background))
         
         chain = signal.next { _ in
             
@@ -185,7 +185,7 @@ class SignalTests: XCTestCase {
         
         scheduler.async {
             
-            signal.send(1, onQueue: .mainQueue)
+            signal.send(1, on: .main)
         }
         
         waitForExpectations(timeout: 0.1, handler: nil)
@@ -194,7 +194,7 @@ class SignalTests: XCTestCase {
     func testDebounce() {
         
         let expectation = self.expectation(description: "Should debounce the sent values")
-        let scheduler = Scheduler(queue: .mainQueue)
+        let scheduler = Scheduler(queue: .main)
         let signal = Signal<Int>()
         var result = [Int]()
         
@@ -218,7 +218,7 @@ class SignalTests: XCTestCase {
     func testDelay() {
         
         let expectation = self.expectation(description: "Should delay the sent values")
-        let scheduler = Scheduler(queue: .mainQueue)
+        let scheduler = Scheduler(queue: .main)
         let signal = Signal<Int>()
         var result = 0
         

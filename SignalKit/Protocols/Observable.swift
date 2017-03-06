@@ -20,11 +20,9 @@ public protocol Observable: class {
 
 extension Observable {
     
-    public func send(_ value: Value, onQueue: SchedulerQueue) {
+    public func send(_ value: Value, on queue: DispatchQueue) {
         
-        let scheduler = Scheduler(queue: onQueue)
-        
-        scheduler.async { [weak self] in
+        queue.async { [weak self] in
             
             self?.send(value)
         }

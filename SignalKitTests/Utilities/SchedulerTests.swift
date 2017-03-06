@@ -14,7 +14,7 @@ class SchedulerTests: XCTestCase {
     func testDispatchOnMainQueue() {
         
         let expectation = self.expectation(description: "Should dispatch on main queue")
-        let scheduler = Scheduler(queue: .mainQueue)
+        let scheduler = Scheduler(queue: .main)
         
         scheduler.async {
             
@@ -31,7 +31,7 @@ class SchedulerTests: XCTestCase {
         
         let interactiveQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive)
         let expectation = self.expectation(description: "Should dispatch on user interactive queue")
-        let scheduler = Scheduler(queue: .userInteractiveQueue)
+        let scheduler = Scheduler(queue: .global(qos: .userInteractive))
         
         scheduler.async {
             
@@ -48,7 +48,7 @@ class SchedulerTests: XCTestCase {
         
         let initiatedQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)
         let expectation = self.expectation(description: "Should dispatch on user initiated queue")
-        let scheduler = Scheduler(queue: .userInitiatedQueue)
+        let scheduler = Scheduler(queue: .global(qos: .userInitiated))
         
         scheduler.async {
             
@@ -65,7 +65,7 @@ class SchedulerTests: XCTestCase {
         
         let utilityQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.utility)
         let expectation = self.expectation(description: "Should dispatch on utility queue")
-        let scheduler = Scheduler(queue: .utilityQueue)
+        let scheduler = Scheduler(queue: .global(qos: .utility))
         
         scheduler.async {
             
@@ -82,7 +82,7 @@ class SchedulerTests: XCTestCase {
         
         let backgroundQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.background)
         let expectation = self.expectation(description: "Should dispatch on background queue")
-        let scheduler = Scheduler(queue: .backgroundQueue)
+        let scheduler = Scheduler(queue: .global(qos: .background))
         
         scheduler.async {
             
@@ -99,7 +99,7 @@ class SchedulerTests: XCTestCase {
         
         let customQueue = DispatchQueue(label: "signal.kit.tests.queue", attributes: DispatchQueue.Attributes.concurrent)
         let expectation = self.expectation(description: "Should dispatch on custom queue")
-        let scheduler = Scheduler(queue: .customQueue(customQueue))
+        let scheduler = Scheduler(queue: customQueue)
         
         scheduler.async {
             
@@ -115,7 +115,7 @@ class SchedulerTests: XCTestCase {
     func testDelay() {
         
         let expectation = self.expectation(description: "Should dispatch an action with delay")
-        let scheduler = Scheduler(queue: .mainQueue)
+        let scheduler = Scheduler(queue: .main)
         
         scheduler.delay(0.1) {
             
@@ -128,7 +128,7 @@ class SchedulerTests: XCTestCase {
     func testDebounce() {
         
         let expectation = self.expectation(description: "Should debounce the execution of an action")
-        var scheduler = Scheduler(queue: .mainQueue)
+        var scheduler = Scheduler(queue: .main)
         var result = [Int]()
         
         scheduler.debounce(0.1) { result.append(1) }
