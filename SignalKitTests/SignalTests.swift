@@ -15,7 +15,7 @@ class SignalTests: XCTestCase {
     
     func testCreateAtomicSignal() {
         
-        let name = Signal<String>.atomic()
+        let name = Signal<String>(atomic: true)
         
         XCTAssertTrue(name.lock is MutexLock)
     }

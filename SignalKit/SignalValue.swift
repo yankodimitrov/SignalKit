@@ -62,8 +62,8 @@ extension SignalValue {
     
     /// Create a thread safe SignalValue.
     ///
-    /// - Parameter value: the initial value.
-    /// - Returns: a thread safe SignalValue<T> with MutexLock.
+    /// - Parameter value: The initial value.
+    /// - Returns: Thread safe SignalValue<T> with MutexLock.
     public class func atomic(value: T) -> SignalValue<T> {
         
         return SignalValue<T>(value: value, lock: MutexLock())

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C92932F61E6D7D9B006D8937"
-               BuildableName = "SignalKit macOS.framework"
+               BuildableName = "SignalKit.framework"
                BlueprintName = "SignalKit macOS"
                ReferencedContainer = "container:SignalKit.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C92932F61E6D7D9B006D8937"
-            BuildableName = "SignalKit macOS.framework"
+            BuildableName = "SignalKit.framework"
             BlueprintName = "SignalKit macOS"
             ReferencedContainer = "container:SignalKit.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C92932F61E6D7D9B006D8937"
-            BuildableName = "SignalKit macOS.framework"
+            BuildableName = "SignalKit.framework"
             BlueprintName = "SignalKit macOS"
             ReferencedContainer = "container:SignalKit.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C92932F61E6D7D9B006D8937"
-            BuildableName = "SignalKit macOS.framework"
+            BuildableName = "SignalKit.framework"
             BlueprintName = "SignalKit macOS"
             ReferencedContainer = "container:SignalKit.xcodeproj">
          </BuildableReference>
