@@ -11,11 +11,18 @@ import XCTest
 
 class SignalPropertyTests: XCTestCase {
     
-    func testCreateAtomicSignalValue() {
+    func testInitializeAtomic() {
         
         let name = SignalProperty<String>(value: "", atomic: true)
         
         XCTAssertTrue(name.signal.lock is MutexLock)
+    }
+    
+    func testInitializeNonAtomic() {
+        
+        let name = SignalProperty<String>(value: "", atomic: false)
+        
+        XCTAssertNil(name.signal.lock)
     }
     
     func testLockValueSetter() {

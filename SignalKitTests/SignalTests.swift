@@ -13,11 +13,18 @@ class SignalTests: XCTestCase {
     
     var chain: Disposable?
     
-    func testCreateAtomicSignal() {
+    func testInitializeAtomic() {
         
         let name = Signal<String>(atomic: true)
         
         XCTAssertTrue(name.lock is MutexLock)
+    }
+    
+    func testInitializeNonAtomic() {
+        
+        let name = Signal<String>(atomic: false)
+        
+        XCTAssertNil(name.lock)
     }
     
     func testLockAddObserver() {
