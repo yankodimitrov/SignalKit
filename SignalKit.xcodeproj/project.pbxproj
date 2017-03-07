@@ -27,10 +27,10 @@
 		C929331C1E6D7E9B006D8937 /* NSObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327241C8B221300C03404 /* NSObjectExtensions.swift */; };
 		C929331D1E6D7EA1006D8937 /* NSNotificationCenterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327281C8C38B000C03404 /* NSNotificationCenterExtensions.swift */; };
 		C929331E1E6D7EA7006D8937 /* Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326F31C8A304800C03404 /* Signal.swift */; };
-		C929331F1E6D7EAB006D8937 /* SignalValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327011C8AE72F00C03404 /* SignalValue.swift */; };
+		C929331F1E6D7EAB006D8937 /* SignalProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327011C8AE72F00C03404 /* SignalProperty.swift */; };
 		C92933201E6D7EAE006D8937 /* SignalEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327201C8B212500C03404 /* SignalEvent.swift */; };
 		C92933211E6D7FCF006D8937 /* SignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326F51C8A36E000C03404 /* SignalTests.swift */; };
-		C92933221E6D7FD2006D8937 /* SignalValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327031C8AE96400C03404 /* SignalValueTests.swift */; };
+		C92933221E6D7FD2006D8937 /* SignalPropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327031C8AE96400C03404 /* SignalPropertyTests.swift */; };
 		C92933231E6D7FD6006D8937 /* MockDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326FF1C8AE25300C03404 /* MockDisposable.swift */; };
 		C92933241E6D7FDA006D8937 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327161C8B0FD700C03404 /* Person.swift */; };
 		C92933251E6D7FDE006D8937 /* MockLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92932F01E6CAB87006D8937 /* MockLock.swift */; };
@@ -59,8 +59,8 @@
 		C99326FC1C8AE0E200C03404 /* DisposableBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326FB1C8AE0E200C03404 /* DisposableBag.swift */; };
 		C99326FE1C8AE1D900C03404 /* DisposableBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326FD1C8AE1D900C03404 /* DisposableBagTests.swift */; };
 		C99327001C8AE25300C03404 /* MockDisposable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99326FF1C8AE25300C03404 /* MockDisposable.swift */; };
-		C99327021C8AE72F00C03404 /* SignalValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327011C8AE72F00C03404 /* SignalValue.swift */; };
-		C99327041C8AE96400C03404 /* SignalValueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327031C8AE96400C03404 /* SignalValueTests.swift */; };
+		C99327021C8AE72F00C03404 /* SignalProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327011C8AE72F00C03404 /* SignalProperty.swift */; };
+		C99327041C8AE96400C03404 /* SignalPropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327031C8AE96400C03404 /* SignalPropertyTests.swift */; };
 		C99327061C8AEF0400C03404 /* ControlEventObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327051C8AEF0400C03404 /* ControlEventObserver.swift */; };
 		C99327081C8AF0E500C03404 /* ControlEventObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99327071C8AF0E500C03404 /* ControlEventObserverTests.swift */; };
 		C993270D1C8AF5F200C03404 /* MockControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C993270C1C8AF5F200C03404 /* MockControl.swift */; };
@@ -147,8 +147,8 @@
 		C99326FB1C8AE0E200C03404 /* DisposableBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableBag.swift; sourceTree = "<group>"; };
 		C99326FD1C8AE1D900C03404 /* DisposableBagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisposableBagTests.swift; sourceTree = "<group>"; };
 		C99326FF1C8AE25300C03404 /* MockDisposable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockDisposable.swift; sourceTree = "<group>"; };
-		C99327011C8AE72F00C03404 /* SignalValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalValue.swift; sourceTree = "<group>"; };
-		C99327031C8AE96400C03404 /* SignalValueTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalValueTests.swift; sourceTree = "<group>"; };
+		C99327011C8AE72F00C03404 /* SignalProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProperty.swift; sourceTree = "<group>"; };
+		C99327031C8AE96400C03404 /* SignalPropertyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalPropertyTests.swift; sourceTree = "<group>"; };
 		C99327051C8AEF0400C03404 /* ControlEventObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlEventObserver.swift; sourceTree = "<group>"; };
 		C99327071C8AF0E500C03404 /* ControlEventObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlEventObserverTests.swift; sourceTree = "<group>"; };
 		C993270C1C8AF5F200C03404 /* MockControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockControl.swift; sourceTree = "<group>"; };
@@ -395,7 +395,7 @@
 				C9D9882E1B7B0903004559CD /* Extensions */,
 				C9E7F2821B567DF5001AB061 /* Supporting Files */,
 				C99326F31C8A304800C03404 /* Signal.swift */,
-				C99327011C8AE72F00C03404 /* SignalValue.swift */,
+				C99327011C8AE72F00C03404 /* SignalProperty.swift */,
 				C99327201C8B212500C03404 /* SignalEvent.swift */,
 			);
 			path = SignalKit;
@@ -418,7 +418,7 @@
 				C9D988331B7B0950004559CD /* Extensions */,
 				C9E7F28F1B567DF5001AB061 /* Supporting Files */,
 				C99326F51C8A36E000C03404 /* SignalTests.swift */,
-				C99327031C8AE96400C03404 /* SignalValueTests.swift */,
+				C99327031C8AE96400C03404 /* SignalPropertyTests.swift */,
 			);
 			path = SignalKitTests;
 			sourceTree = "<group>";
@@ -616,7 +616,7 @@
 				C92933191E6D7E79006D8937 /* KeyPathObserver.swift in Sources */,
 				C92933121E6D7E4E006D8937 /* Lock.swift in Sources */,
 				C92933201E6D7EAE006D8937 /* SignalEvent.swift in Sources */,
-				C929331F1E6D7EAB006D8937 /* SignalValue.swift in Sources */,
+				C929331F1E6D7EAB006D8937 /* SignalProperty.swift in Sources */,
 				C929331B1E6D7E85006D8937 /* MutexLock.swift in Sources */,
 				C929331E1E6D7EA7006D8937 /* Signal.swift in Sources */,
 				C929330F1E6D7E42006D8937 /* Observable.swift in Sources */,
@@ -644,7 +644,7 @@
 				C92933341E6D83F9006D8937 /* NSControlExtensionsTests.swift in Sources */,
 				C929332A1E6D7FF9006D8937 /* NotificationObserverTests.swift in Sources */,
 				C92933211E6D7FCF006D8937 /* SignalTests.swift in Sources */,
-				C92933221E6D7FD2006D8937 /* SignalValueTests.swift in Sources */,
+				C92933221E6D7FD2006D8937 /* SignalPropertyTests.swift in Sources */,
 				C92933271E6D7FEC006D8937 /* DisposableActionTests.swift in Sources */,
 				C92933241E6D7FDA006D8937 /* Person.swift in Sources */,
 				C92933291E6D7FF1006D8937 /* DisposableBagTests.swift in Sources */,
@@ -675,7 +675,7 @@
 				C99326F41C8A304800C03404 /* Signal.swift in Sources */,
 				C993271F1C8B209700C03404 /* Event.swift in Sources */,
 				C99327211C8B212500C03404 /* SignalEvent.swift in Sources */,
-				C99327021C8AE72F00C03404 /* SignalValue.swift in Sources */,
+				C99327021C8AE72F00C03404 /* SignalProperty.swift in Sources */,
 				C99326E21C8A1ACE00C03404 /* Disposable.swift in Sources */,
 				C99326E81C8A1F9F00C03404 /* Bag.swift in Sources */,
 				C99327431C8C78FD00C03404 /* UIDatePickerExtensions.swift in Sources */,
@@ -703,7 +703,7 @@
 				C99327391C8C731F00C03404 /* UIImageViewExtensionsTests.swift in Sources */,
 				C99326EA1C8A21B900C03404 /* BagTests.swift in Sources */,
 				C99327111C8B0AC300C03404 /* NotificationObserverTests.swift in Sources */,
-				C99327041C8AE96400C03404 /* SignalValueTests.swift in Sources */,
+				C99327041C8AE96400C03404 /* SignalPropertyTests.swift in Sources */,
 				C993274D1C8C81EC00C03404 /* UISliderExtensionsTests.swift in Sources */,
 				C99326FE1C8AE1D900C03404 /* DisposableBagTests.swift in Sources */,
 				C99327551C8C84DD00C03404 /* UITextFieldExtensionsTests.swift in Sources */,
@@ -1018,6 +1018,7 @@
 				C929330A1E6D7D9C006D8937 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C929330B1E6D7D9C006D8937 /* Build configuration list for PBXNativeTarget "SignalKit macOSTests" */ = {
 			isa = XCConfigurationList;
@@ -1026,6 +1027,7 @@
 				C929330D1E6D7D9C006D8937 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9E7F2791B567DF5001AB061 /* Build configuration list for PBXProject "SignalKit" */ = {
 			isa = XCConfigurationList;

@@ -26,9 +26,9 @@ public final class Signal<T>: SignalProtocol {
     }
     
     
-    /// Initialize optionally thread safe Signal
+    /// Initialize optionally thread safe Signal.
     ///
-    /// - Parameter atomic: if true will return thread safe Signal using a mutex lock.
+    /// - Parameter atomic: If true will return thread safe Signal using a mutex lock.
     public convenience init(atomic: Bool) {
         
         var lock: Lock?

@@ -1,5 +1,5 @@
 //
-//  SignalValueTests.swift
+//  SignalPropertyTests.swift
 //  SignalKit
 //
 //  Created by Yanko Dimitrov on 3/5/16.
@@ -9,11 +9,11 @@
 import XCTest
 @testable import SignalKit
 
-class SignalValueTests: XCTestCase {
+class SignalPropertyTests: XCTestCase {
     
     func testCreateAtomicSignalValue() {
         
-        let name = SignalValue<String>.atomic(value: "Atomic")
+        let name = SignalProperty<String>(value: "", atomic: true)
         
         XCTAssertTrue(name.signal.lock is MutexLock)
     }
@@ -21,7 +21,7 @@ class SignalValueTests: XCTestCase {
     func testLockValueSetter() {
         
         let lock = MockLock()
-        let name = SignalValue<String>(value: "Atomic", lock: lock)
+        let name = SignalProperty<String>(value: "", lock: lock)
         
         name.value = "John"
         
@@ -32,7 +32,7 @@ class SignalValueTests: XCTestCase {
     func testLockValueGetter() {
         
         let lock = MockLock()
-        let name = SignalValue<String>(value: "Atomic", lock: lock)
+        let name = SignalProperty<String>(value: "", lock: lock)
         
         _ = name.value
         
@@ -43,7 +43,7 @@ class SignalValueTests: XCTestCase {
     func testLockAddObserver() {
         
         let lock = MockLock()
-        let name = SignalValue<String>(value: "Atomic", lock: lock)
+        let name = SignalProperty<String>(value: "", lock: lock)
         
         _ = name.addObserver { _ in }
         
@@ -54,7 +54,7 @@ class SignalValueTests: XCTestCase {
     func testLockSendValue() {
         
         let lock = MockLock()
-        let name = SignalValue<String>(value: "Atomic", lock: lock)
+        let name = SignalProperty<String>(value: "", lock: lock)
         
         name.send("Atomic")
         
@@ -65,7 +65,7 @@ class SignalValueTests: XCTestCase {
     func testLockRemoveObserverWithToken() {
         
         let lock = MockLock()
-        let name = SignalValue<String>(value: "Atomic", lock: lock)
+        let name = SignalProperty<String>(value: "", lock: lock)
         
         let observer = name.addObserver { _ in }
         
@@ -77,14 +77,14 @@ class SignalValueTests: XCTestCase {
     
     func testInitWithValue() {
         
-        let signal = SignalValue(value: "John")
+        let signal = SignalProperty(value: "John")
         
         XCTAssertEqual(signal.value, "John", "Should init with value")
     }
     
     func testSendValueWhenChanged() {
         
-        let signal = SignalValue(value: 1)
+        let signal = SignalProperty(value: 1)
         var result = 0
         
         signal.addObserver { result = $0 }
@@ -95,7 +95,7 @@ class SignalValueTests: XCTestCase {
     
     func testSendCurrentValueWhenNewObserverIsAdded() {
         
-        let signal = SignalValue(value: "John")
+        let signal = SignalProperty(value: "John")
         var result = ""
         
         _ = signal.next { result = $0 }
@@ -105,7 +105,7 @@ class SignalValueTests: XCTestCase {
     
     func testSendNext() {
         
-        let signal = SignalValue(value: 2)
+        let signal = SignalProperty(value: 2)
         var result = 0
         
         _ = signal.next { result = $0 }

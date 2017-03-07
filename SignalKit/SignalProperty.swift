@@ -1,5 +1,5 @@
 //
-//  SignalValue.swift
+//  SignalProperty.swift
 //  SignalKit
 //
 //  Created by Yanko Dimitrov on 3/5/16.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class SignalValue<T>: SignalProtocol {
+public final class SignalProperty<T>: SignalProtocol {
     
     public typealias Value = T
     
@@ -49,30 +49,32 @@ public final class SignalValue<T>: SignalProtocol {
         signal = Signal<T>(lock: lock)
     }
     
+    
+    /// Initialize optionally thread safe SignalProperty with initial value.
+    ///
+    /// - Parameters:
+    ///   - value: The initial value.
+    ///   - atomic: If true will return thread safe SignalProperty using a mutex lock.
+    public convenience init(value: T, atomic: Bool) {
+        
+        var lock: Lock?
+        
+        if atomic == true {
+            lock = MutexLock()
+        }
+        
+        self.init(value: value, lock: lock)
+    }
+    
     deinit {
         
         dispose()
     }
 }
 
-// MARK: - Atomic signal
-
-extension SignalValue {
-    
-    
-    /// Create a thread safe SignalValue.
-    ///
-    /// - Parameter value: The initial value.
-    /// - Returns: Thread safe SignalValue<T> with MutexLock.
-    public class func atomic(value: T) -> SignalValue<T> {
-        
-        return SignalValue<T>(value: value, lock: MutexLock())
-    }
-}
-
 // MARK: - Observable
 
-extension SignalValue {
+extension SignalProperty {
     
     @discardableResult public func addObserver(_ observer: @escaping (Value) -> Void) -> Disposable {
         
